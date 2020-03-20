@@ -1063,6 +1063,9 @@
 }
 .ti-email:before {
 	content: "\e75a";
+	position: relative;
+   	right: 15px;
+	   top: 2px;
 }
 .ti-drupal:before {
 	content: "\e75b";

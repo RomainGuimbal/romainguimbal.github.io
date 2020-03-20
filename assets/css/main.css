@@ -794,6 +794,17 @@ a {
 	margin-right: 2.5%;
 }
 
+.img-third .item {
+	float: left;
+	height: auto;
+	width: 31.666%;
+}
+
+.img-third .item:nth-of-type(1) {
+	margin-right: 2.5%;
+}
+
+
 .next {
 	align-items: center;
 	display: flex;

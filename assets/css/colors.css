@@ -134,7 +134,7 @@ Table of Contents
 .footer-default .follow-us-links li a:hover,
 .blog .entry-title a:hover,
 .hero .social-links li a:hover {
-	color: #ff6f61;
+	color: #403dff;
 }
 
 /*-----------------------------------------------------
@@ -145,5 +145,5 @@ Table of Contents
 .share-links li a:hover,
 .contact-form input[type=submit]:hover,
 .btn:hover {
-	background: #ff6f61;
+	background: #403dff;
 }
