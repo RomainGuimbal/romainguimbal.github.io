@@ -759,7 +759,7 @@ a h1{
 	font-size: 3.75rem;
 	font-weight: 400;
 	margin: 0 0 25px -3px;
-	text-transform: capitalize;
+	text-transform: none;
 }
 
 .single-project .intro ul {
@@ -809,11 +809,17 @@ a h1{
 	width: 31.666%;
 }
 
-.img-third .item:nth-of-type(1) {
+.img-third .item:nth-of-type(-n+2){
 	margin-right: 2.5%;
 }
 
-.img-third .item:nth-of-type(2) {
+.img-quad .item{
+	float: left;
+	height: auto;
+	width: 23.125%;
+}
+
+.img-quad .item:nth-of-type(-n+3) {
 	margin-right: 2.5%;
 }
 
