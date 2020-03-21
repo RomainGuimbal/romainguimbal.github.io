@@ -38,8 +38,10 @@ body {
 }
 
 a {
+	text-align: center;
 	text-decoration: none;
 	transition: all .2s ease-in-out;
+
 }
 
 .btn {
@@ -566,13 +568,13 @@ a {
 /* =============== # Hero =============== */
 
 .hero {
-	padding: 150px 0;
+	padding:150px 0;
 	position: relative;
 	width: 100%;
 }
 
 .hero h1 {
-	font-size: 5.625rem;
+	font-size: 3.625rem;
 	font-weight: 500;
 	line-height: 1.1;
 }
@@ -804,6 +806,9 @@ a {
 	margin-right: 2.5%;
 }
 
+.img-third .item:nth-of-type(2) {
+	margin-right: 2.5%;
+}
 
 .next {
 	align-items: center;

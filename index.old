@@ -22,7 +22,6 @@
 	<!-- Favicon -->
 	<link rel="icon" href="assets/img/favicon.png">
 </head>
-
 <body>
 
 	<!-- ========== Header ========== -->
@@ -31,26 +30,36 @@
 
 		<div class="container">
 
+			<a href="#" class="open-nav">
+				<i></i>
+			</a>
 			<a href="index.html">
 				<h1><br>Romain Guimbal</h1>
+				<!--<img src="assets/img/favicon.png" class="logo" alt="">-->
 			</a>
-			
+
 			<div class="clearfix"></div>
-			
 
 		</div> <!-- /.container -->
 
-    </header> <!-- /.main-header -->
-		
-	<!-- ========== Main ==========  -->
+	</header> <!-- /.main-header -->
+
+	<!-- ========== Main ========== &amp; -->
 
 	<main>
-
+		
 		<div class="container">
 
 			<div class="hero">
+				
+				<h1>Design<br>&amp; Ingénierie </h1>
 
-				<h1>Portfolio 2020</h1>
+				<ul class="social-links">
+					<li><a href="#">Mail</a></li>
+					<li><a href="#">Téléphone</a></li>
+					<li><a href="#">Adresse</a></li>
+					<li><a href="#">CV</a></li>
+				</ul>
 
 			</div> <!-- /.hero -->
 
@@ -65,8 +74,6 @@
 						<h3 class="item-category">scifi</h3>
 					</div>
 				</a>
-
-				
 
 				<a href="categories/projetsAnimation.html">
 					<div class="item">
@@ -95,7 +102,7 @@
 						<div class="item-img">
 							<img src="assets/img/sgdhjjkk-02.jpeg" alt="" class="img-cover">
 						</div>
-						<h2 class="item-title">3D<br> experimentale</h2>
+						<h2 class="item-title">3D<br> experimental</h2>
 						<h3 class="item-category">branding</h3>
 					</div>
 				</a>
@@ -120,12 +127,22 @@
 		</div> <!-- /.container -->
 
 	</main> <!-- /main -->
-	</main>
-	
 
 	<footer class="footer-default footer-default-border">
 
 		<div class="container">
+
+			<p class="copyright"><i class="far fa-copyright"></i> 2019 kano portfolio template. all rights reserved</p>
+
+			<!--<ul class="follow-us-links">
+				<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+				<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+				<li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+				<li><a href="#"><i class="fab fa-behance"></i></a></li>
+			</ul>
+
+			<div class="clearfix"></div>-->
 
 			<ul class="follow-us-links">
 				<li><i class="ti-email"></i>romainguimbal1@gmail.com</li>
@@ -134,5 +151,33 @@
 		</div> <!-- /.container -->
 
 	</footer> <!-- /.footer-default -->
+
+	<div class="aside-navigation-overlay">
+		
+		<div class="aside-navigation">
+			
+			<a href="#" class="close-nav"><i class="ti-close"></i></a>
+
+			<nav>
+				<ul>
+					<li><a href="index.html">home</a></li>
+					<li><a href="about.html">about</a></li>
+					<li><a href="portfolio.html">portfolio</a></li>
+					<li><a href="blog-list.html">blog</a></li>
+					<li><a href="contact.html">contact</a></li>
+				</ul>
+			</nav>
+
+			<ul class="social-icons">
+				<ul class="follow-us-links">
+					<li><i class="ti-email"></i>romainguimbal1@gmail.com</li>
+				</ul>
+			</ul>
+	
+		</div> <!-- /.aside-navigation -->
+
+	</div> <!-- /.aside-navigation-overlay -->
+
+	<script src="assets/js/main.js"></script>
 </body>
 </html>
