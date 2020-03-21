@@ -114,8 +114,13 @@ Table of Contents
 		margin-right: 100px;
 	}
 
+	.featured-works a:nth-of-type(1) .item .item-title {
+		margin: 50px -45px 0 0;
+	}
+
 	.featured-works a:nth-of-type(2) .item .item-title {
-		left: -143px;
+		margin: 70px 0 0 0;
+		left: -186px;
 	}
 
 	.featured-works a:nth-of-type(3) .item-img {
