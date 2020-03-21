@@ -38,10 +38,14 @@ body {
 }
 
 a {
-	text-align: center;
+	
 	text-decoration: none;
 	transition: all .2s ease-in-out;
 
+}
+
+a h1{
+	text-align: center;
 }
 
 .btn {
@@ -555,11 +559,13 @@ a {
 }
 
 .footer-default .follow-us-links {
-	float: right;
+	text-align: center;
+	float: center;
 }
 
 .footer-default .follow-us-links li {
-	float: left;
+	text-align: center;
+	float: center;
 	font-size: .875rem;
 	list-style: none;
 	margin-left: 35px;
@@ -574,6 +580,7 @@ a {
 }
 
 .hero h1 {
+	text-align: center;
 	font-size: 3.625rem;
 	font-weight: 500;
 	line-height: 1.1;
@@ -820,7 +827,7 @@ a {
 }
 
 .next h2 {
-	font-size: 6.25rem;
+	font-size: 2.25rem;
 	font-weight: 500;
 	text-transform: capitalize;
 }

@@ -33,7 +33,8 @@ Table of Contents
 .next,
 .hero .social-links li a,
 .featured-works .item,
-.close-nav {
+.close-nav,
+.main-header h1{
 	color: #000;
 }
 
@@ -133,7 +134,8 @@ Table of Contents
 .comment .reply:hover,
 .footer-default .follow-us-links li a:hover,
 .blog .entry-title a:hover,
-.hero .social-links li a:hover {
+.hero .social-links li a:hover,
+.main-header h1:hover {
 	color: #403dff;
 }
 
@@ -144,6 +146,6 @@ Table of Contents
 .open-nav:hover,
 .share-links li a:hover,
 .contact-form input[type=submit]:hover,
-.btn:hover {
+.btn:hover{
 	background: #403dff;
 }
