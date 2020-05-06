@@ -123,6 +123,10 @@ Table of Contents
 		left: -186px;
 	}
 
+	.featured-works a:nth-of-type(3) .item .item-title {
+		margin: 100px 0 0 0;
+	}
+
 	.featured-works a:nth-of-type(3) .item-img {
 		height: 470px;
 	}

@@ -793,15 +793,27 @@ a h1{
 	width: 100%;
 }
 
-.img-halved .item {
-	float: left;
-	height: 670px;
-	width: 48.75%;
+.fresque {
+	height: auto;
+	width: 140%;
+	margin-left:-20%;
 }
 
-.img-halved .item:nth-of-type(1) {
-	margin-right: 2.5%;
+.img-halved .item {
+	float: left;
+	height: auto ;
+	width: 48.75%;
+	margin-top:2.5%;
 }
+
+
+
+.img-halved .item:nth-of-type(odd) {
+	margin-right: 2.5%;
+	
+}
+
+
 
 .img-third .item {
 	float: left;
@@ -815,7 +827,7 @@ a h1{
 
 .img-quad .item{
 	float: left;
-	height: auto;
+	height: 350px;
 	width: 23.125%;
 }
 
