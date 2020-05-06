@@ -108,8 +108,7 @@ Table of Contents
 		right: -100px;
 	}
 
-	.featured-works a:nth-of-type(2) .item,
-	.featured-works a:nth-of-type(4) .item {
+	.featured-works a:nth-of-type(even) .item{
 		float: right;
 		margin-right: 100px;
 	}
@@ -118,7 +117,7 @@ Table of Contents
 		margin: 50px -45px 0 0;
 	}
 
-	.featured-works a:nth-of-type(2) .item .item-title {
+	.featured-works a:nth-of-type(6) .item .item-title {
 		margin: 70px 0 0 0;
 		left: -186px;
 	}

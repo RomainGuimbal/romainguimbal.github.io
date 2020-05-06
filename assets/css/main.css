@@ -806,14 +806,18 @@ a h1{
 	margin-top:2.5%;
 }
 
-
-
 .img-halved .item:nth-of-type(odd) {
 	margin-right: 2.5%;
 	
 }
 
-
+.img-full-smaller .item {
+	float: center;
+	align-items: center;
+	margin-top:2.5%;
+	height : 80ch;
+	width: 80ch;
+}
 
 .img-third .item {
 	float: left;
@@ -850,3 +854,9 @@ a h1{
 	text-transform: capitalize;
 }
 
+video{
+	display: block;
+	margin: 2.5% auto;
+	float: center;
+	height:80vh;
+}
