@@ -135,7 +135,8 @@ Table of Contents
 .footer-default .follow-us-links li a:hover,
 .blog .entry-title a:hover,
 .hero .social-links li a:hover,
-.main-header h1:hover {
+.main-header h1:hover,
+h2:hover {
 	color: #403dff;
 }
 
