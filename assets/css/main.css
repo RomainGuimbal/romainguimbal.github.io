@@ -514,7 +514,7 @@ a h1{
 	width: 100%;
 }
 
-.featured-works a:nth-of-type(5) .item {
+.featured-works a:nth-of-type(6) .item {
 	margin-bottom: 0;
 }
 
@@ -823,6 +823,7 @@ a h1{
 	float: left;
 	height: auto;
 	width: 31.666%;
+	margin-top:2.5%;
 }
 
 .img-third .item:nth-of-type(-n+2){
@@ -854,9 +855,14 @@ a h1{
 	text-transform: capitalize;
 }
 
-video{
+
+
+.item video{
 	display: block;
 	margin: 2.5% auto;
 	float: center;
-	height:80vh;
+
+	height: auto;
+	margin-bottom: 60px;
+	width: 100%;
 }
