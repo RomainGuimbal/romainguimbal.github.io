@@ -128,7 +128,8 @@ a h1{
 }
 
 .container {
-	max-width: 1170px;
+	max-width: 1100px;
+	/*1170px*/
 	margin: auto;
 }
 
@@ -771,7 +772,7 @@ a h1{
 .single-project .intro ul li {
 	font-size: 1.125rem;
 	margin-bottom: 6px;
-	text-transform: capitalize;
+	text-transform: none;
 }
 
 .single-project .intro p {
@@ -793,6 +794,14 @@ a h1{
 	width: 100%;
 }
 
+.img-full-long {
+	width: 40%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
 .fresque {
 	height: auto;
 	width: 140%;
@@ -808,15 +817,21 @@ a h1{
 
 .img-halved .item:nth-of-type(odd) {
 	margin-right: 2.5%;
-	
 }
 
-.img-full-smaller .item {
+.img-full-halved-long{
+	width: 40%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.img-full-smaller{
 	float: center;
 	align-items: center;
 	margin-top:2.5%;
-	height : 80ch;
-	width: 80ch;
+	height : 80vh;
+	width: 80vh;
 }
 
 .img-third .item {
@@ -865,4 +880,8 @@ a h1{
 	height: auto;
 	margin-bottom: 60px;
 	width: 100%;
+}
+
+.img-following .item {
+	margin: 2.5% 0;
 }
