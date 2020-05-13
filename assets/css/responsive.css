@@ -130,6 +130,27 @@ Table of Contents
 		height: 470px;
 	}
 
+	.featured-works a:nth-of-type(2) .item-img{
+		display: inline-block; 
+		overflow: hidden;
+	}
+
+	.featured-works a:nth-of-type(2) .item-img img{
+		left : -300px;
+		top : 40px;
+		position: relative;
+		scale : 140%;
+		width : 140%;
+	}
+
+	.featured-works a:nth-of-type(2) .item .item-title {
+		left: -220px;
+	}
+
+
+
+
+
 	.featured-works a:nth-of-type(3) .item {
 		margin-left: 200px;
 		width: 66%;
