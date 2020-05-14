@@ -795,11 +795,10 @@ a h1{
 }
 
 .img-full-long {
-	width: 40%;
+	width: 100%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-
 }
 
 .fresque {
