@@ -881,6 +881,11 @@ a h1{
 	width: 100%;
 }
 
+.video-square video{
+	float: center;
+	width: 60%;
+}
+
 .img-following .item {
 	margin: 2.5% 0;
 }
