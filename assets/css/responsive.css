@@ -67,6 +67,7 @@ Table of Contents
 		position: absolute;
 		top: 675px;
 	}
+
 }
 
 /* Start @media(min-width:1024px) */
@@ -473,6 +474,7 @@ Table of Contents
 
 	.img-full,
 	.img-halved .item {
+		
 		height: 470px;
 	}
 

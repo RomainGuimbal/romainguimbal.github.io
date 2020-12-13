@@ -792,20 +792,19 @@ a h1{
 .img-full {
 	height: 600px;
 	width: 100%;
+	margin-top:2.5%;
 }
 
 .img-full-long {
 	width: 100%;
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin-top:2.5%;
 }
 
 .img-full-square {
 	width: 100%;
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin-top:2.5%;
 }
 
 
@@ -815,7 +814,7 @@ a h1{
 	margin-left:-20%;
 }
 
-.img-halved .item {
+.img-halved .item{
 	float: left;
 	height: auto ;
 	width: 48.75%;
@@ -841,7 +840,7 @@ a h1{
 	width: 80vh;
 }
 
-.img-third .item {
+.img-third .item{
 	float: left;
 	height: auto;
 	width: 31.666%;
@@ -886,7 +885,6 @@ a h1{
 	float: center;
 
 	height: auto;
-	margin-bottom: 60px;
 	width: 100%;
 }
 
@@ -897,4 +895,21 @@ a h1{
 
 .img-following .item {
 	margin: 2.5% 0;
+}
+
+#grue{
+	height : 450px;
+	width: 60%;
+	position: relative;
+	overflow: hidden;
+	margin: auto;
+}
+
+#grue video{
+	position: relative;
+	float: center;
+	display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
