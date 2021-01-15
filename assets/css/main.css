@@ -48,6 +48,7 @@ a h1{
 	text-align: center;
 }
 
+
 .btn {
 	border-radius: 27.5px;
 	display: inline-block;
@@ -894,7 +895,7 @@ a h1{
 }
 
 .img-following .item {
-	margin: 2.5% 0;
+	margin-top: 2.5%;
 }
 
 #grue{
