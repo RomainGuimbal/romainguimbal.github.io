@@ -576,9 +576,14 @@ a h1{
 /* =============== # Hero =============== */
 
 .hero {
-	padding:150px 0;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	padding:100px 0;
 	position: relative;
-	width: 100%;
+	width: 140%;
+	margin-left:-20%;
+	background: rgb(255,255,255);
+	background: linear-gradient(35deg, rgba(255,255,255,1) 0%, rgba(251,251,251,1) 39%, rgba(229,233,241,1) 100%);
 }
 
 .hero h1 {
@@ -919,7 +924,7 @@ a h1{
 	height: auto;
 	width: 140%;
 	margin-left:-20%;
-	background: rgb(20, 20, 31);
+	/* background: black; */
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
@@ -932,3 +937,4 @@ figcaption {
 	margin-top:-4%;
 	margin-bottom:4%;
 }
+
