@@ -20,20 +20,10 @@ Table of Contents
 # color #000
 ------------------------------------------------------*/
 
-.aside-navigation nav ul li a,
-.aside-navigation .social-icons li a,
-.share-links li a,
-.comment .reply,
-.contact-form input::placeholder,
-.contact-form textarea::placeholder,
-.footer-default .follow-us-links li a,
-.blog .entry-title a,
-.portfolio-item-heading,
+
 .contact-info a,
-.next,
 .hero .social-links li a,
 .featured-works .item,
-.close-nav,
 .main-header h1{
 	color: #000;
 }
