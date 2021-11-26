@@ -4,23 +4,30 @@
 	display: grid;
 	grid-template-columns: repeat(3,1fr);
 	column-gap: 30px;
-	width : clamp(300px, 60%,1200px);/*min, prefered, max*/
+	width : clamp(300px, 60%,1000px);/*min, prefered, max*/
 	margin: 3% auto 3%;
 }
 
 img, video{
-	width : clamp(300px, 40%,1200px);/*min, prefered, max*/
+	width : clamp(300px, 40%,1000px);/*min, prefered, max*/
 	display: block;
 	margin: 3% auto 3%;
+	box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+}
+
+img:hover:not(:focus), video:hover:not(:focus){
+	box-shadow: 0 0 1em rgba(0,0,0,0.8);
+	transition: box-shadow 100ms ease-in-out ;
 }
 
 img:focus, video:focus{
+	box-shadow: 0 0 5em rgba(0,0,0,0.8);
 	width: clamp(400px, 85%, 2000px);
 	height: 100hv;/*Marche pas T-T*/
 	position: fixed;
   	top: 50%;
   	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -56%);
 	/*border : 1000px solid rgba(0, 0, 0, .5); 
 	trop puissant pour le moment*/
 }
