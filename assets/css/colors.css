@@ -24,7 +24,7 @@ Table of Contents
 .contact-info a,
 .hero .social-links li a,
 .featured-works .item,
-.main-header h1{
+header h1{
 	color: #000;
 }
 
@@ -108,9 +108,7 @@ Table of Contents
 
 .open-nav i,
 .open-nav i:before,
-.open-nav i:after,
-.aside-navigation,
-.team-member .overlay {
+.open-nav i:after {
 	background: #fff;
 }
 
@@ -125,8 +123,8 @@ Table of Contents
 .footer-default .follow-us-links li a:hover,
 .blog .entry-title a:hover,
 .hero .social-links li a:hover,
-.main-header h1:hover,
-h2:hover {
+header h1:hover,
+h2 {
 	color: #403dff;
 }
 

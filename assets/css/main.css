@@ -1,15 +1,58 @@
 
-
-.grid{
-	display: grid;
-	grid-template-columns: repeat(3,1fr);
-	column-gap: 30px;
-	width : clamp(300px, 60%,1000px);/*min, prefered, max*/
-	margin: 3% auto 3%;
+h1{
+	text-align: center;
+	font: small-caps 1.5em "Fira Sans", sans-serif;
+	margin: 0.4em;
+	line-height: 0.5em;
+	clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
+h2{
+	text-align: center;
+	font: bold 4em "Fira Sans", sans-serif;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+header{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 3em;
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.3);
+}
+
+header img{
+	height: 3em;
+	width: auto;
+	margin: auto 0.4em;
+	left: 0;
+	box-shadow: 90px -210px 0px -15px red;
+}
+
+.head_grid{
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	column-gap: 0;
+
+}
+
+
+
+
+
 img, video{
-	width : clamp(300px, 40%,1000px);/*min, prefered, max*/
+	width : clamp(300px, 40%, 500px);/*min, prefered, max*/
 	display: block;
 	margin: 3% auto 3%;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
@@ -22,16 +65,56 @@ img:hover:not(:focus), video:hover:not(:focus){
 
 img:focus, video:focus{
 	box-shadow: 0 0 5em rgba(0,0,0,0.8);
-	width: clamp(400px, 85%, 2000px);
-	height: 100hv;/*Marche pas T-T*/
+
+	/*Marche pas T-T    width: clamp(400px, 85%, 2000px);*/
 	position: fixed;
+	max-height: clamp( 200px,95%,1200px);
+	width : auto;
   	top: 50%;
   	left: 50%;
 	transform: translate(-50%, -56%);
+
+	transition: width 100ms ease-in-out 100ms;
 	/*border : 1000px solid rgba(0, 0, 0, .5); 
 	trop puissant pour le moment*/
 }
 
 .round{
 	border-radius:50%;
+}
+
+
+
+.trio{
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	column-gap: 1em;
+	width : clamp(20em, 60%, 900px);/*min, prefered, max*/
+	margin: 3% auto 3%;
+}
+
+.trio > img{
+	width: clamp(100px, 100%, 300px);
+}
+
+
+.duo{
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	column-gap: 1em;
+	height : auto;
+	width : clamp(20em, 60%, 900px);
+	margin: 3% auto 3%;
+}
+
+.duo > img{
+	width: clamp(100px, 100%, 600px);
+}
+
+.orange{
+	background-color: rgb(255, 189, 102);
+	background-attachment:scroll;
+	width: 100%;
+	padding: 1em;
+	left: 0;
 }
