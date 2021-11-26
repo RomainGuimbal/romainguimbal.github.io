@@ -109,6 +109,7 @@ img:focus, video:focus{
 
 .duo > img{
 	width: clamp(100px, 100%, 600px);
+	margin: auto;
 }
 
 .orange{
