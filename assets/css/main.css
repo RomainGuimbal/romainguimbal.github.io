@@ -70,6 +70,7 @@ img:focus, video:focus{
 	position: fixed;
 	max-height: clamp( 200px,95%,1200px);
 	width : auto;
+	max-width: 95%;
   	top: 50%;
   	left: 50%;
 	transform: translate(-50%, -56%);
