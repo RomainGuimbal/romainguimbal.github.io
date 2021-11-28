@@ -102,27 +102,12 @@ header h1{
 	color: #fff;
 }
 
-/*-----------------------------------------------------
-# background #fff
-------------------------------------------------------*/
-
-.open-nav i,
-.open-nav i:before,
-.open-nav i:after {
-	background: #fff;
-}
 
 /*-----------------------------------------------------
 # color #ff6f61
 ------------------------------------------------------*/
 
-.aside-navigation nav ul li a:hover,
-.aside-navigation .social-icons li a:hover,
-.entry-category,
-.comment .reply:hover,
-.footer-default .follow-us-links li a:hover,
-.blog .entry-title a:hover,
-.hero .social-links li a:hover,
+
 header h1:hover,
 h2 {
 	color: #403dff;
@@ -132,9 +117,6 @@ h2 {
 # background #ff6f61
 ------------------------------------------------------*/
 
-.open-nav:hover,
-.share-links li a:hover,
-.contact-form input[type=submit]:hover,
-.btn:hover{
+.title-line{
 	background: #403dff;
 }
