@@ -1,6 +1,8 @@
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
 }
 
 /*-----------------------------------------------------
@@ -167,10 +169,14 @@ img:focus, video:focus{
 	margin: 3% auto 3%;
 }
 
-.trio img,
-.duo img{
+.trio img{
 	width: clamp(100px, 100%, 300px);
 }
+
+.duo img{
+	width: clamp(100px, 100%, 600px);
+}
+
 
 .trio img:focus,
 .duo img:focus{
@@ -183,17 +189,12 @@ img:focus, video:focus{
 
 .duo{
 	display: grid;
-	grid-template-columns: repeat(4,1fr);
+	grid-template-columns: repeat(2,1fr);
 	column-gap: 0.5em;
 	height : auto;
-	width : clamp(25em, 100%, 1700px);
+	width : clamp(25em, 60%, 1700px);
 	margin: 3% auto 3%;
 	text-align: right;
-}
-
-.duo > p {
-	border : 1px solid white;
-	overflow: auto;
 }
 
 .orange{
@@ -202,4 +203,19 @@ img:focus, video:focus{
 	width: 100%;
 	padding: 1em;
 	left: 0;
+}
+
+figcaption{
+	margin-top : -40px;
+}
+
+
+
+
+
+
+footer{
+	padding : 0.1vh;
+	background-color: #eee;
+	box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.2);
 }
