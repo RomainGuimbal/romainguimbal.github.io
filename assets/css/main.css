@@ -10,15 +10,18 @@ html, body {
 ------------------------------------------------------*/
 header{
 	position: fixed;
-	top: 0;
-	
-	width: 100%;
+	top: 0.5em;
+	left: 50%;
+	margin-left: clamp(-450px, -25%, -10em);
+	width : clamp(20em, 50%, 900px);/*min, prefered, max*/
+	border-radius: 8px;
 	height: 3em;
 	overflow: hidden;
 	background-color: rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.3);
+	outline: 0.05rem solid white;
 }
 
 header img{
@@ -38,8 +41,8 @@ header img{
 
 h1{
 	text-align: left;
-	font: small-caps 1.5em "Fira Sans", sans-serif;
-	margin: 0.4em;
+	font: small-caps 1.3em "Fira Sans", sans-serif;
+	margin: 0.5em;
 	clear: both;
     display: inline-block;
     overflow: hidden;
@@ -54,7 +57,7 @@ a:link {
 header a{
 	position: relative;
 	width : 100%;
-	margin-left: -40%;
+	margin-left: 10%;
 }
 
 
