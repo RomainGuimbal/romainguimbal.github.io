@@ -33,13 +33,15 @@ header img{
 }
 
 .head_grid{
-	display: grid;
+	display: flex;
 	grid-template-columns: repeat(2,1fr);
 	column-gap: 0;
-
+	position: relative;
+	width : 100%;
+	margin-left: 10%;
 }
 
-h1{
+header h1, header h3{
 	text-align: left;
 	font: small-caps 1.3em "Fira Sans", sans-serif;
 	margin: 0.5em;
@@ -50,14 +52,14 @@ h1{
 	z-index: 1;
 }
 
-a:link {
-	text-decoration: none;
+header  h3{
+	font: small-caps 1em "Fira Sans", sans-serif;
+	margin: 0.8em;
 }
 
-header a{
-	position: relative;
-	width : 100%;
-	margin-left: 10%;
+
+a:link {
+	text-decoration: none;
 }
 
 
@@ -210,6 +212,12 @@ img:focus, video:focus{
 
 figcaption{
 	margin-top : -40px;
+}
+
+sidescroll{
+	background-color: rgb(255, 230, 157) ;
+	overflow: auto;
+	white-space: nowrap;
 }
 
 
