@@ -140,8 +140,9 @@ img, video{
 	border-radius: 3px;
 }
 
-img:hover:not(:focus), video:hover:not(:focus){
-	box-shadow: 0 0 1em rgba(0,0,0,0.8);
+img:hover:not(:focus),
+video:hover:not(:focus){
+	box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
 	transition: box-shadow 100ms ease-in-out ;
 }
 
@@ -182,23 +183,13 @@ img:focus, video:focus{
 	width: clamp(100px, 100%, 600px);
 }
 
-.sidescroll img{
+.sidescroll img:not(:focus),
+.sidescroll video:not(:focus){
 	column-gap: 0.5em;
 	display: inline-block;
 	height: clamp(25em, 1vh, 1vh);
 	width : auto;
-
 }
-
-.trio img:focus,
-.duo img:focus,
-.sidescroll img:focus{
-	max-height: clamp( 200px,95%,1200px);
-	width : auto;
-	max-width: 95%;
-  	top: 50%;
-}	
-
 
 .duo{
 	display: grid;
@@ -215,20 +206,17 @@ img:focus, video:focus{
 	white-space: nowrap;
 }
 
-.orange{
-	background-color: rgb(255, 240, 193);
+.project{
 	background-attachment:scroll;
 	width: 100%;
 	padding: 1em;
 	left: 0;
+	margin: 3% auto 3%;
 }
 
 figcaption{
 	margin-top : -40px;
 }
-
-
-
 
 
 
