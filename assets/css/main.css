@@ -22,6 +22,7 @@ header{
 	-webkit-backdrop-filter: blur(10px);
 	box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.3);
 	outline: 0.05rem solid white;
+	z-index: 1;
 }
 
 header img{
@@ -157,8 +158,8 @@ img:focus, video:focus{
   	top: 50%;
   	left: 50%;
 	transform: translate(-50%, -56%);
-
 	transition: width 100ms ease-in-out 100ms;
+	z-index : 2;
 }
 
 .round{
@@ -175,11 +176,11 @@ img:focus, video:focus{
 	margin: 3% auto 3%;
 }
 
-.trio img{
+.trio img:not(:focus){
 	width: clamp(100px, 100%, 300px);
 }
 
-.duo img{
+.duo img:not(:focus){
 	width: clamp(100px, 100%, 600px);
 }
 
@@ -212,10 +213,6 @@ img:focus, video:focus{
 	padding: 1em;
 	left: 0;
 	margin: 3% auto 3%;
-}
-
-figcaption{
-	margin-top : -40px;
 }
 
 
