@@ -205,6 +205,7 @@ img:focus, video:focus{
 .sidescroll{
 	overflow: auto;
 	white-space: nowrap;
+	display: inline-flex;
 }
 
 .project{
@@ -215,6 +216,25 @@ img:focus, video:focus{
 	margin: 3% auto 3%;
 }
 
+.vertical-duo{
+	width : clamp(300px, 40%, 500px);
+	border: 2px solid red;
+	display: grid;
+	grid-column: 1;
+	grid-row: 2;
+	column-gap: 0.5em;
+}
+
+.vertical-duo img:not(:focus),
+.vertical-duo p{
+
+	height: 100px;
+}
+
+.sidescroll .img:not(:focus),
+.sidescroll p{
+	display: inline-block;
+}
 
 
 
