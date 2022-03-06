@@ -213,8 +213,15 @@ img:focus, video:focus{
 .sidescroll video:not(:focus){
 	column-gap: 0.5em;
 	display: inline-block;
-	height: clamp(25em, 1vh, 1vh);
+	height: 20em;
 	width : auto;
+}
+
+@media(max-width: 1000px) {
+	.sidescroll img:not(:focus),
+	.sidescroll video:not(:focus){
+		height: 10em;
+	}
 }
 
 /* .vertical-duo{
