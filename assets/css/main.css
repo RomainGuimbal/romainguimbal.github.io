@@ -25,6 +25,8 @@ header{
 	z-index: 1;
 }
 
+
+
 header img{
 	height: 3em;
 	width: auto;
@@ -63,6 +65,27 @@ a:link {
 	text-decoration: none;
 }
 
+@media(max-width: 60em) {
+	header{
+		height: 4.5em;
+		overflow: visible;
+	}
+
+	header h1, header h3{
+		white-space: normal;
+		overflow: visible;
+	}
+
+	.head_grid{
+		margin-left: 4%;
+	}
+}
+
+@media(max-width: 90em) {
+	.head_grid{
+		margin-left: 4%;
+	}
+}
 
 
 
