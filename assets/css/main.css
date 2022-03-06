@@ -180,18 +180,6 @@ img:focus, video:focus{
 	width: clamp(100px, 100%, 300px);
 }
 
-.duo img:not(:focus){
-	width: clamp(100px, 100%, 600px);
-}
-
-.sidescroll img:not(:focus),
-.sidescroll video:not(:focus){
-	column-gap: 0.5em;
-	display: inline-block;
-	height: clamp(25em, 1vh, 1vh);
-	width : auto;
-}
-
 .duo{
 	display: grid;
 	grid-template-columns: repeat(2,1fr);
@@ -202,10 +190,8 @@ img:focus, video:focus{
 	text-align: right;
 }
 
-.sidescroll{
-	overflow: auto;
-	white-space: nowrap;
-	display: inline-flex;
+.duo img:not(:focus){
+	width: clamp(100px, 100%, 600px);
 }
 
 .project{
@@ -216,26 +202,45 @@ img:focus, video:focus{
 	margin: 3% auto 3%;
 }
 
-.vertical-duo{
+.sidescroll{
+	overflow: auto;
+	white-space: nowrap;
+	/* display: inline-flex; */
+	/* display: inline-block; */
+}
+
+.sidescroll img:not(:focus),
+.sidescroll video:not(:focus){
+	column-gap: 0.5em;
+	display: inline-block;
+	height: clamp(25em, 1vh, 1vh);
+	width : auto;
+}
+
+/* .vertical-duo{
 	width : clamp(300px, 40%, 500px);
 	border: 2px solid red;
 	display: grid;
+	height: clamp(25em, 1vh, 1vh);
+	width : auto;
+
 	grid-column: 1;
 	grid-row: 2;
-	column-gap: 0.5em;
 }
+
 
 .vertical-duo img:not(:focus),
 .vertical-duo p{
+	height: auto;
+	width : 97%;
+}	
 
-	height: 100px;
-}
-
-.sidescroll .img:not(:focus),
-.sidescroll p{
+.cont{
+	column-gap: 0.5em;
 	display: inline-block;
-}
-
+	height: clamp(25em, 0.5vh, 1vh);
+	width : auto;
+} */
 
 
 
