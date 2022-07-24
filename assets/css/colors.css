@@ -116,7 +116,6 @@ header h3{
 ------------------------------------------------------*/
 
 
-header h1:hover,
 h2 {
 	background-image: linear-gradient(to right, #403dff,#403dff,#403dff, rgb(160, 168, 255), rgb(160, 168, 255));
 	/* color: #403dff; */
@@ -124,6 +123,11 @@ h2 {
 	background-clip: text;
 	color: transparent;
 }
+
+header h1:hover{
+	color:#403dff;
+}
+
 
 /*-----------------------------------------------------
 # background #ff6f61
