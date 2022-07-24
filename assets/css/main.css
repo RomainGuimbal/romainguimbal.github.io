@@ -3,6 +3,14 @@ html, body {
     overflow-x: hidden;
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
+	color : #e6e6e7;
+	background: repeating-linear-gradient(
+	0deg,
+	#1f2937,
+	#1f2937 19px,
+	#1a2330 1px,
+	#1a2330 20px
+	);
 }
 
 /*-----------------------------------------------------
@@ -93,21 +101,22 @@ a:link {
 # Background
 ------------------------------------------------------*/
 main{
+	
+	/* White Theme
 	background: repeating-linear-gradient(
 	0deg,
 	#ffffff,
 	#ffffff 19px,
 	#f3f4f8 1px,
 	#f3f4f8 20px
-	);
+	); */
 	z-index:-2;
 }
 
 .notebook-line{
 
-
 	border:none;
-	border: top 10px dotted #e9ecf0;
+	border: top 10px dotted #1f2937;
 	height:20px;
 	width:100%;
 
@@ -124,14 +133,15 @@ body{
 # Title
 ------------------------------------------------------*/
 .page-title{
-	margin-top: 5em;
-	margin-bottom: 2em;
+	/* width: min-content; */
+	margin: 5em auto 2em;
 }
 
 h2{
 	text-align: center;
 	font: bold 4em "Fira Sans", sans-serif;
 	margin: 1%;
+
 }
 
 .title-line{
@@ -151,9 +161,6 @@ h2{
 	z-index:1;
 }
 
-
-
-
 img, video{
 	width : clamp(300px, 40%, 500px);/*min, prefered, max*/
 	display: block;
@@ -170,11 +177,11 @@ video:hover:not(:focus){
 	transition: box-shadow 100ms ease-in-out ;
 }
 
-img:focus, video:focus{
-	box-shadow: 0 0 5em rgba(0,0,0,0.8);
+/* img:focus, video:focus{
+	box-shadow: 0 0 5em rgba(0,0,0,0.8); */
 
 	/*Marche pas T-T    width: clamp(400px, 85%, 2000px);*/
-	position: fixed;
+	/* position: fixed;
 	max-height: clamp( 200px,95%,1200px);
 	width : auto;
 	max-width: 95%;
@@ -183,7 +190,7 @@ img:focus, video:focus{
 	transform: translate(-50%, -56%);
 	transition: width 100ms ease-in-out 100ms;
 	z-index : 2;
-}
+} */
 
 .round{
 	border-radius:50%;
