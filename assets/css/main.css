@@ -3,14 +3,6 @@ html, body {
     overflow-x: hidden;
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
-	color : #e6e6e7;
-	background: repeating-linear-gradient(
-	0deg,
-	#1f2937,
-	#1f2937 19px,
-	#1a2330 1px,
-	#1a2330 20px
-	);
 }
 
 /*-----------------------------------------------------
@@ -284,6 +276,5 @@ video:hover:not(:focus){
 
 footer{
 	padding : 0.1vh;
-	background-color: #eee;
 	box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.2);
 }
