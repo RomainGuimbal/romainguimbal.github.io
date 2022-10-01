@@ -25,7 +25,9 @@ header{
 	z-index: 1;
 }
 
-
+header li{
+	white-space: pre;
+}
 
 header img{
 	height: 3em;
@@ -103,26 +105,36 @@ header h3 li{
 # Background
 ------------------------------------------------------*/
 main{
-	
-	/* White Theme
-	background: repeating-linear-gradient(
-	0deg,
-	#ffffff,
-	#ffffff 19px,
-	#f3f4f8 1px,
-	#f3f4f8 20px
-	); */
 	z-index:-2;
 }
 
 .notebook-line{
-
-	border:none;
+	z-index:1;
+	border-left: 3px solid #391d2e;
+  	height: 100vh;
+	margin-left : 10%;
+	position: fixed;
+	/* border:none;
 	border: top 10px dotted #1f2937;
 	height:20px;
-	width:100%;
-
+	width:100%; */
 }
+
+/*Prototype de des trous de feuille
+
+.notebook-holes{
+	z-index:1;
+	border: 40px;
+  	height: 100vh;
+	width : 50px;
+	position: fixed;
+
+	background-image: radial-gradient(#1a2330 8px, transparent 0);
+	background-size: 80px 80px;
+} */
+
+
+
 
 body{
 	margin : 0;
@@ -137,12 +149,14 @@ body{
 .page-title{
 	/* width: min-content; */
 	margin: 5em auto 2em;
+	z-index: 5;
 }
 
 h2{
 	text-align: center;
 	font: bold 4em "Fira Sans", sans-serif;
 	margin: 1%;
+	z-index: 0;
 
 }
 

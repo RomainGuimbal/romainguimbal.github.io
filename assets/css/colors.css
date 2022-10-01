@@ -20,7 +20,7 @@ Table of Contents
 # color #000
 ------------------------------------------------------*/
 html, body{
-	color : #e6e6e7;
+	color : #1f2937;
 	background: repeating-linear-gradient(
 	0deg,
 	#1f2937,
@@ -28,6 +28,20 @@ html, body{
 	#1a2330 1px,
 	#1a2330 20px
 	);
+
+	/* White Theme
+	background: repeating-linear-gradient(
+	0deg,
+	#ffffff,
+	#ffffff 19px,
+	#f3f4f8 1px,
+	#f3f4f8 20px
+	); */
+
+	/* Dots
+	background-color: #1f2937;
+	background-image: radial-gradient(#1a2330 3px, transparent 0);
+	background-size: 40px 40px; */
 }
 
 
