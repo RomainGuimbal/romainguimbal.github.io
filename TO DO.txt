@@ -6,23 +6,46 @@
 -ajouter section CAO ? : pédale du broyeur + potence (dejà sur le git)
 -Une photo des croquis répartis sur la table pour le presse agrume (façon M3S) ?
 
+-nommer mes projets
 
 -Grand dilem : skill oriented ou project oriented
     - PB de skill :
         -les skills sont tous interco
         -les sites des designers sont souvent par projets
+        -bcp moins doux à l'oeil vu que pas color matching
     - PB de project :
         -raconte moins, parait un peu aléatoire
         -Les mini projets paraissent tous seuls 
 
-    -Posibilité de faire une 
+    -Posibilité de faire un mélange :
+        -mon expertise, Mes projets
+
+
+Mon expertise :
+-Recherche de forme :
+    -Croquis avancés, Exploration structurée, Contrôle des courbes et des surfaces
+-Modélisation de préscion :
+    -Maillage avancé, CAO surfacique
+-Visualisation 3D avancé
+    -Shaders avancés, rendering, lighting, compositing, motion-design
+-Modélisation procédurale et Architecture générative 
+-Direction artistique
+    -Storyboarding, Definition de style graphique, Character design
+-Graphisme généraliste
+-Animation traditionnel
+
+Mes projets :
+-Presse agrume
+
+
+
 
 
 
 Buts :
 - Présentable à l'employeur
 - Garder la possibilité qu'il évolue vers mon site d'artiste complet... plus de folie...
-
+-Imprimable !?
 
 "Destiné à rester seulement partiellement pertinent, 
 ne pas détailler les projets de disciplines 
