@@ -10,6 +10,7 @@
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="assets/css/main.css">
 	<link rel="stylesheet" href="assets/css/colors.css">
+	<link rel="stylesheet" href="assets/css/icons.css">
 	
 	<!-- Magnific Popup core CSS file -->
 	<link rel="stylesheet" href="assets\css\magnific-popup.css">
@@ -23,7 +24,6 @@
 	<!-- Favicon -->
 	<link rel="icon" href="assets/img/favicon.png">
 
-	
 </head>
 
 <body>
@@ -50,6 +50,7 @@
 		<div class="container">
 			<!--Ajoute tabindex="0" aux images pour leur permettre de capturer le focus-->
 			
+			<div id="svg_icons"></div>
 			
 			
 			<video class="" controls loop autoplay>
@@ -57,7 +58,18 @@
 				Your browser does not support the video tag.
 			</video>
 			
-			
+			<div class="item">
+				<div class="badgelist">
+					<a href="#skills"><div class="badgecliczone"><div class="skillbadge" id="rendering"></div></div></a>
+					<a href="#skills"><div class="badgecliczone"><div class="skillbadge" id="rendering"></div></div></a>
+					<a href="#skills"><div class="badgecliczone"><div class="skillbadge" id="rendering"></div></div></a>
+				</div>
+				<a href="../assets/img/lard odfg1.jpg" class="without-caption image-link"><img src="../assets/img/lard odfg1.jpg" /></a>
+				
+			</div>
+
+
+
 			<a href="../assets/img/lard odfg1.jpg" class="without-caption image-link"><img src="../assets/img/lard odfg1.jpg" /></a>
 			<a href="../assets/img/Lardon octobre 2019 copy.jpg" class="without-caption image-link"><img src="../assets/img/Lardon octobre 2019 copy.jpg" ></a>
 			<!-- <a href="../assets/img/vaisseau scoot modif avril 2021.jpg" class="without-caption image-link"><img src="../assets/img/vaisseau scoot modif avril 2021.jpg"></a>
@@ -112,6 +124,7 @@
 			
 
 			<div class="project" style="background-color:rgb(46, 103, 63)">
+				<div style="background:'../assets/img/effet ecran nodes.jpg'"></div>
 				<p>Architecture générative</p>
 				<div class="sidescroll">
 					<a href="../assets/img/batiments rubans.jpg" class="without-caption image-link"><img src="../assets/img/batiments rubans.jpg"></a>					
@@ -189,6 +202,12 @@
 
 		</div>
 
+
+
+
+
+		<div id="skills"><h2>Skills</h2></div>
+
 		
 	</main>
 
@@ -207,5 +226,10 @@
 
 	<script src="assets/Js/main.js"></script>
 
+	<script> 
+	$(function(){
+	$("#svg_icons").load("../assets/icons/icons_svg.html"); 
+	});
+	</script> 
 </body>
 </html>

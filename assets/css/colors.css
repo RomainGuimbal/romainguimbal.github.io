@@ -140,6 +140,11 @@ header h1:hover{
 }
 
 
+
+
+
+
+
 /*-----------------------------------------------------
 # background #ff6f61
 ------------------------------------------------------*/
@@ -148,6 +153,7 @@ header h1:hover{
 	/* background: #403dff; */
 	background-image: linear-gradient(to right, #403dff,#403dff, rgb(160, 168, 255));
 }
+
 
 
 
