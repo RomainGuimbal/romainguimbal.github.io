@@ -34,10 +34,20 @@
 }
 
 .item{
-    width : clamp(300px, 40%, 500px);
+
+    margin: auto;
+    display : grid;
+    grid-template-columns: 3em  auto 3em;
+    /* width: clamp(300px, 53%, 500px); */
+    width :auto;
 }
 
+/* .item img{
+    width: 100%;
+} */
+
 .badgelist{
-    position: absolute;
+    margin: auto auto 0;
+    width : 3em;
 }
 
