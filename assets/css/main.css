@@ -256,6 +256,19 @@ video:hover:not(:focus){
 	margin: 3% auto 3%;
 }
 
+#archi-gene{
+	
+	background-image :url("../img/effet ecran nodes.jpg");
+	background-color: rgb(46, 103, 63);
+	background-repeat: no-repeat;
+  	background-size: cover;
+	background-position: center;
+}
+
+
+
+
+
 .sidescroll{
 	overflow: auto;
 	white-space: nowrap;

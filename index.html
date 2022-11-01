@@ -23,7 +23,8 @@
 	
 	<!-- Favicon -->
 	<link rel="icon" href="assets/img/favicon.png">
-
+	
+	<div id="svg_icons"></div>
 </head>
 
 <body>
@@ -50,7 +51,7 @@
 		<div class="container">
 			<!--Ajoute tabindex="0" aux images pour leur permettre de capturer le focus-->
 			
-			<div id="svg_icons"></div>
+			
 			
 			
 			<video class="" controls loop autoplay>
@@ -60,12 +61,12 @@
 			
 			<div class="item">
 				<div class="badgelist">
-					<a href="#skills"><div class="badgecliczone"><div class="skillbadge" id="rendering"></div></div></a>
-					<a href="#skills"><div class="badgecliczone"><div class="skillbadge" id="rendering"></div></div></a>
+					<a href="#skills"><div class="badgecliczone"><div class="skillbadge" id="modeling"></div></div></a>
+					<a href="#generative_descript"><div class="badgecliczone"><div class="skillbadge" id="generative"></div></div></a>
 					<a href="#skills"><div class="badgecliczone"><div class="skillbadge" id="rendering"></div></div></a>
 				</div>
 				<a href="../assets/img/lard odfg1.jpg" class="without-caption image-link"><img src="../assets/img/lard odfg1.jpg" /></a>
-				
+				<p>Render 2022 <br> Model 2016</p>
 			</div>
 
 
@@ -123,8 +124,9 @@
 			<a href="../assets/img/phare design.jpg" class="without-caption image-link"><img src="../assets/img/phare design.jpg" style="margin-bottom: .4em;"><figcaption>Reproduction du feu avant de la Smart Forjoy Concept</figcaption></a>
 			
 
-			<div class="project" style="background-color:rgb(46, 103, 63)">
-				<div style="background:'../assets/img/effet ecran nodes.jpg'"></div>
+			<div class="project" id="archi-gene">
+				<!-- style="background-color:rgb(46, 103, 63) -->
+				
 				<p>Architecture générative</p>
 				<div class="sidescroll">
 					<a href="../assets/img/batiments rubans.jpg" class="without-caption image-link"><img src="../assets/img/batiments rubans.jpg"></a>					
@@ -207,6 +209,11 @@
 
 
 		<div id="skills"><h2>Skills</h2></div>
+		<div id="generative_descript"><h2>Models génératifs</h2>
+			<p>Par quelques nodes connectés entre eux rapidité </p>
+		</div>
+
+		
 
 		
 	</main>
@@ -230,6 +237,6 @@
 	$(function(){
 	$("#svg_icons").load("../assets/icons/icons_svg.html"); 
 	});
-	</script> 
+	</script>
 </body>
 </html>
