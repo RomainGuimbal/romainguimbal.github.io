@@ -280,8 +280,10 @@ video:hover:not(:focus){
 .sidescroll video:not(:focus){
 	column-gap: 0.5em;
 	display: inline-block;
-	height: 20em;
+	height: 10em;
 	width : auto;
+	max-width: 15em;
+	object-fit: cover;
 }
 
 @media(max-width: 1000px) {

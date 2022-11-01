@@ -11,21 +11,24 @@
 
 #generative {
     clip-path: url("#generative-clippath");
- 
     background: rgb(83,222,255);
     background: linear-gradient(153deg, rgba(83,222,255,1) 0%, rgba(79,103,255,1) 35%, rgba(182,78,255,1) 54%, rgba(182,105,255,1) 60%, rgba(108,118,254,1) 71%, rgba(79,103,255,1) 80%, rgba(83,222,255,1) 100%);
 }
 
 #modeling {
     clip-path: url("#modeling-clippath");
- 
+    background: rgb(83,222,255);
+    background: linear-gradient(153deg, rgba(83,222,255,1) 0%, rgba(79,103,255,1) 35%, rgba(182,78,255,1) 54%, rgba(182,105,255,1) 60%, rgba(108,118,254,1) 71%, rgba(79,103,255,1) 80%, rgba(83,222,255,1) 100%);
+}
+
+#motion {
+    clip-path: url("#motion-clippath");
     background: rgb(83,222,255);
     background: linear-gradient(153deg, rgba(83,222,255,1) 0%, rgba(79,103,255,1) 35%, rgba(182,78,255,1) 54%, rgba(182,105,255,1) 60%, rgba(108,118,254,1) 71%, rgba(79,103,255,1) 80%, rgba(83,222,255,1) 100%);
 }
 
 
-
-.skillbadge {
+.skillbadge:not(:hover),.skillbadge {
     height: 2em;
     width: 2em;
     display: block;
@@ -34,13 +37,17 @@
     margin-top:0.5em;
     filter : saturate(0) brightness(10);
     opacity: 20%;
+    transition: filter 500ms ease-in-out ;
+    transition: opacity 500ms ease-in-out ;
+    
 }
 
 .badgecliczone:hover .skillbadge{
     filter : saturate(1) brightness(1);
     opacity: 100%;
-    transition: filter 500ms ease-in-out ;
-    transition: opacity 500ms ease-in-out ;
+    transition: filter 200ms ease-in-out ;
+    transition: opacity 200ms ease-in-out ;
+    /* box-shadow: 10px white; clippé donc nan*/
 }
 
 .badgecliczone{
@@ -48,7 +55,23 @@
     width: 2em;
     margin : 0;
     background-color: rgb(21, 25, 49);
-    border-radius: 50%;
+    border-radius: 1em;
+}
+
+.badgecliczone:hover {
+    width: 100px;
+}
+
+.badgecliczone p{
+    display: inline-block;
+    color :transparent;
+    text-align: right;
+}
+
+
+.badgecliczone:hover p{
+    color : rgb(75, 75, 255);
+    text-decoration: none;
 }
 
 .item{
@@ -71,10 +94,11 @@
     
 }
 
-.item p{
+.item p, .item figcaption{
     height: auto;
     text-align: left;
     margin: 0 0 0 1em ;
     align-self: flex-end;
     overflow: visible;
+    white-space: nowrap;
 }
