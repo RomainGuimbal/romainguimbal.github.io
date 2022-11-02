@@ -264,14 +264,13 @@ video:hover:not(:focus){
 .project{
 	background-attachment:scroll;
 	width: 100%;
-	padding: 3em;
-	left: 0;
+	padding: 3em 0;
 	margin: 3% auto 3%;
 }
 
 .project-main{
 	/* max-width: 40em; change rien le texte considère les marges T-T*/
-	margin: auto;
+	margin: 0;
 }
 
 .project-main img, .project-main video{
@@ -287,6 +286,10 @@ video:hover:not(:focus){
 .project-main .skillbadge{
 	/* max-width: 40em; change rien le texte considère les marges T-T*/
 	margin: auto;
+}
+
+.project p{
+	margin:0;
 }
 
 
@@ -319,7 +322,7 @@ video:hover:not(:focus){
 	width : auto;
 	max-width: 15em;
 	object-fit: cover;
-	margin : 0 auto 0;
+	margin : 1em auto 1em;
 }
 
 @media(max-width: 1000px) {
