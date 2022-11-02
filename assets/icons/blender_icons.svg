@@ -46,13 +46,13 @@
      inkscape:window-height="1001"
      id="namedview34335"
      showgrid="false"
-     inkscape:zoom="16.000001"
-     inkscape:cx="174.28124"
-     inkscape:cy="204.40624"
+     inkscape:zoom="2.8284273"
+     inkscape:cx="297.51516"
+     inkscape:cy="546.77028"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g11301"
+     inkscape:current-layer="g9974-4-9"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#808080"
      inkscape:snap-object-midpoints="true" />
@@ -19699,6 +19699,13 @@
          id="path4931-8"
          cx="537.84467"
          cy="458.8566"
+         rx="12.829"
+         ry="12.821065" />
+      <ellipse
+         style="display:inline;fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new;stop-color:#000000"
+         id="path4931-8-60"
+         cx="119"
+         cy="417"
          rx="12.829"
          ry="12.821065" />
       <path
