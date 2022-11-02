@@ -29,20 +29,25 @@
 
 
 .skillbadge, .skillbadge:not(:hover) {
-    height: 2em;
-    width: 2em;
+    height: 2rem;
+    width: 2rem;
     background-repeat: no-repeat;
     background-position: center;
     
-    transform: translate(.5em,-.5em);
+    /* transform: translate(.5em,-.5em); */
 
     filter : saturate(0) brightness(10);
     opacity: 20%;
     transition: filter 500ms ease-in-out ;
     transition: opacity 500ms ease-in-out ;
+    flex-shrink: 0;
+    flex-basis: 2rem;
+    position: relative;
+    margin-right: 0;
+
 }
 
-.badgecliczone:hover .skillbadge{
+.badge-backg:hover .skillbadge{
     filter : saturate(1) brightness(1);
     opacity: 100%;
     transition: filter 200ms ease-in-out ;
@@ -50,34 +55,31 @@
     /* box-shadow: 10px white; clippé donc nan*/
 }
 
-.badgecliczone{
+.badge-backg{
     height: 2em;
     width: 2em;
     background-color: rgb(21, 25, 49);
     border-radius: 1em;
     margin-top: 0.5em;
-    flex-direction: row-reverse;
+    margin-right :0;
+    display: flex;
+    /* flex-direction: row-reverse; */
     max-width: 2em;
-    overflow: hidden;
     /* justify-content: right; */
+    overflow: hidden;
 }
 
-.badgecliczone:hover {
-    width: auto;
-    max-width: 1000px;
-    transition: max-width 3s ease-in-out;
-}
-
-.badgecliczone a{
+.badgelist span{
     display: flex;
     color :transparent;
     width: 0;
     text-align: center;
     padding: 0.5em;
     white-space: nowrap;
+    height: 2em;
 }
 
-.badgecliczone:hover a{
+.badgelist:hover span {
     color : rgb(75, 75, 255);
     text-decoration: none;
     width: auto;
@@ -99,6 +101,7 @@
 }
 
 .badgelist{
+    display: grid;
     margin: auto 1em 0 auto;
     width : auto;
     position: relative;
