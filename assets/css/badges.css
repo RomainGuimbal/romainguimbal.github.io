@@ -23,47 +23,50 @@
 
 #motion {
     clip-path: url("#motion-clippath");
-    background: rgb(83,222,255);
-    background: linear-gradient(153deg, rgba(83,222,255,1) 0%, rgba(79,103,255,1) 35%, rgba(182,78,255,1) 54%, rgba(182,105,255,1) 60%, rgba(108,118,254,1) 71%, rgba(79,103,255,1) 80%, rgba(83,222,255,1) 100%);
+    background: rgb(255,57,57);
+    background: linear-gradient(153deg, rgba(255,57,57,1) 13%, rgba(255,105,174,1) 28%, rgba(255,185,78,1) 42%, rgba(253,255,77,1) 53%, rgba(255,176,78,1) 66%, rgba(255,105,174,1) 84%, rgba(255,57,57,1) 100%); 
 }
 
-
-.skillbadge, .skillbadge:not(:hover) {
-    height: 2rem;
-    width: 2rem;
+.badge-backg .skillbadge {
     background-repeat: no-repeat;
     background-position: center;
-    
-    /* transform: translate(.5em,-.5em); */
-
-    filter : saturate(0) brightness(10);
+    filter : saturate(0) brightness(5);
     opacity: 20%;
-    transition: filter 500ms ease-in-out ;
-    transition: opacity 500ms ease-in-out ;
+    /* height: 2rem;
+    width: 2rem; */
+    /* transform: translate(.5em,-.5em); */
+    /* transition: filter 500ms ease-in-out;
+    -webkit-transition : -webkit-filter 500ms ease-in-out;
+    -moz-transition: -moz-filter 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out ; */
     flex-shrink: 0;
     flex-basis: 2rem;
     position: relative;
     margin-right: 0;
 
+    transition: all 0.5s ease-in-out;
+    transition-delay:0.5s;
 }
+
+.project .badge-backg .skillbadge {
+    opacity: 80%;
+}
+
+
 
 .badge-backg:hover .skillbadge{
     filter : saturate(1) brightness(1);
     opacity: 100%;
-    transition: filter 200ms ease-in-out ;
-    transition: opacity 200ms ease-in-out ;
-    /* box-shadow: 10px white; clippé donc nan*/
+    transition: all 0s linear;
 }
 
 .badge-backg{
     height: 2em;
     width: 2em;
-    background-color: rgb(21, 25, 49);
     border-radius: 1em;
     margin-top: 0.5em;
-    margin-right :0;
+    margin-right: 0;
     display: flex;
-    /* flex-direction: row-reverse; */
 }
 
 .badge-backg span{
@@ -73,16 +76,15 @@
     white-space: nowrap;
     height: 2em;
     position: absolute;
-    text-align: left;
-    width:100px;
+
+    width:0px;
     transform: translate(2em,0);
 }
 
 .badge-backg:hover span{
-    color : rgb(75, 75, 255) !important;
+    color : rgb(97, 97, 255) !important;
     opacity: 100% !important;
     text-decoration: none;
-
 }
 
 .badgelist:hover span {
@@ -102,22 +104,28 @@
 
 }
 
-.item img, .item video{
+.item .without-caption,
+.item video{
     margin: 0 auto 0;
+}
+
+.item img{
+    margin: 0em;
+    display: inline-block;
+    position: relative;
 }
 
 .badgelist{
     display: grid;
     margin: auto 1em 0 auto;
-    width : auto;
+    width : 2em;
     position: relative;
     justify-items: end;
-    float: right;
     flex-grow: 1;
     flex-basis: 0;
 }
 
-.item p, .item figcaption{
+.item figcaption{
     height: auto;
     text-align: left;
     margin: 0 0 0 1em ;

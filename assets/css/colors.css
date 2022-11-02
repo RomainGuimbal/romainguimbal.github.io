@@ -140,22 +140,42 @@ h2 {
 }
 
 #porsche h2{
-	background-image: linear-gradient(to right, #403dff,#403dff, rgb(0, 4, 43), rgb(0, 4, 43));
+	background-image: linear-gradient(to right, #3c3ab9,#3c3ab9, rgb(0, 4, 43), rgb(0, 4, 43));
 }
 
 #agrume h2{
 	background-image: linear-gradient(to right, #f2ede6,#f2ede6, rgb(255, 170, 44), rgb(255, 170, 44));
 }
 
+#archi-gene h2{
+	background-image: linear-gradient(to right, #40af6b,#23c862, rgb(255, 238, 126), rgb(255, 220, 166));
+}
+
+#verriere h2{
+	background-image: linear-gradient(153deg, rgba(255,231,173,1) 17%, rgba(205,187,143,1) 45%, rgba(135,166,255,1) 76%); 
+}
+
+
 header h1:hover{
 	color:#403dff;
 }
 
+.item .badge-backg{
+    background-color: rgb(21, 25, 49);
+}
 
+.project .badge-backg{
+    background-color: rgba(55, 57, 75, 0);
+	/* opacity: 20%; */
+	transition: all 0.5s ease-in-out;
+    transition-delay:0.5s;
+}
 
-
-
-
+.project .badge-backg:hover{
+	/* opacity: 80%; */
+	background-color: rgba(55, 57, 75, 0.842);
+	transition: all 0s linear;
+}
 
 /*-----------------------------------------------------
 # background #ff6f61

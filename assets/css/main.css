@@ -214,21 +214,6 @@ video:hover:not(:focus){
 	transition: box-shadow 100ms ease-in-out ;
 }
 
-/* img:focus, video:focus{
-	box-shadow: 0 0 5em rgba(0,0,0,0.8); */
-
-	/*Marche pas T-T    width: clamp(400px, 85%, 2000px);*/
-	/* position: fixed;
-	max-height: clamp( 200px,95%,1200px);
-	width : auto;
-	max-width: 95%;
-  	top: 50%;
-  	left: 50%;
-	transform: translate(-50%, -56%);
-	transition: width 100ms ease-in-out 100ms;
-	z-index : 2;
-} */
-
 .round{
 	border-radius:50%;
 }
@@ -273,7 +258,8 @@ video:hover:not(:focus){
 	margin: 0;
 }
 
-.project-main img, .project-main video{
+.project-main img, 
+.project-main video{
 	margin:0 auto 0;
 	width : clamp(300px, 40rem, 500px);/*solution de clochard*/
 }
@@ -283,7 +269,7 @@ video:hover:not(:focus){
 	margin:0;
 }
 
-.project-main .skillbadge{
+.project-main .badge-backg{
 	/* max-width: 40em; change rien le texte considère les marges T-T*/
 	margin: auto;
 }
