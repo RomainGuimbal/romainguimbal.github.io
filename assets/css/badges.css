@@ -73,14 +73,23 @@
     white-space: nowrap;
     height: 2em;
     position: absolute;
-    transform-origin: right top;
-    text-align: right;
+    text-align: left;
+    width:100px;
+    transform: translate(2em,0);
 }
 
-.badge-backg:hover span {
-    color : rgb(75, 75, 255);
+.badge-backg:hover span{
+    color : rgb(75, 75, 255) !important;
+    opacity: 100% !important;
     text-decoration: none;
+
 }
+
+.badgelist:hover span {
+    color : rgb(124, 127, 161);
+    opacity: 50%;
+}
+
 
 .item{
     margin: 3% 3% 3%;
@@ -115,7 +124,7 @@
     align-self: flex-end;
     overflow: visible;
     /* white-space: nowrap; */
-    color : rgb(124, 128, 172);
+    color : rgb(124, 127, 161);
     float: left;
     flex-grow: 1;
     flex-basis: 0;
