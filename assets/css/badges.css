@@ -64,25 +64,22 @@
     margin-right :0;
     display: flex;
     /* flex-direction: row-reverse; */
-    max-width: 2em;
-    /* justify-content: right; */
-    overflow: hidden;
 }
 
-.badgelist span{
+.badge-backg span{
     display: flex;
     color :transparent;
-    width: 0;
-    text-align: center;
     padding: 0.5em;
     white-space: nowrap;
     height: 2em;
+    position: absolute;
+    transform-origin: right top;
+    text-align: right;
 }
 
-.badgelist:hover span {
+.badge-backg:hover span {
     color : rgb(75, 75, 255);
     text-decoration: none;
-    width: auto;
 }
 
 .item{
