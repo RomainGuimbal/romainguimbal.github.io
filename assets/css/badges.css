@@ -17,8 +17,8 @@
 
 #modeling {
     clip-path: url("#modeling-clippath");
-    background: rgb(83,222,255);
-    background: linear-gradient(153deg, rgba(83,222,255,1) 0%, rgba(79,103,255,1) 35%, rgba(182,78,255,1) 54%, rgba(182,105,255,1) 60%, rgba(108,118,254,1) 71%, rgba(79,103,255,1) 80%, rgba(83,222,255,1) 100%);
+    background: rgb(255,57,57);
+    background: linear-gradient(153deg, rgba(255,57,57,1) 0%, rgba(255,105,174,1) 24%, rgba(182,78,255,1) 40%, rgba(144,163,255,1) 57%, rgba(182,78,255,1) 74%, rgba(255,105,174,1) 84%, rgba(255,57,57,1) 100%); 
 }
 
 #motion {
@@ -28,18 +28,18 @@
 }
 
 
-.skillbadge:not(:hover),.skillbadge {
+.skillbadge, .skillbadge:not(:hover) {
     height: 2em;
     width: 2em;
-    display: block;
     background-repeat: no-repeat;
     background-position: center;
-    margin-top:0.5em;
+    
+    transform: translate(.5em,-.5em);
+
     filter : saturate(0) brightness(10);
     opacity: 20%;
     transition: filter 500ms ease-in-out ;
     transition: opacity 500ms ease-in-out ;
-    
 }
 
 .badgecliczone:hover .skillbadge{
@@ -53,45 +53,59 @@
 .badgecliczone{
     height: 2em;
     width: 2em;
-    margin : 0;
     background-color: rgb(21, 25, 49);
     border-radius: 1em;
+    margin-top: 0.5em;
+    flex-direction: row-reverse;
+    max-width: 2em;
+    overflow: hidden;
+    /* justify-content: right; */
 }
 
 .badgecliczone:hover {
-    width: 100px;
+    width: auto;
+    max-width: 1000px;
+    transition: max-width 3s ease-in-out;
 }
 
-.badgecliczone p{
-    display: inline-block;
+.badgecliczone a{
+    display: flex;
     color :transparent;
-    text-align: right;
+    width: 0;
+    text-align: center;
+    padding: 0.5em;
+    white-space: nowrap;
 }
 
-
-.badgecliczone:hover p{
+.badgecliczone:hover a{
     color : rgb(75, 75, 255);
     text-decoration: none;
+    width: auto;
 }
 
 .item{
-    margin: auto;
-    display : grid;
-    grid-template-columns: 3em  auto 3em;
-    width: clamp(400px, 40%, 800px);    
+    margin: 3% 3% 3%;
+    display: flex;
+    /* display : grid;
+    grid-template-columns: 20% auto 20%; */
+    /* width: clamp(400px, 40%, 600px);     */
+    width: auto;
     height: auto;
+
 }
 
-.item img{
-    width: 100%;
-    margin:0;
+.item img, .item video{
+    margin: 0 auto 0;
 }
 
 .badgelist{
-    margin: auto auto 0;
-    width : 3em;
-    position: relaive;
-    
+    margin: auto 1em 0 auto;
+    width : auto;
+    position: relative;
+    justify-items: end;
+    float: right;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 
 .item p, .item figcaption{
@@ -100,5 +114,9 @@
     margin: 0 0 0 1em ;
     align-self: flex-end;
     overflow: visible;
-    white-space: nowrap;
+    /* white-space: nowrap; */
+    color : rgb(124, 128, 172);
+    float: left;
+    flex-grow: 1;
+    flex-basis: 0;
 }

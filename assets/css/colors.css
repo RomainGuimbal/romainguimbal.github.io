@@ -135,6 +135,18 @@ h2 {
 	color: transparent;
 }
 
+.title-line h2{
+	background-image: linear-gradient(to right, #403dff,#403dff,#403dff, rgb(160, 168, 255), rgb(160, 168, 255));
+}
+
+#porsche h2{
+	background-image: linear-gradient(to right, #403dff,#403dff, rgb(0, 4, 43), rgb(0, 4, 43));
+}
+
+#agrume h2{
+	background-image: linear-gradient(to right, #f2ede6,#f2ede6, rgb(255, 170, 44), rgb(255, 170, 44));
+}
+
 header h1:hover{
 	color:#403dff;
 }

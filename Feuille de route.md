@@ -46,6 +46,7 @@
     -Blender pour le design industriel
       - Utilisation de Blender comme un intermédiaire entre le croquis et le modèle CAO (c'est une maquette finalement). Permet d'itérer bien plus rapidement. Actuellement ça s'est avéré très utile pour traiter les **problèmes d'encombrement**. (Un croquis en perspective ok, mais avec les volumes correctes bof)
       - Outils en constante évolution de plus en plus intégré chez les designers. Un grand nombre d'indépendants mais pas que : volswagen link : https://www.blender.org/press/volkswagen-group-signs-up-as-corporate-patron/
+      - Le logiciel incontournable pour faire exploser sa créativité
     
     -Mes projets réalisés en entreprise ne sont pas encore disponible publiquement. Les évoquer?
 
