@@ -177,6 +177,26 @@ header h1:hover{
 	transition: all 0s linear;
 }
 
+
+
+
+
+.skill-title{
+	color: rgb(160, 141, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*-----------------------------------------------------
 # background #ff6f61
 ------------------------------------------------------*/
@@ -185,7 +205,6 @@ header h1:hover{
 	/* background: #403dff; */
 	background-image: linear-gradient(to right, #403dff,#403dff, rgb(160, 168, 255));
 }
-
 
 
 

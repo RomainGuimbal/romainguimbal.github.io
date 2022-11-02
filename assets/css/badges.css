@@ -2,14 +2,14 @@
 #Badges
 ------------------------------------------------------*/
 
-#rendering {
+#rendering{
     clip-path: url("#rendering-clippath");
     background: rgb(172,83,255);
     background: linear-gradient(153deg, rgba(172,83,255,1) 0%, rgba(255,118,160,1) 23%, rgba(255,197,79,1) 41%, rgba(146,223,144,1) 49%, rgba(73,240,187,1) 61%, rgba(255,202,95,1) 71%, rgba(251,140,49,1) 85%, rgba(255,132,170,1) 91%, rgba(182,105,255,1) 100%);
 
    }
 
-#generative {
+#generative{
     clip-path: url("#generative-clippath");
     background: rgb(83,222,255);
     background: linear-gradient(153deg, rgba(83,222,255,1) 0%, rgba(79,103,255,1) 35%, rgba(182,78,255,1) 54%, rgba(182,105,255,1) 60%, rgba(108,118,254,1) 71%, rgba(79,103,255,1) 80%, rgba(83,222,255,1) 100%);
@@ -27,7 +27,7 @@
     background: linear-gradient(153deg, rgba(255,57,57,1) 13%, rgba(255,105,174,1) 28%, rgba(255,185,78,1) 42%, rgba(253,255,77,1) 53%, rgba(255,176,78,1) 66%, rgba(255,105,174,1) 84%, rgba(255,57,57,1) 100%); 
 }
 
-.badge-backg .skillbadge {
+.badge-backg .skillbadge{
     background-repeat: no-repeat;
     background-position: center;
     filter : saturate(0) brightness(5);
@@ -39,7 +39,6 @@
     -webkit-transition : -webkit-filter 500ms ease-in-out;
     -moz-transition: -moz-filter 500ms ease-in-out;
     transition: opacity 500ms ease-in-out ; */
-    flex-shrink: 0;
     flex-basis: 2rem;
     position: relative;
     margin-right: 0;
@@ -53,19 +52,33 @@
 }
 
 
-
-.badge-backg:hover .skillbadge{
+.item .badge-backg:hover .skillbadge,
+.project .badge-backg:hover .skillbadge{
     filter : saturate(1) brightness(1);
     opacity: 100%;
     transition: all 0s linear;
 }
 
-.badge-backg{
+.item .badge-backg,
+.project .badge-backg{
     height: 2em;
     width: 2em;
     border-radius: 1em;
     margin-top: 0.5em;
     margin-right: 0;
+    display: flex;
+}
+
+#skills .skillbadge{
+    flex-basis: 3rem;
+    filter : none;
+    opacity: 100%;
+}
+
+#skills .badge-backg{
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
     display: flex;
 }
 

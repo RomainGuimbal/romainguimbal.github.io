@@ -290,9 +290,6 @@ video:hover:not(:focus){
 }
 
 
-
-
-
 .sidescroll{
 	overflow: auto;
 	white-space: nowrap;
@@ -342,6 +339,31 @@ video:hover:not(:focus){
 	height: clamp(25em, 0.5vh, 1vh);
 	width : auto;
 } */
+
+
+#skills{
+	margin:10% auto 5%;
+	width : clamp(300px, 40%, 500px);
+	text-align: left;
+}
+
+.skill-descrip{
+	margin : 10% auto 10%;
+}
+
+.skill-descrip .skill-title{
+	display: flex;
+	margin : auto;
+}
+
+.skill-descrip h3{
+	margin: 1em;
+}
+
+#skills p{
+	padding-left: 1.5em;
+}
+
 
 
 
