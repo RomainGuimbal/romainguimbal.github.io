@@ -29,20 +29,25 @@
 
 
 .skillbadge, .skillbadge:not(:hover) {
-    height: 2em;
-    width: 2em;
+    height: 2rem;
+    width: 2rem;
     background-repeat: no-repeat;
     background-position: center;
     
-    transform: translate(.5em,-.5em);
+    /* transform: translate(.5em,-.5em); */
 
     filter : saturate(0) brightness(10);
     opacity: 20%;
     transition: filter 500ms ease-in-out ;
     transition: opacity 500ms ease-in-out ;
+    flex-shrink: 0;
+    flex-basis: 2rem;
+    position: relative;
+    margin-right: 0;
+
 }
 
-.badgecliczone:hover .skillbadge{
+.badge-backg:hover .skillbadge{
     filter : saturate(1) brightness(1);
     opacity: 100%;
     transition: filter 200ms ease-in-out ;
@@ -50,38 +55,41 @@
     /* box-shadow: 10px white; clippé donc nan*/
 }
 
-.badgecliczone{
+.badge-backg{
     height: 2em;
     width: 2em;
     background-color: rgb(21, 25, 49);
     border-radius: 1em;
     margin-top: 0.5em;
-    flex-direction: row-reverse;
-    max-width: 2em;
-    overflow: hidden;
-    /* justify-content: right; */
+    margin-right :0;
+    display: flex;
+    /* flex-direction: row-reverse; */
 }
 
-.badgecliczone:hover {
-    width: auto;
-    max-width: 1000px;
-    transition: max-width 3s ease-in-out;
-}
-
-.badgecliczone a{
+.badge-backg span{
     display: flex;
     color :transparent;
-    width: 0;
-    text-align: center;
     padding: 0.5em;
     white-space: nowrap;
+    height: 2em;
+    position: absolute;
+    text-align: left;
+    width:100px;
+    transform: translate(2em,0);
 }
 
-.badgecliczone:hover a{
-    color : rgb(75, 75, 255);
+.badge-backg:hover span{
+    color : rgb(75, 75, 255) !important;
+    opacity: 100% !important;
     text-decoration: none;
-    width: auto;
+
 }
+
+.badgelist:hover span {
+    color : rgb(124, 127, 161);
+    opacity: 50%;
+}
+
 
 .item{
     margin: 3% 3% 3%;
@@ -99,6 +107,7 @@
 }
 
 .badgelist{
+    display: grid;
     margin: auto 1em 0 auto;
     width : auto;
     position: relative;
@@ -115,7 +124,7 @@
     align-self: flex-end;
     overflow: visible;
     /* white-space: nowrap; */
-    color : rgb(124, 128, 172);
+    color : rgb(124, 127, 161);
     float: left;
     flex-grow: 1;
     flex-basis: 0;
