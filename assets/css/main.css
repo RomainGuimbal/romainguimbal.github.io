@@ -22,7 +22,7 @@ header{
 	-webkit-backdrop-filter: blur(5px);
 	box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.3);
 	outline: 0.05rem solid white;
-	z-index: 1;
+	z-index: 3;
 }
 
 header li{
@@ -256,6 +256,7 @@ video:hover:not(:focus){
 .project-main{
 	/* max-width: 40em; change rien le texte considère les marges T-T*/
 	margin: 0;
+	margin-bottom: 1em;
 }
 
 .project-main img, 

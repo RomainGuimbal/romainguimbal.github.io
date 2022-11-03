@@ -139,6 +139,10 @@ h2 {
 	background-image: linear-gradient(to right, #403dff,#403dff,#403dff, rgb(160, 168, 255), rgb(160, 168, 255));
 }
 
+#porsche{
+	background:linear-gradient(-250deg, #838b96, rgb(63, 70, 105));
+}
+
 #porsche h2{
 	background-image: linear-gradient(to right, #3c3ab9,#3c3ab9, rgb(0, 4, 43), rgb(0, 4, 43));
 }
@@ -174,6 +178,7 @@ header h1:hover{
 .project .badge-backg:hover{
 	/* opacity: 80%; */
 	background-color: rgba(55, 57, 75, 0.842);
+	box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.3);;
 	transition: all 0s linear;
 }
 
