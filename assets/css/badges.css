@@ -23,9 +23,24 @@
 
 #motion {
     clip-path: url("#motion-clippath");
+    background: rgb(109,112,255);
+    background: linear-gradient(153deg, rgba(109,112,255,1) 0%, rgba(135,166,255,1) 18%, rgba(143,205,156,1) 34%, rgba(255,231,173,1) 53%, rgba(143,205,156,1) 66%, rgba(135,166,255,1) 76%, rgba(90,65,255,1) 94%); 
+
+    }
+
+#perspec{
+    clip-path: url("#perspec-clippath");
     background: rgb(255,57,57);
     background: linear-gradient(153deg, rgba(255,57,57,1) 13%, rgba(255,105,174,1) 28%, rgba(255,185,78,1) 42%, rgba(253,255,77,1) 53%, rgba(255,176,78,1) 66%, rgba(255,105,174,1) 84%, rgba(255,57,57,1) 100%); 
+
 }
+
+#fx{
+    clip-path: url("#fx-clippath");
+    background: rgb(79,116,255);
+    background: linear-gradient(153deg, rgba(79,116,255,1) 23%, rgba(173,66,255,1) 34%, rgba(255,184,122,1) 50%, rgba(173,250,255,1) 56%, rgba(173,250,255,1) 62%, rgba(255,184,122,1) 69%, rgba(173,66,255,1) 78%, rgba(90,65,255,1) 86%); 
+}
+
 
 .badge-backg .skillbadge{
     background-repeat: no-repeat;

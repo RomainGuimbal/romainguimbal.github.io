@@ -142,17 +142,36 @@ h2 {
 #porsche{
 	background:linear-gradient(-250deg, #838b96, rgb(63, 70, 105));
 }
-
 #porsche h2{
 	background-image: linear-gradient(to right, #3c3ab9,#3c3ab9, rgb(0, 4, 43), rgb(0, 4, 43));
+}
+
+#agrume{
+	background-color: #bf6e79;
 }
 
 #agrume h2{
 	background-image: linear-gradient(to right, #f2ede6,#f2ede6, rgb(255, 170, 44), rgb(255, 170, 44));
 }
 
+#agrume .fond-projet{
+	background-image :url("../img/multi sketch presse agrume.jpg");
+	filter : invert();
+	mix-blend-mode: difference;
+
+}
+
+#archi-gene{
+	
+	background-image :url("../img/effet ecran nodes.jpg");
+	background-color: rgb(46, 103, 63);
+	background-repeat: no-repeat;
+  	background-size: cover;
+	background-position: center;
+}
+
 #archi-gene h2{
-	background-image: linear-gradient(to right, #40af6b,#23c862, rgb(255, 238, 126), rgb(255, 220, 166));
+	background-image: linear-gradient(to right, #26a288,#26a288, #5ae891, #5ae891);
 }
 
 #verriere h2{
@@ -178,7 +197,7 @@ header h1:hover{
 .project .badge-backg:hover{
 	/* opacity: 80%; */
 	background-color: rgba(55, 57, 75, 0.842);
-	box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.3);;
+	box-shadow: 0 0 0.5em #2925ff7e;
 	transition: all 0s linear;
 }
 
