@@ -41,6 +41,12 @@
     background: linear-gradient(153deg, rgba(79,116,255,1) 23%, rgba(173,66,255,1) 34%, rgba(255,184,122,1) 50%, rgba(173,250,255,1) 56%, rgba(173,250,255,1) 62%, rgba(255,184,122,1) 69%, rgba(173,66,255,1) 78%, rgba(90,65,255,1) 86%); 
 }
 
+#surface{
+    clip-path: url("#surface-clippath");
+    background: rgb(79,116,255);
+    background: linear-gradient(153deg, rgba(79,116,255,1) 23%, rgba(173,66,255,1) 34%, rgba(255,184,122,1) 50%, rgba(173,250,255,1) 56%, rgba(173,250,255,1) 62%, rgba(255,184,122,1) 69%, rgba(173,66,255,1) 78%, rgba(90,65,255,1) 86%); 
+}
+
 
 .badge-backg .skillbadge{
     background-repeat: no-repeat;
