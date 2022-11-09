@@ -46,16 +46,20 @@
      inkscape:window-height="1001"
      id="namedview34335"
      showgrid="false"
-     inkscape:zoom="2.8284273"
-     inkscape:cx="297.51516"
-     inkscape:cy="546.77028"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="g9974-4-9"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="271.24998"
+     inkscape:cy="608.24996"
+     inkscape:window-x="-32000"
+     inkscape:window-y="-32000"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer8"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#808080"
-     inkscape:snap-object-midpoints="true" />
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-bbox="false"
+     inkscape:snap-bbox-midpoints="false"
+     inkscape:snap-grids="false"
+     inkscape:snap-to-guides="false" />
   <defs
      id="defs4">
     <linearGradient
@@ -106,7 +110,8 @@
      inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="grid"
-     style="display:inline;opacity:0.3">
+     style="display:inline;opacity:0.3"
+     sodipodi:insensitive="true">
     <g
        id="g40174"
        transform="translate(0,2)">
@@ -19685,7 +19690,8 @@
      style="display:inline;opacity:1">
     <g
        id="g11301"
-       inkscape:label="Rendering">
+       inkscape:label="Rendering"
+       transform="translate(0,-0.0428931)">
       <ellipse
          style="display:inline;opacity:1;fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new;stop-color:#000000"
          id="path4931"
@@ -19717,13 +19723,6 @@
          id="path4931-8-4-1"
          cx="454"
          cy="18.500004"
-         rx="12.829"
-         ry="12.821065" />
-      <ellipse
-         style="display:inline;fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new;stop-color:#000000"
-         id="path4931-8-7"
-         cx="264.98672"
-         cy="417.01328"
          rx="12.829"
          ry="12.821065" />
       <ellipse
@@ -19761,13 +19760,10 @@
          cy="626.9986"
          rx="12.829"
          ry="12.821065" />
-      <ellipse
-         style="display:inline;fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new;stop-color:#000000"
-         id="path4931-8-6"
-         cx="326.996"
-         cy="563.297"
-         rx="12.829"
-         ry="12.821065" />
+      <path
+         style="color:#000000;fill:#ffffff;stroke-linecap:round;-inkscape-stroke:none"
+         d="m 328.0625,550.75863 c -7.3553,0 -13.32813,5.96906 -13.32813,13.32031 0,7.35126 5.97283,13.32032 13.32813,13.32032 7.3553,0 13.32812,-5.96906 13.32812,-13.32032 0,-7.35125 -5.97282,-13.32031 -13.32812,-13.32031 z m 0,1 c 6.8152,0 12.32812,5.50983 12.32812,12.32031 0,6.81049 -5.51292,12.32032 -12.32812,12.32032 -6.81521,0 -12.32813,-5.50983 -12.32813,-12.32032 0,-6.81048 5.51292,-12.32031 12.32813,-12.32031 z"
+         id="path4931-8-6" />
       <ellipse
          style="display:inline;fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new;stop-color:#000000"
          id="path4931-8-6-4"
@@ -19812,6 +19808,10 @@
          cy="416.99442"
          rx="12.829"
          ry="12.821065" />
+      <path
+         style="color:#000000;fill:#ffffff;stroke-linecap:round;-inkscape-stroke:none"
+         d="m 433,298.73633 c -7.35531,0 -13.32813,5.96905 -13.32813,13.32031 0,7.35126 5.97282,13.32227 13.32813,13.32227 7.35531,0 13.32812,-5.97101 13.32812,-13.32227 0,-7.35126 -5.97281,-13.32031 -13.32812,-13.32031 z m 0,1 c 6.8152,0 12.32812,5.50983 12.32812,12.32031 0,6.81049 -5.51292,12.32227 -12.32812,12.32227 -6.8152,0 -12.32813,-5.51178 -12.32813,-12.32227 0,-6.81048 5.51293,-12.32031 12.32813,-12.32031 z"
+         id="path4931-8-7-7-2-3-2" />
       <ellipse
          style="display:inline;fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new;stop-color:#000000"
          id="path4931-8-7-7-2-9"

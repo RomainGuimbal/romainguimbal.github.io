@@ -208,6 +208,15 @@ img, video{
 	border-radius: 3px;
 }
 
+.item .without-caption img{
+	width: 100%;
+}
+
+.item .without-caption{
+	width : clamp(300px, 40%, 500px);
+}
+
+
 img:hover:not(:focus),
 video:hover:not(:focus){
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
