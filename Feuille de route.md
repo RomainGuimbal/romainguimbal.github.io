@@ -1,33 +1,20 @@
 ## TO DO
 ~~-notebook-line doesn't work + points~~ abandonné (pas assez beau)
+~~-Template projet multi image (figma)~~
+~~-Une photo des **croquis** répartis sur la table pour le **presse agrume** (façon M3S) ? > next year :/~~
+~~-Grand dilem : skill oriented ou project oriented~~ solution trouvée
+~~-Système de badges~~
 
--Template projet multi image (figma)
+-remplir les badge
 
--virer le decalage des videos quand on clique dessus
+-**section CAO** ? : pédale du broyeur + potence (dejà sur le git)
 
--ajouter **section CAO** ? : pédale du broyeur + potence (dejà sur le git)
-
--Une photo des **croquis** répartis sur la table pour le **presse agrume** (façon M3S) ? > next year :/
-
--Nommer mes projets > layout avec les 2 paneaux latéraux.
+-Nommer les projets > layout avec les 2 paneaux latéraux.
                      Nom ou date c'est déjà bien
 
-~~-Grand dilem : skill oriented ou project oriented~~ solution trouvée
-    - PB de skill :
-        -les skills sont tous interco
-        -les sites des designers sont souvent par projets
-        -bcp moins doux à l'oeil vu que pas color matching
-    - PB de project :
-        -raconte moins, parait un peu aléatoire
-        -Les mini projets paraissent tous seuls 
+-fond archi a retirer
 
-    **-Posibilité de faire un mélange :
-        -mon expertise, Mes projets**
 
--Système de badges
-
--Layout paneaux latéraux
-    -3 colonnes, et faire que la colonne de texte soit en overflow ?
 
 -Ecrire les texte des skills :
 # Mon expertise :
@@ -41,7 +28,7 @@
     -Direction artistique
         -Storyboarding, Definition de style graphique, Character design
     -Graphisme généraliste
-    -Animation traditionnel
+    -Animation traditionnelle
 
     -Blender pour le design industriel
       - Utilisation de Blender comme un intermédiaire entre le croquis et le modèle CAO (c'est une maquette finalement). Permet d'itérer bien plus rapidement. Actuellement ça s'est avéré très utile pour traiter les **problèmes d'encombrement**. (Un croquis en perspective ok, mais avec les volumes correctes bof)
@@ -53,9 +40,9 @@
 
 
 
-Mes projets :
--Presse agrume
+-images aux skills ?
 
+-pb videos en side scroll (pas urgent)
 
 
 

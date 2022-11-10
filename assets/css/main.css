@@ -48,7 +48,7 @@ header img{
 
 header h1, header h3{
 	text-align: left;
-	font: small-caps 1.3em "Fira Sans", sans-serif;
+	font: small-caps 1.3em "Poppins", sans-serif;
 	margin: 0.5em;
 	clear: both;
     display: inline-block;
@@ -58,7 +58,7 @@ header h1, header h3{
 }
 
 header  h3{
-	font: small-caps 1em "Fira Sans", sans-serif;
+	font: small-caps 1em "Poppins", sans-serif;
 	margin: 0.8em;
 }
 
@@ -161,7 +161,7 @@ body{
 
 h2{
 	text-align: center;
-	font: bold 4em "Fira Sans", sans-serif;
+	font: bold 4em "Poppins", sans-serif;
 }
 
 .page-title h2{
