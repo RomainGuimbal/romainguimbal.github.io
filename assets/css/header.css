@@ -1,18 +1,27 @@
-
-
-
-
 /*-----------------------------------------------------
 # Header
 ------------------------------------------------------*/
 header{
 	width : 100%;
 	height: 10em;
-	overflow: hidden;
+    position: absolute;
 	background-color: black;
-    background-image:("../assets/img/drop.jpg");
-	/* filter: blur(7.5px); */
+    
 	/* box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.3); */
+}
+
+header #bg{
+    width: 100%;
+    height: 100%;
+	filter: blur(7.5px);
+    position: absolute;
+}
+
+header img{
+    width: 15em;
+    height: auto;
+    display:inline-block;
+ 
 }
 
 header li{
@@ -27,15 +36,20 @@ header li{
 	box-shadow: inset 0 0 10px 0 white;
 } */
 
+#page-title li{
+    width: fit-content;
+    text-align: left;
+    float: left;
+    margin-left: 0;
+}
 
 
 header h1, header h3{
 	text-align: left;
 	font: small-caps 1.3em "Poppins", sans-serif;
-	margin: 0.5em;
 	/* clear: both; */
     /* display: inline-block; */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 
@@ -89,25 +103,22 @@ header h3 li{
 
 
 
-
-/*-----------------------------------------------------
-# Title
-------------------------------------------------------*/
-.page-title{
-	/* width: min-content; */
-	margin: 5em auto 2em;
+#page-title{
+    position: absolute;
+    display: flex;
+    width: fit-content;
 }
 
 
 
-.page-title h2{
+/* #page-title h2{
 	margin: 1% auto 1%;
 	z-index: 0;
 	max-width: 80%;
-}
+} */
 
 /* @media(max-width:600px) {
-	.page-title h2{
+	#page-title h2{
 		font-size: 3.2em;
 	}
 

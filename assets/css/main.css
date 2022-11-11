@@ -59,7 +59,7 @@ body{
 	z-index:1;
 }
 
-img, video{
+main img, main video{
 	width : clamp(300px, 40%, 500px);/*min, prefered, max*/
 	display: block;
 	margin: 3% auto 3%;
@@ -147,7 +147,7 @@ video:hover:not(:focus){
 
 @media(max-width:600px) {
 	.project h2{
-		font-size: 3em;
+		font-size: 3em;}
 	}
 
 
