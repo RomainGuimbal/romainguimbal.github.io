@@ -78,8 +78,8 @@ main img, main video{
 }
 
 
-img:hover:not(:focus),
-video:hover:not(:focus){
+main img:hover:not(:focus),
+main video:hover:not(:focus){
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
 	transition: box-shadow 100ms ease-in-out ;
 }

@@ -43,10 +43,6 @@ header h1{
 	color:#1f2937;
 }
 
-header h3{
-	color:rgb(88, 85, 114)
-}
-
 /*-----------------------------------------------------
 # background #000
 ------------------------------------------------------*/
@@ -127,16 +123,12 @@ header h3{
 ------------------------------------------------------*/
 
 
-h2 {
+main h2 {
 	background-image: linear-gradient(to right, #403dff,#403dff,#403dff, rgb(160, 168, 255), rgb(160, 168, 255));
 	/* color: #403dff; */
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
-}
-
-.title-line h2{
-	background-image: linear-gradient(to right, #403dff,#403dff,#403dff, rgb(160, 168, 255), rgb(160, 168, 255));
 }
 
 #porsche{
@@ -179,9 +171,9 @@ h2 {
 }
 
 
-header h1:hover{
+/* header h1:hover{
 	color:#403dff;
-}
+} */
 
 .item .badge-backg{
     background-color: rgb(21, 25, 49);
