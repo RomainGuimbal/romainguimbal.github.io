@@ -12,8 +12,6 @@
 -Nommer les projets > layout avec les 2 paneaux latéraux.
                      Nom ou date c'est déjà bien
 
--fond archi a retirer
-
 
 
 -Ecrire les texte des skills :

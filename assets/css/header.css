@@ -7,11 +7,10 @@ header{
 	position: relative;
 	background-color: black;
     overflow: hidden;
-	/* box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.3); */
-	/* display: inline-block; */
 	margin: 0 auto 1em;
 	z-index: 1;
 	display:flow-root;
+	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 }
 
 

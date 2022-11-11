@@ -155,8 +155,9 @@ main h2 {
 
 #archi-gene{
 	
-	background-image :url("../img/effet ecran nodes.jpg");
-	background-color: rgb(46, 103, 63);
+	/* background-image :url("../img/effet ecran nodes.jpg"); */
+	/* background-color: rgb(46, 103, 63); */
+	background:linear-gradient(-250deg, rgb(40, 92, 55), rgb(33, 108, 83));
 	background-repeat: no-repeat;
   	background-size: cover;
 	background-position: center;

@@ -121,6 +121,7 @@ main video:hover:not(:focus){
 	width: 100%;
 	padding: 3em 0;
 	margin: 3% auto 3%;
+	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 }
 
 .project-main{
