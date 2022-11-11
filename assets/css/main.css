@@ -5,103 +5,9 @@ html, body {
 	text-align: center;
 }
 
-/*-----------------------------------------------------
-# Header
-------------------------------------------------------*/
-header{
-	position: fixed;
-	top: 0.5em;
-	left: 50%;
-	margin-left: clamp(-450px, -25%, -10em);
-	width : clamp(20em, 50%, 900px);/*min, prefered, max*/
-	border-radius: 8px;
-	height: 3em;
-	overflow: hidden;
-	background-color: rgba(255, 255, 255, 0.5);
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
-	box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.3);
-	outline: 0.05rem solid white;
-	z-index: 3;
-}
-
-header li{
-	white-space: pre;
-}
-
-header img{
-	height: 3em;
-	width: auto;
-	margin: auto;
-	margin-right: 0;
-	box-shadow: inset 0 0 10px 0 white;
-}
-
-.head_grid{
-	display: flex;
-	grid-template-columns: repeat(2,1fr);
-	column-gap: 0;
-	position: relative;
-	width : 100%;
-	margin-left: 10%;
-}
-
-header h1, header h3{
-	text-align: left;
-	font: small-caps 1.3em "Fira Sans", sans-serif;
-	margin: 0.5em;
-	clear: both;
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-	z-index: 1;
-}
-
-header  h3{
-	font: small-caps 1em "Fira Sans", sans-serif;
-	margin: 0.8em;
-}
-
-
-
 a:link {
 	text-decoration: none;
 }
-
-header h3 li{
-	display:inline-block;
-}
-
-@media(max-width: 60rem) {
-	header{
-		height: 4.5em;
-		overflow: visible;
-	}
-
-	header h1, header h3{
-		white-space: normal;
-		overflow: visible;
-	}
-
-	.head_grid{
-		margin-left: 4%;
-	}
-}
-
-@media(max-width: 85rem){
-	header{
-		height: 4.5em;
-	}
-	header h3 li{
-		display:list-item;
-		list-style-type: none;
-	}
-}
-
-
-
-
-
 
 
 /*-----------------------------------------------------
@@ -146,51 +52,6 @@ body{
 
 
 
-
-
-
-
-/*-----------------------------------------------------
-# Title
-------------------------------------------------------*/
-.page-title{
-	/* width: min-content; */
-	margin: 5em auto 2em;
-	z-index: 5;
-}
-
-h2{
-	text-align: center;
-	font: bold 4em "Fira Sans", sans-serif;
-}
-
-.page-title h2{
-	margin: 1% auto 1%;
-	z-index: 0;
-	max-width: 80%;
-}
-
-@media(max-width:600px) {
-	.page-title h2{
-		font-size: 3.2em;
-	}
-
-}
-
-.title-line{
-	height: 0.1em;
-	width : clamp(150px, 20%, 20%);
-	position: relative;
-	margin: 1% auto 1%;
-	z-index: 0;
-}
-
-
-
-
-
-
-
 /*-----------------------------------------------------
 # Content
 ------------------------------------------------------*/
@@ -198,7 +59,7 @@ h2{
 	z-index:1;
 }
 
-img, video{
+main img, main video{
 	width : clamp(300px, 40%, 500px);/*min, prefered, max*/
 	display: block;
 	margin: 3% auto 3%;
@@ -217,8 +78,8 @@ img, video{
 }
 
 
-img:hover:not(:focus),
-video:hover:not(:focus){
+main img:hover:not(:focus),
+main video:hover:not(:focus){
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
 	transition: box-shadow 100ms ease-in-out ;
 }
@@ -275,9 +136,22 @@ video:hover:not(:focus){
 }
 
 .project h2{
-	font-size: 4vw;/* à modif*/
-	margin:0;
+	/* font-size: 4vw;à modif */
+	margin: 0;
+	padding: .2em 0 .2em;
+	text-align: center;
+	font: bold 4em "Poppins", sans-serif;
+	line-height: 0.9em;
+	overflow: visible;
 }
+
+@media(max-width:600px) {
+	.project h2{
+		font-size: 3em;}
+	}
+
+
+
 
 .project-main .badge-backg{
 	/* max-width: 40em; change rien le texte considère les marges T-T*/
