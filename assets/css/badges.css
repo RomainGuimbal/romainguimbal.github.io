@@ -103,6 +103,11 @@
     display: flex;
 }
 
+#skills p{
+    text-align: justify;
+    text-justify: auto;
+}
+
 .badge-backg span{
     display: flex;
     color :transparent;
