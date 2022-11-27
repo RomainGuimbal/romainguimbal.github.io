@@ -1,28 +1,50 @@
 # Mon expertise :
-    -Recherche de formes
-        Croquis avancés, Exploration structurée, Contrôle des courbes et des surfaces
-        Contrôle de la courbure, du rythme et de la dynamique
+~~  -Recherche de formes ~~
+        ~~Croquis avancés, Exploration structurée, Contrôle des courbes et des surface~~
+        ~~Contrôle de la courbure, du rythme et de la dynamique~~
+
     
+
+    -Dessin technique
+        Exploration rapide des formes
+        Perspectives
+
+    -Design de surfaces et de formes
+        Contrôle de la courbure, du rythme et de la dynamique
+        Exploration structurée des possibilités
+
     -Modélisation de préscion
         Maillage avancé, CAO surfacique
         Blender, Solidworks
    
     -Visualisation 3D avancée
         Rendering photoréaliste
-        Shaders et matériaux avancés
+        Shaders et matériaux
         Lighting
         Effets visuels
         Motion design
-   
+
     -Modélisation générative
-        Génération de modèles 3D à partir de réseaux de nodes. Sur Blender façon Grasshopper
-        Permet précision et flexibilité.
-  
-    -Direction artistique
-        Storyboarding, Definition de style, Character design
+        Génération de modèles 3D à partir de réseaux de nodes
+        Sur Blender façon Grasshopper
+        Permet précision et flexibilité
     
-    -
-        Graphisme, Illustration, Animation traditionnelle, Peinture digitale
+    -Arts graphiques
+        Graphisme, Illustration, Peinture digitale
+
+    -Animation
+        Animation traditionnelle
+        Storyboarding
+        Character design
+        Concept art
+
+Ajouter one day
+    -Design produit/ ingénierie mécha jsp (icone engrenages)
+        Approche utilisateur
+        Calcul de structures
+        Contraintes
+        ...
+
 
     Blender et design mécanique
     Intégration de blender dans la conception mécanique et le design industriel :
