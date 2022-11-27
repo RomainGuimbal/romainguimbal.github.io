@@ -113,11 +113,6 @@
     min-width: 3em;
 }
 
-#skills p{
-    text-align: justify;
-    text-justify: auto;
-}
-
 .badge-backg span{
     display: flex;
     color :transparent;
