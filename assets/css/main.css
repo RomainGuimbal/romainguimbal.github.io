@@ -117,11 +117,21 @@ main video:hover:not(:focus){
 }
 
 .project{
+	
 	background-attachment:scroll;
 	width: 100%;
 	padding: 3em 0;
 	margin: 3% auto 3%;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+	
+	/* border */
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(42deg, rgba(255,255,255,0) 12%, rgba(255, 255, 255, 0.663) 72%, rgba(255, 255, 255, 0.318) 100%); 
 }
 
 .project-main{
@@ -201,7 +211,7 @@ main video:hover:not(:focus){
 	width : auto;
 	max-width: 15em;
 	object-fit: cover;
-	margin : 1em auto 1em;
+	margin : 0 auto 0;
 }
 
 @media(max-width: 1000px) {

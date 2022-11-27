@@ -110,6 +110,7 @@
     width: 3em;
     border-radius: 50%;
     display: flex;
+    min-width: 3em;
 }
 
 #skills p{
