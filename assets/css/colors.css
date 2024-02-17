@@ -131,6 +131,13 @@ main h2 {
 	color: transparent;
 }
 
+#sword{
+	background-color: #083434;
+}
+#sword h2{
+	background-image: linear-gradient(to right, #a95f41,#a95f41, #10141e, #10141e);
+}
+
 #porsche{
 	background:linear-gradient(-250deg, #838b96, rgb(63, 70, 105));
 }
@@ -139,7 +146,7 @@ main h2 {
 }
 
 #agrume{
-	background-color: #bf6e79;
+	background-color: #c28661;/*#bf6e79*/
 }
 
 #agrume h2{
