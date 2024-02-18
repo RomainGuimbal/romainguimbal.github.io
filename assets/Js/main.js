@@ -29,4 +29,11 @@ $('.with-caption').magnificPopup({
 });
 
 
+var latest_index = 0;
 
+class Project{
+
+    constructor(){
+        self.index = latest_index+1
+    }
+}

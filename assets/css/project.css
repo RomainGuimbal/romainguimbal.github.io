@@ -1,0 +1,80 @@
+/*-----------------------------------------------------
+# Project
+------------------------------------------------------*/
+.project{
+	background-attachment:scroll;
+	width: 70%;
+	padding: 3em 0;
+	margin: 3% auto 3%;
+	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+	
+	/* border */
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(42deg, rgba(255,255,255,0) 12%, rgba(255, 255, 255, 0.663) 72%, rgba(255, 255, 255, 0.318) 100%); 
+	
+	background-image: url("../img/canson paper texture.jpg");
+	background-size: cover;
+}
+
+.project-main{
+	margin: 0 auto 1em;
+	width: clamp(300px, 40%, 500px);
+}
+
+.project-main img, 
+.project-main video{
+	margin:0 auto 0;
+	width: 100%;
+	/* width : clamp(300px, 40rem, 500px); */
+}
+
+.project h2{
+	/* font-size: 4vw;à modif */
+	margin: 0 auto 0;
+	padding: .2em 0 .2em;
+	text-align: center;
+	font: bold 4em "Poppins", sans-serif;
+	line-height: 0.9em;
+	position:relative;
+	width :clamp(100%, 200%, 1000px);
+	right:clamp(25%, 50%, 250px);
+}
+
+@media(max-width:600px) {
+	.project h2{
+		font-size: 3em;
+		width :100%;
+		right:0;
+	}
+} 
+
+
+
+
+.project-main .badge-backg{
+	margin: auto;
+}
+
+.project p{
+	margin:0 auto 0;
+	width: 100%;
+	text-align: justify;
+	text-justify: auto;
+	text-align-last: center;
+}
+
+.fond-projet{
+	position : absolute;
+	height: 100%;
+	width: 100%;
+	opacity: 20%;
+	/* mix-blend-mode: multiply; */
+	background-repeat: no-repeat;
+	background-size: cover;
+ 	background-position: center;
+}
