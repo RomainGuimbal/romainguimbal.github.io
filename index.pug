@@ -1,0 +1,441 @@
+doctype html
+include ./head.pug
+//start pug command : pug -w ./ -o . -P
+header
+  img#bg(src='../assets/img/drop.jpg')
+  #page-title
+    img(src='../assets/img/drop.jpg')
+    li
+      h1#romain Romain
+      h1#guimbal GUIMBAL
+      h2 Portfolio 2022
+  h3 Design - Ingénierie - 3D - Art graphique
+
+
+main
+.container
+    // Ajoute tabindex="0" aux images pour leur permettre de capturer le focus
+    h1 100 créations personnelles
+    #sword.project
+      .project-main
+        h3.numero 1.
+        video(controls='' loop='' autoplay='')
+          source(src='../assets/img/Sword 2017 3D 20230001-0100.mp4' type='video/mp4')
+        h2 Garde d&apos;&Eacute;p&eacute;e cuivre
+        li.badgebar
+          a.badge-backg(href='#surface_descrip')
+            i#surface.skillbadge
+          a.badge-backg(href='#modeling_descrip')
+            i#modeling.skillbadge
+          a.badge-backg(href='#fx_descrip')
+            i#fx.skillbadge
+        p
+      .sidescroll
+        a.without-caption.image-link(href='../assets/img/Sword 2017 3D 2023 close1.jpg')
+          img(src='../assets/img/Sword 2017 3D 2023 close1.jpg')
+        a.without-caption.image-link(href='../assets/img/Sword 2017 3D 2023 close2.jpg')
+          img(src='../assets/img/Sword 2017 3D 2023 close2.jpg')
+        a.without-caption.image-link(href='../assets/img/Sword 2017 3D 2023 HD.jpg')
+          img(src='../assets/img/Sword 2017 3D 2023 HD.jpg')
+    .item
+      .badgelist
+        a.badge-backg(href='#surface_descrip')
+          i#surface.skillbadge
+          span Surfaces et formes
+        a.badge-backg(href='#modeling_descrip')
+          i#modeling.skillbadge
+          span Mod&eacute;lisation
+        a.badge-backg(href='#fx_descrip')
+          i#fx.skillbadge
+          span Visualisation
+      a.without-caption.image-link(href='../assets/img/lard odfg1.jpg')
+        img(src='../assets/img/lard odfg1.jpg')
+      figcaption
+        | Le Lardon
+        br
+        | Render 2022
+        br
+        | Model 2016
+    .item
+      .badgelist
+        a.badge-backg(href='#surface_descrip')
+          i#surface.skillbadge
+          span Surfaces et formes
+        a.badge-backg(href='#modeling_descrip')
+          i#modeling.skillbadge
+          span Mod&eacute;lisation
+        a.badge-backg(href='#fx_descrip')
+          i#fx.skillbadge
+          span Visualisation
+      a.without-caption.image-link(href='../assets/img/Lardon octobre 2019 copy.jpg')
+        img(src='../assets/img/Lardon octobre 2019 copy.jpg')
+      figcaption
+        | Le Lardon
+        br
+        | Render 2019
+    //
+      <a href="../assets/img/vaisseau scoot modif avril 2021.jpg" class="without-caption image-link"><img src="../assets/img/vaisseau scoot modif avril 2021.jpg"></a>
+    //
+      <div class="trio">
+      <a href="../assets/img/voiture 2019 front copy.jpg" class="without-caption image-link"><img src="../assets/img/voiture 2019 front copy.jpg"></a>
+      <a href="../assets/img/voiture 2019 side copy.jpg" class="without-caption image-link"><img src="../assets/img/voiture 2019 side copy.jpg"></a>
+      <a href="../assets/img/voiture 2019 back copy.jpg" class="without-caption image-link"><img src="../assets/img/voiture 2019 back copy.jpg"></a>
+      </div>
+    #agrume.project
+      // <div class="fond-projet"></div>
+      .project-main
+        h3.numero 4.
+        a.without-caption.image-link(href='../assets/img/Presse agrume.jpg')
+          img(src='../assets/img/Presse agrume.jpg')
+        h2  Presse agrume
+        li.badgebar
+          a.badge-backg(href='#surface_descrip')
+            i#surface.skillbadge
+          a.badge-backg(href='#perspec_descrip')
+            i#perspec.skillbadge
+          a.badge-backg(href='#modeling_descrip')
+            i#modeling.skillbadge
+          a.badge-backg(href='#fx_descrip')
+            i#fx.skillbadge
+        p
+          | Le presse agrume : ce produit existe depuis des si&egrave;cles et a d&eacute;j&agrave; pris toutes les formes possibles. Faire nouveau signifie donc faire extr&ecirc;me. Apr&egrave;s une version industrielle &agrave; 6 demi-oranges press&eacute;es simultan&eacute;ment, je suis revenu vers cette version miniature. Mais bien que miniature, la combinaison de bois brut et m&eacute;tal avec m&eacute;canismes apparents &eacute;voque encore les machines agricoles robustes et authentiques.
+        //
+          Le nom Kaijus viens de "kaiju" la bête absurde en japonnais.
+          -Dessin avancé
+          Exploration vers des designs improbables
+      .sidescroll
+        a.without-caption.image-link(href='../assets/img/Mood board.jpg')
+          img(src='../assets/img/Mood board.jpg')
+        a.without-caption.image-link(href='../assets/img/multi sketch presse agrume.jpg')
+          img(src='../assets/img/multi sketch presse agrume.jpg')
+        a.without-caption.image-link(href='../assets/img/Kaijus1.jpg')
+          img(src='../assets/img/Kaijus1.jpg')
+        a.without-caption.image-link(href='../assets/img/Kaijus incliné1.jpg')
+          img(src='../assets/img/Kaijus incliné1.jpg')
+    .item
+      li.badgelist(style='margin-bottom : 3em;')
+        // Marge au video, pour pas gener boutons
+        a.badge-backg(href='#modeling_descrip')
+          i#modeling.skillbadge
+          span Mod&eacute;lisation
+        a.badge-backg(href='#generative_descrip')
+          i#generative.skillbadge
+          span Mod&eacute;lisation g&eacute;n&eacute;rative
+        a.badge-backg(href='#animation_descrip')
+          i#animation.skillbadge
+          span Animation
+        a.badge-backg(href='#fx_descrip')
+          i#fx.skillbadge
+          span Visualisation
+      video(controls='')
+        source(src='../assets/img/Precision living.mp4' type='video/mp4')
+      figcaption
+        | Precision living
+        br
+        | 2022
+        br
+        | Musique : Vibin&apos; Out - FKJ, ((( O )))
+    .item
+      .badgelist
+        a.badge-backg(href='#modeling_descrip')
+          i#modeling.skillbadge
+          span Mod&eacute;lisation
+        a.badge-backg(href='#fx_descrip')
+          i#fx.skillbadge
+          span Visualisation
+      a.without-caption.image-link(href='../assets/img/robe.jpg')
+        img(src='../assets/img/robe.jpg')
+      figcaption
+        | Robe dor&eacute;e
+        br
+        | 2020
+    .item
+      .badgelist
+        a.badge-backg(href='#modeling_descrip')
+          i#modeling.skillbadge
+          span Mod&eacute;lisation
+        a.badge-backg(href='#fx_descrip')
+          i#fx.skillbadge
+          span Visualisation
+        a.badge-backg(href='#animation_descrip')
+          i#animation.skillbadge
+          span Animation
+      a.without-caption.image-link(href='../assets/img/head sculpt.jpg')
+        img(src='../assets/img/head sculpt.jpg')
+      figcaption
+        | Head sculpt
+        br
+        | 2022
+    #porsche.project
+      // #a16461
+      .project-main
+        video(controls='' loop='' autoplay='')
+          source(src='../assets/img/porsche courbes.mp4' type='video/mp4')
+        h2 Porsche 911 carrera 1999 study
+        li.badgebar
+          a.badge-backg(href='#surface_descrip')
+            i#surface.skillbadge
+          a.badge-backg(href='#modeling_descrip')
+            i#modeling.skillbadge
+          a.badge-backg(href='#fx_descrip')
+            i#fx.skillbadge
+        p Exercice de hard surface de pr&eacute;cision
+        //
+          Maillage manuel de precision
+          Topology avancée
+          Contrôle du reflet
+          à partir de la méthode développée en entreprise
+      .sidescroll
+        a.without-caption.image-link(href='../assets/img/Porsche bois vue haut2.jpg')
+          img(src='../assets/img/Porsche bois vue haut2.jpg')
+        a.without-caption.image-link(href='../assets/img/Porsche drap1.jpg')
+          img(src='../assets/img/Porsche drap1.jpg')
+        a.without-caption.image-link(href='../assets/img/porsche etape 2.jpg')
+          img(src='../assets/img/porsche etape 2.jpg')
+        a.without-caption.image-link(href='../assets/img/Porsche wireframe.jpg')
+          img(src='../assets/img/Porsche wireframe.jpg')
+        a.without-caption.image-link(href='../assets/img/Porsche close1.jpg')
+          img(src='../assets/img/Porsche close1.jpg')
+    .item
+      .badgelist
+        a.badge-backg(href='#modeling_descrip')
+          i#modeling.skillbadge
+          span Mod&eacute;lisation
+        a.badge-backg(href='#fx_descrip')
+          i#fx.skillbadge
+          span Visualisation
+      a.without-caption.image-link(href='../assets/img/phare design.jpg')
+        img(src='../assets/img/phare design.jpg' style='margin-bottom: .4em;')
+      figcaption
+        | Reproduction du feu avant de la Smart Forjoy Concept
+        br
+        | 2021
+    #archi-gene.project
+      // style="background-color:rgb(46, 103, 63)
+      .project-main
+        a.without-caption.image-link(href='../assets/img/batiments rubans.jpg')
+          img(src='../assets/img/batiments rubans.jpg')
+        h2 Architecture g&eacute;n&eacute;rative
+        li.badgebar
+          a.badge-backg(href='#generative_descrip')
+            i#generative.skillbadge
+          a.badge-backg(href='#fx_descrip')
+            i#fx.skillbadge
+      // <p>Shaders - Champs vectoriels</p>
+      .sidescroll
+        //
+          <img src="../assets/img/Kurdan.jpg" tabindex="0">
+          <img src="../assets/img/Kurdan1.jpg" tabindex="0">
+        a.without-caption.image-link(href='../assets/img/effet ecran nodes.jpg')
+          img(src='../assets/img/effet ecran nodes.jpg')
+        a.without-caption.image-link(href="../assets/img/maison d'allumettes.jpg")
+          img(src="../assets/img/maison d'allumettes.jpg")
+        a.without-caption.image-link(href='../assets/img/Piliers spiral bois.jpg')
+          img(src='../assets/img/Piliers spiral bois.jpg')
+        a.without-caption.image-link(href='../assets/img/le feizomj.jpg')
+          img(src='../assets/img/le feizomj.jpg')
+    .item
+      .badgelist
+        a.badge-backg(href='#modeling_descrip')
+          i#modeling.skillbadge
+          span Mod&eacute;lisation
+        a.badge-backg(href='#fx_descrip')
+          i#fx.skillbadge
+          span Visualisation
+      a.without-caption.image-link(href='../assets/img/shoes sim 4.jpg')
+        img(src='../assets/img/shoes sim 4.jpg')
+      figcaption
+        | Premier personnage 3D
+        br
+        | 2018
+    .item
+      .badgelist
+        a.badge-backg(href='#modeling_descrip')
+          i#modeling.skillbadge
+          span Mod&eacute;lisation
+        a.badge-backg(href='#fx_descrip')
+          i#fx.skillbadge
+          span Visualisation
+      a.without-caption.image-link(href='../assets/img/Maciek Jasik studdy 2.jpg')
+        img(src='../assets/img/Maciek Jasik studdy 2.jpg')
+      figcaption
+        | Dissolution
+        br
+        | Flou-net fa&ccedil;on Maciek Jasik
+        br
+        | 2022
+    // <img src="../assets/img/eau 8.jpg">
+    .item
+      .badgelist(style='margin-bottom : 2em;')
+        // Marge au video, pour pas gener boutons
+        a.badge-backg(href='#animation_descrip')
+          i#animation.skillbadge
+          span Animation
+        a.badge-backg(href='#fx_descrip')
+          i#fx.skillbadge
+          span Visualisation
+      video(controls='' loop='' autoplay='')
+        source(src='../assets/img/graphite final.mp4' type='video/mp4')
+      figcaption
+        | Graphite
+        br
+        | 2020
+    #verriere.project(style='background-color:#533ebf')
+      .project-main
+        a.without-caption.image-link(href='../assets/img/verrière bateau.jpg')
+          img(src='../assets/img/verrière bateau.jpg')
+        h2 Verri&egrave;re royale
+        li.badgebar
+          a.badge-backg(href='#surface_descrip')
+            i#surface.skillbadge
+          a.badge-backg(href='#generative_descrip')
+            i#generative.skillbadge
+          a.badge-backg(href='#modeling_descrip')
+            i#modeling.skillbadge
+          a.badge-backg(href='#fx_descrip')
+            i#fx.skillbadge
+        p
+          | Verri&egrave;re de la salle de bal d&apos;un bateau de croisi&egrave;re. D&eacute;cor de dessin anim&eacute; dans un style post-futuriste.
+          | Cette verri&egrave;re utilise une m&eacute;thode de mod&eacute;lisation encore jamais vue ailleurs. J&apos;ai r&eacute;alis&eacute;, &agrave; l&apos;aide de nodes, un syst&egrave;me de projection et d&eacute;tourage des motifs.
+      .sidescroll
+        a.without-caption.image-link(href='../assets/img/Salle de bal 1.jpg')
+          img(src='../assets/img/Salle de bal 1.jpg')
+        a.without-caption.image-link(href='../assets/img/Salle de bal 2.jpg')
+          img(src='../assets/img/Salle de bal 2.jpg')
+        a.without-caption.image-link(href='../assets/img/verrière bateau 1.jpg')
+          img(src='../assets/img/verrière bateau 1.jpg')
+        a.without-caption.image-link(href='../assets/img/verrière bateau 2.jpg')
+          img(src='../assets/img/verrière bateau 2.jpg')
+    .item
+      .badgelist
+        a.badge-backg(href='#graphic_descrip')
+          i#graphic.skillbadge
+          span Graphique
+        a.badge-backg(href='#animation_descrip')
+          i#animation.skillbadge
+          span Animation
+      a.without-caption.image-link(href='../assets/img/Princesse Cation tete 3quarts.jpg')
+        img(src='../assets/img/Princesse Cation tete 3quarts.jpg')
+      figcaption
+        | Princesse Cation
+        br
+        | Character design
+        br
+        | 2021
+    //
+      <img src="../assets/img/photo_2021-04-08_00-19-56.jpg" style="margin-bottom: .4em;">
+      <figcaption class ="legende">D'après photo</figcaption>
+    .item
+      .badgelist
+        a.badge-backg(href='#graphic_descrip')
+          i#graphic.skillbadge
+          span Graphique
+        a.badge-backg(href='#animation_descrip')
+          i#animation.skillbadge
+          span Animation
+      video(controls='' loop='' autoplay='')
+        source(src='../assets/img/fleur0001-0033.mp4' type='video/mp4')
+        | &#x9;&#x9;&#x9;&#x9;&#x9;Your browser does not support the video tag.
+      figcaption
+        | Animation traditionnelle
+        br
+        | 2016
+    #CAO.project(style='background-color:#c49c5c')
+      .project-main
+        a.without-caption.image-link(href='../assets/img/Guidon.jpg')
+          img(src='../assets/img/Guidon.jpg')
+        h2 CAO
+        li.badgebar
+          a.badge-backg(href='#suface_descrip')
+            i#surface.skillbadge
+          a.badge-backg(href='#modeling_descrip')
+            i#modeling.skillbadge
+        p
+      .sidescroll
+        a.without-caption.image-link(href='../assets/img/Broyeur.jpg')
+          img(src='../assets/img/Broyeur.jpg')
+        a.without-caption.image-link(href='../assets/img/cpas arrete.jpg')
+          img(src='../assets/img/cpas arrete.jpg')
+    //
+      <div class="duo">
+      <a href="../assets/img/foulard electro.jpg" class="without-caption image-link"><img src="../assets/img/foulard electro.jpg"></a>
+      <a href="../assets/img/foulard 2.jpg" class="without-caption image-link"><img src="../assets/img/foulard 2.jpg"></a>
+      </div>
+      <div class="duo">
+      <a href="../assets/img/Logo poly'painting 2020.jpg" class="without-caption image-link"><img src="../assets/img/Logo poly'painting 2020.jpg" class="round"></a>
+      <video class="" controls loop autoplay>
+      <source src="../assets/img/logo ruban.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+      </div>
+  #skills
+    #perspec_descrip.skill-descrip
+      .skill-title
+        a.badge-backg
+          i#perspec.skillbadge
+        h3 Dessin technique
+      p Exploration rapide des formes
+      p Perspectives
+    #surface_descrip.skill-descrip
+      .skill-title
+        a.badge-backg
+          i#surface.skillbadge
+        h3 Design de surfaces et de formes
+      p Contr&ocirc;le de la courbure, du rythme et de la dynamique
+      p Exploration structur&eacute;e des possibilit&eacute;s
+    #modeling_descrip.skill-descrip
+      .skill-title
+        a.badge-backg
+          i#modeling.skillbadge
+        h3 Mod&eacute;lisation 3D de pr&eacute;cision
+      p Maillage avanc&eacute;, CAO surfacique
+      p Blender, Solidworks
+    #fx_descrip.skill-descrip
+      .skill-title
+        a.badge-backg
+          i#fx.skillbadge
+        h3 Visualisation 3D avanc&eacute;e
+      p Rendering photor&eacute;aliste
+      p Shaders et mat&eacute;riaux
+      p Lighting
+      p Effets visuels
+    #generative_descrip.skill-descrip
+      .skill-title
+        a.badge-backg
+          i#generative.skillbadge
+        h3 Mod&eacute;lisation g&eacute;n&eacute;rative
+      p G&eacute;n&eacute;ration de mod&egrave;les 3D &agrave; partir de r&eacute;seaux de nodes
+      p Sur Blender fa&ccedil;on Grasshopper
+      p Permet pr&eacute;cision et flexibilit&eacute;
+    #graphic_descrip.skill-descrip
+      .skill-title
+        a.badge-backg
+          i#graphic.skillbadge
+        h3 Arts graphiques
+      p Graphisme
+      p Illustration
+      p Peinture digitale
+    #animation_descrip.skill-descrip
+      .skill-title
+        a.badge-backg
+          i#animation.skillbadge
+        h3 Animation
+      p Motion design
+      p Animation traditionnelle
+      p
+        | Storyboarding
+      p Character design
+footer
+  img(src='../assets/img/photo_portrait.jpg' style='height: 150px;')
+  p
+    b CONTACTEZ-MOI &emsp;:
+    |  &emsp; romainguimbal1@gmail.com
+// jQuery 3.6.0
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+// Magnific Popup core JS file
+script(src='assets/Js/jquery.magnific-popup.js')
+script(src='assets/Js/main.js')
+script.
+  $(function(){
+  $("#svg_icons").load("../assets/icons/icons_svg.html");
+  });
