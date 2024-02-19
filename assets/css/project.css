@@ -34,6 +34,7 @@
 }
 
 .project h2{
+	mix-blend-mode: multiply;
 	/* font-size: 4vw;à modif */
 	margin: 0 auto 0;
 	padding: .2em 0 .2em;

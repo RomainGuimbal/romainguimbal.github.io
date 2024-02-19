@@ -91,6 +91,12 @@ main video:hover:not(:focus){
 }
 
 
+.item spline-viewer{
+	width: 70em;
+	height: 80vh;
+}
+
+
 
 .trio{
 	display: grid;
@@ -124,11 +130,13 @@ main video:hover:not(:focus){
 	font: bold 12em "Poppins", sans-serif;
 	position: absolute;
 	margin: 0;
-	translate: ();
+	transform: translate(50%,-20%);
 	background-clip: text;
-	-webkit-text-strok: 0.05em transparent;
+	-webkit-text-strok: 0.05em gray;
 	/* linear-gradient(42deg, rgba(255,255,255,0) 12%, rgba(255, 255, 255, 0.663) 72%, rgba(255, 255, 255, 0.318) 100%); */
+	mix-blend-mode: overlay;
 }
+
 
 
 
