@@ -21,6 +21,7 @@ main
         include ./assets/html/items/sword.pug
 
         .item
+            h3.numero 2.
             .badgelist
                 a.badge-backg(href='#surface_descrip')
                     i#surface.skillbadge
@@ -42,6 +43,7 @@ main
 
 
         .item
+            h3.numero 3.
             .badgelist
                 a.badge-backg(href='#surface_descrip')
                     i#surface.skillbadge
@@ -60,6 +62,7 @@ main
                 | Render 2019
 
         .item
+            h3.numero 4.
             .badgelist
 
             a.without-caption.image-link(href="../assets/img/vaisseau scoot modif avril 2021.jpg")
@@ -68,6 +71,7 @@ main
                 | Le Marsouin
         
         .item
+            h3.numero 5.
             script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.53/build/spline-viewer.js")
             spline-viewer(url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
 
@@ -121,22 +125,22 @@ main
 
 
         .item
-        .badgelist
-            a.badge-backg(href='#modeling_descrip')
-                i#modeling.skillbadge
-                span Modélisation
-            a.badge-backg(href='#fx_descrip')
-                i#fx.skillbadge
-                span Visualisation
-            a.badge-backg(href='#animation_descrip')
-                i#animation.skillbadge
-                span Animation
-        a.without-caption.image-link(href='../assets/img/head sculpt.jpg')
-            img(src='../assets/img/head sculpt.jpg')
-        figcaption
-            | Head sculpt
-            br
-            | 2022
+            .badgelist
+                a.badge-backg(href='#modeling_descrip')
+                    i#modeling.skillbadge
+                    span Modélisation
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+                a.badge-backg(href='#animation_descrip')
+                    i#animation.skillbadge
+                    span Animation
+            a.without-caption.image-link(href='../assets/img/head sculpt.jpg')
+                img(src='../assets/img/head sculpt.jpg')
+            figcaption
+                | Head sculpt
+                br
+                | 2022
 
         include ./assets/html/items/porsche.pug
 
@@ -189,7 +193,6 @@ main
                 br
                 | 2022
             // <img src="../assets/img/eau 8.jpg">
-
 
         .item
             .badgelist(style='margin-bottom : 2em;')

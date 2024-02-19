@@ -79,6 +79,20 @@ main img, main video{
 	width : clamp(300px, 40%, 500px);
 }
 
+.item figcaption{
+    height: auto;
+    text-align: left;
+    margin: 0 0 0 1em ;
+    align-self: flex-end;
+    overflow: visible;
+    /* white-space: nowrap; */
+    color : rgb(124, 127, 161);
+    float: left;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+
 
 main img:hover:not(:focus),
 main video:hover:not(:focus){
@@ -94,6 +108,9 @@ main video:hover:not(:focus){
 .item spline-viewer{
 	width: 70em;
 	height: 80vh;
+	margin: 0em;
+    /* display: inline-block; */
+    position: relative;
 }
 
 
@@ -125,16 +142,53 @@ main video:hover:not(:focus){
 }
 
 
+.item{
+    margin: 3% auto 3%;
+    display: flex;
+    /* display : grid;
+    grid-template-columns: 20% auto 20%; */
+    /* width: clamp(400px, 40%, 600px);     */
+    width: fit-content;
+    height: auto;
+}
+
+.item .without-caption,
+.item video{
+    margin: 0 auto 0;
+}
+
+.item img{
+    margin: 0em;
+    /* display: inline-block; */
+    position: relative;
+}
+
+
+
 
 .numero{
 	font: bold 12em "Poppins", sans-serif;
+	text-align: left;
 	position: absolute;
 	margin: 0;
-	transform: translate(50%,-20%);
+	/* transform: translate(50%,-20%); */
 	background-clip: text;
-	-webkit-text-strok: 0.05em gray;
 	/* linear-gradient(42deg, rgba(255,255,255,0) 12%, rgba(255, 255, 255, 0.663) 72%, rgba(255, 255, 255, 0.318) 100%); */
 	mix-blend-mode: overlay;
+	line-height: 0.85em;
+}
+
+.project .numero{
+	color: #3d251233;
+	-webkit-text-stroke: 0.03em transparent;
+	background: linear-gradient(#3a2828,#eeefea);
+	background-clip: text;
+	padding: 0 0.25em;
+}
+
+.item .numero{
+	width: 50%;
+	text-align: center;
 }
 
 

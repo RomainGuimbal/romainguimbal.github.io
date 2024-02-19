@@ -3,7 +3,7 @@
 ------------------------------------------------------*/
 .project{
 	background-attachment:scroll;
-	width: 70%;
+	width: clamp(500px, 70%, 1000px);
 	padding: 3em 0;
 	margin: 3% auto 3%;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
