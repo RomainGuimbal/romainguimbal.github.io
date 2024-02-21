@@ -15,10 +15,20 @@
 	border-top: 1px solid;
 	border-bottom: 1px solid;
 	border-image-slice: 1;
-	border-image-source: linear-gradient(42deg, rgba(255,255,255,0) 12%, rgba(255, 255, 255, 0.663) 72%, rgba(255, 255, 255, 0.318) 100%); 
+	/* border-image-source: linear-gradient(42deg, rgba(255,255,255,0) 12%, rgba(255, 255, 255, 0.663) 72%, rgba(255, 255, 255, 0.318) 100%); 
 	
 	background-image: url("../img/canson paper texture.jpg");
 	background-size: cover;
+ */
+
+
+	background: url("../img/canson paper texture.jpg") 100%,
+		linear-gradient(42deg, var(--bg-color-dark,rgba(255,255,255,0)) 0%, var(--bg-color-light,rgba(255, 255, 255, 0.318)) 100%);
+	background-position: center center;
+	background-size: cover;
+	background-blend-mode:
+    	overlay,
+    	normal;
 }
 
 .project-main{
@@ -44,6 +54,8 @@
 	position:relative;
 	width :clamp(100%, 200%, 1000px);
 	right:clamp(25%, 50%, 250px);
+
+	background-image: linear-gradient(to right, #543f31,#eeefea);
 }
 
 @media(max-width:600px) {
@@ -52,7 +64,7 @@
 		width :100%;
 		right:0;
 	}
-} 
+}
 
 
 

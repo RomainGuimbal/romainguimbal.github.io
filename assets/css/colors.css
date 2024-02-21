@@ -132,52 +132,29 @@ main h2 {
 }
 
 #sword{
-	background-color: #083434;
-}
-#sword h2{
-	background-image: linear-gradient(to right, #a95f41,#a95f41, #10141e, #10141e);
+	--bg-color-dark: #083434;
+	--bg-color-light: #4db77d;
 }
 
 #porsche{
-	background:linear-gradient(-250deg, #838b96, rgb(63, 70, 105));
-}
-#porsche h2{
-	background-image: linear-gradient(to right, #3c3ab9,#3c3ab9, rgb(0, 4, 43), rgb(0, 4, 43));
+	--bg-color-dark: rgb(63, 70, 105);
+	--bg-color-light: #838b96;
 }
 
 #agrume{
-	background-color: #c28661;
-	 /*#bf6e79 */
-}
-
-#agrume h2{
-	background-image: linear-gradient(to right, #f2ede6,#f2ede6, rgb(255, 170, 44), rgb(255, 170, 44));
-}
-
-#agrume .fond-projet{
-	background-image :url("../img/multi sketch presse agrume.jpg");
-	filter : invert();
-	mix-blend-mode: difference;
-
+	--bg-color-light: #FFAA5B;
+	--bg-color-dark: #463063;
 }
 
 #archi-gene{
-	
-	/* background-image :url("../img/effet ecran nodes.jpg"); */
-	/* background-color: rgb(46, 103, 63); */
-	background:linear-gradient(-250deg, rgb(40, 92, 55), rgb(33, 108, 83));
-	background-repeat: no-repeat;
-  	background-size: cover;
-	background-position: center;
+	--bg-color-light: rgb(128, 189, 109);
+	--bg-color-dark: rgb(26, 99, 43);
 }
 
-#archi-gene h2{
-	background-image: linear-gradient(to right, #26a288,#26a288, #5ae891, #5ae891);
-}
-
+/*
 #verriere h2{
 	background-image: linear-gradient(153deg, rgba(255,231,173,1) 17%, rgba(205,187,143,1) 45%, rgba(135,166,255,1) 76%); 
-}
+} */
 
 
 /* header h1:hover{

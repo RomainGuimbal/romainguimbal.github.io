@@ -106,9 +106,11 @@ main video:hover:not(:focus){
 
 
 .item spline-viewer{
-	width: 70em;
+	width: 80vw;
+	/* width: 70em; */
 	height: 80vh;
-	margin: 0em;
+	/* height: auto; */
+	margin: 0 auto;
     /* display: inline-block; */
     position: relative;
 }
@@ -190,8 +192,6 @@ main video:hover:not(:focus){
 	width: 50%;
 	text-align: center;
 }
-
-
 
 
 
