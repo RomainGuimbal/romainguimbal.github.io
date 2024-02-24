@@ -16,12 +16,15 @@ header
 main
     .container
         //- Ajoute tabindex="0" aux images pour leur permettre de capturer le focus
-       
-
         #iceberg
             script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.54/build/spline-viewer.js")
             spline-viewer(url="https://prod.spline.design/Y1LkSYIcXCE5tM9S/scene.splinecode")
-            p 100 créations personnelles
+            .legend    
+                .legend-attach-line
+                p.t
+                    span.big-num 100 
+                    br
+                    span.cre créations personnelles
 
         include ./assets/html/items/sword.pug
 
@@ -81,12 +84,14 @@ main
             spline-viewer(url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
 
         //-
-            <div class="trio">
-                <a href="../assets/img/voiture 2019 front copy.jpg" class="without-caption image-link"><img src="../assets/img/voiture 2019 front copy.jpg"></a>
-                <a href="../assets/img/voiture 2019 side copy.jpg" class="without-caption image-link"><img src="../assets/img/voiture 2019 side copy.jpg"></a>
-                <a href="../assets/img/voiture 2019 back copy.jpg" class="without-caption image-link"><img src="../assets/img/voiture 2019 back copy.jpg"></a>
-            </div>
-        
+            .trio
+                a.without-caption.image-link(href='../assets/img/voiture 2019 front copy.jpg')
+                    img(src='../assets/img/voiture 2019 front copy.jpg')
+                a.without-caption.image-link(href='../assets/img/voiture 2019 side copy.jpg')
+                    img(src='../assets/img/voiture 2019 side copy.jpg')
+                a.without-caption.image-link(href='../assets/img/voiture 2019 back copy.jpg')
+                    img(src='../assets/img/voiture 2019 back copy.jpg')
+                        
         include ./assets/html/items/agrume.pug
 
         .item
@@ -185,7 +190,7 @@ main
             .badgelist
                 a.badge-backg(href='#modeling_descrip')
                     i#modeling.skillbadge
-                    span Mod&eacute;lisation
+                    span Modélisation
                 a.badge-backg(href='#fx_descrip')
                     i#fx.skillbadge
                     span Visualisation
@@ -200,7 +205,7 @@ main
             .badgelist
                 a.badge-backg(href='#modeling_descrip')
                     i#modeling.skillbadge
-                    span Mod&eacute;lisation
+                    span Modélisation
                 a.badge-backg(href='#fx_descrip')
                     i#fx.skillbadge
                     span Visualisation
@@ -230,8 +235,20 @@ main
                 br
                 | 2020
 
+        .item
+            .badgelist
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+            .duo
+                video(controls='' loop='' autoplay='')
+                    source(src='../assets/img/diamant holo 20001-0149.mp4' type='video/mp4')
+                video(controls='' loop='' autoplay='')
+                    source(src='../assets/img/diamant bleu0001-0149.mp4' type='video/mp4')
+            figcaption
+
         include ./assets/html/items/verriere.pug
-             
+
         .item
             .badgelist
                 a.badge-backg(href='#graphic_descrip')
@@ -281,7 +298,6 @@ main
                     span Animation
             video(controls='' loop='' autoplay='')
                 source(src='../assets/img/fleur0001-0033.mp4' type='video/mp4')
-                | &#x9;&#x9;&#x9;&#x9;&#x9;Your browser does not support the video tag.
             figcaption
                 | Animation traditionnelle
                 br
@@ -290,15 +306,6 @@ main
         
         include ./assets/html/items/surfacepsycho.pug
         include ./assets/html/items/CAO.pug
-
-        //-
-            <div class="duo">
-            <a href="../assets/img/Logo poly'painting 2020.jpg" class="without-caption image-link"><img src="../assets/img/Logo poly'painting 2020.jpg" class="round"></a>
-            <video class="" controls loop autoplay>
-            <source src="../assets/img/logo ruban.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-            </video>
-            </div>
 
         include ./assets/html/skills.pug
 
