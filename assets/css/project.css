@@ -1,3 +1,31 @@
+#sword{
+	--bg-color-dark: #083434;
+	--bg-color-light: #4db77d;
+}
+
+#porsche{
+	--bg-color-dark: rgb(63, 70, 105);
+	--bg-color-light: #838b96;
+}
+
+#agrume{
+	--bg-color-light: #FFAA5B;
+	--bg-color-dark: #463063;
+}
+
+#archi-gene{
+	--bg-color-light: rgb(128, 189, 109);
+	--bg-color-dark: rgb(26, 99, 43);
+}
+
+/*
+#verriere h2{
+	background-image: linear-gradient(153deg, rgba(255,231,173,1) 17%, rgba(205,187,143,1) 45%, rgba(135,166,255,1) 76%); 
+} */
+
+
+
+
 /*-----------------------------------------------------
 # Project
 ------------------------------------------------------*/
@@ -22,7 +50,7 @@
  */
 
 
-	background: url("../img/canson paper texture.jpg") 100%,
+	background: url("../img/canson paper texture.jpg") 80%,
 		linear-gradient(42deg, var(--bg-color-dark,rgba(255,255,255,0)) 0%, var(--bg-color-light,rgba(255, 255, 255, 0.318)) 100%);
 	background-position: center center;
 	background-size: cover;
@@ -91,3 +119,5 @@
 	background-size: cover;
  	background-position: center;
 }
+
+

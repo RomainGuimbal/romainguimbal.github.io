@@ -105,16 +105,27 @@ main video:hover:not(:focus){
 }
 
 
-.item spline-viewer{
-	width: 80vw;
+spline-viewer{
+	/* width: 80vw; */
 	/* width: 70em; */
 	height: 80vh;
-	/* height: auto; */
+	
 	margin: 0 auto;
     /* display: inline-block; */
     position: relative;
 }
 
+#iceberg{
+	width: fit-content;
+	margin: 0 auto;
+}
+#iceberg p{
+	width: fit-content;
+	position: absolute;
+}
+#iceberg spline-viewer{
+	height: auto;
+}
 
 
 .trio{
@@ -130,17 +141,17 @@ main video:hover:not(:focus){
 }
 
 .duo{
-	display: grid;
-	grid-template-columns: repeat(2,1fr);
+	/* display: grid;
+	grid-template-columns: repeat(2,1fr); */
+	display:flex;
 	column-gap: 0.5em;
 	height : auto;
-	width : clamp(25em, 60%, 1700px);
-	margin: 3% auto 3%;
-	text-align: right;
+	width : clamp(300px, 40%, 500px);
+	margin: 0;
 }
 
 .duo img:not(:focus){
-	width: clamp(100px, 100%, 600px);
+	width: 100%;
 }
 
 

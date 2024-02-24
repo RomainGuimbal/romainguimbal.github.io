@@ -131,32 +131,6 @@ main h2 {
 	color: transparent;
 }
 
-#sword{
-	--bg-color-dark: #083434;
-	--bg-color-light: #4db77d;
-}
-
-#porsche{
-	--bg-color-dark: rgb(63, 70, 105);
-	--bg-color-light: #838b96;
-}
-
-#agrume{
-	--bg-color-light: #FFAA5B;
-	--bg-color-dark: #463063;
-}
-
-#archi-gene{
-	--bg-color-light: rgb(128, 189, 109);
-	--bg-color-dark: rgb(26, 99, 43);
-}
-
-/*
-#verriere h2{
-	background-image: linear-gradient(153deg, rgba(255,231,173,1) 17%, rgba(205,187,143,1) 45%, rgba(135,166,255,1) 76%); 
-} */
-
-
 /* header h1:hover{
 	color:#403dff;
 } */
@@ -179,24 +153,9 @@ main h2 {
 	transition: all 0s linear;
 }
 
-
-
-
-
 .skill-title{
 	color: rgb(160, 141, 255);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*-----------------------------------------------------

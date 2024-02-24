@@ -1,7 +1,7 @@
 /*-----------------------------------------------------
 # Header
 ------------------------------------------------------*/
-header{
+/* header{
 	width : 100%;
 	height: 10em;
 	position: relative;
@@ -11,8 +11,31 @@ header{
 	z-index: 1;
 	display:flow-root;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+} */
+
+#header_ribbon{
+	width : 100%;
+	height: 10em;
+	position: relative;
+	background-color: black;
+    overflow: hidden;
+	margin: 0 auto 1em;
+	/* z-index: 1; */
+	display:flow-root;
+	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+	
+	animation-timeline: view(0 100vh);
+	animation-name: depth-effect;
+	/* animation-range: exit-crossing exit; */
+	/* for firefox rrrr */
+	animation-duration: 1ms;
 }
 
+@keyframes depth-effect {
+	from{transform: translateY(0);}
+
+	to{ transform: translateY(-10em);}
+}
 
 
 header #bg{
@@ -55,14 +78,16 @@ header h3{
 
 
 #page-title{
-    position: relative;
+	background-color: black;
+	border-radius: 999px;
+    position: fixed;
     display: flex;
     width: fit-content;
 	align-items: center;
 	justify-content: center;
 	z-index:2;
-	margin: 0 auto;
-	right: 30%;
+	top: 0;
+	left: 10vw;
 }
 
 @media(max-width:1100px) {
@@ -81,9 +106,10 @@ header h3{
 #page-title img{
 	width: 7rem;
 	height: 7rem;
+	border-radius: 50% 0 0 50%;
 	display: inline-block;
 	object-fit: cover;
-	margin : auto;
+	padding-left :2em;
 }
 
 /* #page-title img::content{
@@ -97,8 +123,9 @@ header h3{
     width: fit-content;
     text-align: left;
     float: left;
-    margin : 2em;
+    margin : 2.5em 2.5em 2.1em 1em;
 	list-style-type: none;
+	transform: translate(0, 0);
 }
 
 
@@ -115,8 +142,8 @@ header h1{
 #romain{
 	font-family:"Poppins", sans-serif;
 	font-weight: 200;
-	font-size: 2.1em;;
-    line-height: 38px;
+	font-size: 1.25em;;
+    line-height: 1.2em;
 	margin: 0;
     letter-spacing: 0.245em;
     color: #FFFFFF;
@@ -125,8 +152,8 @@ header h1{
 #guimbal{
 	font-family:"Poppins", sans-serif;
 	font-weight: 500;
-	font-size: 2.5em;
-	line-height: 1em;
+	font-size: 1.5em;
+	line-height: 1.2em;
 	letter-spacing: -0.04em;
 	color: #3039FF;
 	text-shadow: 0px 0px 0.5em #0011ff;
@@ -136,11 +163,11 @@ header h1{
 header h2{
 	font-weight: 500;
 	font-size: 0.5em;
-	line-height: 15px;
+	line-height: 1.2em;
 	letter-spacing: 0.095em;
 	text-align: left;
-	position: absolute;
-	right: 16.2em;
+	/* position: absolute; */
+	/* right: 16.2em; */
 }
 
 

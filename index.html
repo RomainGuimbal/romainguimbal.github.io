@@ -22,7 +22,10 @@
   <link rel="icon" href="assets/img/favicon.png">
   <div id="svg_icons" style="position:fixed"></div>
 </head>
-<header><img id="bg" src="../assets/img/drop.jpg">
+<header>
+  <div id="header_ribbon"><img id="bg" src="../assets/img/drop.jpg">
+    <h3>Design - Ingénierie - 3D - Art graphique</h3>
+  </div>
   <div id="page-title"><img src="../assets/img/drop.jpg">
     <li>
       <h1 id="romain">Romain</h1>
@@ -30,11 +33,14 @@
       <h2>Portfolio 2024</h2>
     </li>
   </div>
-  <h3>Design - Ingénierie - 3D - Art graphique</h3>
 </header>
 <main>
   <div class="container">
-    <h1>100 créations personnelles</h1>
+    <div id="iceberg">
+      <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.54/build/spline-viewer.js"></script>
+      <spline-viewer url="https://prod.spline.design/Y1LkSYIcXCE5tM9S/scene.splinecode"></spline-viewer>
+      <p>100 créations personnelles</p>
+    </div>
     <div class="project" id="sword">
       <h3 class="numero">1.</h3>
       <div class="project-main">
@@ -42,7 +48,7 @@
           <source src="../assets/img/Sword 2017 3D 20230001-0100.mp4" type="video/mp4">
         </video>
         <h2>Garde d'épée cuivre</h2>
-        <li class="badgebar"><a class="badge-backg" href="#surface_descrip"><i class="skillbadge" id="surface"></i></a><a class="badge-backg" href="#modeling_descrip"><i class="skillbadge" id="modeling"></i></a><a class="badge-backg" href="#fx_descrip"><i class="skillbadge" id="fx"></i></a></li>
+        <li class="badgebar"><a class="badge-backg" href="#surface_descrip"><i class="skillbadge" id="surface"></i></a><a class="badge-backg" href="#fx_descrip"><i class="skillbadge" id="fx"></i></a></li>
         <p></p>
       </div>
       <div class="sidescroll"><a class="without-caption image-link" href="../assets/img/Sword 2017 3D 2023 close1.jpg"><img src="../assets/img/Sword 2017 3D 2023 close1.jpg"></a><a class="without-caption image-link" href="../assets/img/Sword 2017 3D 2023 close2.jpg"><img src="../assets/img/Sword 2017 3D 2023 close2.jpg"></a><a class="without-caption image-link" href="../assets/img/Sword 2017 3D 2023 HD.jpg"><img src="../assets/img/Sword 2017 3D 2023 HD.jpg"></a></div>
@@ -134,12 +140,17 @@
       </div>
     </div>
     <div class="item">
+      <div class="badgelist"><a class="badge-backg" href="#graphic_descrip"><i class="skillbadge" id="fx"></i><span>Graphique</span></a></div>
+      <div class="duo"><a class="without-caption image-link" href="../assets/img/foulard electro.jpg"><img src="../assets/img/foulard electro.jpg"></a><a class="without-caption image-link" href="../assets/img/foulard 2.jpg"><img src="../assets/img/foulard 2.jpg"></a></div>
+      <figcaption>Foulard carte électronique<br>2015</figcaption>
+    </div>
+    <div class="item">
       <div class="badgelist"><a class="badge-backg" href="#modeling_descrip"><i class="skillbadge" id="modeling"></i><span>Mod&eacute;lisation</span></a><a class="badge-backg" href="#fx_descrip"><i class="skillbadge" id="fx"></i><span>Visualisation</span></a></div><a class="without-caption image-link" href="../assets/img/shoes sim 4.jpg"><img src="../assets/img/shoes sim 4.jpg"></a>
       <figcaption>Premier personnage 3D<br>2018</figcaption>
     </div>
     <div class="item">
       <div class="badgelist"><a class="badge-backg" href="#modeling_descrip"><i class="skillbadge" id="modeling"></i><span>Mod&eacute;lisation</span></a><a class="badge-backg" href="#fx_descrip"><i class="skillbadge" id="fx"></i><span>Visualisation</span></a></div><a class="without-caption image-link" href="../assets/img/Maciek Jasik studdy 2.jpg"><img src="../assets/img/Maciek Jasik studdy 2.jpg"></a>
-      <figcaption>Dissolution<br>Flou-net fa&ccedil;on Maciek Jasik<br>2022</figcaption>
+      <figcaption>Dissolution<br>Flou-net façon Maciek Jasik<br>2022</figcaption>
       <!-- <img src="../assets/img/eau 8.jpg">-->
     </div>
     <div class="item">
@@ -164,6 +175,10 @@
       <div class="badgelist"><a class="badge-backg" href="#graphic_descrip"><i class="skillbadge" id="graphic"></i><span>Graphique</span></a><a class="badge-backg" href="#animation_descrip"><i class="skillbadge" id="animation"></i><span>Animation</span></a></div><a class="without-caption image-link" href="../assets/img/Princesse Cation tete 3quarts.jpg"><img src="../assets/img/Princesse Cation tete 3quarts.jpg"></a>
       <figcaption>Princesse Cation<br>Character design<br>2021</figcaption>
     </div>
+    <div class="item">
+      <div class="badgelist"><a class="badge-backg" href="#graphic_descrip"><i class="skillbadge" id="graphic"></i><span>Graphique</span></a><a class="badge-backg" href="#animation_descrip"><i class="skillbadge" id="animation"></i><span>Animation</span></a></div><a class="without-caption image-link" href="../assets/img/Prince des murs.jpg"><img src="../assets/img/Prince des murs.jpg"></a>
+      <figcaption>Prince des murs<br>Peinture numérique<br>2023</figcaption>
+    </div>
     <!--
     <img src="../assets/img/photo_2021-04-08_00-19-56.jpg" style="margin-bottom: .4em;">
     <figcaption class ="legende">D'après photo</figcaption>
@@ -175,6 +190,18 @@
         <source src="../assets/img/fleur0001-0033.mp4" type="video/mp4">&#x9;&#x9;&#x9;&#x9;&#x9;Your browser does not support the video tag.
       </video>
       <figcaption>Animation traditionnelle<br>2016</figcaption>
+    </div>
+    <div class="project" id="surfacepsycho">
+      <h3 class="numero">1.</h3>
+      <div class="project-main">
+        <video controls="" loop="" autoplay="">
+          <source src="../assets/img/SP - G4 continuity.mp4" type="video/mp4">
+        </video>
+        <h2>SurfacePsycho surface-design tool</h2>
+        <li class="badgebar"><a class="badge-backg" href="#surface_descrip"><i class="skillbadge" id="surface"></i></a><a class="badge-backg" href="#modeling_descrip"><i class="skillbadge" id="modeling"></i></a><a class="badge-backg" href="#fx_descrip"><i class="skillbadge" id="fx"></i></a></li>
+        <p></p>
+      </div>
+      <div class="sidescroll"><a class="without-caption image-link" href="../assets/img/SP hanger viewport.jpg"><img src="../assets/img/SP hanger viewport.jpg"></a><a class="without-caption image-link" href="../assets/img/SP hanger SW.jpg"><img src="../assets/img/SP hanger SW.jpg"></a><a class="without-caption image-link" href="../assets/img/SP cover.jpg"><img src="../assets/img/SP cover.jpg"></a><a class="without-caption image-link" href="../assets/img/SP screenshot1.jpg"><img src="../assets/img/SP screenshot1.jpg"></a></div>
     </div>
     <div class="project" id="CAO" style="background-color:#c49c5c">
       <div class="project-main"><a class="without-caption image-link" href="../assets/img/Guidon.jpg"><img src="../assets/img/Guidon.jpg"></a>
