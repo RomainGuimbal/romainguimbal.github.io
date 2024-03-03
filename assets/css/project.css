@@ -45,12 +45,12 @@
 	border-image-slice: 1;
 	/* border-image-source: linear-gradient(42deg, rgba(255,255,255,0) 12%, rgba(255, 255, 255, 0.663) 72%, rgba(255, 255, 255, 0.318) 100%); 
 	
-	background-image: url("../img/canson paper texture.jpg");
+	background-image: url("../img/canson paper texture SD.jpg");
 	background-size: cover;
  */
 
 
-	background: url("../img/canson paper texture.jpg") 80%,
+	background: url("../img/canson paper texture SD.jpg") 80%,
 		linear-gradient(42deg, var(--bg-color-dark,rgba(255,255,255,0)) 0%, var(--bg-color-light,rgba(255, 255, 255, 0.318)) 100%);
 	background-position: center center;
 	background-size: cover;

@@ -226,8 +226,13 @@ spline-viewer{
 }
 
 .item .numero{
-	width: 50%;
-	text-align: center;
+	position: absolute;
+	/* transform: translate(50%, 0); */
+	transform: translate(-50vw, 0);
+	right: clamp(150px, 20%, 250px);
+	/* right: clamp(calc(50vw+150px), calc(50vw+20%), calc(50vw+250px)); */
+	/* width: 50%; */
+	text-align: right;
 }
 
 
@@ -235,17 +240,17 @@ spline-viewer{
 .sidescroll{
 	overflow: auto;
 	white-space: nowrap;
-	/* display: inline-flex; */
+	display: inline-flex;
+	column-gap: 0.5em;
 	/* display: inline-block; */
 }
 
 .sidescroll img,
 .sidescroll video{
-	column-gap: 0.5em;
 	display: inline-block;
 	height: 10em;
 	width : auto;
-	/* max-width: 15em; */
+	max-width: 15em;
 	object-fit: cover;
 	margin : 0 auto 0;
 }
