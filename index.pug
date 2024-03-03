@@ -19,7 +19,7 @@ main
         #iceberg
             script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.54/build/spline-viewer.js")
             spline-viewer(url="https://prod.spline.design/Y1LkSYIcXCE5tM9S/scene.splinecode")
-            .legend    
+            .legend
                 .legend-attach-line
                 p.t
                     span.big-num 100 
@@ -48,7 +48,6 @@ main
                 | Render 2022
                 br
                 | Model 2016
-
 
         .item
             h3.numero
@@ -118,6 +117,24 @@ main
                     | 2022
                     br
                     | Musique : Vibin' Out - FKJ, ((( O )))
+        
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#graphic_descrip')
+                    i#graphic.skillbadge
+                    span Graphique
+                a.badge-backg(href='#animation_descrip')
+                    i#animation.skillbadge
+                    span Animation
+            a.without-caption.image-link(href='../assets/img/Prince des murs.jpg')
+                img(src='../assets/img/Prince des murs.jpg')
+            figcaption
+                | Prince des murs
+                br
+                | Peinture numérique
+                br
+                | 2023
 
         .item
             h3.numero
@@ -255,8 +272,43 @@ main
                 video(controls='' loop='' autoplay='')
                     source(src='../assets/img/diamant bleu0001-0149.mp4' type='video/mp4')
             figcaption
+                | Diamants en duo
+                br
+                | 2020
 
         include ./assets/html/items/verriere.pug
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#graphic_descrip')
+                    i#graphic.skillbadge
+                    span Graphique
+                a.badge-backg(href='#generative_descrip')
+                    i#generative.skillbadge
+                    span Modélisation générative
+            a.without-caption.image-link(href='../assets/img/Carte de voeuuu23 3.jpg')
+                img(src='../assets/img/Carte de voeuuu23 3.jpg')
+            figcaption
+                | Carte de Voeux
+                br
+                | 2023
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#graphic_descrip')
+                    i#graphic.skillbadge
+                    span Graphique
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+            a.without-caption.image-link(href='../assets/img/inviit.jpg')
+                img(src='../assets/img/inviit.jpg')
+            figcaption
+                | Fond de carton d'invitation
+                br
+                | 2018
 
         .item
             h3.numero
@@ -276,23 +328,7 @@ main
                 br
                 | 2021
         
-        .item
-            h3.numero
-            .badgelist
-                a.badge-backg(href='#graphic_descrip')
-                    i#graphic.skillbadge
-                    span Graphique
-                a.badge-backg(href='#animation_descrip')
-                    i#animation.skillbadge
-                    span Animation
-            a.without-caption.image-link(href='../assets/img/Prince des murs.jpg')
-                img(src='../assets/img/Prince des murs.jpg')
-            figcaption
-                | Prince des murs
-                br
-                | Peinture numérique
-                br
-                | 2023
+
         
         
         //
@@ -314,8 +350,7 @@ main
                 | Animation traditionnelle
                 br
                 | 2016
-        
-        
+
         include ./assets/html/items/surfacepsycho.pug
         include ./assets/html/items/CAO.pug
 

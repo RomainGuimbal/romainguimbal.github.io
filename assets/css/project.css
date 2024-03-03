@@ -74,16 +74,23 @@
 .project h2{
 	mix-blend-mode: multiply;
 	/* font-size: 4vw;à modif */
-	margin: 0 auto 0;
-	padding: .2em 0 .2em;
+	margin: .2em auto .2em;
 	text-align: center;
-	font: bold 4em "Poppins", sans-serif;
+	font: 300 4em "Poppins", sans-serif;
 	line-height: 0.9em;
 	position:relative;
 	width :clamp(100%, 200%, 1000px);
 	right:clamp(25%, 50%, 250px);
 
-	background-image: linear-gradient(to right, #543f31,#eeefea);
+	/* background-image: linear-gradient(to right, #543f31,#eeefea); */
+
+	mix-blend-mode: overlay;
+
+	color: #3d251233;
+	-webkit-text-stroke: 0.3rem transparent;
+	background: linear-gradient(to right,#735656,#74766a);
+	background-clip: text;
+	padding: 0 0.25em;
 }
 
 @media(max-width:600px) {

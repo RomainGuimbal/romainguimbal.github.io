@@ -139,8 +139,8 @@ spline-viewer{
 	display: grid;
 	grid-template-columns: repeat(2,1fr);
 	top: 13rem;
-	right:5rem;
-	height: 10%;
+	transform: translate(-50%, -50%);
+	right: -5rem;
 }
 .big-num{
 	font-size: 2.5em;
@@ -210,7 +210,6 @@ spline-viewer{
 	text-align: left;
 	position: absolute;
 	margin: 0;
-	/* transform: translate(50%,-20%); */
 	background-clip: text;
 	/* linear-gradient(42deg, rgba(255,255,255,0) 12%, rgba(255, 255, 255, 0.663) 72%, rgba(255, 255, 255, 0.318) 100%); */
 	mix-blend-mode: overlay;
@@ -219,7 +218,7 @@ spline-viewer{
 
 .project .numero{
 	color: #3d251233;
-	-webkit-text-stroke: 0.03em transparent;
+	-webkit-text-stroke: 0.3rem transparent;
 	background: linear-gradient(#3a2828,#eeefea);
 	background-clip: text;
 	padding: 0 0.25em;
@@ -227,11 +226,8 @@ spline-viewer{
 
 .item .numero{
 	position: absolute;
-	/* transform: translate(50%, 0); */
 	transform: translate(-50vw, 0);
 	right: clamp(150px, 20%, 250px);
-	/* right: clamp(calc(50vw+150px), calc(50vw+20%), calc(50vw+250px)); */
-	/* width: 50%; */
 	text-align: right;
 }
 
@@ -240,7 +236,7 @@ spline-viewer{
 .sidescroll{
 	overflow: auto;
 	white-space: nowrap;
-	display: inline-flex;
+	/* display: inline-flex; */
 	column-gap: 0.5em;
 	/* display: inline-block; */
 }
