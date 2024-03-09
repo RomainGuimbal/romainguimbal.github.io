@@ -112,9 +112,11 @@ spline-viewer{
 }
 
 #iceberg{
-	width: fit-content;
+	width: 100vw;
+	overflow: hidden;
 	height: fit-content;
 	margin: 0 auto;
+
 }
 #iceberg p{
 	font: 100 2.5em "Poppins", sans-serif;
@@ -132,12 +134,18 @@ spline-viewer{
 	/* margin: 5em auto; */
 }
 #iceberg .legend{
-	position: absolute;
+	position: relative;
 	display: grid;
 	grid-template-columns: repeat(2,1fr);
-	top: 13rem;
-	transform: translate(-50%, -50%);
-	right: -5rem;
+	margin: auto;
+	/* top: 13rem; */
+	transform: translate(15em, -25em); */
+	/* right: -5rem; */
+}
+
+#iceberg-container{
+	width: fit-content;
+	margin: 0 auto;
 }
 .big-num{
 	font-size: 2.5em;
@@ -218,7 +226,7 @@ spline-viewer{
 	-webkit-text-stroke: 0.3rem transparent;
 	background: linear-gradient(#775e5e,#eeefea);
 	background-clip: text;
-	padding: 0 0.25em;
+	padding: 0 2.5rem;
 }
 
 .item .numero{
@@ -234,7 +242,7 @@ spline-viewer{
 	overflow: auto;
 	white-space: nowrap;
 	/* display: inline-flex; */
-	column-gap: 0.5em;
+	/* column-gap: 0.5em; */
 	/* display: inline-block; */
 	scrollbar-color: #e9e9e977 transparent;
 	scrollbar-width: thin;
@@ -247,7 +255,7 @@ spline-viewer{
 	width : auto;
 	max-width: 15em;
 	object-fit: cover;
-	margin : 0 auto 0;
+	margin : 0 0.2em 0;
 }
 
 @media(max-width: 1000px) {
@@ -285,12 +293,13 @@ spline-viewer{
 
 #skills{
 	margin:5% auto 5%;
-	width : clamp(300px, 40%, 500px);
+	width : clamp(300px, 30rem, 500px);
 	text-align: left;
 }
 
 .skill-descrip{
 	margin : 5% auto;
+	/* width: 30em; */
 }
 
 .skill-descrip .skill-title{
@@ -308,7 +317,7 @@ spline-viewer{
 	padding-left: 4.2em;
 	text-align: justify;
 	text-justify: auto;
-	margin: 0.2em;
+	margin: 0.4em;
 }
 
 
@@ -319,14 +328,14 @@ footer{
 	padding : 0.1vh;
 	box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.2);
 	width: 100%;
-	height: 200px;
+	height: fit-content;
 	margin: auto;
 }
-footer p{
+/* footer p{
 	width: 15%;
 	float: left;
-}
-footer img{
+} */
+/* footer img{
 	margin-left: 15%;
 	height: 200px;
-}
+} */

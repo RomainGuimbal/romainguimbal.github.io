@@ -37,7 +37,7 @@
 .project{
 	background-attachment:scroll;
 	width: clamp(500px, 70%, 1000px);
-	padding: 3em 0;
+	padding: 2.5em 0;
 	margin: 3% auto 3%;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 	
@@ -45,14 +45,15 @@
 	box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+	border-radius: 3px;
 	border-top: 1px solid;
 	border-bottom: 1px solid;
 	border-image-slice: 1;
-	/* border-image-source: linear-gradient(42deg, rgba(255,255,255,0) 12%, rgba(255, 255, 255, 0.663) 72%, rgba(255, 255, 255, 0.318) 100%); 
-	
-	background-image: url("../img/canson paper texture SD.jpg");
-	background-size: cover;
- */
+	border-image-source: 
+		linear-gradient(42deg, 
+		rgba(255,255,255,0) 12%,
+		rgba(255, 255, 255, 0.053) 72%,
+		rgba(255, 255, 255, 0.118) 100%);
 
 
 	background: url("../img/canson paper texture SD.jpg") 80%,

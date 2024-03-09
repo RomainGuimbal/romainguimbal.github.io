@@ -16,16 +16,18 @@ header
 main
     .container
         //- Ajoute tabindex="0" aux images pour leur permettre de capturer le focus
-        #iceberg
-            p ça n'est que le sommet de l'iceberg
-            script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js")
-            spline-viewer(url="https://prod.spline.design/Y1LkSYIcXCE5tM9S/scene.splinecode")
-            .legend
-                .legend-attach-line
-                p.t
-                    span.big-num 100 
-                    br
-                    span.cre créations personnelles
+        
+        //- #iceberg
+        //-     //- p ça n'est que le sommet de l'iceberg
+        //-     script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js")
+        //-     #iceberg-container
+        //-         spline-viewer(url="https://prod.spline.design/Y1LkSYIcXCE5tM9S/scene.splinecode")
+        //-     .legend
+        //-         .legend-attach-line
+        //-         p.t
+        //-             span.big-num 100 
+        //-             br
+        //-             span.cre créations personnelles
 
         include ./assets/html/items/sword.pug
 
@@ -355,13 +357,20 @@ main
         include ./assets/html/items/surfacepsycho.pug
         include ./assets/html/items/CAO.pug
 
-        include ./assets/html/skills.pug
-        img(src='../assets/img/photo_portrait.jpg' style='height:20em; width: 20em; object-fit: cover; border-radius: 10000px; ')
-    
+            
 footer
-    p
-        b CONTACTEZ-MOI &emsp;:
-        |  &emsp; romainguimbal1@gmail.com
+    
+    
+    .item
+        .duo(style='margin:0 auto; width:auto; column-gap:10em;')
+            .container
+                img(src='../assets/img/photo_portrait.jpg' style='height:20em; width: 20em; object-fit: cover; border-radius: 10000px; ')
+                p
+                    b CONTACT &emsp;:
+                    |  &emsp; romainguimbal1@gmail.com
+
+            .container(style='width:auto')
+                include ./assets/html/skills.pug
 
 // jQuery 3.6.0
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
