@@ -17,7 +17,8 @@ main
     .container
         //- Ajoute tabindex="0" aux images pour leur permettre de capturer le focus
         #iceberg
-            script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.54/build/spline-viewer.js")
+            p ça n'est que le sommet de l'iceberg
+            script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js")
             spline-viewer(url="https://prod.spline.design/Y1LkSYIcXCE5tM9S/scene.splinecode")
             .legend
                 .legend-attach-line
@@ -79,7 +80,7 @@ main
         
         .item
             h3.numero
-            script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.53/build/spline-viewer.js")
+            //- script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.53/build/spline-viewer.js")
             spline-viewer(url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
 
         //-
@@ -355,9 +356,9 @@ main
         include ./assets/html/items/CAO.pug
 
         include ./assets/html/skills.pug
-
+        img(src='../assets/img/photo_portrait.jpg' style='height:20em; width: 20em; object-fit: cover; border-radius: 10000px; ')
+    
 footer
-    img(src='../assets/img/photo_portrait.jpg' style='height: 150px;')
     p
         b CONTACTEZ-MOI &emsp;:
         |  &emsp; romainguimbal1@gmail.com
