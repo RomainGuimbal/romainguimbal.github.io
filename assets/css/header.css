@@ -24,17 +24,11 @@
 	display:flow-root;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 	
-	animation-timeline: view(0 100vh);
+	animation-timeline: view(-1px 10px);
 	animation-name: depth-effect;
-	/* animation-range: exit-crossing exit; */
-	/* for firefox rrrr */
+	/* animation-range: exit-crossing exit;
+	/* for firefox rrrr*/
 	animation-duration: 1ms;
-}
-
-@keyframes depth-effect {
-	from{transform: translateY(0);}
-
-	to{ transform: translateY(-10em);}
 }
 
 
@@ -50,6 +44,8 @@ header #bg{
 	opacity: 80%;
 	transform: translate(-10%,-47%);
 }
+
+
 
 @media(max-width:700px) {
 	header{
@@ -88,7 +84,27 @@ header h3{
 	z-index:2;
 	top: 0;
 	left: 3vw;
+
+
+
+	/* animation-timeline: view(0 100vh); */
+	animation-name: depth-effect;
+	animation-range: exit-crossing exit;
+	/* for firefox rrrr */
+	animation-duration: 1000ms;
 }
+
+@keyframes depth-effect {
+	from{transform: translateY(0em);
+		background-color: black;
+	}
+
+	to{ transform: translateY(-20em);
+		background-color: white;
+	}
+}
+
+
 
 @media(max-width:1100px) {
 	#page-title{

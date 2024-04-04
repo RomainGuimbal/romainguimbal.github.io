@@ -29,8 +29,9 @@ main
         //-             br
         //-             span.cre créations personnelles
 
-        include ./assets/html/items/sword.pug
-
+        
+        include ./assets/html/items/agrume.pug
+        
         .item
             h3.numero
             .badgelist
@@ -82,8 +83,8 @@ main
         
         .item
             h3.numero
-            //- script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.53/build/spline-viewer.js")
-            spline-viewer(url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
+            script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js")
+            spline-viewer(loading-anim-type="spinner-small-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
 
         //-
             .trio
@@ -94,7 +95,7 @@ main
                 a.without-caption.image-link(href='../assets/img/voiture 2019 back copy.jpg')
                     img(src='../assets/img/voiture 2019 back copy.jpg')
                         
-        include ./assets/html/items/agrume.pug
+        
 
         .item
             h3.numero
@@ -120,6 +121,22 @@ main
                     | 2022
                     br
                     | Musique : Vibin' Out - FKJ, ((( O )))
+
+        .item
+            h3.numero
+            li.badgelist(style='margin-bottom : 3em;')
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+                a.badge-backg(href='#animation_descrip')
+                    i#animation.skillbadge
+                    span Animation
+            video(controls='')
+                    source(src='../assets/img/Motion mandala0001-0198.mp4' type='video/mp4')
+            figcaption
+                    | 2023
+                    //- br
+                    //- | Son : création personnelle
         
         .item
             h3.numero
@@ -192,7 +209,8 @@ main
                 | Reproduction du feu avant de la Smart Forjoy Concept
                 br
                 | 2021
-
+        
+        include ./assets/html/items/sword.pug
         include ./assets/html/items/archi.pug
 
         .item

@@ -139,7 +139,7 @@ spline-viewer{
 	grid-template-columns: repeat(2,1fr);
 	margin: auto;
 	/* top: 13rem; */
-	transform: translate(15em, -25em); */
+	transform: translate(15em, -25em);
 	/* right: -5rem; */
 }
 
@@ -221,13 +221,7 @@ spline-viewer{
 	color: #e6e6e794;
 }
 
-.project .numero{
-	color: #3d251233;
-	-webkit-text-stroke: 0.3rem transparent;
-	background: linear-gradient(#775e5e,#eeefea);
-	background-clip: text;
-	padding: 0 2.5rem;
-}
+
 
 .item .numero{
 	position: absolute;
@@ -246,14 +240,22 @@ spline-viewer{
 	/* display: inline-block; */
 	scrollbar-color: #e9e9e977 transparent;
 	scrollbar-width: thin;
+	
+	mask: linear-gradient(90deg, rgba(0,0,0,0) 5%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 95%);
+	mask-repeat: no-repeat;
+	/* mask-position: 0% 50%; */
+	mask-size: 100% 100%;
+
 }
 
 .sidescroll img,
 .sidescroll video{
 	display: inline-block;
-	height: 10em;
+	/* height: 10em;
 	width : auto;
-	max-width: 15em;
+	max-width: 15em; */
+	height: 7em;
+  	max-width: 7em;
 	object-fit: cover;
 	margin : 0 0.2em 0;
 }
@@ -292,13 +294,13 @@ spline-viewer{
 
 
 #skills{
-	margin:5% auto 5%;
+	margin: 0 auto;
 	width : clamp(300px, 30rem, 500px);
 	text-align: left;
 }
 
 .skill-descrip{
-	margin : 5% auto;
+	margin : 0 auto 5%;
 	/* width: 30em; */
 }
 
