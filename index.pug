@@ -311,9 +311,24 @@ main
             figcaption
                 | Diamants en duo
                 br
-                | 2020
+                | 2020        
 
         include ./assets/html/items/verriere.pug
+
+        .item
+            h3.numero
+            .badgelist(style='margin-bottom : 2em;')
+                a.badge-backg(href='#generative_descrip')
+                    i#generative.skillbadge
+                    span Modélisation générative
+            video(controls='' loop='' autoplay='')
+                source(src='../assets/img/Origami procedurale.mp4' type='video/mp4')
+            figcaption
+                | Origami Procédurale
+                br
+                | Génération temps réel des patrons des découpe numérotés
+                br
+                | 2023
 
         .item
             h3.numero
