@@ -136,29 +136,6 @@
     opacity: 50%;
 }
 
-
-.item{
-    margin: 3% auto 3%;
-    display: flex;
-    /* display : grid;
-    grid-template-columns: 20% auto 20%; */
-    /* width: clamp(400px, 40%, 600px);     */
-    width: fit-content;
-    height: auto;
-
-}
-
-.item .without-caption,
-.item video{
-    margin: 0 auto 0;
-}
-
-.item img{
-    margin: 0em;
-    /* display: inline-block; */
-    position: relative;
-}
-
 .badgelist{
     display: grid;
     margin: auto 1em 0 auto;
@@ -169,19 +146,6 @@
     flex-basis: 0;
     gap: 0.5rem;
     z-index: 1;
-}
-
-.item figcaption{
-    height: auto;
-    text-align: left;
-    margin: 0 0 0 1em ;
-    align-self: flex-end;
-    overflow: visible;
-    /* white-space: nowrap; */
-    color : rgb(124, 127, 161);
-    float: left;
-    flex-grow: 1;
-    flex-basis: 0;
 }
 
 .badgebar{

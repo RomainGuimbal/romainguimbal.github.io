@@ -1,0 +1,463 @@
+doctype html
+include ./assets/html/head.pug
+//- start pug command : pug -w ./ -o . -P
+header
+    #header_ribbon
+        img#bg(src='../assets/img/drop.jpg')
+        h3 Design - Ingénierie - 3D - Art graphique
+
+    #page-title
+        img(src='../assets/img/drop.jpg')
+        li
+            h1#romain Romain
+            h1#guimbal GUIMBAL
+            h2 Portfolio 2024
+
+main
+    .container
+        //- Ajoute tabindex="0" aux images pour leur permettre de capturer le focus
+        
+        //- #iceberg
+        //-     //- p ça n'est que le sommet de l'iceberg
+        //-     script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js")
+        //-     #iceberg-container
+        //-         spline-viewer(url="https://prod.spline.design/Y1LkSYIcXCE5tM9S/scene.splinecode")
+        //-     .legend
+        //-         .legend-attach-line
+        //-         p.t
+        //-             span.big-num 100 
+        //-             br
+        //-             span.cre créations personnelles
+
+        
+        include ./assets/html/items/agrume.pug
+        
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#surface_descrip')
+                    i#surface.skillbadge
+                    span Surfaces et formes
+                a.badge-backg(href='#modeling_descrip')
+                    i#modeling.skillbadge
+                    span Modélisation
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+            a.without-caption.image-link(href='../assets/img/lard odfg1.jpg')
+                img(src='../assets/img/lard odfg1.jpg')
+            figcaption
+                | Le Lardon
+                br
+                | Render 2022
+                br
+                | Model 2016
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#surface_descrip')
+                    i#surface.skillbadge
+                    span Surfaces et formes
+                a.badge-backg(href='#modeling_descrip')
+                    i#modeling.skillbadge
+                    span Mod&eacute;lisation
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+            a.without-caption.image-link(href='../assets/img/Lardon octobre 2019 copy.jpg')
+                img(src='../assets/img/Lardon octobre 2019 copy.jpg')
+            figcaption
+                | Le Lardon
+                br
+                | Render 2019
+
+        .item
+            h3.numero
+            .badgelist
+
+            a.without-caption.image-link(href="../assets/img/vaisseau scoot modif avril 2021.jpg")
+                img(src="../assets/img/vaisseau scoot modif avril 2021.jpg")
+            figcaption
+                | Le Marsouin
+        
+        .item
+            h3.numero
+            script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js")
+            spline-viewer(loading-anim-type="spinner-small-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
+
+        //-
+            .trio
+                a.without-caption.image-link(href='../assets/img/voiture 2019 front copy.jpg')
+                    img(src='../assets/img/voiture 2019 front copy.jpg')
+                a.without-caption.image-link(href='../assets/img/voiture 2019 side copy.jpg')
+                    img(src='../assets/img/voiture 2019 side copy.jpg')
+                a.without-caption.image-link(href='../assets/img/voiture 2019 back copy.jpg')
+                    img(src='../assets/img/voiture 2019 back copy.jpg')
+                        
+        
+
+        .item
+            h3.numero
+            li.badgelist(style='margin-bottom : 3em;')
+                // Marge au video, pour pas gener boutons
+                a.badge-backg(href='#modeling_descrip')
+                    i#modeling.skillbadge
+                    span Modélisation
+                a.badge-backg(href='#generative_descrip')
+                    i#generative.skillbadge
+                    span Modélisation générative
+                a.badge-backg(href='#animation_descrip')
+                    i#animation.skillbadge
+                    span Animation
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+            video(controls='')
+                    source(src='../assets/img/Precision living.mp4' type='video/mp4')
+            figcaption
+                    | Precision living
+                    br
+                    | 2022
+                    br
+                    | Musique : Vibin' Out - FKJ, ((( O )))
+
+        .item
+            h3.numero
+            li.badgelist(style='margin-bottom : 3em;')
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+                a.badge-backg(href='#animation_descrip')
+                    i#animation.skillbadge
+                    span Animation
+            video(controls='')
+                    source(src='../assets/img/Motion mandala0001-0198.mp4' type='video/mp4')
+            figcaption
+                    | 2023
+                    //- br
+                    //- | Son : création personnelle
+        
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#graphic_descrip')
+                    i#graphic.skillbadge
+                    span Graphique
+                a.badge-backg(href='#animation_descrip')
+                    i#animation.skillbadge
+                    span Animation
+            a.without-caption.image-link(href='../assets/img/Prince des murs.jpg')
+                img(src='../assets/img/Prince des murs.jpg')
+            figcaption
+                | Prince des murs
+                br
+                | Peinture numérique
+                br
+                | 2023
+        
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#modeling_descrip')
+                    i#modeling.skillbadge
+                    span Modélisation
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+            a.without-caption.image-link(href='../assets/img/Robe velour doré 2023.jpg')
+                img(src='../assets/img/Robe velour doré 2023.jpg')
+            figcaption
+                | Robe velour doré
+                br
+                | 2023
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#modeling_descrip')
+                    i#modeling.skillbadge
+                    span Modélisation
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+            a.without-caption.image-link(href='../assets/img/robe.jpg')
+                img(src='../assets/img/robe.jpg')
+            figcaption
+                | Robe dorée
+                br
+                | 2020
+
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#modeling_descrip')
+                    i#modeling.skillbadge
+                    span Modélisation
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+                a.badge-backg(href='#animation_descrip')
+                    i#animation.skillbadge
+                    span Animation
+            a.without-caption.image-link(href='../assets/img/head sculpt.jpg')
+                img(src='../assets/img/head sculpt.jpg')
+            figcaption
+                | Head sculpt
+                br
+                | 2022
+
+        include ./assets/html/items/porsche.pug
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#modeling_descrip')
+                    i#modeling.skillbadge
+                    span Modélisation
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+            a.without-caption.image-link(href='../assets/img/phare design.jpg')
+                img(src='../assets/img/phare design.jpg' style='margin-bottom: .4em;')
+            figcaption
+                | Reproduction du feu avant de la Smart Forjoy Concept
+                br
+                | 2021
+        
+        include ./assets/html/items/sword.pug
+        include ./assets/html/items/archi.pug
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#graphic_descrip')
+                    i#fx.skillbadge
+                    span Graphique
+            .duo
+                a.without-caption.image-link(href='../assets/img/foulard electro.jpg')
+                    img(src='../assets/img/foulard electro.jpg')
+                a.without-caption.image-link(href='../assets/img/foulard 2.jpg')
+                    img(src='../assets/img/foulard 2.jpg')
+            figcaption
+                | Foulard carte électronique
+                br
+                | 2015
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#modeling_descrip')
+                    i#modeling.skillbadge
+                    span Modélisation
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+            a.without-caption.image-link(href='../assets/img/shoes sim 4.jpg')
+                img(src='../assets/img/shoes sim 4.jpg')
+            figcaption
+                | Premier personnage 3D
+                br
+                | 2018
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#modeling_descrip')
+                    i#modeling.skillbadge
+                    span Modélisation
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+            a.without-caption.image-link(href='../assets/img/Maciek Jasik studdy 2.jpg')
+                img(src='../assets/img/Maciek Jasik studdy 2.jpg')
+            figcaption
+                | Dissolution
+                br
+                | Flou-net façon Maciek Jasik
+                br
+                | 2022
+            // <img src="../assets/img/eau 8.jpg">
+
+        .item
+            h3.numero
+            .badgelist(style='margin-bottom : 2em;')
+                // Marge au video, pour pas gener boutons
+                a.badge-backg(href='#animation_descrip')
+                    i#animation.skillbadge
+                    span Animation
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+            video(controls='' loop='' autoplay='')
+                source(src='../assets/img/graphite final.mp4' type='video/mp4')
+            figcaption
+                | Graphite
+                br
+                | 2020
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+            .duo
+                video(controls='' loop='' autoplay='')
+                    source(src='../assets/img/diamant holo 20001-0149.mp4' type='video/mp4')
+                video(controls='' loop='' autoplay='')
+                    source(src='../assets/img/diamant bleu0001-0149.mp4' type='video/mp4')
+            figcaption
+                | Diamants en duo
+                br
+                | 2020        
+
+        include ./assets/html/items/verriere.pug
+
+        .item
+            h3.numero
+            .badgelist(style='margin-bottom : 2em;')
+                a.badge-backg(href='#generative_descrip')
+                    i#generative.skillbadge
+                    span Modélisation générative
+            video(controls='' loop='' autoplay='')
+                source(src='../assets/img/Origami procedurale.mp4' type='video/mp4')
+            figcaption
+                | Origami Procédurale
+                br
+                | Génération temps réel des patrons des découpe numérotés
+                br
+                | 2023
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#graphic_descrip')
+                    i#graphic.skillbadge
+                    span Graphique
+                a.badge-backg(href='#generative_descrip')
+                    i#generative.skillbadge
+                    span Modélisation générative
+            a.without-caption.image-link(href='../assets/img/Carte de voeuuu23 3.jpg')
+                img(src='../assets/img/Carte de voeuuu23 3.jpg')
+            figcaption
+                | Carte de Voeux
+                br
+                | 2023
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#graphic_descrip')
+                    i#graphic.skillbadge
+                    span Graphique
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+            a.without-caption.image-link(href='../assets/img/inviit.jpg')
+                img(src='../assets/img/inviit.jpg')
+            figcaption
+                | Fond de carton d'invitation
+                br
+                | 2018
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#graphic_descrip')
+                    i#graphic.skillbadge
+                    span Graphique
+                a.badge-backg(href='#animation_descrip')
+                    i#animation.skillbadge
+                    span Animation
+            a.without-caption.image-link(href='../assets/img/Princesse Cation tete 3quarts.jpg')
+                img(src='../assets/img/Princesse Cation tete 3quarts.jpg')
+            figcaption
+                | Princesse Cation
+                br
+                | Character design
+                br
+                | 2021
+        
+
+        
+        
+        //
+            <img src="../assets/img/photo_2021-04-08_00-19-56.jpg" style="margin-bottom: .4em;">
+            <figcaption class ="legende">D'après photo</figcaption>
+        
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#graphic_descrip')
+                    i#graphic.skillbadge
+                    span Graphique
+                a.badge-backg(href='#animation_descrip')
+                    i#animation.skillbadge
+                    span Animation
+            video(controls='' loop='' autoplay='')
+                source(src='../assets/img/fleur0001-0033.mp4' type='video/mp4')
+            figcaption
+                | Animation traditionnelle
+                br
+                | 2016
+
+        include ./assets/html/items/surfacepsycho.pug
+        include ./assets/html/items/CAO.pug
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#graphic_descrip')
+                    i#graphic.skillbadge
+                    span Graphique
+                a.badge-backg(href='#fx_descrip')
+                    i#fx.skillbadge
+                    span Visualisation
+                a.badge-backg(href='#animation_descrip')
+                    i#animation.skillbadge
+                    span Animation
+            a.without-caption.image-link(href='../assets/img/artiche.jpg')
+                img(src='../assets/img/artiche.jpg')
+            figcaption
+                | Image extraite du court-métrage 
+                br
+                i Born to Wear, The Vegetal Revange
+                br
+                | 2023
+        
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#graphic_descrip')
+                    i#graphic.skillbadge
+                    span Graphique
+            a.without-caption.image-link(href='../assets/img/G-co 2.jpg')
+                img(src='../assets/img/G-co 2.jpg')
+            figcaption
+                | 2014
+        
+footer
+    
+    
+    .item
+        .duo(style='margin:0 auto; width:auto; column-gap:10em;')
+            .container
+                img(src='../assets/img/photo_portrait.jpg' style='height:20em; width: 20em; object-fit: cover; border-radius: 10000px; ')
+                p
+                    b CONTACT &emsp;:
+                    |  &emsp; romainguimbal1@gmail.com
+
+            .container(style='width:auto')
+                include ./assets/html/skills.pug
+
+// jQuery 3.6.0
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+// Magnific Popup core JS file
+script(src='assets/Js/jquery.magnific-popup.js')
+script(src='assets/Js/main.js')
+script.
+    $(function(){
+    $("#svg_icons").load("../assets/icons/icons_svg.html");
+    });

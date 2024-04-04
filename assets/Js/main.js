@@ -30,3 +30,19 @@ $('.with-caption').magnificPopup({
 
 
 
+
+// class Project{
+
+//     constructor(){
+//         this.index = latest_index+1
+//     }
+// }
+
+$(document).ready(function(){
+    var latest_index = 0;
+
+    $(".numero").each(function(index) {
+        latest_index++;
+        $(this).text(latest_index+".");
+    });
+})
