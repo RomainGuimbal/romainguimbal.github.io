@@ -4,8 +4,9 @@
 }
 
 #porsche{
-	--bg-color-dark: rgb(63, 70, 105);
-	--bg-color-light: #838b96;
+	--bg-color-dark: rgb(0, 15, 75);
+	--bg-color-light: rgb(63, 70, 105);
+	/* --bg-color-light: #838b96; */
 }
 
 #agrume{
@@ -15,7 +16,7 @@
 
 #archi-gene{
 	--bg-color-light: rgb(128, 189, 109);
-	--bg-color-dark: rgb(26, 99, 43);
+	--bg-color-dark: rgb(0, 55, 33);
 }
 
 #surfacepsycho{

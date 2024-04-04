@@ -181,7 +181,8 @@ spline-viewer{
 	margin: 0;
 }
 
-.duo img:not(:focus){
+.duo img:not(:focus),
+.duo video:not(:focus){
 	width: 100%;
 }
 
