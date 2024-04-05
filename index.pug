@@ -14,7 +14,7 @@ header
             h2 Portfolio 2024
 
 main
-    .container
+    .container-main
         //- Ajoute tabindex="0" aux images pour leur permettre de capturer le focus
         
         //- #iceberg
@@ -45,7 +45,7 @@ main
                     i#fx.skillbadge
                     span Visualisation
             a.without-caption.image-link(href='../assets/img/lard odfg1.jpg')
-                img(src='../assets/img/lard odfg1.jpg')
+                img.content-pic(src='../assets/img/lard odfg1.jpg')
             figcaption
                 | Le Lardon
                 br
@@ -66,7 +66,7 @@ main
                     i#fx.skillbadge
                     span Visualisation
             a.without-caption.image-link(href='../assets/img/Lardon octobre 2019 copy.jpg')
-                img(src='../assets/img/Lardon octobre 2019 copy.jpg')
+                img.content-pic(src='../assets/img/Lardon octobre 2019 copy.jpg')
             figcaption
                 | Le Lardon
                 br
@@ -83,8 +83,10 @@ main
         
         .item
             h3.numero
-            script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js")
-            spline-viewer(loading-anim-type="spinner-small-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
+            div#spline-container
+                div
+                    script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js")
+                    spline-viewer(loading-anim-type="spinner-small-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
 
         .item
             h3.numero
@@ -431,9 +433,9 @@ footer
     
     
     .item
-        .duo(style='margin:0 auto; width:auto; column-gap:10em;')
+        .duo
             .container
-                img(src='../assets/img/photo_portrait.jpg' style='height:20em; width: 20em; object-fit: cover; border-radius: 10000px; ')
+                img(src='../assets/img/photo_portrait.jpg')
                 p
                     b CONTACT &emsp;:
                     |  &emsp; romainguimbal1@gmail.com

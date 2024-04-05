@@ -9,7 +9,14 @@ $('.without-caption').magnificPopup({
     zoom: {
         enabled: true,
         duration: 100 // don't foget to change the duration also in CSS
-    }
+    },
+    gallery: {
+        enabled: true,
+        tPrev: '@T("Media.MagnificPopup.Previous")',
+        tNext: '@T("Media.MagnificPopup.Next")',
+    },
+    tClose: '@T("Media.MagnificPopup.Close")',
+    tLoading: '@T("Media.MagnificPopup.Loading")'
 });
 
 $('.with-caption').magnificPopup({
@@ -25,7 +32,14 @@ $('.with-caption').magnificPopup({
     },
     zoom: {
         enabled: true
-    }
+    },
+    gallery: {
+        enabled: true,
+        tPrev: '@T("Media.MagnificPopup.Previous")',
+        tNext: '@T("Media.MagnificPopup.Next")',
+    },
+    tClose: '@T("Media.MagnificPopup.Close")',
+    tLoading: '@T("Media.MagnificPopup.Loading")'
 });
 
 
@@ -45,4 +59,4 @@ $(document).ready(function(){
         latest_index++;
         $(this).text(latest_index+".");
     });
-})
+});

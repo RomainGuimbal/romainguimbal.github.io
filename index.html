@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/project.css">
   <link rel="stylesheet" href="assets/css/badges.css">
+  <link rel="stylesheet" href="assets/css/iceberg.css">
   <!-- Magnific Popup core CSS file-->
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
   <!-- Google Fonts-->
@@ -35,7 +36,7 @@
   </div>
 </header>
 <main>
-  <div class="container">
+  <div class="container-main">
     <div class="project" id="agrume">
       <div class="project-content">
         <div class="project-main">
@@ -58,12 +59,12 @@
     </div>
     <div class="item">
       <h3 class="numero"></h3>
-      <div class="badgelist"><a class="badge-backg" href="#surface_descrip"><i class="skillbadge" id="surface"></i><span>Surfaces et formes</span></a><a class="badge-backg" href="#modeling_descrip"><i class="skillbadge" id="modeling"></i><span>Modélisation</span></a><a class="badge-backg" href="#fx_descrip"><i class="skillbadge" id="fx"></i><span>Visualisation</span></a></div><a class="without-caption image-link" href="../assets/img/lard odfg1.jpg"><img src="../assets/img/lard odfg1.jpg"></a>
+      <div class="badgelist"><a class="badge-backg" href="#surface_descrip"><i class="skillbadge" id="surface"></i><span>Surfaces et formes</span></a><a class="badge-backg" href="#modeling_descrip"><i class="skillbadge" id="modeling"></i><span>Modélisation</span></a><a class="badge-backg" href="#fx_descrip"><i class="skillbadge" id="fx"></i><span>Visualisation</span></a></div><a class="without-caption image-link" href="../assets/img/lard odfg1.jpg"><img class="content-pic" src="../assets/img/lard odfg1.jpg"></a>
       <figcaption>Le Lardon<br>Render 2022<br>Model 2016</figcaption>
     </div>
     <div class="item">
       <h3 class="numero"></h3>
-      <div class="badgelist"><a class="badge-backg" href="#surface_descrip"><i class="skillbadge" id="surface"></i><span>Surfaces et formes</span></a><a class="badge-backg" href="#modeling_descrip"><i class="skillbadge" id="modeling"></i><span>Mod&eacute;lisation</span></a><a class="badge-backg" href="#fx_descrip"><i class="skillbadge" id="fx"></i><span>Visualisation</span></a></div><a class="without-caption image-link" href="../assets/img/Lardon octobre 2019 copy.jpg"><img src="../assets/img/Lardon octobre 2019 copy.jpg"></a>
+      <div class="badgelist"><a class="badge-backg" href="#surface_descrip"><i class="skillbadge" id="surface"></i><span>Surfaces et formes</span></a><a class="badge-backg" href="#modeling_descrip"><i class="skillbadge" id="modeling"></i><span>Mod&eacute;lisation</span></a><a class="badge-backg" href="#fx_descrip"><i class="skillbadge" id="fx"></i><span>Visualisation</span></a></div><a class="without-caption image-link" href="../assets/img/Lardon octobre 2019 copy.jpg"><img class="content-pic" src="../assets/img/Lardon octobre 2019 copy.jpg"></a>
       <figcaption>Le Lardon<br>Render 2019</figcaption>
     </div>
     <div class="item">
@@ -73,8 +74,12 @@
     </div>
     <div class="item">
       <h3 class="numero"></h3>
-      <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js"></script>
-      <spline-viewer loading-anim-type="spinner-small-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode"></spline-viewer>
+      <div id="spline-container">
+        <div>
+          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js"></script>
+          <spline-viewer loading-anim-type="spinner-small-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode"></spline-viewer>
+        </div>
+      </div>
     </div>
     <div class="item">
       <h3 class="numero"></h3>
@@ -326,8 +331,8 @@
 </main>
 <footer>
   <div class="item">
-    <div class="duo" style="margin:0 auto; width:auto; column-gap:10em;">
-      <div class="container"><img src="../assets/img/photo_portrait.jpg" style="height:20em; width: 20em; object-fit: cover; border-radius: 10000px; ">
+    <div class="duo">
+      <div class="container"><img src="../assets/img/photo_portrait.jpg">
         <p><b>CONTACT &emsp;:</b> &emsp; romainguimbal1@gmail.com</p>
       </div>
       <div class="container" style="width:auto">

@@ -1,0 +1,45 @@
+#iceberg{
+	width: 100vw;
+	overflow: hidden;
+	height: fit-content;
+	margin: 0 auto;
+}
+#iceberg p{
+	font: 100 2.5em "Poppins", sans-serif;
+	text-transform: uppercase;
+	width: 10em;
+	line-height: 1em;
+	text-align: left;
+	border-left: 0.1rem solid #e6e6e7;
+	padding: .4em;
+	padding-bottom: 0;
+	margin: 0;
+}
+#iceberg spline-viewer{
+	height: auto;
+	/* margin: 5em auto; */
+}
+#iceberg .legend{
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	margin: auto;
+	/* top: 13rem; */
+	transform: translate(15em, -25em);
+	/* right: -5rem; */
+}
+
+#iceberg-container{
+	width: fit-content;
+	margin: 0 auto;
+}
+.big-num{
+	font-size: 2.5em;
+}
+.legend-attach-line{
+	height: 0.1rem;
+	width: 15rem;
+	margin: 20px auto 0;
+	margin-right: 0;
+	background-color: #e6e6e7;
+}

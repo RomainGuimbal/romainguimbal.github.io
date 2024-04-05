@@ -39,7 +39,7 @@
 
 .project{
 	position: relative;
-	--project-width: clamp(500px, 70%, 1000px);
+	--project-width: clamp(500px, 95%, 1000px);
 	background-attachment: scroll;
 	width: var(--project-width);
 	padding-bottom: calc(var(--project-width)*0.7);
@@ -187,13 +187,13 @@
 } */
 
 
-@media(max-width:600px){
+/* @media(max-width:600px){
 	.project h2{
 		font-size: 3em;
 		width :100%;
 		right:0;
 	}
-}
+} */
 
 
 @media screen and (max-aspect-ratio:1/1) and (max-width:600px){
@@ -209,10 +209,24 @@
 		width: 100%;
 		height: auto;
 	}
-
 	.project-side{
 		width: 100%;
 		padding-left: 0;
-
 	}
+
+	.project h2{
+		display: inline;
+		text-align: left;
+	}
+	.project .numero{
+		display: inline;
+		text-align: left;
+	}
+
+	.sidescroll img,
+	.sidescroll video{
+		height: 4em;
+  		max-width: 4em;
+	}
+	
 }
