@@ -3,7 +3,7 @@ include ./assets/html/head.pug
 //- start pug command : pug -w ./ -o . -P
 header
     #header_ribbon
-        img#bg(src='../assets/img/drop.jpg')
+        img#bg-img(src='../assets/img/drop.jpg')
         h3 Design - Ingénierie - 3D - Art graphique
 
     #page-title
@@ -85,17 +85,6 @@ main
             h3.numero
             script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js")
             spline-viewer(loading-anim-type="spinner-small-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
-
-        //-
-            .trio
-                a.without-caption.image-link(href='../assets/img/voiture 2019 front copy.jpg')
-                    img(src='../assets/img/voiture 2019 front copy.jpg')
-                a.without-caption.image-link(href='../assets/img/voiture 2019 side copy.jpg')
-                    img(src='../assets/img/voiture 2019 side copy.jpg')
-                a.without-caption.image-link(href='../assets/img/voiture 2019 back copy.jpg')
-                    img(src='../assets/img/voiture 2019 back copy.jpg')
-                        
-        
 
         .item
             h3.numero

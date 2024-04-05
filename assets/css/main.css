@@ -89,6 +89,16 @@ main img, main video{
     flex-basis: 0;
 }
 
+@media (max-width:600px){
+	.item figcaption{
+		align-self: auto;
+		position: absolute;
+		translate: 50vw 0;
+		margin: auto;
+	}
+}
+
+
 
 
 main img:hover:not(:focus),
@@ -213,6 +223,7 @@ spline-viewer{
 
 .numero{
 	font: bold 12em "Poppins", sans-serif;
+	font-size: clamp(3rem, -5rem + 20vw ,12rem);
 	text-align: left;
 	position: absolute;
 	margin: 0;
@@ -221,7 +232,6 @@ spline-viewer{
 	line-height: 0.85em;
 	color: #e6e6e794;
 }
-
 
 
 .item .numero{
