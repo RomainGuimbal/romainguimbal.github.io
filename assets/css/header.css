@@ -24,11 +24,11 @@
 	display:flow-root;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 	
-	animation-timeline: view(-1px 10px);
-	animation-name: depth-effect;
+	/* animation-timeline: view(-1px 10px);*/
+	/* animation-name: depth-effect; */
 	/* animation-range: exit-crossing exit;
 	/* for firefox rrrr*/
-	animation-duration: 5000ms;
+	/* animation-duration: 5000ms; */
 }
 
 
