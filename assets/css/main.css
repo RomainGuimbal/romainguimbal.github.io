@@ -235,7 +235,7 @@ spline-viewer{
 
 div#spline-container{
 	margin: 0 auto;
-  	width: 0;
+  	/* width: 0; */
 	height: 634px;
 }
 
