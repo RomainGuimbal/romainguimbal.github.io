@@ -286,6 +286,7 @@ div#spline-container{
 
 .skill-descrip h3{
 	margin: auto 1em;
+	font-size: 1em;
 }
 
 #skills p{
@@ -293,6 +294,7 @@ div#spline-container{
 	text-align: justify;
 	text-justify: auto;
 	margin: 0.4em;
+	font-size: 0.8em;
 }
 
 
@@ -315,7 +317,7 @@ footer .duo{
 	width: 15%;
 	float: left;
 } */
-footer img{
+#profile_picture{
 	height: 20em;
 	width: 20em;
 	object-fit: cover;
@@ -326,4 +328,8 @@ footer .duo{
 	margin:0 auto; 
 	width:auto; 
 	column-gap: 10em;
+}
+
+#bio p{
+	line-height: 1.5em;
 }

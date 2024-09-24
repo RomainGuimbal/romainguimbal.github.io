@@ -106,11 +106,11 @@
 }
 
 #skills .badge-backg{
-    height: 3em;
-    width: 3em;
+    height: 2.2em;
+    width: 2.2em;
     border-radius: 50%;
     display: flex;
-    min-width: 3em;
+    min-width: 2.2em;
 }
 
 .badge-backg span{
