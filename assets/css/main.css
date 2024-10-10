@@ -150,6 +150,15 @@ spline-viewer{
 	width: 100%;
 }
 
+.duo-vertical{
+	display: inline;
+	height: auto;
+	width : clamp(300px, 40%, 500px);
+}
+
+.item .duo-vertical img:first-of-type{
+	margin-bottom: 0.5em;
+}
 
 .item{
     margin: 3% auto 3%;
@@ -165,6 +174,7 @@ spline-viewer{
 .item video{
     margin: 0 auto 0;
 }
+
 
 .item img{
     margin: 0em;

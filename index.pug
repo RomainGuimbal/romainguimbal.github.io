@@ -35,23 +35,60 @@ main
         .item
             h3.numero
             .badgelist
-                a.badge-backg(href='#surface_descrip')
-                    i#surface.skillbadge
-                    span Surfaces et formes
                 a.badge-backg(href='#modeling_descrip')
                     i#modeling.skillbadge
                     span Modélisation
                 a.badge-backg(href='#fx_descrip')
                     i#fx.skillbadge
                     span Visualisation
-            a.without-caption.image-link(href='../assets/img/lard odfg1.jpg')
-                img.content-pic(src='../assets/img/lard odfg1.jpg')
+            a.without-caption.image-link(href='../assets/img/phare design.jpg')
+                img(src='../assets/img/phare design.jpg' style='margin-bottom: .4em;')
             figcaption
-                | Le Lardon
+                | Reproduction du feu avant de la Smart Forjoy Concept
                 br
-                | Render 2022
+                | 2021
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#perspec_descrip')
+                    i#perspec.skillbadge
+                    span Dessin technique
+                a.badge-backg(href='#surface_descrip')
+                    i#surface.skillbadge
+                    span Surfaces et formes
+            .duo-vertical
+                a.without-caption.image-link(href='../assets/img/random car dessin.jpg')
+                    img.content-pic(src='../assets/img/random car dessin.jpg')
+                a.without-caption.image-link(href='../assets/img/random car dessin paintover.jpg')
+                    img.content-pic(src='../assets/img/random car dessin paintover.jpg')
+            figcaption
+                | Concept voiture
                 br
-                | Model 2016
+                | 2024
+
+
+
+        //- .item
+        //-     h3.numero
+        //-     .badgelist
+        //-         a.badge-backg(href='#surface_descrip')
+        //-             i#surface.skillbadge
+        //-             span Surfaces et formes
+        //-         a.badge-backg(href='#modeling_descrip')
+        //-             i#modeling.skillbadge
+        //-             span Modélisation
+        //-         a.badge-backg(href='#fx_descrip')
+        //-             i#fx.skillbadge
+        //-             span Visualisation
+        //-     a.without-caption.image-link(href='../assets/img/lard odfg1.jpg')
+        //-         img.content-pic(src='../assets/img/lard odfg1.jpg')
+        //-     figcaption
+        //-         | Le Lardon
+        //-         br
+        //-         | Render 2022
+        //-         br
+        //-         | Model 2016
 
         .item
             h3.numero
@@ -71,6 +108,11 @@ main
                 | Le Lardon
                 br
                 | Render 2019
+                br
+                | Model 2016
+
+
+
 
         .item
             h3.numero
@@ -82,7 +124,7 @@ main
                 | Le Marsouin
         
         .item
-            h3.numero
+            //- h3.numero
             div#spline-container
                 div
                     script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js")
@@ -113,21 +155,61 @@ main
                     br
                     | Musique : Vibin' Out - FKJ, ((( O )))
 
+
+        include ./assets/html/items/archi.pug
+        
+
         .item
             h3.numero
-            li.badgelist(style='margin-bottom : 3em;')
+            .badgelist
+                a.badge-backg(href='#graphic_descrip')
+                    i#fx.skillbadge
+                    span Graphique
+            .duo-vertical
+                a.without-caption.image-link(href='../assets/img/foulard electro.jpg')
+                    img(src='../assets/img/foulard electro.jpg')
+                a.without-caption.image-link(href='../assets/img/foulard 2.jpg')
+                    img(src='../assets/img/foulard 2.jpg')
+            figcaption
+                | Foulard carte électronique
+                br
+                | 2015
+
+        include ./assets/html/items/sword.pug
+
+
+        .item
+            h3.numero
+            .badgelist
+                a.badge-backg(href='#modeling_descrip')
+                    i#modeling.skillbadge
+                    span Modélisation
                 a.badge-backg(href='#fx_descrip')
                     i#fx.skillbadge
                     span Visualisation
-                a.badge-backg(href='#animation_descrip')
-                    i#animation.skillbadge
-                    span Animation
-            video(controls='')
-                    source(src='../assets/img/Motion mandala0001-0198.mp4' type='video/mp4')
+            a.without-caption.image-link(href='../assets/img/Architecture classique no mat.jpg')
+                img(src='../assets/img/Architecture classique no mat.jpg')
             figcaption
-                    | 2023
-                    //- br
-                    //- | Son : création personnelle
+                | Exercice d'architecture classique
+                br
+                | 2024
+
+
+        //- .item
+        //-     h3.numero
+        //-     li.badgelist(style='margin-bottom : 3em;')
+        //-         a.badge-backg(href='#fx_descrip')
+        //-             i#fx.skillbadge
+        //-             span Visualisation
+        //-         a.badge-backg(href='#animation_descrip')
+        //-             i#animation.skillbadge
+        //-             span Animation
+        //-     video(controls='')
+        //-             source(src='../assets/img/Motion mandala0001-0198.mp4' type='video/mp4')
+        //-     figcaption
+        //-             | 2023
+        //-             //- br
+        //-             //- | Son : création personnelle
         
         .item
             h3.numero
@@ -201,40 +283,9 @@ main
 
         include ./assets/html/items/porsche.pug
 
-        .item
-            h3.numero
-            .badgelist
-                a.badge-backg(href='#modeling_descrip')
-                    i#modeling.skillbadge
-                    span Modélisation
-                a.badge-backg(href='#fx_descrip')
-                    i#fx.skillbadge
-                    span Visualisation
-            a.without-caption.image-link(href='../assets/img/phare design.jpg')
-                img(src='../assets/img/phare design.jpg' style='margin-bottom: .4em;')
-            figcaption
-                | Reproduction du feu avant de la Smart Forjoy Concept
-                br
-                | 2021
-        
-        include ./assets/html/items/sword.pug
-        include ./assets/html/items/archi.pug
 
-        .item
-            h3.numero
-            .badgelist
-                a.badge-backg(href='#graphic_descrip')
-                    i#fx.skillbadge
-                    span Graphique
-            .duo
-                a.without-caption.image-link(href='../assets/img/foulard electro.jpg')
-                    img(src='../assets/img/foulard electro.jpg')
-                a.without-caption.image-link(href='../assets/img/foulard 2.jpg')
-                    img(src='../assets/img/foulard 2.jpg')
-            figcaption
-                | Foulard carte électronique
-                br
-                | 2015
+        
+
 
         .item
             h3.numero
