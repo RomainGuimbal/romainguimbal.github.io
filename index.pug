@@ -1,6 +1,8 @@
 doctype html
 include ./assets/html/head.pug
-//- start pug command : pug -w ./ -o . -P
+// start pug commandx : 
+// Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+// pug -w ./ -o . -P
 header
     #header_ribbon
         img#bg-img(src='../assets/img/drop.jpg')
@@ -8,10 +10,11 @@ header
 
     #page-title
         img(src='../assets/img/drop.jpg')
+        img#bg-img2(src='../assets/img/drop.jpg')
         li
             h1#romain Romain
             h1#guimbal GUIMBAL
-            h2 Portfolio 2024
+            h2 Portfolio 2025
 
 main
     .container-main
@@ -31,6 +34,8 @@ main
 
         
         include ./assets/html/items/agrume.pug
+
+        include ./assets/html/items/sp-logo.pug
         
         .item
             h3.numero
@@ -484,6 +489,9 @@ main
                 br
                 | 2014
         
+        <!-- Back to top button -->
+
+
 footer
     
     
@@ -503,6 +511,9 @@ footer
 
             .container(style='width:auto')
                 include ./assets/html/skills.pug
+        
+    button#backToTop(onclick='topFunction()' title='Go to top')
+        |↑ Top
 
 // jQuery 3.6.0
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
@@ -513,3 +524,6 @@ script.
     $(function(){
     $("#svg_icons").load("../assets/icons/icons_svg.html");
     });
+
+script(src='assets/Js/morph_header.js')
+script(src='assets/Js/back_to_top.js')

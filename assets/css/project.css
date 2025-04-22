@@ -24,6 +24,11 @@
 	--bg-color-light: rgb(38, 156, 174);
 }
 
+#sp-logo{
+	--bg-color-dark: #320094;
+	--bg-color-light: rgb(38, 156, 174);
+}
+
 /*
 #verriere h2{
 	background-image: linear-gradient(153deg, rgba(255,231,173,1) 17%, rgba(205,187,143,1) 45%, rgba(135,166,255,1) 76%); 

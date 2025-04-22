@@ -35,15 +35,14 @@
 header #bg-img{
 	filter: blur(0.8rem);
     position: absolute;
-	/* left: 10rem; */
-	/* top:-50%;
-	left: 50%; */
 	width: 35rem;
 	height: 35rem;
 	/* top: -10rem; */
 	opacity: 80%;
 	transform: translate(-10%,-47%);
 }
+
+
 
 
 header h3{
@@ -64,16 +63,20 @@ header h3{
 
 #page-title{
 	background-color: black;
+	width: 18em;
+	height: 10em;
 	border-radius: 999px;
+	margin-top: 0;
     position: fixed;
     display: flex;
-    width: fit-content;
+    /* width: fit-content; */
 	align-items: center;
 	justify-content: center;
 	z-index:2;
 	top: 0;
 	left: 3vw;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
+	overflow: hidden;
 
 	/* animation-timeline: view(0 100vh); */
 	/* animation-name: depth-effect; */
@@ -100,7 +103,7 @@ header h3{
 	height: 7rem;
 	border-radius: 50% 0 0 50%;
 	display: inline-block;
-	object-fit: cover;
+	/* object-fit: cover; */
 	padding-left :2em;
 }
 
@@ -120,7 +123,14 @@ header h3{
 	transform: translate(0, 0);
 }
 
-
+header #bg-img2{
+	filter: blur(0.4rem);
+    position: absolute;
+	width: 25rem;
+	height: 25rem;
+	opacity: 80%;
+	transform: translate(100%,0%);
+}
 
 
 /* @media(max-width:1100px) {
@@ -147,7 +157,6 @@ header h3{
 		
 	}
 }
-
 
 
 header h1, header h2, header h3{

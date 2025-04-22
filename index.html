@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/project.css">
   <link rel="stylesheet" href="assets/css/badges.css">
-  <link rel="stylesheet" href="assets/css/iceberg.css">
+  <link rel="stylesheet" href="assets/css/back_to_top_button.css">
   <!-- Magnific Popup core CSS file-->
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
   <!-- Google Fonts-->
@@ -23,15 +23,18 @@
   <link rel="icon" href="assets/img/favicon.png">
   <div id="svg_icons" style="position:fixed"></div>
 </head>
+<!-- start pug commandx : -->
+<!-- Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass-->
+<!-- pug -w ./ -o . -P-->
 <header>
   <div id="header_ribbon"><img id="bg-img" src="../assets/img/drop.jpg">
     <h3>Design - Ingénierie - 3D - Art graphique</h3>
   </div>
-  <div id="page-title"><img src="../assets/img/drop.jpg">
+  <div id="page-title"><img src="../assets/img/drop.jpg"><img id="bg-img2" src="../assets/img/drop.jpg">
     <li>
       <h1 id="romain">Romain</h1>
       <h1 id="guimbal">GUIMBAL</h1>
-      <h2>Portfolio 2024</h2>
+      <h2>Portfolio 2025</h2>
     </li>
   </div>
 </header>
@@ -53,6 +56,25 @@
               agricoles robustes et authentiques.
             </p>
             <div class="sidescroll"><a class="without-caption image-link" href="../assets/img/Mood board.jpg"><img src="../assets/img/Mood board.jpg"></a><a class="without-caption image-link" href="../assets/img/multi sketch presse agrume.jpg"><img src="../assets/img/multi sketch presse agrume.jpg"></a><a class="without-caption image-link" href="../assets/img/Presse agrume.jpg"><img src="../assets/img/Presse agrume.jpg"></a><a class="without-caption image-link" href="../assets/img/Kaijus2024 -1.jpg"><img src="../assets/img/Kaijus2024 -1.jpg"></a><a class="without-caption image-link" href="../assets/img/Kaijus2024 -2.jpg"><img src="../assets/img/Kaijus2024 -2.jpg"></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="project" id="sp-logo">
+      <div class="project-content">
+        <div class="project-main">
+          <div class="project-large-img"><a class="without-caption image-link" href="../assets/img/splogo_alpha.png" style="box-shadow: none;"><img src="../assets/img/splogo_alpha.png" style="box-shadow: none;"></a></div>
+          <div class="project-side">
+            <h3 class="numero"></h3>
+            <h2> SurfacePsycho logo</h2>
+            <li class="badgebar"><a class="badge-backg" href="#surface_descrip"><i class="skillbadge" id="graphic"></i></a></li>
+            <p>
+              SurfacePsycho est mon propre plugin de design pour Blender (plus d'info plus bas). 
+              Son logo a naturellement été réalisé avec lui même comme preuve de concept de ses capacité 2D. 
+              Les peignes de courbures ainsi que les capacités natives de Blender permettent de dépasser très 
+              largement la précision qu'offre un éditeur type Illustrator ou Inkscape.
+            </p>
+            <div class="sidescroll"><a class="without-caption image-link" href="../assets/img/splogomoodboard.jpg"><img src="../assets/img/splogomoodboard.jpg"></a><a class="without-caption image-link" href="../assets/img/splogowires.jpg"><img src="../assets/img/splogowires.jpg"></a><a class="without-caption image-link" href="../assets/img/splogo_wire_clean.jpg"><img src="../assets/img/splogo_wire_clean.jpg"></a><a class="without-caption image-link" href="../assets/img/splogo_color.jpg"><img src="../assets/img/splogo_color.jpg"></a></div>
           </div>
         </div>
       </div>
@@ -321,7 +343,7 @@
       <h3 class="numero"></h3>
       <div class="badgelist"><a class="badge-backg" href="#graphic_descrip"><i class="skillbadge" id="graphic"></i><span>Graphique</span></a></div><a class="without-caption image-link" href="../assets/img/G-co 2.jpg"><img src="../assets/img/G-co 2.jpg"></a>
       <figcaption>Illustrator<br>2014</figcaption>
-    </div>
+    </div><!-- Back to top button -->
   </div>
 </main>
 <footer>
@@ -391,6 +413,7 @@
       </div>
     </div>
   </div>
+  <button id="backToTop" onclick="topFunction()" title="Go to top">↑ Top</button>
 </footer>
 <!-- jQuery 3.6.0-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -401,4 +424,7 @@
   $(function(){
   $("#svg_icons").load("../assets/icons/icons_svg.html");
   });
+  
 </script>
+<script src="assets/Js/morph_header.js"></script>
+<script src="assets/Js/back_to_top.js"></script>
