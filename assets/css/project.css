@@ -149,7 +149,7 @@
 	-webkit-text-stroke: 0.15rem transparent;
 	background: linear-gradient(to right,#735656,#74766a);
 	background-clip: text;
-	/* padding: 0 0.25em; */
+	padding-bottom: 0.6rem;
 }
 
 
