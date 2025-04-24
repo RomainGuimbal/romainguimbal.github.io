@@ -17,24 +17,12 @@ header
             h2 Portfolio 2025
 
 main
+        
     .container-main
+        .chapters-container
         //- Ajoute tabindex="0" aux images pour leur permettre de capturer le focus
-        
-        //- #iceberg
-        //-     //- p ça n'est que le sommet de l'iceberg
-        //-     script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js")
-        //-     #iceberg-container
-        //-         spline-viewer(url="https://prod.spline.design/Y1LkSYIcXCE5tM9S/scene.splinecode")
-        //-     .legend
-        //-         .legend-attach-line
-        //-         p.t
-        //-             span.big-num 100 
-        //-             br
-        //-             span.cre créations personnelles
 
-        
         include ./assets/html/items/agrume.pug
-
         include ./assets/html/items/sp-logo.pug
         
         .item
@@ -129,11 +117,11 @@ main
                 | Le Marsouin
         
         .item
-            //- h3.numero
             div#spline-container
                 div
-                    script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js")
-                    spline-viewer(loading-anim-type="spinner-small-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
+                    script(type="module" src="https://unpkg.com/@splinetool/viewer@1.9.86/build/spline-viewer.js" async)
+                    spline-viewer(loading-anim-type="spinner-big-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
+
 
         .item
             h3.numero
@@ -513,10 +501,11 @@ footer
                 include ./assets/html/skills.pug
         
     button#backToTop(onclick='topFunction()' title='Go to top')
-        |↑ Top
+        |↑
 
 // jQuery 3.6.0
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+
 // Magnific Popup core JS file
 script(src='assets/Js/jquery.magnific-popup.js')
 script(src='assets/Js/main.js')
@@ -525,5 +514,7 @@ script.
     $("#svg_icons").load("../assets/icons/icons_svg.html");
     });
 
+// My Scripts
 script(src='assets/Js/morph_header.js')
 script(src='assets/Js/back_to_top.js')
+script(src='assets/Js/chapter_scrollbar.js')

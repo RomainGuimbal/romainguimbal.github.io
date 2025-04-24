@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/project.css">
   <link rel="stylesheet" href="assets/css/badges.css">
-  <link rel="stylesheet" href="assets/css/back_to_top_button.css">
+  <link rel="stylesheet" href="assets/css/chapter_scrollbar.css">
   <!-- Magnific Popup core CSS file-->
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
   <!-- Google Fonts-->
@@ -40,6 +40,7 @@
 </header>
 <main>
   <div class="container-main">
+    <div class="chapters-container"></div>
     <div class="project" id="agrume">
       <div class="project-content">
         <div class="project-main">
@@ -63,7 +64,7 @@
     <div class="project" id="sp-logo">
       <div class="project-content">
         <div class="project-main">
-          <div class="project-large-img"><a class="without-caption image-link" href="../assets/img/splogo_alpha.png" style="box-shadow: none;"><img src="../assets/img/splogo_alpha.png" style="box-shadow: none;"></a></div>
+          <div class="project-large-img"><a class="without-caption image-link" href="../assets/img/splogo_alpha.png" style="box-shadow: none;"><img src="../assets/img/splogo_alpha.png" style="box-shadow: none; filter: drop-shadow(0 0 1em rgba(0, 17, 90, 0.5));"></a></div>
           <div class="project-side">
             <h3 class="numero"></h3>
             <h2> SurfacePsycho logo</h2>
@@ -103,8 +104,8 @@
     <div class="item">
       <div id="spline-container">
         <div>
-          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js"></script>
-          <spline-viewer loading-anim-type="spinner-small-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode"></spline-viewer>
+          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.86/build/spline-viewer.js" async></script>
+          <spline-viewer loading-anim-type="spinner-big-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode"></spline-viewer>
         </div>
       </div>
     </div>
@@ -413,7 +414,7 @@
       </div>
     </div>
   </div>
-  <button id="backToTop" onclick="topFunction()" title="Go to top">↑ Top</button>
+  <button id="backToTop" onclick="topFunction()" title="Go to top">↑</button>
 </footer>
 <!-- jQuery 3.6.0-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -426,5 +427,7 @@
   });
   
 </script>
+<!-- My Scripts-->
 <script src="assets/Js/morph_header.js"></script>
 <script src="assets/Js/back_to_top.js"></script>
+<script src="assets/Js/chapter_scrollbar.js"></script>
