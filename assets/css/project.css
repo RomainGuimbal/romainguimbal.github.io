@@ -175,6 +175,12 @@
 	/* text-align-last: center; */
 }
 
+
+@media (max-width:600px){
+	.project p{
+		font-size: 0.7em;
+}
+
 .project .sidescroll{
 	margin-left: -5%;
 	width: 110%;

@@ -245,10 +245,10 @@ spline-viewer{
 } */
 
 
-/* div#spline-container{
+div#spline-container{
 	margin: 0 auto;
-	height: 634px;
-} */
+	/* height: 634px; */
+}
 
 
 /* .vertical-duo{
