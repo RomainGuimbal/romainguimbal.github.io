@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurfacePsycho - Donate</title>
+    <link rel="stylesheet" href="sp-donation.css"/>
+    <link rel="icon" href="../assets/img/favicon.png">
+</head>
+<body>
+    <!-- <canvas id="shaderCanvas"></canvas> -->
+
+    <div class="container">
+        <div class="main-content">
+            
+
+            <div class="logo-stack">
+                <h2 class="dominus">DOMINUS NURBSUS</h2>
+                <!-- <img class="svg" src="svg button.svg"/> -->
+                <img class="logo" src="../assets/img/splogo_alpha.png">
+            </div>
+
+            <h1 class="title">SurfacePsycho</h1>
+            <p class="subtitle">Accelerate the future</p>
+            
+
+            <div class="donate-button" onclick="handleDonate()" id="centerButton">
+                <img class="donate-frame"><!--src="svg button.svg"> -->
+                <img class="donate-decoration" src="svg button ext.svg">
+                <span class="default-text">Free Money</span>
+                <span class="hover-text">Donate</span>
+            </div>
+            
+            <div class="progress-section">
+                <div class="progress-label">
+                    <span>Goal Progress</span>
+                    <span>1 100 € / 50 000 €</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>            
+        </div>
+
+        <div class="links-grid">
+            <a href="https://github.com/RomainGuimbal/SurfacePsycho" class="link-frame">
+                <!-- <div class="link-icon">ℹ️</div> -->
+                <div class="link-title">Github</div>
+                <div class="link-desc">It's open-source babe 😎</div>
+            </a>
+
+            <a href="#" class="link-frame">
+                <div class="link-icon">👑</div>
+                <div class="link-title">Top Donator</div>
+                <div class="link-desc">To him you shall pray</div>
+            </a>
+            
+            <a href="#" class="link-frame" onclick="handleLinkClick('updates')">
+                <!-- <div class="link-icon">📰</div> -->
+                <div class="link-title">Documentation</div>
+                <div class="link-desc">Probably obsolete sorry</div>
+            </a>
+
+            <a href="#" class="link-frame" onclick="handleLinkClick('updates')">
+                <!-- <div class="link-icon">📰</div> -->
+                <div class="link-title">Updates</div>
+                <div class="link-desc">Latest project news</div>
+            </a>
+
+            <a href="https://discord.gg/MJdxMBM6pm" class="link-frame">
+                <!-- <div class="link-icon">📰</div> -->
+                <div class="link-title">Geometry Nerd&nbsp?</div>
+                <div class="link-desc">Join the discord</div>
+            </a>
+
+            <a href="#" class="link-frame" onclick="handleLinkClick('contact')">
+                <!-- <div class="link-icon">📧</div> -->
+                <div class="link-title">Contact</div>
+                <div class="link-desc">Get in touch with us</div>
+            </a>
+
+            <a href="#" class="link-frame" onclick="handleLinkClick('faq')" style="background-image: url('../assets/img/pp.jpg');">
+                <!-- <div class="link-icon">❓</div> -->
+                <div class="link-title" style="color: #ff70ae">Me lol</div>
+                <div class="link-desc">Romain Guimbal</div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function handleDonate() {
+            // Add donation logic here
+            alert('Thank you for your interest in donating! This would redirect to your payment processor.');
+        }
+
+        function handleLinkClick(section) {
+            // Add navigation logic here
+            alert(`Navigating to ${section} section`);
+        }
+
+        // Animate progress bar on load
+        window.addEventListener('load', () => {
+            const progressFill = document.querySelector('.progress-fill');
+            progressFill.style.width = '0%';
+            setTimeout(() => {
+                progressFill.style.transition = 'width 2s ease-out';
+                progressFill.style.width = '2.2%';
+            }, 500);
+        });
+    </script>
+
+    <script src="tunnel-background.js"></script>
+</body>
+</html>
