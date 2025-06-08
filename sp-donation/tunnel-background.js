@@ -206,14 +206,16 @@ const canvas = document.getElementById('shaderCanvas');
                 
                 
                 centerButton.style.transform = `translate(-50%, -50%) scale(${scale})`;
+                
                 // -webkit-filter: drop-shadow( 0px 0px 20px rgba(255, 255, 255, 0.7));
-                centerButton.style.dropShadow = `0 0 ${20 + glowIntensity * 80}px rgba(255, 255, 255, ${glowIntensity})`;
+                // centerButton.style.dropShadow = `0 0 ${20 + glowIntensity * 80}px rgba(255, 255, 255, ${glowIntensity})`;
     
                 // centerButton.style.boxShadow = `0 0 ${20 + glowIntensity * 80}px rgba(255, 255, 255, ${glowIntensity})`;
             } else {
                 timeMultiplier = 1.0;
                 centerButton.style.transform = 'translate(-50%, -50%) scale(1.0)';
                 // centerButton.style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.1)';
+
             }
         }
 

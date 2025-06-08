@@ -8,7 +8,7 @@
     <link rel="icon" href="../assets/img/favicon.png">
 </head>
 <body>
-    <!-- <canvas id="shaderCanvas"></canvas> -->
+    <canvas id="shaderCanvas"></canvas>
 
     <div class="container">
         <div class="main-content">
@@ -21,12 +21,15 @@
             </div>
 
             <h1 class="title">SurfacePsycho</h1>
-            <p class="subtitle">Accelerate the future</p>
+            <p class="subtitle">Accelerate the project now</p>
             
 
-            <div class="donate-button" onclick="handleDonate()" id="centerButton">
-                <img class="donate-frame"><!--src="svg button.svg"> -->
+            <div class="donate-button" href="https://github.com/RomainGuimbal/SurfacePsycho" id="centerButton">
                 <img class="donate-decoration" src="svg button ext.svg">
+                <img class="donate-decoration" src="svg button ext.svg">
+                <img class="donate-decoration" src="svg button ext.svg">
+                <img class="donate-decoration" src="svg button ext.svg">
+                <img class="donate-frame">
                 <span class="default-text">Free Money</span>
                 <span class="hover-text">Donate</span>
             </div>
@@ -44,7 +47,7 @@
 
         <div class="links-grid">
             <a href="https://github.com/RomainGuimbal/SurfacePsycho" class="link-frame">
-                <!-- <div class="link-icon">ℹ️</div> -->
+                <img class="link-icon" src="github-mark-white.svg" style="width: 30px; height: 30px">
                 <div class="link-title">Github</div>
                 <div class="link-desc">It's open-source babe 😎</div>
             </a>
@@ -52,47 +55,38 @@
             <a href="#" class="link-frame">
                 <div class="link-icon">👑</div>
                 <div class="link-title">Top Donator</div>
-                <div class="link-desc">To him you shall pray</div>
+                <div class="link-desc">NAME HERE</div>
+                <div class="hover-text">To him you shall pray</div>
             </a>
             
-            <a href="#" class="link-frame" onclick="handleLinkClick('updates')">
-                <!-- <div class="link-icon">📰</div> -->
-                <div class="link-title">Documentation</div>
-                <div class="link-desc">Probably obsolete sorry</div>
+            <a href="#" class="link-frame" style="background-image: url('../assets/img/pp.jpg');">
+                <!-- <div class="link-icon">❓</div> -->
+                <div class="link-title" style="color: #000000">Talk to the manager</div>
+                <div class="link-desc" style="color: #000000">Romain Guimbal</div>
+                <div class="hover-text">romain.guimbal@proton.me</div>
             </a>
 
-            <a href="#" class="link-frame" onclick="handleLinkClick('updates')">
+            <a href="#" class="link-frame">
                 <!-- <div class="link-icon">📰</div> -->
                 <div class="link-title">Updates</div>
                 <div class="link-desc">Latest project news</div>
             </a>
 
-            <a href="https://discord.gg/MJdxMBM6pm" class="link-frame">
+            <a href="#" class="link-frame">
                 <!-- <div class="link-icon">📰</div> -->
+                <div class="link-title">Hands-on</div>
+                <div class="link-desc">Install SurfacePsycho Blender add-on</div>
+            </a>
+
+            <a href="https://discord.gg/MJdxMBM6pm" class="link-frame">
+                <img class="link-icon" src="https://upload.wikimedia.org/wikipedia/fr/4/4f/Discord_Logo_sans_texte.svg" style="width: 30px; height: 30px">
                 <div class="link-title">Geometry Nerd&nbsp?</div>
                 <div class="link-desc">Join the discord</div>
-            </a>
-
-            <a href="#" class="link-frame" onclick="handleLinkClick('contact')">
-                <!-- <div class="link-icon">📧</div> -->
-                <div class="link-title">Contact</div>
-                <div class="link-desc">Get in touch with us</div>
-            </a>
-
-            <a href="#" class="link-frame" onclick="handleLinkClick('faq')" style="background-image: url('../assets/img/pp.jpg');">
-                <!-- <div class="link-icon">❓</div> -->
-                <div class="link-title" style="color: #ff70ae">Me lol</div>
-                <div class="link-desc">Romain Guimbal</div>
             </a>
         </div>
     </div>
 
     <script>
-        function handleDonate() {
-            // Add donation logic here
-            alert('Thank you for your interest in donating! This would redirect to your payment processor.');
-        }
-
         function handleLinkClick(section) {
             // Add navigation logic here
             alert(`Navigating to ${section} section`);

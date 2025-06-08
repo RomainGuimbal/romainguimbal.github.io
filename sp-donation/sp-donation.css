@@ -83,7 +83,6 @@ canvas {
 }
 
 .donate-button {
-    border: none;
     padding: 50px;
     font-size: 1.5rem;
     font-weight: 600;
@@ -102,12 +101,10 @@ canvas {
     color: white;
     text-align: center;
     transition: all 0.2s ease;
-    pointer-events: none;
     z-index: 10;
     width: 300px;
     height: 160px;
 }
-
 
 /* .donate-button:hover {
     -webkit-filter: drop-shadow( 0px 0px 20px rgba(255, 255, 255, 0.7));
@@ -135,31 +132,29 @@ canvas {
   opacity: 1;
 }
 
-.donate-button .donate-decoration {
+.donate-button .donate-decoration{
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1.4);
-    transition: 0.3s ease-in;
     position: absolute;
-
 }
 
-.donate-button:hover .donate-decoration{
-    transform: translate(-50%, -50%) scale(1) ;
+img.donate-decoration:nth-of-type(1) { transform: translate(-35%, -40%) rotate(0deg); }
+img.donate-decoration:nth-of-type(2) { transform: translate(-65%, -60%) rotate(180deg); }
+img.donate-decoration:nth-of-type(3) { transform: translate(-35%, -60%) scale(1.0, -1.0); }
+img.donate-decoration:nth-of-type(4) { transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0); }
 
-}
 
 .donate-button .donate-frame {
     transform: translate(-50%, -50%);
     width: 100%;
-    height: auto;
+    height: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     
-    background: linear-gradient(90deg, #000000, #764ba2, #f093fb, #f5576c);
-    background-size: 200% 100%;
-    animation: gradientShift 3s ease-in-out infinite;
+    background: linear-gradient(90deg, #000, #453e4c, #000, #414348);;
+    background-size:500% 100%;
+    animation: gradientShift 10s ease-in-out infinite;
     -webkit-mask: url('svg button.svg') center/contain no-repeat;
     mask: url('svg button.svg') center/contain no-repeat;
 }
@@ -249,7 +244,7 @@ canvas {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(141, 80, 255, 0.784), transparent);
     animation: shimmer 2s infinite;
 }
 
@@ -292,7 +287,7 @@ canvas {
 .link-frame:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.95) !important;
 }
 
 .link-icon {
@@ -304,18 +299,51 @@ canvas {
     justify-content: center;
     color: white;
     font-size: 1.5rem;
+    transition: all 0.3s ease;
 }
 
 .link-title {
     font-weight: 600;
     margin-bottom: 5px;
     color: #ffffffd3;
+    opacity: 1.0;
+    transition: all 0.3s ease;
 }
 
 .link-desc {
     font-size: 0.9rem;
     color: #ffffff7d;
+    transition: all 0.3s ease;
 }
+
+.link-frame:hover .link-title,
+.link-frame:hover .link-icon,
+.link-frame:hover .link-desc,
+.link-frame:hover .link-icon {
+    opacity: 0.0;
+}
+
+
+.hover-text {
+    font-size: 0.9rem;
+    color: #ffffff7d;
+    opacity: 0.0;
+    transition: all 0.3s ease;
+    position : absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.link-frame:hover .hover-text {
+    opacity: 1.0;
+}
+
+
+
+
+
+
 
 @media (max-width: 768px) {
     .main-content {
