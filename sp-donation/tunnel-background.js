@@ -15,7 +15,7 @@ const canvas = document.getElementById('shaderCanvas');
 
         // Fragment shader source (converted from your Shadertoy shader)
         const fragmentShaderSource = `
-            precision mediump float;
+            precision lowp float;
             uniform vec2 iResolution;
             uniform float iTime;
             
@@ -50,7 +50,7 @@ const canvas = document.getElementById('shaderCanvas');
                 for(int i=0; i<70; i++) {
                     p = ro + rd * dO;
                     dS = -(length(vec2(length(p.xz)- radius_major, p.y)) - radius_minor);
-                    if(dS<.001) break; // ray touched surface
+                    if(dS<.0001) break; // ray touched surface
                     dO += dS;
                 }
                
@@ -58,7 +58,7 @@ const canvas = document.getElementById('shaderCanvas');
                 vec3 highlights = vec3(0.0);
                 vec3 col = vec3(0.0);
                
-                if(dS<.001){
+                if(dS<.0001){
                     float x = atan(p.x, p.z); // -pi to pi
                     float y = atan(length(p.xz)- 1.0, p.y);
                    
@@ -192,7 +192,7 @@ const canvas = document.getElementById('shaderCanvas');
 
         // Update time multiplier based on mouse distance
         function updateTimeMultiplier(distance) {
-            const maxDistance = 300; // Maximum distance for effect
+            const maxDistance = 600; // Maximum distance for effect
             const maxMultiplier = 10.0; // Maximum time acceleration
             
             if (distance <= maxDistance) {

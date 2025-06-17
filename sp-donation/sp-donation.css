@@ -98,7 +98,7 @@ canvas {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color:#fe0957;
     text-align: center;
     transition: all 0.2s ease;
     z-index: 10;
@@ -113,6 +113,7 @@ canvas {
 
 .donate-button .default-text {
   transition: opacity 0.3s ease;
+  
 }
 
 .donate-button .hover-text {
