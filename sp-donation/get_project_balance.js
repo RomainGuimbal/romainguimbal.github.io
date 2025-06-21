@@ -37,9 +37,11 @@ export async function fetchCollectiveBalance(slug) {
         
         // Update your HTML elements
         document.getElementById('balance-amount').textContent = 
-            `${balance.currency} ${amount}`;
-        document.getElementById('collective-name').textContent = 
-            collective.name;
+            amount; // Only set the amount, not the currency code
+        if (document.getElementById('collective-name')) {
+            document.getElementById('collective-name').textContent = 
+                collective.name;
+        }
             
         return { amount, currency: balance.currency, name: collective.name };
     } catch (error) {

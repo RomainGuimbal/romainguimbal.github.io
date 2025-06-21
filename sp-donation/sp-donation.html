@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SurfacePsycho - Donate</title>
     <link rel="stylesheet" href="sp-donation.css"/>
-    <link rel="icon" href="assets/img/favicon.png">
+    <link rel="icon" href="../assets/img/favicon.png">
 </head>
 <body>
     <canvas id="shaderCanvas"></canvas>
@@ -17,14 +17,14 @@
             <div class="logo-stack">
                 <h2 class="dominus">DOMINUS NURBSUS</h2>
                 <!-- <img class="svg" src="svg button.svg"/> -->
-                <img class="logo" src="assets/img/splogo_alpha.png">
+                <img class="logo" src="../assets/img/splogo_alpha.png">
             </div>
             <h1 class="title">SurfacePsycho</h1>
             
             <p class="subtitle">Accelerate the project now</p>
             
             <!-- DONATE BUTTON -->
-            <div class="donate-button" href="https://github.com/RomainGuimbal/SurfacePsycho" id="centerButton">
+            <div class="donate-button" href="https://opencollective.com/surfacepsycho#category-CONTRIBUTE" id="centerButton">
                 <img class="donate-decoration" src="svg button ext.svg">
                 <img class="donate-decoration" src="svg button ext.svg">
                 <img class="donate-decoration" src="svg button ext.svg">
@@ -89,7 +89,7 @@
         </div>
     </div>
 
-    <script type="module" src="main.js">
+    <script type="module">
         import { fetchCollectiveBalance } from "./get_project_balance.js";
         function handleLinkClick(section) {
             // Add navigation logic here
@@ -106,8 +106,8 @@
             if (result) {
                 const amount = parseFloat(result.amount.replace(',', '.'));
                 const percent = Math.min((amount / 50000) * 100, 100);
-                document.getElementById('balance-amount').textContent = `${amount.toLocaleString('fr-FR', {minimumFractionDigits: 2, maximumFractionDigits: 2})} ${result.currency}`;
-                document.getElementById('balance-label').innerHTML = `<span id='balance-amount'>${amount.toLocaleString('fr-FR', {minimumFractionDigits: 2, maximumFractionDigits: 2})} ${result.currency}</span> / 50 000 €`;
+                document.getElementById('balance-amount').textContent = `${amount.toLocaleString('fr-FR', {minimumFractionDigits: 2, maximumFractionDigits: 2})} €`;
+                document.getElementById('balance-label').innerHTML = `<span id='balance-amount'>${amount.toLocaleString('fr-FR', {minimumFractionDigits: 2, maximumFractionDigits: 2})} €</span> / 50 000 €`;
                 const progressFill = document.getElementById('progress-fill');
                 setTimeout(() => {
                     progressFill.style.transition = 'width 2s ease-out';
