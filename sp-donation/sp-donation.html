@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SurfacePsycho - Donate</title>
     <link rel="stylesheet" href="sp-donation.css"/>
-    <link rel="icon" href="../assets/img/favicon.png">
+    <link rel="icon" href="assets/img/favicon.png">
 </head>
 <body>
     <canvas id="shaderCanvas"></canvas>
@@ -17,7 +17,7 @@
             <div class="logo-stack">
                 <h2 class="dominus">DOMINUS NURBSUS</h2>
                 <!-- <img class="svg" src="svg button.svg"/> -->
-                <img class="logo" src="../assets/img/splogo_alpha.png">
+                <img class="logo" src="assets/img/splogo_alpha.png">
             </div>
             <h1 class="title">SurfacePsycho</h1>
             
@@ -37,10 +37,10 @@
             <div class="progress-section">
                 <div class="progress-label">
                     <span>Goal Progress</span>
-                    <span>1 100 € / 50 000 €</span>
+                    <span id="balance-label"><span id="balance-amount">1 100</span> € / 50 000 €</span>
                 </div>
                 <div class="progress-bar">
-                    <div class="progress-fill"></div>
+                    <div class="progress-fill" id="progress-fill"></div>
                 </div>
             </div>            
         </div>
@@ -89,7 +89,8 @@
         </div>
     </div>
 
-    <script>
+    <script type="module" src="main.js">
+        import { fetchCollectiveBalance } from "./get_project_balance.js";
         function handleLinkClick(section) {
             // Add navigation logic here
             alert(`Navigating to ${section} section`);
@@ -97,12 +98,22 @@
 
         // Animate progress bar on load
         window.addEventListener('load', () => {
-            const progressFill = document.querySelector('.progress-fill');
+            const progressFill = document.getElementById('progress-fill');
             progressFill.style.width = '0%';
-            setTimeout(() => {
-                progressFill.style.transition = 'width 2s ease-out';
-                progressFill.style.width = '2.2%';
-            }, 500);
+        });
+        
+        fetchCollectiveBalance('surfacepsycho').then(result => {
+            if (result) {
+                const amount = parseFloat(result.amount.replace(',', '.'));
+                const percent = Math.min((amount / 50000) * 100, 100);
+                document.getElementById('balance-amount').textContent = `${amount.toLocaleString('fr-FR', {minimumFractionDigits: 2, maximumFractionDigits: 2})} ${result.currency}`;
+                document.getElementById('balance-label').innerHTML = `<span id='balance-amount'>${amount.toLocaleString('fr-FR', {minimumFractionDigits: 2, maximumFractionDigits: 2})} ${result.currency}</span> / 50 000 €`;
+                const progressFill = document.getElementById('progress-fill');
+                setTimeout(() => {
+                    progressFill.style.transition = 'width 2s ease-out';
+                    progressFill.style.width = percent + '%';
+                }, 500);
+            }
         });
     </script>
 

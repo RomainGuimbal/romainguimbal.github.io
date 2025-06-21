@@ -44,14 +44,6 @@ $('.with-caption').magnificPopup({
 
 
 
-
-// class Project{
-
-//     constructor(){
-//         this.index = latest_index+1
-//     }
-// }
-
 $(document).ready(function(){
     var latest_index = 0;
 
@@ -60,3 +52,20 @@ $(document).ready(function(){
         $(this).text(latest_index+".");
     });
 });
+
+
+$(function(){
+    $("#svg_icons").load("assets/icons/icons_svg.html");
+});
+
+
+function closeBanner() {
+    const banner = document.getElementById('promoBanner');
+    banner.style.transform = 'translateY(-100%)';
+    banner.style.transition = 'transform 0.3s ease-out';
+    
+    setTimeout(() => {
+        banner.style.display = 'none';
+        document.body.style.marginTop = '0';
+    }, 300);
+}

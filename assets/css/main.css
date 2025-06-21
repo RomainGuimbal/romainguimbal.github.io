@@ -5,7 +5,10 @@ html, body {
 	text-align: center;
 	scrollbar-color: #e9e9e977 transparent;
 	/* font-size: 0.9em; */
+	box-sizing: border-box;
 }
+
+
 
 a:link {
 	text-decoration: none;
