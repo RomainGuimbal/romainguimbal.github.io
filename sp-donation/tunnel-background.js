@@ -238,6 +238,18 @@ const canvas = document.getElementById('shaderCanvas');
             updateTimeMultiplier(distance);
         });
         
+        // Touch movement tracking for time acceleration on mobile
+        document.addEventListener('touchmove', (e) => {
+            if (e.touches && e.touches.length > 0) {
+                const rect = canvas.getBoundingClientRect();
+                const touch = e.touches[0];
+                const touchX = touch.clientX - rect.left;
+                const touchY = touch.clientY - rect.top;
+                const distance = getDistanceToCenter(touchX, touchY);
+                updateTimeMultiplier(distance);
+            }
+        }, { passive: true });
+        
         // Reset time multiplier when mouse leaves canvas
         document.addEventListener('mouseleave', () => {
             timeMultiplier = 1.0;
