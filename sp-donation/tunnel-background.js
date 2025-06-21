@@ -24,7 +24,7 @@ const canvas = document.getElementById('shaderCanvas');
                 vec4 fragColor;
                 
                 vec2 uv = (fragCoord-.5*iResolution.xy)/iResolution.y;
-                float t = iTime*.2;
+                float t = iTime*.1;
                 
                 // Camera
                 vec3 ro = vec3(1.05,0,0.0); // ray origin
@@ -193,19 +193,19 @@ const canvas = document.getElementById('shaderCanvas');
         // Update time multiplier based on mouse distance
         function updateTimeMultiplier(distance) {
             const maxDistance = 600; // Maximum distance for effect
-            const maxMultiplier = 10.0; // Maximum time acceleration
+            const maxMultiplier = 25.0; // Maximum time acceleration
             
             if (distance <= maxDistance) {
                 // Closer to center = higher multiplier (inverse relationship)
                 const normalizedDistance = distance / maxDistance;
-                timeMultiplier = 1.0 + (maxMultiplier - 1.0) * (1.0 - normalizedDistance);
+                timeMultiplier = 1.0 + (maxMultiplier - 1.0) * (1.0 - normalizedDistance)**2;
                 
-                // Visual feedback on center button
-                const scale = 1.0 + (1.0 - normalizedDistance) * 0.4;
-                const glowIntensity = (1.0 - normalizedDistance) * 1.0;
+                // // Visual feedback on center button
+                // const scale = 1.0 + (1.0 - normalizedDistance) * 0.4;
+                // const glowIntensity = (1.0 - normalizedDistance) * 1.0;
                 
                 
-                centerButton.style.transform = `translate(-50%, -50%) scale(${scale})`;
+                centerButton.style.transform = `translate(-50%, -50%)`;
                 
                 // -webkit-filter: drop-shadow( 0px 0px 20px rgba(255, 255, 255, 0.7));
                 // centerButton.style.dropShadow = `0 0 ${20 + glowIntensity * 80}px rgba(255, 255, 255, ${glowIntensity})`;
