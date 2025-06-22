@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
     /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
@@ -15,7 +16,7 @@ html, body {
     font-family: Arial, sans-serif;
     height: 100%;
     width: 100%;
-    color : white;
+    color: white;
 }
 
 canvas {
@@ -59,7 +60,8 @@ canvas {
     text-align: center;
     max-width: 600px;
     width: 100%;
-    border: 4px solid rgba(255, 255, 255, 0.2);
+    /* border: 4px solid rgba(255, 255, 255, 0.2); */
+    overflow: visible;
     height: 350px;
 }
 
@@ -73,13 +75,16 @@ canvas {
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    /* text-shadow: 0 0 8px rgb(0, 0, 0); */
 }
 
 .subtitle {
     font-size: 1.2rem;
-    color: #ffffffb5;
+    color: #ffffff;
     margin-bottom: 40px;
     line-height: 1.6;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgb(0, 0, 0);
 }
 
 .donate-button {
@@ -89,6 +94,7 @@ canvas {
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
+    text-decoration: none;
     letter-spacing: 1px;
     background: url('svg buttons bg.svg') center/contain no-repeat;
     position: absolute;
@@ -98,51 +104,68 @@ canvas {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color:#fe0957;
+    color: #fe0957;
     text-align: center;
     transition: all 0.2s ease;
     z-index: 10;
     width: 300px;
     height: 160px;
+
+    -webkit-filter: drop-shadow( 0px 0px 20px rgba(255, 98, 124, 0.7));
+    filter: drop-shadow( 0px 0px 20px rgba(255, 98, 124, 0.7));
 }
 
-/* .donate-button:hover {
-    -webkit-filter: drop-shadow( 0px 0px 20px rgba(255, 255, 255, 0.7));
-    filter: drop-shadow( 0px 0px 20px rgba(255, 255, 255, 0.7));
-} */
+.donate-button:hover {
+    -webkit-filter: drop-shadow( 0px 0px 35px rgb(89, 133, 255));
+    filter: drop-shadow( 0px 0px 35px rgba(89, 133, 255, 1));
+}
 
 .donate-button .default-text {
-  transition: opacity 0.3s ease;
-  
+    transition: opacity 0.3s ease;
+
 }
 
 .donate-button .hover-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+    font-size: 1.5rem;
+    color: #9b18ff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
 }
 
 .donate-button:hover .default-text {
-  opacity: 0;
+    opacity: 0;
 }
 
 .donate-button:hover .hover-text {
-  opacity: 1;
+    opacity: 1;
 }
 
-.donate-button .donate-decoration{
+.donate-button .donate-decoration {
     top: 50%;
     left: 50%;
     position: absolute;
 }
 
-img.donate-decoration:nth-of-type(1) { transform: translate(-35%, -40%) rotate(0deg); }
-img.donate-decoration:nth-of-type(2) { transform: translate(-65%, -60%) rotate(180deg); }
-img.donate-decoration:nth-of-type(3) { transform: translate(-35%, -60%) scale(1.0, -1.0); }
-img.donate-decoration:nth-of-type(4) { transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0); }
+img.donate-decoration:nth-of-type(1) {
+    transform: translate(-35%, -40%) rotate(0deg);
+}
+
+img.donate-decoration:nth-of-type(2) {
+    transform: translate(-65%, -60%) rotate(180deg);
+}
+
+img.donate-decoration:nth-of-type(3) {
+    transform: translate(-35%, -60%) scale(1.0, -1.0);
+}
+
+img.donate-decoration:nth-of-type(4) {
+    transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0);
+}
 
 
 .donate-button .donate-frame {
@@ -152,9 +175,10 @@ img.donate-decoration:nth-of-type(4) { transform: translate(-65%, -40%) rotate(1
     position: absolute;
     top: 50%;
     left: 50%;
-    
-    background: linear-gradient(90deg, #000, #453e4c, #000, #414348);;
-    background-size:500% 100%;
+
+    background: linear-gradient(90deg, #000, #453e4c, #000, #414348);
+    ;
+    background-size: 500% 100%;
     animation: gradientShift 10s ease-in-out infinite;
     -webkit-mask: url('svg button.svg') center/contain no-repeat;
     mask: url('svg button.svg') center/contain no-repeat;
@@ -170,15 +194,17 @@ img.donate-decoration:nth-of-type(4) { transform: translate(-65%, -40%) rotate(1
     margin-top: -32px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* centers horizontally */
-    justify-content: center; /* centers vertically (optional) */
+    align-items: center;
+    /* centers horizontally */
+    justify-content: center;
+    /* centers vertically (optional) */
 }
 
 .logo {
-    position: absolute;
+    position: static;
     width: 100px;
-    height: 100px;
-    z-index: 10;
+    height: auto;
+    display: block;
     margin-top: -30px;
 }
 
@@ -186,15 +212,34 @@ img.donate-decoration:nth-of-type(4) { transform: translate(-65%, -40%) rotate(1
     position: absolute;
 }
 
-.dominus{
-    font-size: 1rem;
-    font-weight: 700;
-    color : rgb(190, 185, 255);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    word-spacing: 100px;
+.dominus-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: -1.5em;
+    gap: 0px;
+    /* space between words and frame */
 }
 
+.dominus {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(190, 185, 255);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    /* Remove word-spacing */
+    word-spacing: normal;
+    white-space: nowrap;
+}
+
+.dominus-left {
+    text-align: right;
+}
+
+.dominus-right {
+    text-align: left;
+}
 
 
 
@@ -202,7 +247,7 @@ img.donate-decoration:nth-of-type(4) { transform: translate(-65%, -40%) rotate(1
 .progress-section {
     width: calc(100% - 40px);
     background: rgba(255, 255, 255, 0.14);
-    backdrop-filter: blur(10px);    
+    backdrop-filter: blur(10px);
     border-radius: 10px;
     position: absolute;
     bottom: 0;
@@ -217,6 +262,14 @@ img.donate-decoration:nth-of-type(4) { transform: translate(-65%, -40%) rotate(1
     margin-bottom: 10px;
     font-weight: 600;
     color: #ffffff;
+}
+
+.progress-label .progress-total {
+    font-size: 0.6em;
+    opacity: 0.8;
+    margin-left: 2px;
+    font-weight: 400;
+    vertical-align: middle;
 }
 
 .progress-bar {
@@ -250,23 +303,36 @@ img.donate-decoration:nth-of-type(4) { transform: translate(-65%, -40%) rotate(1
 }
 
 @keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 .links-grid {
     position: fixed;
-    top: calc(50% + 175px); /* 50% + half of center frame height */
+    top: calc(50% + 175px);
+    /* 50% + half of center frame height */
     left: 50%;
     transform: translateX(-50%);
     width: 600px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 3fr));
     gap: 5px;
     margin-top: 10px;
 }
@@ -283,6 +349,7 @@ img.donate-decoration:nth-of-type(4) { transform: translate(-65%, -40%) rotate(1
     text-decoration: none;
     color: inherit;
     background-size: cover;
+    position: relative;
 }
 
 .link-frame:hover {
@@ -330,61 +397,18 @@ img.donate-decoration:nth-of-type(4) { transform: translate(-65%, -40%) rotate(1
     color: #ffffff7d;
     opacity: 0.0;
     transition: all 0.3s ease;
-    position : absolute;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
 }
 
 .link-frame:hover .hover-text {
     opacity: 1.0;
 }
 
-
-
-
-
-
-
-@media (max-width: 768px) {
-    .main-content {
-        padding: 30px 20px;
-        margin: 10px;
-    }
-
-    .title {
-        font-size: 2rem;
-    }
-
-    .donate-button {
-        padding: 15px 40px;
-        font-size: 1.2rem;
-    }
-
-    .links-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .title {
-        font-size: 1.5rem;
-    }
-
-    .donate-button {
-        padding: 12px 30px;
-        font-size: 1rem;
-    }
-
-    .main-content {
-        padding: 20px 15px;
-    }
-}
-
-
-
-/* Lapin donate animation styles */
 #lapin-donate {
     position: fixed;
     left: 0;
@@ -393,9 +417,9 @@ img.donate-decoration:nth-of-type(4) { transform: translate(-65%, -40%) rotate(1
     height: auto;
     z-index: 9000;
     pointer-events: auto;
-    transition: transform 1.2s cubic-bezier(.68,-0.1,.27,1.2), left 1.2s cubic-bezier(.68,-0.1,.27,1.2);
+    transition: transform 1.2s cubic-bezier(.68, -0.1, .27, 1.2), left 1.2s cubic-bezier(.68, -0.1, .27, 1.2);
     opacity: 1;
-    transform: translate(-200px,500px) rotate(20deg);
+    transform: translate(-200px, 500px) rotate(20deg);
 }
 
 #lapin-donate.partial-rise {
@@ -404,4 +428,54 @@ img.donate-decoration:nth-of-type(4) { transform: translate(-65%, -40%) rotate(1
 
 #lapin-donate.full-rise {
     transform: translate(calc(-200px + 5vw), -50px) rotate(0deg);
+}
+
+
+#frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    transform-origin: center;
+}
+
+#contact-frame {
+    background-image: none;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-blend-mode: darken !important;
+    position: relative;
+}
+
+#contact-frame:hover {
+    background-image: url('my eye small.jpg') !important;
+    background-color: rgba(0, 12, 43, 0.4)!important;
+    background-blend-mode: darken !important;
+}
+
+#contact-frame .hover-text {
+    width: 100%;
+}
+
+#contact-frame:hover .hover-text {
+    color: white;
+    opacity: 1.0;
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 20px 15px;
+    }
+
+    .links-grid {
+        width: 100%;
+    }
 }

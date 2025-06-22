@@ -12,12 +12,16 @@
 
     <div class="container">
         <div class="main-content">
+            <img id="frame" class="svg" src="baroque frame.svg"/>
             <div class="logo-stack">
-                <h2 class="dominus">DOMINUS NURBSUS</h2>
-                <!-- <img class="svg" src="svg button.svg"/> -->
-                <img class="logo" src="../assets/img/splogo_alpha.png">
+                <div class="dominus-flex">
+                    <span class="dominus dominus-left">DOMINUS</span>
+                    <img class="logo" src="../assets/img/splogo_alpha.png">
+                    <span class="dominus dominus-right">NURBSUS</span>
+                </div>
+                <h1 class="title">SurfacePsycho</h1>
             </div>
-            <h1 class="title">SurfacePsycho</h1>
+            
             
             <p class="subtitle">Accelerate the project now</p>
             
@@ -34,8 +38,11 @@
             
             <div class="progress-section">
                 <div class="progress-label">
-                    <span>Goal Progress</span>
-                    <span id="balance-label"><span id="balance-amount">1 100</span> € / 50 000 €</span>
+                    <span>2025 Goal</span>
+                    <span id="balance-label">
+                        <span id="balance-amount">1 100 €</span>
+                        <span class="progress-total">/ 25 000 €</span>
+                    </span>
                 </div>
                 <div class="progress-bar">
                     <div class="progress-fill" id="progress-fill"></div>
@@ -44,11 +51,19 @@
         </div>
 
         <div class="links-grid">
-            <a href="https://github.com/RomainGuimbal/SurfacePsycho" class="link-frame">
+            <!-- <a href="https://github.com/RomainGuimbal/SurfacePsycho" class="link-frame">
                 <img class="link-icon" src="github-mark-white.svg" style="width: 30px; height: 30px">
                 <div class="link-title">Github</div>
                 <div class="link-desc">Add-on Source & Doc</div>
                 <div class="hover-text">Open-source babe 😎</div>
+            </a> -->
+
+            <a href="#" class="link-frame">
+                <div class="link-icon">🤔</div>
+                <!-- <img class="link-icon" src="github-mark-white.svg" style="width: 30px; height: 30px"> -->
+                <div class="link-title">About</div>
+                <div class="link-desc">Donate for what ?</div>
+                <div class="hover-text">For the developement of Blender native NURBS, and the SP add-on until native NURBS catch up</div>
             </a>
 
             <a href="#" class="link-frame">
@@ -58,38 +73,40 @@
                 <div class="hover-text">To him you shall pray</div>
             </a>
             
-            <a href="#" class="link-frame" ><!--style="background-image: url('../assets/img/pp.jpg');"-->
+            <a href="mailto:romain.guimbal@proton.me" class="link-frame" id="contact-frame">
                 <div class="link-icon">🧢</div>
-                <div class="link-title">Contact</div> <!--style="color: #000000"-->
+                <div class="link-title">Contact</div>
                 <div class="link-desc">Talk to the manager</div>
-                <!-- <div class="hover-text">Romain Guimbal</div> -->
                 <div class="hover-text">romain.guimbal@proton.me</div>
             </a>
 
             <a href="https://blenderartists.org/t/surfacepsycho-addon-project/1487629" class="link-frame">
                 <div class="link-icon">📰</div>
-                <div class="link-title">Updates</div>
-                <div class="link-desc">Probably obsolete</div>
+                <div class="link-title">News</div>
+                <div class="link-desc">It moves fast</div>
                 <div class="hover-text">blenderartists.org</div>
             </a>
 
-            <a href="#" class="link-frame">
-                <div class="link-icon">🫳</div>
-                <div class="link-title">Hands-on</div>
-                <div class="link-desc">Get SurfacePsycho Blender add-on</div>
+            <a href="https://acideromineh.gumroad.com/l/SurfacePsycho" class="link-frame">
+                <div class="link-icon">⬇️</div>
+                <div class="link-title">Download</div>
+                <div class="link-desc">SurfacePsycho Add-on</div>
+                <div class="hover-text">Try it quick, but you are here to donate OKAY?</div>
             </a>
 
             <a href="https://discord.gg/MJdxMBM6pm" class="link-frame">
                 <img class="link-icon" src="https://upload.wikimedia.org/wikipedia/fr/4/4f/Discord_Logo_sans_texte.svg" style="width: 30px; height: 30px">
                 <div class="link-title">Geometry Nerd&nbsp?</div>
                 <div class="link-desc">Join the discord</div>
+                <div class="hover-text">Bla bla bla cosine... bla bla... basis matrix.. bla bla</div>
             </a>
         </div>
     </div>
 
     <!-- Lapin donate image -->
     <img id="lapin-donate" src="lapin donate.png" alt="Lapin Donate" />
-
+    
+    <script src="tunnel-background.js"></script>
     <script type="module">
         import { fetchCollectiveBalance } from "./get_project_balance.js";
         function handleLinkClick(section) {
@@ -105,10 +122,13 @@
         
         fetchCollectiveBalance('surfacepsycho').then(result => {
             if (result) {
-                const amount = parseFloat(result.amount.replace(',', '.'));
-                const percent = Math.min((amount / 50000) * 100, 100);
-                document.getElementById('balance-amount').textContent = `${amount.toLocaleString('fr-FR', {minimumFractionDigits: 2, maximumFractionDigits: 2})} €`;
-                document.getElementById('balance-label').innerHTML = `<span id='balance-amount'>${amount.toLocaleString('fr-FR', {minimumFractionDigits: 2, maximumFractionDigits: 2})} €</span> / 50 000 €`;
+                // Use the formatted amount for display, raw amount for math
+                const amount = result.amount;
+                const formattedAmount = result.formattedAmount;
+                const percent = Math.min((amount / 25000) * 100, 100);
+                document.getElementById('balance-amount').textContent = `${formattedAmount} €`;
+                document.getElementById('balance-label').innerHTML =
+                    `<span id='balance-amount'>${formattedAmount} €</span><span class="progress-total">/ 25 000 €</span>`;
                 const progressFill = document.getElementById('progress-fill');
                 setTimeout(() => {
                     progressFill.style.transition = 'width 2s ease-out';
@@ -117,7 +137,6 @@
             }
         });
     </script>
-    <script src="tunnel-background.js"></script>
     <script>
         // Lapin donate animation logic
         const lapin = document.getElementById('lapin-donate');

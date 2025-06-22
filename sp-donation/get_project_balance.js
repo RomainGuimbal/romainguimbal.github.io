@@ -33,17 +33,21 @@ export async function fetchCollectiveBalance(slug) {
         
         const collective = data.data.collective;
         const balance = collective.stats.balance;
-        const amount = (balance.valueInCents / 100).toFixed(2);
-        
+        // Round to nearest euro (no decimals)
+        const amount = Math.round(balance.valueInCents / 100);
+
+        // Format with space as thousands separator (fr-FR)
+        const formattedAmount = amount.toLocaleString('fr-FR');
+
         // Update your HTML elements
-        document.getElementById('balance-amount').textContent = 
-            amount; // Only set the amount, not the currency code
+        document.getElementById('balance-amount').textContent =
+            formattedAmount + ' €'; // Add euro symbol
         if (document.getElementById('collective-name')) {
-            document.getElementById('collective-name').textContent = 
+            document.getElementById('collective-name').textContent =
                 collective.name;
         }
-            
-        return { amount, currency: balance.currency, name: collective.name };
+
+        return { amount, formattedAmount, currency: balance.currency, name: collective.name };
     } catch (error) {
         console.error('Error fetching balance:', error);
         return null;
