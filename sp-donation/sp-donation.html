@@ -12,8 +12,6 @@
 
     <div class="container">
         <div class="main-content">
-            
-
             <div class="logo-stack">
                 <h2 class="dominus">DOMINUS NURBSUS</h2>
                 <!-- <img class="svg" src="svg button.svg"/> -->
@@ -89,6 +87,9 @@
         </div>
     </div>
 
+    <!-- Lapin donate image -->
+    <img id="lapin-donate" src="lapin donate.png" alt="Lapin Donate" />
+
     <script type="module">
         import { fetchCollectiveBalance } from "./get_project_balance.js";
         function handleLinkClick(section) {
@@ -116,7 +117,44 @@
             }
         });
     </script>
-
     <script src="tunnel-background.js"></script>
+    <script>
+        // Lapin donate animation logic
+        const lapin = document.getElementById('lapin-donate');
+        let lapinTimeout = null;
+
+        function clearLapinClasses() {
+            lapin.classList.remove('partial-rise');
+            lapin.classList.remove('full-rise');
+        }
+
+        function showLapinPartial() {
+            clearLapinClasses();
+            lapin.classList.add('partial-rise');
+            if (lapinTimeout) clearTimeout(lapinTimeout);
+            lapinTimeout = setTimeout(() => {
+                lapin.classList.remove('partial-rise');
+            }, 3500);
+        }
+
+        function showLapinFull() {
+            clearLapinClasses();
+            lapin.classList.add('full-rise');
+            if (lapinTimeout) clearTimeout(lapinTimeout);
+            lapinTimeout = setTimeout(() => {
+                lapin.classList.remove('full-rise');
+            }, 1500);
+        }
+
+        // Show partial rise every 10s
+        setInterval(showLapinPartial, 10000);
+        // Show partial rise on page load
+        setTimeout(showLapinPartial, 1000);
+
+        // Show full rise on click/touch/hover
+        lapin.addEventListener('click', showLapinFull);
+        lapin.addEventListener('touchstart', showLapinFull);
+        lapin.addEventListener('mouseenter', showLapinFull);
+    </script>
 </body>
 </html>

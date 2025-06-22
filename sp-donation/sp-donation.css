@@ -381,3 +381,27 @@ img.donate-decoration:nth-of-type(4) { transform: translate(-65%, -40%) rotate(1
         padding: 20px 15px;
     }
 }
+
+
+
+/* Lapin donate animation styles */
+#lapin-donate {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 600px;
+    height: auto;
+    z-index: 9000;
+    pointer-events: auto;
+    transition: transform 1.2s cubic-bezier(.68,-0.1,.27,1.2), left 1.2s cubic-bezier(.68,-0.1,.27,1.2);
+    opacity: 1;
+    transform: translate(-200px,500px) rotate(20deg);
+}
+
+#lapin-donate.partial-rise {
+    transform: translate(calc(-200px + 5vw), 320px) rotate(10deg);
+}
+
+#lapin-donate.full-rise {
+    transform: translate(calc(-200px + 5vw), -50px) rotate(0deg);
+}
