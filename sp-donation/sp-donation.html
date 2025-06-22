@@ -141,10 +141,12 @@
         // Lapin donate animation logic
         const lapin = document.getElementById('lapin-donate');
         let lapinTimeout = null;
+        let lapinIsFullyUp = false;
 
         function clearLapinClasses() {
             lapin.classList.remove('partial-rise');
             lapin.classList.remove('full-rise');
+            lapinIsFullyUp = false;
         }
 
         function showLapinPartial() {
@@ -153,16 +155,23 @@
             if (lapinTimeout) clearTimeout(lapinTimeout);
             lapinTimeout = setTimeout(() => {
                 lapin.classList.remove('partial-rise');
-            }, 2000);
+            }, 2500);
         }
 
         function showLapinFull() {
             clearLapinClasses();
             lapin.classList.add('full-rise');
             if (lapinTimeout) clearTimeout(lapinTimeout);
+            lapinIsFullyUp = false;
+            // Wait for the CSS transition to finish before allowing "down"
+            setTimeout(() => {
+                lapinIsFullyUp = true;
+            }, 1200); // match the CSS transition duration
             lapinTimeout = setTimeout(() => {
                 lapin.classList.remove('full-rise');
-            }, 2500);
+                lapinTimeout = null;
+                lapinIsFullyUp = false;
+            }, 4000);
         }
 
         // Show partial rise every 10s
@@ -171,9 +180,60 @@
         setTimeout(showLapinPartial, 1000);
 
         // Show full rise on click/touch/hover
-        lapin.addEventListener('click', showLapinFull);
-        lapin.addEventListener('touchstart', showLapinFull);
+        lapin.addEventListener('click', function(e) {
+            // Only allow to animate down if lapin is fully up (not animating)
+            if (lapin.classList.contains('full-rise') && lapinIsFullyUp) {
+                lapin.classList.remove('full-rise');
+                lapinIsFullyUp = false;
+                if (lapinTimeout) clearTimeout(lapinTimeout);
+                lapinTimeout = null;
+            } else if (!lapin.classList.contains('full-rise')) {
+                showLapinFull();
+            }
+        });
+        lapin.addEventListener('touchstart', function(e) {
+            if (lapin.classList.contains('full-rise') && lapinIsFullyUp) {
+                lapin.classList.remove('full-rise');
+                lapinIsFullyUp = false;
+                if (lapinTimeout) clearTimeout(lapinTimeout);
+                lapinTimeout = null;
+            } else if (!lapin.classList.contains('full-rise')) {
+                showLapinFull();
+            }
+        });
         lapin.addEventListener('mouseenter', showLapinFull);
+    </script>
+    <script>
+        // Touch hover emulation for mobile devices
+        function enableTouchHover(selector) {
+            document.querySelectorAll(selector).forEach(function(el) {
+                // Add .touch-hover on touchstart (finger down)
+                el.addEventListener('touchstart', function(e) {
+                    document.querySelectorAll(selector).forEach(function(other) {
+                        if (other !== el) other.classList.remove('touch-hover');
+                    });
+                    el.classList.add('touch-hover');
+                });
+                // Remove .touch-hover on touchend (finger up)
+                el.addEventListener('touchend', function(e) {
+                    el.classList.remove('touch-hover');
+                });
+                // Remove .touch-hover if finger leaves the element
+                el.addEventListener('touchcancel', function(e) {
+                    el.classList.remove('touch-hover');
+                });
+            });
+            // Remove .touch-hover from all when touching anywhere else
+            document.addEventListener('touchstart', function(e) {
+                document.querySelectorAll(selector).forEach(function(el) {
+                    if (!el.contains(e.target)) {
+                        el.classList.remove('touch-hover');
+                    }
+                });
+            });
+        }
+        enableTouchHover('.donate-button');
+        enableTouchHover('.link-frame');
     </script>
 </body>
 </html>

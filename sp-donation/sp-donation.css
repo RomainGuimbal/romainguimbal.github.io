@@ -120,6 +120,11 @@ canvas {
     filter: drop-shadow( 0px 0px 35px rgba(89, 133, 255, 1));
 }
 
+.donate-button.touch-hover {
+    -webkit-filter: drop-shadow( 0px 0px 35px rgb(89, 133, 255));
+    filter: drop-shadow( 0px 0px 35px rgba(89, 133, 255, 1));
+}
+
 .donate-button .default-text {
     transition: opacity 0.3s ease;
 
@@ -142,6 +147,13 @@ canvas {
 }
 
 .donate-button:hover .hover-text {
+    opacity: 1;
+}
+
+.donate-button.touch-hover .default-text {
+    opacity: 0;
+}
+.donate-button.touch-hover .hover-text {
     opacity: 1;
 }
 
@@ -358,6 +370,12 @@ img.donate-decoration:nth-of-type(4) {
     background: rgba(0, 0, 0, 0.95) !important;
 }
 
+.link-frame.touch-hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.95) !important;
+}
+
 .link-icon {
     width: auto;
     height: auto;
@@ -386,8 +404,13 @@ img.donate-decoration:nth-of-type(4) {
 
 .link-frame:hover .link-title,
 .link-frame:hover .link-icon,
-.link-frame:hover .link-desc,
-.link-frame:hover .link-icon {
+.link-frame:hover .link-desc {
+    opacity: 0.0;
+}
+
+.link-frame.touch-hover .link-title,
+.link-frame.touch-hover .link-icon,
+.link-frame.touch-hover .link-desc {
     opacity: 0.0;
 }
 
@@ -409,6 +432,10 @@ img.donate-decoration:nth-of-type(4) {
     opacity: 1.0;
 }
 
+.link-frame.touch-hover .hover-text {
+    opacity: 1.0;
+}
+
 #lapin-donate {
     position: fixed;
     left: 0;
@@ -417,7 +444,7 @@ img.donate-decoration:nth-of-type(4) {
     height: auto;
     z-index: 9000;
     pointer-events: auto;
-    transition: transform 1.2s cubic-bezier(.68, -0.1, .27, 1.2), left 1.2s cubic-bezier(.68, -0.1, .27, 1.2);
+    transition: transform 1.2s cubic-bezier(.68, -0.1, .27, 1.4), left 1.2s cubic-bezier(.68, -0.1, .27, 1.2);
     opacity: 1;
     transform: translate(-200px, 500px) rotate(20deg);
 }
@@ -453,11 +480,23 @@ img.donate-decoration:nth-of-type(4) {
     background-blend-mode: darken !important;
 }
 
+#contact-frame.touch-hover {
+    background-image: url('my eye small.jpg') !important;
+    background-color: rgba(0, 12, 43, 0.4)!important;
+    background-blend-mode: darken !important;
+}
+
 #contact-frame .hover-text {
     width: 100%;
 }
 
 #contact-frame:hover .hover-text {
+    color: white;
+    opacity: 1.0;
+    width: 100%;
+}
+
+#contact-frame.touch-hover .hover-text {
     color: white;
     opacity: 1.0;
     width: 100%;
