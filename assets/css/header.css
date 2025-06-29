@@ -14,16 +14,16 @@
 } */
 
 #header_ribbon{
-	width : 100%;
+	width : 80%;
 	height: 10em;
 	position: relative;
-	background-color: black;
+	/* background-color: black;
     overflow: hidden;
-	margin: 0 auto 1em;
-	/* z-index: 1; */
-	display:flow-root;
+	margin: 0 auto 1em;*/
+	z-index: 1;
+	/* display:flow-root;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
-	
+	 */ */
 	/* animation-timeline: view(-1px 10px);*/
 	/* animation-name: depth-effect; */
 	/* animation-range: exit-crossing exit;

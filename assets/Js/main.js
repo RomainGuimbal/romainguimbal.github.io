@@ -69,3 +69,4 @@ function closeBanner() {
         document.body.style.marginTop = '0';
     }, 300);
 }
+

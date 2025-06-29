@@ -15,486 +15,311 @@ body
             button.promo-close(onclick='closeBanner()' aria-label='Close banner') &times;
     
     header
-        #header_ribbon
-            img#bg-img(src='../assets/img/drop.jpg')
-            h3 Design - Ingénierie - 3D - Art graphique
-
         #page-title
             img(src='../assets/img/drop.jpg')
             img#bg-img2(src='../assets/img/drop.jpg')
             li
                 h1#romain Romain
                 h1#guimbal GUIMBAL
-                h2 Portfolio 2025
+                h2 Portfolio
+                //- h3 Design - Ingénierie - 3D - Art graphique
 
 
     main
         .container-main
-            .chapters-container
-            //- Ajoute tabindex="0" aux images pour leur permettre de capturer le focus
+            .masonry-grid
+                .grid-item.project#agrume
+                    // Multiple images example
+                    .multi-image
+                        a.without-caption.image-link(href='../assets/img/Kaijus2024 -1.jpg' class='active')
+                            img(src='../assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg' )
+                        a.without-caption.image-link(href='../assets/img/Kaijus2024 -2.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg')
+                        a.without-caption.image-link(href='../assets/img/Mood board.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_Mood board.jpg')
+                        a.without-caption.image-link(href='../assets/img/multi sketch presse agrume.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_multi sketch presse agrume.jpg')
+                        a.without-caption.image-link(href='../assets/img/Presse agrume.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_Presse agrume.jpg')    
+                        a.without-caption.image-link(href='../assets/img/Kaijus2024 -1.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg')
+                        a.without-caption.image-link(href='../assets/img/Kaijus2024 -2.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg')
 
-            include ./assets/html/items/agrume.pug
-            include ./assets/html/items/sp-logo.pug
+                    .image-dots
+                        span.image-dot.active(data-index='0')
+                        span.image-dot(data-index='1')
+                        span.image-dot(data-index='2')
+                        span.image-dot(data-index='3')
+                        span.image-dot(data-index='4')
+                        span.image-dot(data-index='5')
+                        span.image-dot(data-index='6')
+                    //-                    
+                            h3.numero
+                    //-     .image-index-dots
+
+                .grid-item.project
+                    a.without-caption.image-link(href='../assets/img/splogo_alpha.png' style='box-shadow: none;')
+                        img(src='../assets/img/thumbnails/thumbnail_splogo_alpha.png' style='box-shadow: none; filter: drop-shadow(0 0 1em rgba(0, 17, 90, 0.5));')
+                
+                
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/phare design.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_phare design.jpg' style='margin-bottom: .4em;')
+                        
+                    //-     figcaption
+                    //-         | Reproduction du feu avant de la Smart Fourjoy Concept
+                    //-         br
+                    //-         | 2021
+
             
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#modeling_descrip')
-                        i#modeling.skillbadge
-                        span Modélisation
-                    a.badge-backg(href='#fx_descrip')
-                        i#fx.skillbadge
-                        span Visualisation
-                a.without-caption.image-link(href='../assets/img/phare design.jpg')
-                    img(src='../assets/img/phare design.jpg' style='margin-bottom: .4em;')
-                figcaption
-                    | Reproduction du feu avant de la Smart Fourjoy Concept
-                    br
-                    | 2021
 
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#perspec_descrip')
-                        i#perspec.skillbadge
-                        span Dessin technique
-                    a.badge-backg(href='#surface_descrip')
-                        i#surface.skillbadge
-                        span Surfaces et formes
-                .duo-vertical
+                .grid-item
                     a.without-caption.image-link(href='../assets/img/random car dessin.jpg')
-                        img.content-pic(src='../assets/img/random car dessin.jpg')
-                    a.without-caption.image-link(href='../assets/img/random car dessin paintover.jpg')
-                        img.content-pic(src='../assets/img/random car dessin paintover.jpg')
-                figcaption
-                    | Concept voiture
-                    br
-                    | 2024
+                        img.content-pic(src='../assets/img/thumbnails/thumbnail_random car dessin.jpg')
+                    //- a.without-caption.image-link(href='../assets/img/random car dessin paintover.jpg')
+                    //-     img.content-pic(src='../assets/img/random car dessin paintover.jpg')
+                    //- figcaption
+                    //-     | Concept voiture
+                    //-     br
+                    //-     | 2024
+
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/Lardon octobre 2019 copy.jpg')
+                        img.content-pic(src='../assets/img/thumbnails/thumbnail_Lardon octobre 2019 copy.jpg')
+                    //- figcaption
+                    //-     | Le Lardon
+                    //-     br
+                    //-     | Render 2019
+                    //- br
+                    //- | Model 2016
+                    
+                .grid-item
+                    a.without-caption.image-link(href="assets/img/vaisseau scoot modif avril 2021.jpg")
+                        img(src="assets/img/thumbnails/thumbnail_vaisseau scoot modif avril 2021.jpg")
+                    //- figcaption
+                    //-     | Le Marsouin
 
 
-
-            //- .item
-            //-     h3.numero
-            //-     .badgelist
-            //-         a.badge-backg(href='#surface_descrip')
-            //-             i#surface.skillbadge
-            //-             span Surfaces et formes
-            //-         a.badge-backg(href='#modeling_descrip')
-            //-             i#modeling.skillbadge
-            //-             span Modélisation
-            //-         a.badge-backg(href='#fx_descrip')
-            //-             i#fx.skillbadge
-            //-             span Visualisation
-            //-     a.without-caption.image-link(href='../assets/img/lard odfg1.jpg')
-            //-         img.content-pic(src='../assets/img/lard odfg1.jpg')
-            //-     figcaption
-            //-         | Le Lardon
-            //-         br
-            //-         | Render 2022
-            //-         br
-            //-         | Model 2016
-
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#surface_descrip')
-                        i#surface.skillbadge
-                        span Surfaces et formes
-                    a.badge-backg(href='#modeling_descrip')
-                        i#modeling.skillbadge
-                        span Mod&eacute;lisation
-                    a.badge-backg(href='#fx_descrip')
-                        i#fx.skillbadge
-                        span Visualisation
-                a.without-caption.image-link(href='../assets/img/Lardon octobre 2019 copy.jpg')
-                    img.content-pic(src='../assets/img/Lardon octobre 2019 copy.jpg')
-                figcaption
-                    | Le Lardon
-                    br
-                    | Render 2019
-                    br
-                    | Model 2016
-
-
-
-
-            .item
-                h3.numero
-                .badgelist
-
-                a.without-caption.image-link(href="assets/img/vaisseau scoot modif avril 2021.jpg")
-                    img(src="assets/img/vaisseau scoot modif avril 2021.jpg")
-                figcaption
-                    | Le Marsouin
-            
-            .item
-                h3.numero
-                div#spline-container
-                    div
-                        script(type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js" async)
-                        spline-viewer(loading-anim-type="spinner-big-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
-                            img(src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAATCAYAAADxlA/3AAAJ+ElEQVR4AQCBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAouHlQuLh5UUi4eVHIuHlSOLh5Uni4eVKIuHlSaLh5Uhi4eVGIuHlQ2Lh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAAIEAfv8Ai4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQWLh5UOi4eVF4uHlSCLh5Upi4eVL4uHlTOLh5U0i4eVMouHlSyLh5Uji4eVF4uHlQqLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQAAgQB+/wCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQeLh5UPi4eVGYuHlSOLh5Uti4eVNouHlT+Lh5VFi4eVSIuHlUmLh5VGi4eVQIuHlTaLh5Uqi4eVG4uHlQyLh5UAi4eVAIuHlQCLh5UAi4eVAACBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAouHlQqLh5UTi4eVHIuHlSeLh5Uyi4eVPYuHlUiLh5VSi4eVWouHlWCLh5Vji4eVY4uHlV+Lh5VXi4eVTYuHlT+Lh5Uwi4eVH4uHlQ+Lh5UAi4eVAIuHlQCLh5UAAIEAfv8Ai4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQiLh5USi4eVHIuHlSeLh5Uzi4eVQIuHlUyLh5VYi4eVZIuHlW6Lh5V2i4eVe4uHlX2Lh5V8i4eVd4uHlW6Lh5Vii4eVU4uHlUKLh5Uxi4eVIIuHlRCLh5UDi4eVAIuHlQAAgQB+/wCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UIi4eVFIuHlSCLh5Uti4eVOouHlUiLh5VWi4eVZIuHlXGLh5V9i4eVh4uHlY6Lh5WTi4eVlIuHlZGLh5WLi4eVgIuHlXOLh5Vii4eVUIuHlT2Lh5Uri4eVG4uHlQ2Lh5UDi4eVAACBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVBIuHlRCLh5Uei4eVLYuHlTyLh5VMi4eVW4uHlWuLh5V5i4eVhouHlZKLh5Wci4eVoouHlaaLh5Wli4eVoYuHlZmLh5WNi4eVfYuHlWuLh5VYi4eVRIuHlTCLh5Ufi4eVEYuHlQeLh5UBAIEAfv8Ai4eVAIuHlQCLh5UAi4eVAIuHlQCLh5ULi4eVGYuHlSmLh5U6i4eVS4uHlVyLh5Vsi4eVfIuHlYuLh5WYi4eVo4uHlayLh5Wxi4eVs4uHlbGLh5Wri4eVoYuHlZSLh5WDi4eVb4uHlVuLh5VFi4eVMYuHlR+Lh5UQi4eVBouHlQAAgQB+/wCLh5UAi4eVAIuHlQCLh5UAi4eVB4uHlRWLh5Uli4eVNouHlUiLh5Vai4eVa4uHlXyLh5WMi4eVmouHlaeLh5Wxi4eVuIuHlbyLh5W9i4eVuYuHlbKLh5Wmi4eVl4uHlYWLh5Vwi4eVW4uHlUWLh5Uwi4eVHYuHlQ6Lh5UDi4eVAACBAH7/AIuHlQCLh5UAi4eVAIuHlQiLh5UUi4eVI4uHlTSLh5VFi4eVV4uHlWmLh5V6i4eVi4uHlZqLh5Woi4eVs4uHlbyLh5XCi4eVxIuHlcOLh5W+i4eVtYuHlaiLh5WYi4eVhYuHlXCLh5Vai4eVRIuHlS+Lh5Uci4eVDYuHlQKLh5UAAIEAfv8Ai4eVAouHlQaLh5UNi4eVF4uHlSOLh5Uyi4eVQ4uHlVSLh5Vmi4eVd4uHlYiLh5WXi4eVpYuHlbGLh5W7i4eVwouHlceLh5XIi4eVxYuHlb+Lh5W1i4eVqIuHlZeLh5WEi4eVb4uHlVmLh5VDi4eVLouHlRyLh5UOi4eVA4uHlQAAgQB+/wCLh5UQi4eVE4uHlRqLh5Uki4eVMIuHlT+Lh5VPi4eVX4uHlXCLh5WAi4eVkIuHlZ6Lh5Wqi4eVtYuHlb2Lh5XDi4eVxouHlcWLh5XCi4eVu4uHlbGLh5Wji4eVk4uHlYGLh5Vsi4eVV4uHlUKLh5Uui4eVHYuHlQ+Lh5UFi4eVAACBAH7/AIuHlReLh5Ubi4eVIYuHlSuLh5U3i4eVRIuHlVOLh5Vii4eVcouHlYGLh5WPi4eVm4uHlaaLh5Wvi4eVtYuHlbqLh5W7i4eVuouHlbaLh5Wvi4eVpouHlZmLh5WJi4eVeIuHlWWLh5VSi4eVPouHlSyLh5Uci4eVD4uHlQaLh5UBAIEAfv8Ai4eVFYuHlRiLh5Uei4eVJ4uHlTKLh5U/i4eVTIuHlVqLh5Voi4eVdYuHlYKLh5WMi4eVlouHlZ2Lh5Wii4eVpYuHlaaLh5Wli4eVoYuHlZqLh5WRi4eVhouHlXiLh5Voi4eVWIuHlUaLh5U1i4eVJIuHlRaLh5ULi4eVAouHlQAAgQB+/wCLh5UHi4eVCouHlQ+Lh5UXi4eVIouHlS2Lh5U5i4eVRouHlVKLh5Vei4eVaYuHlXKLh5V6i4eVgIuHlYSLh5WGi4eVh4uHlYaLh5WCi4eVfIuHlXWLh5Vri4eVX4uHlVGLh5VDi4eVNIuHlSWLh5UXi4eVCouHlQCLh5UAi4eVAACBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UIi4eVEouHlR2Lh5Upi4eVNIuHlT6Lh5VHi4eVT4uHlVaLh5Vbi4eVXouHlWCLh5Vhi4eVX4uHlV2Lh5VYi4eVUouHlUqLh5VAi4eVNYuHlSmLh5Uci4eVD4uHlQOLh5UAi4eVAIuHlQCLh5UAAIEAfv8Ai4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQiLh5USi4eVG4uHlSOLh5Uqi4eVMIuHlTSLh5U3i4eVOYuHlTqLh5U5i4eVN4uHlTSLh5Uvi4eVKIuHlSCLh5UXi4eVDYuHlQOLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQAAgQB+/wCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVBYuHlQyLh5URi4eVFIuHlReLh5UZi4eVGouHlRqLh5UYi4eVFouHlRKLh5UNi4eVB4uHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAAGBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UDi4eVBYuHlQeLh5UIi4eVCIuHlQeLh5UFi4eVAouHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAJVJ2HejgW84AAAAASUVORK5CYII=" alt="Spline preview" style="width: 100%; height: 100%;")    
-            .item
-                h3.numero
-                li.badgelist(style='margin-bottom : 3em;')
-                    // Marge au video, pour pas gener boutons
-                    a.badge-backg(href='#modeling_descrip')
-                        i#modeling.skillbadge
-                        span Modélisation
-                    a.badge-backg(href='#generative_descrip')
-                        i#generative.skillbadge
-                        span Modélisation générative
-                    a.badge-backg(href='#animation_descrip')
-                        i#animation.skillbadge
-                        span Animation
-                    a.badge-backg(href='#fx_descrip')
-                        i#fx.skillbadge
-                        span Visualisation
-                video(controls='')
+                .grid-item
+                    video(controls='')
                         source(src='../assets/img/Precision living.mp4' type='video/mp4')
-                figcaption
-                        | Precision living
-                        br
-                        | 2022
-                        br
-                        | Musique : Vibin' Out - FKJ, ((( O )))
+                    //- figcaption
+                    //-         | Precision living
+                    //-         br
+                    //-         | 2022
+                    //-         br
+                    //-         | Musique : Vibin' Out - FKJ, ((( O )))
 
 
-            include ./assets/html/items/archi.pug
+                .grid-item
+                    div#spline-container
+                        div
+                            script(type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js" async)
+                            spline-viewer(loading-anim-type="spinner-big-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
+                                img(src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAATCAYAAADxlA/3AAAJ+ElEQVR4AQCBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAouHlQuLh5UUi4eVHIuHlSOLh5Uni4eVKIuHlSaLh5Uhi4eVGIuHlQ2Lh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAAIEAfv8Ai4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQWLh5UOi4eVF4uHlSCLh5Upi4eVL4uHlTOLh5U0i4eVMouHlSyLh5Uji4eVF4uHlQqLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQAAgQB+/wCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQeLh5UPi4eVGYuHlSOLh5Uti4eVNouHlT+Lh5VFi4eVSIuHlUmLh5VGi4eVQIuHlTaLh5Uqi4eVG4uHlQyLh5UAi4eVAIuHlQCLh5UAi4eVAACBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAouHlQqLh5UTi4eVHIuHlSeLh5Uyi4eVPYuHlUiLh5VSi4eVWouHlWCLh5Vji4eVY4uHlV+Lh5VXi4eVTYuHlT+Lh5Uwi4eVH4uHlQ+Lh5UAi4eVAIuHlQCLh5UAAIEAfv8Ai4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQiLh5USi4eVHIuHlSeLh5Uzi4eVQIuHlUyLh5VYi4eVZIuHlW6Lh5V2i4eVe4uHlX2Lh5V8i4eVd4uHlW6Lh5Vii4eVU4uHlUKLh5Uxi4eVIIuHlRCLh5UDi4eVAIuHlQAAgQB+/wCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UIi4eVFIuHlSCLh5Uti4eVOouHlUiLh5VWi4eVZIuHlXGLh5V9i4eVh4uHlY6Lh5WTi4eVlIuHlZGLh5WLi4eVgIuHlXOLh5Vii4eVUIuHlT2Lh5Uri4eVG4uHlQ2Lh5UDi4eVAACBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVBIuHlRCLh5Uei4eVLYuHlTyLh5VMi4eVW4uHlWuLh5V5i4eVhouHlZKLh5Wci4eVoouHlaaLh5Wli4eVoYuHlZmLh5WNi4eVfYuHlWuLh5VYi4eVRIuHlTCLh5Ufi4eVEYuHlQeLh5UBAIEAfv8Ai4eVAIuHlQCLh5UAi4eVAIuHlQCLh5ULi4eVGYuHlSmLh5U6i4eVS4uHlVyLh5Vsi4eVfIuHlYuLh5WYi4eVo4uHlayLh5Wxi4eVs4uHlbGLh5Wri4eVoYuHlZSLh5WDi4eVb4uHlVuLh5VFi4eVMYuHlR+Lh5UQi4eVBouHlQAAgQB+/wCLh5UAi4eVAIuHlQCLh5UAi4eVB4uHlRWLh5Uli4eVNouHlUiLh5Vai4eVa4uHlXyLh5WMi4eVmouHlaeLh5Wxi4eVuIuHlbyLh5W9i4eVuYuHlbKLh5Wmi4eVl4uHlYWLh5Vwi4eVW4uHlUWLh5Uwi4eVHYuHlQ6Lh5UDi4eVAACBAH7/AIuHlQCLh5UAi4eVAIuHlQiLh5UUi4eVI4uHlTSLh5VFi4eVV4uHlWmLh5V6i4eVi4uHlZqLh5Woi4eVs4uHlbyLh5XCi4eVxIuHlcOLh5W+i4eVtYuHlaiLh5WYi4eVhYuHlXCLh5Vai4eVRIuHlS+Lh5Uci4eVDYuHlQKLh5UAAIEAfv8Ai4eVAouHlQaLh5UNi4eVF4uHlSOLh5Uyi4eVQ4uHlVSLh5Vmi4eVd4uHlYiLh5WXi4eVpYuHlbGLh5W7i4eVwouHlceLh5XIi4eVxYuHlb+Lh5W1i4eVqIuHlZeLh5WEi4eVb4uHlVmLh5VDi4eVLouHlRyLh5UOi4eVA4uHlQAAgQB+/wCLh5UQi4eVE4uHlRqLh5Uki4eVMIuHlT+Lh5VPi4eVX4uHlXCLh5WAi4eVkIuHlZ6Lh5Wqi4eVtYuHlb2Lh5XDi4eVxouHlcWLh5XCi4eVu4uHlbGLh5Wji4eVk4uHlYGLh5Vsi4eVV4uHlUKLh5Uui4eVHYuHlQ+Lh5UFi4eVAACBAH7/AIuHlReLh5Ubi4eVIYuHlSuLh5U3i4eVRIuHlVOLh5Vii4eVcouHlYGLh5WPi4eVm4uHlaaLh5Wvi4eVtYuHlbqLh5W7i4eVuouHlbaLh5Wvi4eVpouHlZmLh5WJi4eVeIuHlWWLh5VSi4eVPouHlSyLh5Uci4eVD4uHlQaLh5UBAIEAfv8Ai4eVFYuHlRiLh5Uei4eVJ4uHlTKLh5U/i4eVTIuHlVqLh5Voi4eVdYuHlYKLh5WMi4eVlouHlZ2Lh5Wii4eVpYuHlaaLh5Wli4eVoYuHlZqLh5WRi4eVhouHlXiLh5Voi4eVWIuHlUaLh5U1i4eVJIuHlRaLh5ULi4eVAouHlQAAgQB+/wCLh5UHi4eVCouHlQ+Lh5UXi4eVIouHlS2Lh5U5i4eVRouHlVKLh5Vei4eVaYuHlXKLh5V6i4eVgIuHlYSLh5WGi4eVh4uHlYaLh5WCi4eVfIuHlXWLh5Vri4eVX4uHlVGLh5VDi4eVNIuHlSWLh5UXi4eVCouHlQCLh5UAi4eVAACBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UIi4eVEouHlR2Lh5Upi4eVNIuHlT6Lh5VHi4eVT4uHlVaLh5Vbi4eVXouHlWCLh5Vhi4eVX4uHlV2Lh5VYi4eVUouHlUqLh5VAi4eVNYuHlSmLh5Uci4eVD4uHlQOLh5UAi4eVAIuHlQCLh5UAAIEAfv8Ai4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQiLh5USi4eVG4uHlSOLh5Uqi4eVMIuHlTSLh5U3i4eVOYuHlTqLh5U5i4eVN4uHlTSLh5Uvi4eVKIuHlSCLh5UXi4eVDYuHlQOLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQAAgQB+/wCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVBYuHlQyLh5URi4eVFIuHlReLh5UZi4eVGouHlRqLh5UYi4eVFouHlRKLh5UNi4eVB4uHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAAGBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UDi4eVBYuHlQeLh5UIi4eVCIuHlQeLh5UFi4eVAouHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAJVJ2HejgW84AAAAASUVORK5CYII=" alt="Spline preview" style="width: 100%; height: 100%;")    
+                
+       
             
+                .grid-item.project#archi-gene
+                    a.without-caption.image-link(href='../assets/img/Piliers spiral bois.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_Piliers spiral bois.jpg')
+                    //- a.without-caption.image-link(href='../assets/img/batiments rubans.jpg')
+                    //-     img(src='../assets/img/batiments rubans.jpg')
+                    //- figcaption
+                    //-     | Architecture
 
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#graphic_descrip')
-                        i#fx.skillbadge
-                        span Graphique
-                .duo-vertical
+                .grid-item.project
                     a.without-caption.image-link(href='../assets/img/foulard electro.jpg')
-                        img(src='../assets/img/foulard electro.jpg')
-                    a.without-caption.image-link(href='../assets/img/foulard 2.jpg')
-                        img(src='../assets/img/foulard 2.jpg')
-                figcaption
-                    | Foulard carte électronique
-                    br
-                    | 2015
+                        img(src='../assets/img/thumbnails/thumbnail_foulard electro.jpg')
+                    //- a.without-caption.image-link(href='../assets/img/foulard 2.jpg')
+                    //-     img(src='../assets/img/foulard 2.jpg')
+                    //- figcaption
+                    //-     | Foulard carte électronique
+                    //-     br
+                    //-     | 2015
 
-            include ./assets/html/items/sword.pug
+                .grid-item.project#sword
+                    video(controls='' loop='' autoplay='')
+                        source(src='../assets/img/Sword 2017 3D 20230001-0100.mp4' type='video/mp4')
 
-
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#modeling_descrip')
-                        i#modeling.skillbadge
-                        span Modélisation
-                    a.badge-backg(href='#fx_descrip')
-                        i#fx.skillbadge
-                        span Visualisation
-                a.without-caption.image-link(href='../assets/img/Architecture classique no mat.jpg')
-                    img(src='../assets/img/Architecture classique no mat.jpg')
-                figcaption
-                    | Exercice d'architecture classique
-                    br
-                    | 2024
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/Architecture classique no mat.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_Architecture classique no mat.jpg')
+                    //- figcaption
+                    //-     | Exercice d'architecture classique
+                    //-     br
+                    //-     | 2024
 
 
-            //- .item
-            //-     h3.numero
-            //-     li.badgelist(style='margin-bottom : 3em;')
-            //-         a.badge-backg(href='#fx_descrip')
-            //-             i#fx.skillbadge
-            //-             span Visualisation
-            //-         a.badge-backg(href='#animation_descrip')
-            //-             i#animation.skillbadge
-            //-             span Animation
-            //-     video(controls='')
-            //-             source(src='../assets/img/Motion mandala0001-0198.mp4' type='video/mp4')
-            //-     figcaption
-            //-             | 2023
-            //-             //- br
-            //-             //- | Son : création personnelle
+                .grid-item
+                    video(controls='')
+                        source(src='../assets/img/Motion mandala0001-0198.mp4' type='video/mp4')
+                    //- figcaption
+                    //-         | 2023
+                            //- br
+                            //- | Son : création personnelle
+
+                    
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/Prince des murs.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_Prince des murs.jpg')
+                    //- figcaption
+                    //-     | Prince des murs
+                    //-     br
+                    //-     | Peinture numérique
+                    //-     br
+                    //-     | 2023
             
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#graphic_descrip')
-                        i#graphic.skillbadge
-                        span Graphique
-                    a.badge-backg(href='#animation_descrip')
-                        i#animation.skillbadge
-                        span Animation
-                a.without-caption.image-link(href='../assets/img/Prince des murs.jpg')
-                    img(src='../assets/img/Prince des murs.jpg')
-                figcaption
-                    | Prince des murs
-                    br
-                    | Peinture numérique
-                    br
-                    | 2023
-            
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#modeling_descrip')
-                        i#modeling.skillbadge
-                        span Modélisation
-                    a.badge-backg(href='#fx_descrip')
-                        i#fx.skillbadge
-                        span Visualisation
-                a.without-caption.image-link(href='../assets/img/Robe velour doré 2023.jpg')
-                    img(src='../assets/img/Robe velour doré 2023.jpg')
-                figcaption
-                    | Robe velour doré
-                    br
-                    | 2023
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/Robe velour doré 2023.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_Robe velour doré 2023.jpg')
+                    //- figcaption
+                    //-     | Robe velour doré
+                    //-     br
+                    //-     | 2023
 
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#modeling_descrip')
-                        i#modeling.skillbadge
-                        span Modélisation
-                    a.badge-backg(href='#fx_descrip')
-                        i#fx.skillbadge
-                        span Visualisation
-                a.without-caption.image-link(href='../assets/img/robe.jpg')
-                    img(src='../assets/img/robe.jpg')
-                figcaption
-                    | Robe dorée
-                    br
-                    | 2020
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/robe.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_robe.jpg')
+                //-     figcaption
+                //-         | Robe dorée
+                //-         br
+                //-         | 2020
 
 
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#modeling_descrip')
-                        i#modeling.skillbadge
-                        span Modélisation
-                    a.badge-backg(href='#fx_descrip')
-                        i#fx.skillbadge
-                        span Visualisation
-                    a.badge-backg(href='#animation_descrip')
-                        i#animation.skillbadge
-                        span Animation
-                a.without-caption.image-link(href='../assets/img/head sculpt.jpg')
-                    img(src='../assets/img/head sculpt.jpg')
-                figcaption
-                    | Head sculpt
-                    br
-                    | 2022
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/head sculpt.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_head sculpt.jpg')
+                //-     figcaption
+                //-         | Head sculpt
+                //-         br
+                //-         | 2022
 
-            include ./assets/html/items/porsche.pug
+                .grid-item.project#porsche
+                    video(controls='' loop='' autoplay='')
+                        source(src='../assets/img/porsche courbes.mp4' type='video/mp4')
 
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/shoes sim 4.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_shoes sim 4.jpg')
+                    //-     figcaption
+                    //-         | Premier personnage 3D
+                    //-         br
+                    //-         | 2018
 
-            
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/Maciek Jasik studdy 2.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_Maciek Jasik studdy 2.jpg')
+                //-     figcaption
+                //-         | Dissolution
+                //-         br
+                //-         | Flou-net façon Maciek Jasik
+                //-         br
+                //-         | 2022
+                //-     // <img src="assets/img/eau 8.jpg">
 
+                .grid-item
+                    video(controls='' loop='' autoplay='')
+                        source(src='../assets/img/graphite final.mp4' type='video/mp4')
+                //- figcaption
+                //-     | Graphite
+                //-     br
+                //-     | 2020
 
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#modeling_descrip')
-                        i#modeling.skillbadge
-                        span Modélisation
-                    a.badge-backg(href='#fx_descrip')
-                        i#fx.skillbadge
-                        span Visualisation
-                a.without-caption.image-link(href='../assets/img/shoes sim 4.jpg')
-                    img(src='../assets/img/shoes sim 4.jpg')
-                figcaption
-                    | Premier personnage 3D
-                    br
-                    | 2018
-
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#modeling_descrip')
-                        i#modeling.skillbadge
-                        span Modélisation
-                    a.badge-backg(href='#fx_descrip')
-                        i#fx.skillbadge
-                        span Visualisation
-                a.without-caption.image-link(href='../assets/img/Maciek Jasik studdy 2.jpg')
-                    img(src='../assets/img/Maciek Jasik studdy 2.jpg')
-                figcaption
-                    | Dissolution
-                    br
-                    | Flou-net façon Maciek Jasik
-                    br
-                    | 2022
-                // <img src="assets/img/eau 8.jpg">
-
-            .item
-                h3.numero
-                .badgelist(style='margin-bottom : 2em;')
-                    // Marge au video, pour pas gener boutons
-                    a.badge-backg(href='#animation_descrip')
-                        i#animation.skillbadge
-                        span Animation
-                    a.badge-backg(href='#fx_descrip')
-                        i#fx.skillbadge
-                        span Visualisation
-                video(controls='' loop='' autoplay='')
-                    source(src='../assets/img/graphite final.mp4' type='video/mp4')
-                figcaption
-                    | Graphite
-                    br
-                    | 2020
-
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#fx_descrip')
-                        i#fx.skillbadge
-                        span Visualisation
-                .duo
+                .grid-item
+                    //- .duo
                     video(controls='' loop='' autoplay='')
                         source(src='../assets/img/diamant holo 20001-0149.mp4' type='video/mp4')
+                    //- video(controls='' loop='' autoplay='')
+                    //-     source(src='../assets/img/diamant bleu0001-0149.mp4' type='video/mp4')
+                //-     figcaption
+                //-         | Diamants en duo
+                //-         br
+                //-         | 2020        
+
+
+                .grid-item.project
+                    a.without-caption.image-link(href='../assets/img/verrière bateau.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_verrière bateau.jpg')
+
+            
+                .grid-item
                     video(controls='' loop='' autoplay='')
-                        source(src='../assets/img/diamant bleu0001-0149.mp4' type='video/mp4')
-                figcaption
-                    | Diamants en duo
-                    br
-                    | 2020        
+                        source(src='../assets/img/Origami procedurale.mp4' type='video/mp4')
+                    //-     figcaption
+                    //-         | Origami Procédurale
+                    //-         br
+                    //-         | Génération temps réel des patrons de découpe numérotés
+                    //-         br
+                    //-         | 2023
 
-            include ./assets/html/items/verriere.pug
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/Carte de voeuuu23 3.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_Carte de voeuuu23 3.jpg')
+                //-     figcaption
+                //-         | Carte de Voeux
+                //-         br
+                //-         | 2023
 
-            .item
-                h3.numero
-                .badgelist(style='margin-bottom : 2em;')
-                    a.badge-backg(href='#generative_descrip')
-                        i#generative.skillbadge
-                        span Modélisation générative
-                video(controls='' loop='' autoplay='')
-                    source(src='../assets/img/Origami procedurale.mp4' type='video/mp4')
-                figcaption
-                    | Origami Procédurale
-                    br
-                    | Génération temps réel des patrons de découpe numérotés
-                    br
-                    | 2023
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/inviit.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_inviit.jpg')
+                //-     figcaption
+                //-         | Fond de carton d'invitation
+                //-         br
+                //-         | 2018
 
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#graphic_descrip')
-                        i#graphic.skillbadge
-                        span Graphique
-                    a.badge-backg(href='#generative_descrip')
-                        i#generative.skillbadge
-                        span Modélisation générative
-                a.without-caption.image-link(href='../assets/img/Carte de voeuuu23 3.jpg')
-                    img(src='../assets/img/Carte de voeuuu23 3.jpg')
-                figcaption
-                    | Carte de Voeux
-                    br
-                    | 2023
-
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#graphic_descrip')
-                        i#graphic.skillbadge
-                        span Graphique
-                    a.badge-backg(href='#fx_descrip')
-                        i#fx.skillbadge
-                        span Visualisation
-                a.without-caption.image-link(href='../assets/img/inviit.jpg')
-                    img(src='../assets/img/inviit.jpg')
-                figcaption
-                    | Fond de carton d'invitation
-                    br
-                    | 2018
-
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#graphic_descrip')
-                        i#graphic.skillbadge
-                        span Graphique
-                    a.badge-backg(href='#animation_descrip')
-                        i#animation.skillbadge
-                        span Animation
-                a.without-caption.image-link(href='../assets/img/Princesse Cation tete 3quarts.jpg')
-                    img(src='../assets/img/Princesse Cation tete 3quarts.jpg')
-                figcaption
-                    | Princesse Cation
-                    br
-                    | Character design
-                    br
-                    | 2021
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/Princesse Cation tete 3quarts.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_Princesse Cation tete 3quarts.jpg')
+                    //-     figcaption
+                    //-         | Princesse Cation
+                    //-         br
+                    //-         | Character design
+                    //-         br
+                    //-         | 2021
+        
             
+                .grid-item
+                    video(controls='' loop='' autoplay='')
+                        source(src='../assets/img/fleur0001-0033.mp4' type='video/mp4')
+                    //- figcaption
+                    //-     | Animation traditionnelle
+                    //-     br
+                    //-     | 2016
 
-            
-            
-            //
-                <img src="assets/img/photo_2021-04-08_00-19-56.jpg" style="margin-bottom: .4em;">
-                <figcaption class ="legende">D'après photo</figcaption>
-            
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#graphic_descrip')
-                        i#graphic.skillbadge
-                        span Graphique
-                    a.badge-backg(href='#animation_descrip')
-                        i#animation.skillbadge
-                        span Animation
-                video(controls='' loop='' autoplay='')
-                    source(src='../assets/img/fleur0001-0033.mp4' type='video/mp4')
-                figcaption
-                    | Animation traditionnelle
-                    br
-                    | 2016
+                .grid-item
+                    video(controls='' loop='')
+                        source(src='../assets/img/SP - G4 continuity.mp4' type='video/mp4')
 
-            include ./assets/html/items/surfacepsycho.pug
-            include ./assets/html/items/CAO.pug
+                //- include ./assets/html/items/CAO.pug
 
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#graphic_descrip')
-                        i#graphic.skillbadge
-                        span Graphique
-                    a.badge-backg(href='#fx_descrip')
-                        i#fx.skillbadge
-                        span Visualisation
-                    a.badge-backg(href='#animation_descrip')
-                        i#animation.skillbadge
-                        span Animation
-                a.without-caption.image-link(href='../assets/img/artiche.jpg')
-                    img(src='../assets/img/artiche.jpg')
-                figcaption
-                    | Image extraite du court-métrage 
-                    br
-                    i Born to Wear, The Vegetal Revange
-                    br
-                    | Realisé en collaboration avec Tom Février
-                    br
-                    | 2023
-            
-            .item
-                h3.numero
-                .badgelist
-                    a.badge-backg(href='#graphic_descrip')
-                        i#graphic.skillbadge
-                        span Graphique
-                a.without-caption.image-link(href='../assets/img/G-co 2.jpg')
-                    img(src='../assets/img/G-co 2.jpg')
-                figcaption
-                    | Illustrator
-                    br
-                    | 2014
-            
-            <!-- Back to top button -->
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/artiche.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_artiche.jpg')
+                    //- figcaption
+                    //-     | Image extraite du court-métrage 
+                    //-     br
+                    //-     i Born to Wear, The Vegetal Revange
+                    //-     br
+                    //-     | Realisé en collaboration avec Tom Février
+                    //-     br
+                    //-     | 2023
+                
+                .grid-item
+                    a.without-caption.image-link(href='../assets/img/G-co 2.jpg')
+                        img(src='../assets/img/thumbnails/thumbnail_G-co 2.jpg')
+                    //- figcaption
+                    //-     | Illustrator
+                    //-     br
+                    //-     | 2014
 
 
     footer
         
         
-        .item
+        .grid-item
             .bio-split
                 .container#bio
                     img#profile_picture(src='../assets/img/photo_portrait.jpg') 
@@ -516,6 +341,7 @@ body
 
 // jQuery 3.6.0
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+script(src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js")
 
 // Magnific Popup core JS file
 script(src='assets/Js/jquery.magnific-popup.js')
@@ -525,3 +351,4 @@ script(src='assets/Js/main.js')
 script(src='assets/Js/morph_header.js')
 script(src='assets/Js/back_to_top.js')
 script(src='assets/Js/chapter_scrollbar.js')
+script(src='assets/Js/masonry.js')

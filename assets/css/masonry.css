@@ -1,0 +1,100 @@
+.masonry-grid {
+  margin: auto;
+}
+
+.grid-item {
+            width: 300px;
+            margin: 0 10px 20px 10px;
+            /* background: white; */
+            overflow: hidden;
+            transition: 0.2s;
+}
+
+.grid-item img,
+.grid-item video,
+.grid-item div#spline-container,
+.grid-item .duo {
+	width: 100%;
+	height: auto;
+	display: block;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+.grid-item .content {
+	padding: 10px;
+}
+
+.grid-item figcaption {
+            font-size: 16px;
+            color: #333;
+        }
+
+
+@media (max-width: 768px) {
+    .grid-item {
+        width: calc(50% - 20px);
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-item {
+        width: calc(100% - 20px);
+    }
+}
+
+
+.grid-item.project {
+    outline: var(--bg-color-light) 4px solid;
+    outline-offset: 6px;
+    border-radius : 3px
+}
+
+.grid-item .image-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.4em;
+    margin-bottom: 0.5em;
+    margin-top: 0; /* Remove top margin so dots are above images */
+}
+
+.grid-item .image-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #bbb;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.grid-item .image-dot.active {
+    background: #333;
+}
+
+.grid-item .multi-image {
+    position: relative;
+    width: 100%;
+    display: block;
+    margin-top: 0.5em;
+    /* Remove height: auto; */
+}
+
+.grid-item .multi-image a {
+    width: 100%;
+    height: auto;
+    display: block;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: 1;
+    position: absolute;
+}
+
+.grid-item .multi-image a.active {
+    opacity: 1;
+    z-index: 2;
+    position: static; /* Let the active image define the container height */
+}
