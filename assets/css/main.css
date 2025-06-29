@@ -62,7 +62,7 @@ body{
 	z-index:1;
 	max-width: 1200px;
 	margin: auto;
-	margin-top: 10px;
+	margin-top: 6em;
 }
 
 
@@ -319,3 +319,20 @@ footer .bio-split{
 	line-height: 1.5em;
 	margin-bottom: 4em;
 }
+
+
+video::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+/* video::-webkit-media-controls-play-button {
+    display: block !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */

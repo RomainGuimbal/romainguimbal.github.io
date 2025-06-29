@@ -22,11 +22,12 @@ body
                 h1#romain Romain
                 h1#guimbal GUIMBAL
                 h2 Portfolio
-                //- h3 Design - Ingénierie - 3D - Art graphique
+                
 
 
     main
         .container-main
+            //- h3 Design - Ingénierie - 3D - Art graphique
             .masonry-grid
                 .grid-item.project#agrume
                     // Multiple images example
@@ -45,7 +46,6 @@ body
                             img(src='../assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg')
                         a.without-caption.image-link(href='../assets/img/Kaijus2024 -2.jpg')
                             img(src='../assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg')
-
                     .image-dots
                         span.image-dot.active(data-index='0')
                         span.image-dot(data-index='1')
@@ -58,11 +58,6 @@ body
                             h3.numero
                     //-     .image-index-dots
 
-                .grid-item.project
-                    a.without-caption.image-link(href='../assets/img/splogo_alpha.png' style='box-shadow: none;')
-                        img(src='../assets/img/thumbnails/thumbnail_splogo_alpha.png' style='box-shadow: none; filter: drop-shadow(0 0 1em rgba(0, 17, 90, 0.5));')
-                
-                
                 .grid-item
                     a.without-caption.image-link(href='../assets/img/phare design.jpg')
                         img(src='../assets/img/thumbnails/thumbnail_phare design.jpg' style='margin-bottom: .4em;')
@@ -72,7 +67,26 @@ body
                     //-         br
                     //-         | 2021
 
-            
+
+                .grid-item.project#sp-logo
+                    .multi-image
+                        a.without-caption.image-link(href='../assets/img/splogo_alpha.png' style='box-shadow: none;' class='active')
+                            img(src='../assets/img/thumbnails/thumbnail_splogo_alpha.png' style='box-shadow: none; filter: drop-shadow(0 0 1em rgba(0, 17, 90, 0.5));')
+                        a.without-caption.image-link(href='../assets/img/splogomoodboard.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_splogomoodboard.jpg')
+                        a.without-caption.image-link(href='../assets/img/splogowires.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_splogowires.jpg')
+                        a.without-caption.image-link(href='../assets/img/splogo_wire_clean.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_splogo_wire_clean.jpg')
+                        a.without-caption.image-link(href='../assets/img/splogo_color.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_splogo_color.jpg')
+                    .image-dots
+                        span.image-dot.active(data-index='0')
+                        span.image-dot(data-index='1')
+                        span.image-dot(data-index='2')
+                        span.image-dot(data-index='3')
+                        span.image-dot(data-index='4')
+
 
                 .grid-item
                     a.without-caption.image-link(href='../assets/img/random car dessin.jpg')
@@ -122,12 +136,25 @@ body
        
             
                 .grid-item.project#archi-gene
-                    a.without-caption.image-link(href='../assets/img/Piliers spiral bois.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_Piliers spiral bois.jpg')
-                    //- a.without-caption.image-link(href='../assets/img/batiments rubans.jpg')
-                    //-     img(src='../assets/img/batiments rubans.jpg')
-                    //- figcaption
-                    //-     | Architecture
+                    .multi-image
+                        a.without-caption.image-link(href='../assets/img/Piliers spiral bois.jpg' class='active')
+                                img(src='../assets/img/thumbnails/thumbnail_Piliers spiral bois.jpg')
+                        a.without-caption.image-link(href='../assets/img/batiments rubans.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_batiments rubans.jpg')
+                        a.without-caption.image-link(href='../assets/img/effet ecran nodes.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_effet ecran nodes.jpg')
+                        a.without-caption.image-link(href="assets/img/maison d'allumettes.jpg")
+                            img(src="assets/img/thumbnails/thumbnail_maison d'allumettes.jpg")
+                        //- a.without-caption.image-link(href='../assets/img/Piliers spiral bois.jpg')
+                        //-     img(src='../assets/img/Piliers spiral bois.jpg')
+                        a.without-caption.image-link(href='../assets/img/le feizomj.jpg')
+                            img(src='../assets/img/thumbnails/thumbnail_le feizomj.jpg')
+                    .image-dots
+                        span.image-dot.active(data-index='0')
+                        span.image-dot(data-index='1')
+                        span.image-dot(data-index='2')
+                        span.image-dot(data-index='3')
+                        span.image-dot(data-index='4')
 
                 .grid-item.project
                     a.without-caption.image-link(href='../assets/img/foulard electro.jpg')
@@ -239,10 +266,24 @@ body
                 //-         | 2020        
 
 
-                .grid-item.project
-                    a.without-caption.image-link(href='../assets/img/verrière bateau.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_verrière bateau.jpg')
-
+                .grid-item.project#verriere
+                    .multi-image
+                        a.without-caption.image-link(href='../assets/img/verrière bateau.jpg' class='active')
+                            img(src='../assets/img/thumbnails/thumbnail_verrière bateau.jpg')
+                        a.without-caption.image-link(href='../assets/img/Salle de bal 1.jpg')
+                            img(src='../assets/img/Salle de bal 1.jpg')
+                        a.without-caption.image-link(href='../assets/img/Salle de bal 2.jpg')
+                            img(src='../assets/img/Salle de bal 2.jpg')
+                        a.without-caption.image-link(href='../assets/img/verrière bateau 1.jpg')
+                            img(src='../assets/img/verrière bateau 1.jpg')
+                        a.without-caption.image-link(href='../assets/img/verrière bateau 2.jpg')
+                            img(src='../assets/img/verrière bateau 2.jpg')
+                    .image-dots
+                        span.image-dot.active(data-index='0')
+                        span.image-dot(data-index='1')
+                        span.image-dot(data-index='2')
+                        span.image-dot(data-index='3')
+                        span.image-dot(data-index='4')
             
                 .grid-item
                     video(controls='' loop='' autoplay='')
@@ -289,9 +330,24 @@ body
                     //-     br
                     //-     | 2016
 
-                .grid-item
-                    video(controls='' loop='')
-                        source(src='../assets/img/SP - G4 continuity.mp4' type='video/mp4')
+                .grid-item.project#surfacepsycho
+                    .multi-image
+                        video(controls='' loop='' class='active')
+                            source(src='../assets/img/SP - G4 continuity.mp4' type='video/mp4')
+                        a.without-caption.image-link(href='../assets/img/SP hanger viewport.jpg')
+                            img(src='../assets/img/SP hanger viewport.jpg')
+                        a.without-caption.image-link(href='../assets/img/SP hanger SW.jpg')
+                            img(src='../assets/img/SP hanger SW.jpg')
+                        a.without-caption.image-link(href='../assets/img/SP cover.jpg')
+                            img(src='../assets/img/SP cover.jpg')
+                        a.without-caption.image-link(href='../assets/img/SP screenshot1.jpg')
+                            img(src='../assets/img/SP screenshot1.jpg')
+                    .image-dots
+                        span.image-dot.active(data-index='0')
+                        span.image-dot(data-index='1')
+                        span.image-dot(data-index='2')
+                        span.image-dot(data-index='3')
+                        span.image-dot(data-index='4')
 
                 //- include ./assets/html/items/CAO.pug
 

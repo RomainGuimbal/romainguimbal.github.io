@@ -11,20 +11,31 @@ document.addEventListener('DOMContentLoaded', function() {
         fitWidth: true,
         transitionDuration: '0.3s'
     });
+
+    // Ensure .grid-item.project applies border-radius to both images and videos
+    document.querySelectorAll('.grid-item.project').forEach(function(item) {
+        // Add border-radius to images and videos inside .grid-item.project
+        item.querySelectorAll('img, video').forEach(function(media) {
+            media.style.borderRadius = '3px';
+        });
+    });
     
     // Multi-image logic for .grid-item.project
     document.querySelectorAll('.grid-item.project').forEach(function(item) {
         const multiImage = item.querySelector('.multi-image');
         const dots = item.querySelectorAll('.image-dot');
         if (multiImage && dots.length > 0) {
-            // Use <a.without-caption.image-link> as the image containers
-            const imageLinks = multiImage.querySelectorAll('a.without-caption.image-link');
+            // Support both <a.without-caption.image-link> and <video> as carousel items
+            const imageLinks = Array.from(multiImage.children).filter(child =>
+                (child.tagName === 'A' && child.classList.contains('without-caption') && child.classList.contains('image-link')) ||
+                child.tagName === 'VIDEO'
+            );
             dots.forEach(function(dot, idx) {
                 dot.addEventListener('click', function() {
                     // Remove active from all
                     imageLinks.forEach(a => a.classList.remove('active'));
                     dots.forEach(d => d.classList.remove('active'));
-                    // Show only the active <a>
+                    // Show only the active item
                     imageLinks.forEach((a, i) => {
                         if (i === idx) {
                             a.classList.add('active');
@@ -36,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     dot.classList.add('active');
                 });
             });
-            // Ensure only one image is active at start
+            // Ensure only one item is active at start
             let foundActive = false;
             imageLinks.forEach((a, i) => {
                 if (a.classList.contains('active')) {

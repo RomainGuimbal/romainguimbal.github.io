@@ -5,7 +5,6 @@
 .grid-item {
             width: 300px;
             margin: 0 10px 20px 10px;
-            /* background: white; */
             overflow: hidden;
             transition: 0.2s;
 }
@@ -48,15 +47,22 @@
 .grid-item.project {
     outline: var(--bg-color-light) 4px solid;
     outline-offset: 6px;
-    border-radius : 3px
+    border-radius : 3px;
+    /* Ensure child media elements inherit border-radius */
+    aspect-ratio: auto; /* Allow JS to set aspect-ratio inline */
+}
+.grid-item.project img,
+.grid-item.project video {
+    border-radius: 3px;
+    /* Inherit outline from parent, but browsers don't support outline on media, so border-radius only */
 }
 
 .grid-item .image-dots {
     display: flex;
     justify-content: center;
     gap: 0.4em;
-    margin-bottom: 0.5em;
-    margin-top: 0; /* Remove top margin so dots are above images */
+    margin-bottom: 0;
+    margin-top: 0.5em; /* Remove top margin so dots are above images */
 }
 
 .grid-item .image-dot {
@@ -81,7 +87,8 @@
     /* Remove height: auto; */
 }
 
-.grid-item .multi-image a {
+.grid-item .multi-image a,
+.grid-item .multi-image video {
     width: 100%;
     height: auto;
     display: block;
@@ -93,8 +100,9 @@
     position: absolute;
 }
 
-.grid-item .multi-image a.active {
+.grid-item .multi-image a.active,
+.grid-item .multi-image video.active {
     opacity: 1;
     z-index: 2;
-    position: static; /* Let the active image define the container height */
+    position: static; /* Let the active item define the container height */
 }
