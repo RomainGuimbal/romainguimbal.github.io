@@ -16,8 +16,8 @@ body
     
     header
         #page-title
-            img(src='../assets/img/drop.jpg')
-            img#bg-img2(src='../assets/img/drop.jpg')
+            img(src='assets/img/drop.jpg')
+            img#bg-img2(src='assets/img/drop.jpg')
             li
                 h1#romain Romain
                 h1#guimbal GUIMBAL
@@ -28,24 +28,26 @@ body
     main
         .container-main
             //- h3 Design - Ingénierie - 3D - Art graphique
+            .fullscreen-backdrop#backdrop
+
             .masonry-grid
                 .grid-item.project#agrume
                     // Multiple images example
                     .multi-image
-                        a.without-caption.image-link(href='../assets/img/Kaijus2024 -1.jpg' class='active')
-                            img(src='../assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg' )
-                        a.without-caption.image-link(href='../assets/img/Kaijus2024 -2.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg')
-                        a.without-caption.image-link(href='../assets/img/Mood board.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_Mood board.jpg')
-                        a.without-caption.image-link(href='../assets/img/multi sketch presse agrume.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_multi sketch presse agrume.jpg')
-                        a.without-caption.image-link(href='../assets/img/Presse agrume.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_Presse agrume.jpg')    
-                        a.without-caption.image-link(href='../assets/img/Kaijus2024 -1.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg')
-                        a.without-caption.image-link(href='../assets/img/Kaijus2024 -2.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg')
+                        a.without-caption.image-link(href='assets/img/Kaijus2024 -1.jpg' class='active')
+                            img(src='assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg' )
+                        a.without-caption.image-link(href='assets/img/Kaijus2024 -2.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg')
+                        a.without-caption.image-link(href='assets/img/Mood board.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_Mood board.jpg')
+                        a.without-caption.image-link(href='assets/img/multi sketch presse agrume.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_multi sketch presse agrume.jpg')
+                        a.without-caption.image-link(href='assets/img/Presse agrume.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_Presse agrume.jpg')    
+                        a.without-caption.image-link(href='assets/img/Kaijus2024 -1.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg')
+                        a.without-caption.image-link(href='assets/img/Kaijus2024 -2.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg')
                     .image-dots
                         span.image-dot.active(data-index='0')
                         span.image-dot(data-index='1')
@@ -59,8 +61,8 @@ body
                     //-     .image-index-dots
 
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/phare design.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_phare design.jpg' style='margin-bottom: .4em;')
+                    a.without-caption.image-link(href='assets/img/phare design.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_phare design.jpg' style='margin-bottom: .4em;')
                         
                     //-     figcaption
                     //-         | Reproduction du feu avant de la Smart Fourjoy Concept
@@ -70,16 +72,16 @@ body
 
                 .grid-item.project#sp-logo
                     .multi-image
-                        a.without-caption.image-link(href='../assets/img/splogo_alpha.png' style='box-shadow: none;' class='active')
-                            img(src='../assets/img/thumbnails/thumbnail_splogo_alpha.png' style='box-shadow: none; filter: drop-shadow(0 0 1em rgba(0, 17, 90, 0.5));')
-                        a.without-caption.image-link(href='../assets/img/splogomoodboard.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_splogomoodboard.jpg')
-                        a.without-caption.image-link(href='../assets/img/splogowires.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_splogowires.jpg')
-                        a.without-caption.image-link(href='../assets/img/splogo_wire_clean.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_splogo_wire_clean.jpg')
-                        a.without-caption.image-link(href='../assets/img/splogo_color.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_splogo_color.jpg')
+                        a.without-caption.image-link(href='assets/img/splogo_alpha.png' style='box-shadow: none;' class='active')
+                            img(src='assets/img/thumbnails/thumbnail_splogo_alpha.png' style='box-shadow: none; filter: drop-shadow(0 0 1em rgba(0, 17, 90, 0.5));')
+                        a.without-caption.image-link(href='assets/img/splogomoodboard.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_splogomoodboard.jpg')
+                        a.without-caption.image-link(href='assets/img/splogowires.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_splogowires.jpg')
+                        a.without-caption.image-link(href='assets/img/splogo_wire_clean.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_splogo_wire_clean.jpg')
+                        a.without-caption.image-link(href='assets/img/splogo_color.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_splogo_color.jpg')
                     .image-dots
                         span.image-dot.active(data-index='0')
                         span.image-dot(data-index='1')
@@ -89,18 +91,18 @@ body
 
 
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/random car dessin.jpg')
-                        img.content-pic(src='../assets/img/thumbnails/thumbnail_random car dessin.jpg')
-                    //- a.without-caption.image-link(href='../assets/img/random car dessin paintover.jpg')
-                    //-     img.content-pic(src='../assets/img/random car dessin paintover.jpg')
+                    a.without-caption.image-link(href='assets/img/random car dessin.jpg')
+                        img.content-pic(src='assets/img/thumbnails/thumbnail_random car dessin.jpg')
+                    //- a.without-caption.image-link(href='assets/img/random car dessin paintover.jpg')
+                    //-     img.content-pic(src='assets/img/random car dessin paintover.jpg')
                     //- figcaption
                     //-     | Concept voiture
                     //-     br
                     //-     | 2024
 
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/Lardon octobre 2019 copy.jpg')
-                        img.content-pic(src='../assets/img/thumbnails/thumbnail_Lardon octobre 2019 copy.jpg')
+                    a.without-caption.image-link(href='assets/img/Lardon octobre 2019 copy.jpg')
+                        img.content-pic(src='assets/img/thumbnails/thumbnail_Lardon octobre 2019 copy.jpg')
                     //- figcaption
                     //-     | Le Lardon
                     //-     br
@@ -113,11 +115,11 @@ body
                         img(src="assets/img/thumbnails/thumbnail_vaisseau scoot modif avril 2021.jpg")
                     //- figcaption
                     //-     | Le Marsouin
-
-
-                .grid-item
-                    video(controls='')
-                        source(src='../assets/img/Precision living.mp4' type='video/mp4')
+                
+                    
+                .grid-item.video-container#videoContainer
+                    video(preload="metadata")
+                        source(src='assets/img/Precision living.mp4' type='video/mp4')
                     //- figcaption
                     //-         | Precision living
                     //-         br
@@ -129,26 +131,24 @@ body
                 .grid-item
                     div#spline-container
                         div
-                            script(type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js" async)
-                            spline-viewer(loading-anim-type="spinner-big-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
-                                img(src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAATCAYAAADxlA/3AAAJ+ElEQVR4AQCBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAouHlQuLh5UUi4eVHIuHlSOLh5Uni4eVKIuHlSaLh5Uhi4eVGIuHlQ2Lh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAAIEAfv8Ai4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQWLh5UOi4eVF4uHlSCLh5Upi4eVL4uHlTOLh5U0i4eVMouHlSyLh5Uji4eVF4uHlQqLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQAAgQB+/wCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQeLh5UPi4eVGYuHlSOLh5Uti4eVNouHlT+Lh5VFi4eVSIuHlUmLh5VGi4eVQIuHlTaLh5Uqi4eVG4uHlQyLh5UAi4eVAIuHlQCLh5UAi4eVAACBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAouHlQqLh5UTi4eVHIuHlSeLh5Uyi4eVPYuHlUiLh5VSi4eVWouHlWCLh5Vji4eVY4uHlV+Lh5VXi4eVTYuHlT+Lh5Uwi4eVH4uHlQ+Lh5UAi4eVAIuHlQCLh5UAAIEAfv8Ai4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQiLh5USi4eVHIuHlSeLh5Uzi4eVQIuHlUyLh5VYi4eVZIuHlW6Lh5V2i4eVe4uHlX2Lh5V8i4eVd4uHlW6Lh5Vii4eVU4uHlUKLh5Uxi4eVIIuHlRCLh5UDi4eVAIuHlQAAgQB+/wCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UIi4eVFIuHlSCLh5Uti4eVOouHlUiLh5VWi4eVZIuHlXGLh5V9i4eVh4uHlY6Lh5WTi4eVlIuHlZGLh5WLi4eVgIuHlXOLh5Vii4eVUIuHlT2Lh5Uri4eVG4uHlQ2Lh5UDi4eVAACBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVBIuHlRCLh5Uei4eVLYuHlTyLh5VMi4eVW4uHlWuLh5V5i4eVhouHlZKLh5Wci4eVoouHlaaLh5Wli4eVoYuHlZmLh5WNi4eVfYuHlWuLh5VYi4eVRIuHlTCLh5Ufi4eVEYuHlQeLh5UBAIEAfv8Ai4eVAIuHlQCLh5UAi4eVAIuHlQCLh5ULi4eVGYuHlSmLh5U6i4eVS4uHlVyLh5Vsi4eVfIuHlYuLh5WYi4eVo4uHlayLh5Wxi4eVs4uHlbGLh5Wri4eVoYuHlZSLh5WDi4eVb4uHlVuLh5VFi4eVMYuHlR+Lh5UQi4eVBouHlQAAgQB+/wCLh5UAi4eVAIuHlQCLh5UAi4eVB4uHlRWLh5Uli4eVNouHlUiLh5Vai4eVa4uHlXyLh5WMi4eVmouHlaeLh5Wxi4eVuIuHlbyLh5W9i4eVuYuHlbKLh5Wmi4eVl4uHlYWLh5Vwi4eVW4uHlUWLh5Uwi4eVHYuHlQ6Lh5UDi4eVAACBAH7/AIuHlQCLh5UAi4eVAIuHlQiLh5UUi4eVI4uHlTSLh5VFi4eVV4uHlWmLh5V6i4eVi4uHlZqLh5Woi4eVs4uHlbyLh5XCi4eVxIuHlcOLh5W+i4eVtYuHlaiLh5WYi4eVhYuHlXCLh5Vai4eVRIuHlS+Lh5Uci4eVDYuHlQKLh5UAAIEAfv8Ai4eVAouHlQaLh5UNi4eVF4uHlSOLh5Uyi4eVQ4uHlVSLh5Vmi4eVd4uHlYiLh5WXi4eVpYuHlbGLh5W7i4eVwouHlceLh5XIi4eVxYuHlb+Lh5W1i4eVqIuHlZeLh5WEi4eVb4uHlVmLh5VDi4eVLouHlRyLh5UOi4eVA4uHlQAAgQB+/wCLh5UQi4eVE4uHlRqLh5Uki4eVMIuHlT+Lh5VPi4eVX4uHlXCLh5WAi4eVkIuHlZ6Lh5Wqi4eVtYuHlb2Lh5XDi4eVxouHlcWLh5XCi4eVu4uHlbGLh5Wji4eVk4uHlYGLh5Vsi4eVV4uHlUKLh5Uui4eVHYuHlQ+Lh5UFi4eVAACBAH7/AIuHlReLh5Ubi4eVIYuHlSuLh5U3i4eVRIuHlVOLh5Vii4eVcouHlYGLh5WPi4eVm4uHlaaLh5Wvi4eVtYuHlbqLh5W7i4eVuouHlbaLh5Wvi4eVpouHlZmLh5WJi4eVeIuHlWWLh5VSi4eVPouHlSyLh5Uci4eVD4uHlQaLh5UBAIEAfv8Ai4eVFYuHlRiLh5Uei4eVJ4uHlTKLh5U/i4eVTIuHlVqLh5Voi4eVdYuHlYKLh5WMi4eVlouHlZ2Lh5Wii4eVpYuHlaaLh5Wli4eVoYuHlZqLh5WRi4eVhouHlXiLh5Voi4eVWIuHlUaLh5U1i4eVJIuHlRaLh5ULi4eVAouHlQAAgQB+/wCLh5UHi4eVCouHlQ+Lh5UXi4eVIouHlS2Lh5U5i4eVRouHlVKLh5Vei4eVaYuHlXKLh5V6i4eVgIuHlYSLh5WGi4eVh4uHlYaLh5WCi4eVfIuHlXWLh5Vri4eVX4uHlVGLh5VDi4eVNIuHlSWLh5UXi4eVCouHlQCLh5UAi4eVAACBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UIi4eVEouHlR2Lh5Upi4eVNIuHlT6Lh5VHi4eVT4uHlVaLh5Vbi4eVXouHlWCLh5Vhi4eVX4uHlV2Lh5VYi4eVUouHlUqLh5VAi4eVNYuHlSmLh5Uci4eVD4uHlQOLh5UAi4eVAIuHlQCLh5UAAIEAfv8Ai4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQiLh5USi4eVG4uHlSOLh5Uqi4eVMIuHlTSLh5U3i4eVOYuHlTqLh5U5i4eVN4uHlTSLh5Uvi4eVKIuHlSCLh5UXi4eVDYuHlQOLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQAAgQB+/wCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVBYuHlQyLh5URi4eVFIuHlReLh5UZi4eVGouHlRqLh5UYi4eVFouHlRKLh5UNi4eVB4uHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAAGBAH7/AIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UDi4eVBYuHlQeLh5UIi4eVCIuHlQeLh5UFi4eVAouHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAi4eVAIuHlQCLh5UAJVJ2HejgW84AAAAASUVORK5CYII=" alt="Spline preview" style="width: 100%; height: 100%;")    
-                
-       
+                            script(type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js")
+                            spline-viewer(loading-anim-type="spinner-small-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
+
             
                 .grid-item.project#archi-gene
                     .multi-image
-                        a.without-caption.image-link(href='../assets/img/Piliers spiral bois.jpg' class='active')
-                                img(src='../assets/img/thumbnails/thumbnail_Piliers spiral bois.jpg')
-                        a.without-caption.image-link(href='../assets/img/batiments rubans.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_batiments rubans.jpg')
-                        a.without-caption.image-link(href='../assets/img/effet ecran nodes.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_effet ecran nodes.jpg')
+                        a.without-caption.image-link(href='assets/img/Piliers spiral bois.jpg' class='active')
+                                img(src='assets/img/thumbnails/thumbnail_Piliers spiral bois.jpg')
+                        a.without-caption.image-link(href='assets/img/batiments rubans.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_batiments rubans.jpg')
+                        a.without-caption.image-link(href='assets/img/effet ecran nodes.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_effet ecran nodes.jpg')
                         a.without-caption.image-link(href="assets/img/maison d'allumettes.jpg")
                             img(src="assets/img/thumbnails/thumbnail_maison d'allumettes.jpg")
-                        //- a.without-caption.image-link(href='../assets/img/Piliers spiral bois.jpg')
-                        //-     img(src='../assets/img/Piliers spiral bois.jpg')
-                        a.without-caption.image-link(href='../assets/img/le feizomj.jpg')
-                            img(src='../assets/img/thumbnails/thumbnail_le feizomj.jpg')
+                        //- a.without-caption.image-link(href='assets/img/Piliers spiral bois.jpg')
+                        //-     img(src='assets/img/Piliers spiral bois.jpg')
+                        a.without-caption.image-link(href='assets/img/le feizomj.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_le feizomj.jpg')
                     .image-dots
                         span.image-dot.active(data-index='0')
                         span.image-dot(data-index='1')
@@ -157,10 +157,10 @@ body
                         span.image-dot(data-index='4')
 
                 .grid-item.project
-                    a.without-caption.image-link(href='../assets/img/foulard electro.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_foulard electro.jpg')
-                    //- a.without-caption.image-link(href='../assets/img/foulard 2.jpg')
-                    //-     img(src='../assets/img/foulard 2.jpg')
+                    a.without-caption.image-link(href='assets/img/foulard electro.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_foulard electro.jpg')
+                    //- a.without-caption.image-link(href='assets/img/foulard 2.jpg')
+                    //-     img(src='assets/img/foulard 2.jpg')
                     //- figcaption
                     //-     | Foulard carte électronique
                     //-     br
@@ -168,11 +168,11 @@ body
 
                 .grid-item.project#sword
                     video(controls='' loop='' autoplay='')
-                        source(src='../assets/img/Sword 2017 3D 20230001-0100.mp4' type='video/mp4')
+                        source(src='assets/img/Sword 2017 3D 20230001-0100.mp4' type='video/mp4')
 
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/Architecture classique no mat.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_Architecture classique no mat.jpg')
+                    a.without-caption.image-link(href='assets/img/Architecture classique no mat.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_Architecture classique no mat.jpg')
                     //- figcaption
                     //-     | Exercice d'architecture classique
                     //-     br
@@ -181,7 +181,7 @@ body
 
                 .grid-item
                     video(controls='')
-                        source(src='../assets/img/Motion mandala0001-0198.mp4' type='video/mp4')
+                        source(src='assets/img/Motion mandala0001-0198.mp4' type='video/mp4')
                     //- figcaption
                     //-         | 2023
                             //- br
@@ -189,8 +189,8 @@ body
 
                     
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/Prince des murs.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_Prince des murs.jpg')
+                    a.without-caption.image-link(href='assets/img/Prince des murs.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_Prince des murs.jpg')
                     //- figcaption
                     //-     | Prince des murs
                     //-     br
@@ -199,16 +199,16 @@ body
                     //-     | 2023
             
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/Robe velour doré 2023.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_Robe velour doré 2023.jpg')
+                    a.without-caption.image-link(href='assets/img/Robe velour doré 2023.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_Robe velour doré 2023.jpg')
                     //- figcaption
                     //-     | Robe velour doré
                     //-     br
                     //-     | 2023
 
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/robe.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_robe.jpg')
+                    a.without-caption.image-link(href='assets/img/robe.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_robe.jpg')
                 //-     figcaption
                 //-         | Robe dorée
                 //-         br
@@ -216,8 +216,8 @@ body
 
 
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/head sculpt.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_head sculpt.jpg')
+                    a.without-caption.image-link(href='assets/img/head sculpt.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_head sculpt.jpg')
                 //-     figcaption
                 //-         | Head sculpt
                 //-         br
@@ -225,19 +225,19 @@ body
 
                 .grid-item.project#porsche
                     video(controls='' loop='' autoplay='')
-                        source(src='../assets/img/porsche courbes.mp4' type='video/mp4')
+                        source(src='assets/img/porsche courbes.mp4' type='video/mp4')
 
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/shoes sim 4.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_shoes sim 4.jpg')
+                    a.without-caption.image-link(href='assets/img/shoes sim 4.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_shoes sim 4.jpg')
                     //-     figcaption
                     //-         | Premier personnage 3D
                     //-         br
                     //-         | 2018
 
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/Maciek Jasik studdy 2.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_Maciek Jasik studdy 2.jpg')
+                    a.without-caption.image-link(href='assets/img/Maciek Jasik studdy 2.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_Maciek Jasik studdy 2.jpg')
                 //-     figcaption
                 //-         | Dissolution
                 //-         br
@@ -248,7 +248,7 @@ body
 
                 .grid-item
                     video(controls='' loop='' autoplay='')
-                        source(src='../assets/img/graphite final.mp4' type='video/mp4')
+                        source(src='assets/img/graphite final.mp4' type='video/mp4')
                 //- figcaption
                 //-     | Graphite
                 //-     br
@@ -257,9 +257,9 @@ body
                 .grid-item
                     //- .duo
                     video(controls='' loop='' autoplay='')
-                        source(src='../assets/img/diamant holo 20001-0149.mp4' type='video/mp4')
+                        source(src='assets/img/diamant holo 20001-0149.mp4' type='video/mp4')
                     //- video(controls='' loop='' autoplay='')
-                    //-     source(src='../assets/img/diamant bleu0001-0149.mp4' type='video/mp4')
+                    //-     source(src='assets/img/diamant bleu0001-0149.mp4' type='video/mp4')
                 //-     figcaption
                 //-         | Diamants en duo
                 //-         br
@@ -268,16 +268,16 @@ body
 
                 .grid-item.project#verriere
                     .multi-image
-                        a.without-caption.image-link(href='../assets/img/verrière bateau.jpg' class='active')
-                            img(src='../assets/img/thumbnails/thumbnail_verrière bateau.jpg')
-                        a.without-caption.image-link(href='../assets/img/Salle de bal 1.jpg')
-                            img(src='../assets/img/Salle de bal 1.jpg')
-                        a.without-caption.image-link(href='../assets/img/Salle de bal 2.jpg')
-                            img(src='../assets/img/Salle de bal 2.jpg')
-                        a.without-caption.image-link(href='../assets/img/verrière bateau 1.jpg')
-                            img(src='../assets/img/verrière bateau 1.jpg')
-                        a.without-caption.image-link(href='../assets/img/verrière bateau 2.jpg')
-                            img(src='../assets/img/verrière bateau 2.jpg')
+                        a.without-caption.image-link(href='assets/img/verrière bateau.jpg' class='active')
+                            img(src='assets/img/thumbnails/thumbnail_verrière bateau.jpg')
+                        a.without-caption.image-link(href='assets/img/Salle de bal 1.jpg')
+                            img(src='assets/img/Salle de bal 1.jpg')
+                        a.without-caption.image-link(href='assets/img/Salle de bal 2.jpg')
+                            img(src='assets/img/Salle de bal 2.jpg')
+                        a.without-caption.image-link(href='assets/img/verrière bateau 1.jpg')
+                            img(src='assets/img/verrière bateau 1.jpg')
+                        a.without-caption.image-link(href='assets/img/verrière bateau 2.jpg')
+                            img(src='assets/img/verrière bateau 2.jpg')
                     .image-dots
                         span.image-dot.active(data-index='0')
                         span.image-dot(data-index='1')
@@ -287,7 +287,7 @@ body
             
                 .grid-item
                     video(controls='' loop='' autoplay='')
-                        source(src='../assets/img/Origami procedurale.mp4' type='video/mp4')
+                        source(src='assets/img/Origami procedurale.mp4' type='video/mp4')
                     //-     figcaption
                     //-         | Origami Procédurale
                     //-         br
@@ -296,24 +296,24 @@ body
                     //-         | 2023
 
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/Carte de voeuuu23 3.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_Carte de voeuuu23 3.jpg')
+                    a.without-caption.image-link(href='assets/img/Carte de voeuuu23 3.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_Carte de voeuuu23 3.jpg')
                 //-     figcaption
                 //-         | Carte de Voeux
                 //-         br
                 //-         | 2023
 
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/inviit.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_inviit.jpg')
+                    a.without-caption.image-link(href='assets/img/inviit.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_inviit.jpg')
                 //-     figcaption
                 //-         | Fond de carton d'invitation
                 //-         br
                 //-         | 2018
 
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/Princesse Cation tete 3quarts.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_Princesse Cation tete 3quarts.jpg')
+                    a.without-caption.image-link(href='assets/img/Princesse Cation tete 3quarts.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_Princesse Cation tete 3quarts.jpg')
                     //-     figcaption
                     //-         | Princesse Cation
                     //-         br
@@ -324,7 +324,7 @@ body
             
                 .grid-item
                     video(controls='' loop='' autoplay='')
-                        source(src='../assets/img/fleur0001-0033.mp4' type='video/mp4')
+                        source(src='assets/img/fleur0001-0033.mp4' type='video/mp4')
                     //- figcaption
                     //-     | Animation traditionnelle
                     //-     br
@@ -333,15 +333,15 @@ body
                 .grid-item.project#surfacepsycho
                     .multi-image
                         video(controls='' loop='' class='active')
-                            source(src='../assets/img/SP - G4 continuity.mp4' type='video/mp4')
-                        a.without-caption.image-link(href='../assets/img/SP hanger viewport.jpg')
-                            img(src='../assets/img/SP hanger viewport.jpg')
-                        a.without-caption.image-link(href='../assets/img/SP hanger SW.jpg')
-                            img(src='../assets/img/SP hanger SW.jpg')
-                        a.without-caption.image-link(href='../assets/img/SP cover.jpg')
-                            img(src='../assets/img/SP cover.jpg')
-                        a.without-caption.image-link(href='../assets/img/SP screenshot1.jpg')
-                            img(src='../assets/img/SP screenshot1.jpg')
+                            source(src='assets/img/SP - G4 continuity.mp4' type='video/mp4')
+                        a.without-caption.image-link(href='assets/img/SP hanger viewport.jpg')
+                            img(src='assets/img/SP hanger viewport.jpg')
+                        a.without-caption.image-link(href='assets/img/SP hanger SW.jpg')
+                            img(src='assets/img/SP hanger SW.jpg')
+                        a.without-caption.image-link(href='assets/img/SP cover.jpg')
+                            img(src='assets/img/SP cover.jpg')
+                        a.without-caption.image-link(href='assets/img/SP screenshot1.jpg')
+                            img(src='assets/img/SP screenshot1.jpg')
                     .image-dots
                         span.image-dot.active(data-index='0')
                         span.image-dot(data-index='1')
@@ -352,8 +352,8 @@ body
                 //- include ./assets/html/items/CAO.pug
 
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/artiche.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_artiche.jpg')
+                    a.without-caption.image-link(href='assets/img/artiche.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_artiche.jpg')
                     //- figcaption
                     //-     | Image extraite du court-métrage 
                     //-     br
@@ -364,8 +364,8 @@ body
                     //-     | 2023
                 
                 .grid-item
-                    a.without-caption.image-link(href='../assets/img/G-co 2.jpg')
-                        img(src='../assets/img/thumbnails/thumbnail_G-co 2.jpg')
+                    a.without-caption.image-link(href='assets/img/G-co 2.jpg')
+                        img(src='assets/img/thumbnails/thumbnail_G-co 2.jpg')
                     //- figcaption
                     //-     | Illustrator
                     //-     br
@@ -378,7 +378,7 @@ body
         .grid-item
             .bio-split
                 .container#bio
-                    img#profile_picture(src='../assets/img/photo_portrait.jpg') 
+                    img#profile_picture(src='assets/img/photo_portrait.jpg') 
                     p
                         |  Ingénieur mécanique et mécatronique
                         br
@@ -408,3 +408,4 @@ script(src='assets/Js/morph_header.js')
 script(src='assets/Js/back_to_top.js')
 script(src='assets/Js/chapter_scrollbar.js')
 script(src='assets/Js/masonry.js')
+script(src='assets/Js/video.js')

@@ -3,10 +3,10 @@
 }
 
 .grid-item {
-            width: 300px;
-            margin: 0 10px 20px 10px;
-            overflow: hidden;
-            transition: 0.2s;
+    width: 290px;
+    margin: 0 15px 30px 15px;
+    overflow: hidden;
+    transition: 0.2s;
 }
 
 .grid-item img,
@@ -66,25 +66,27 @@
 }
 
 .grid-item .image-dot {
-    width: 8px;
-    height: 8px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
-    background: #bbb;
+    background: #c0c0c06b;
     display: inline-block;
     cursor: pointer;
     transition: background 0.2s;
+    margin: 2px;
 }
 
 .grid-item .image-dot.active {
-    background: #333;
+    background: #c0c0c0;
+    margin: 0px;
+    width: 8px;
+    height: 8px;
 }
 
 .grid-item .multi-image {
     position: relative;
     width: 100%;
     display: block;
-    margin-top: 0.5em;
-    /* Remove height: auto; */
 }
 
 .grid-item .multi-image a,

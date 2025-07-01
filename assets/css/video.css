@@ -1,0 +1,109 @@
+.video-container {
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.video-container.fullscreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    max-width: none;
+    border-radius: 0;
+    z-index: 1000;
+}
+
+.video-container.fullscreen video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fullscreen-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.fullscreen-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.play-pause-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.play-pause-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-pause-btn:active {
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* Hide button when video is playing (after a delay) */
+.video-container.playing .play-pause-btn {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease 1s; /* Fade out after 1 second */
+}
+
+/* Show button on hover when playing */
+.video-container.playing:hover .play-pause-btn {
+    opacity: 0.8;
+    pointer-events: all;
+    transition: opacity 0.3s ease;
+}
+
+/* Play and pause icons using CSS */
+.play-icon::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 20px solid white;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    margin-left: 4px;
+}
+
+.pause-icon::before {
+    content: '';
+    width: 16px;
+    height: 24px;
+    background: linear-gradient(to right, white 0%, white 35%, transparent 35%, transparent 65%, white 65%, white 100%);
+}
