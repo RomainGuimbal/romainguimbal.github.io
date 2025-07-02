@@ -177,7 +177,7 @@ canvas {
         transform: translate(-35%, -40%) translate(0, 0);
     }
 
-    40% {
+    50% {
         transform: translate(-35%, -40%) translate(-5%, 0);
     }
 
@@ -191,7 +191,7 @@ canvas {
         transform: translate(-65%, -60%) rotate(180deg) translate(0, 0);
     }
 
-    40% {
+    50% {
         transform: translate(-65%, -60%) rotate(180deg) translate(-5%, 0);
     }
 
@@ -205,7 +205,7 @@ canvas {
         transform: translate(-35%, -60%) scale(1.0, -1.0) translate(0, 0);
     }
 
-    40% {
+    50% {
         transform: translate(-35%, -60%) scale(1.0, -1.0) translate(-5%, 0);
     }
 
@@ -219,7 +219,7 @@ canvas {
         transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0) translate(0, 0);
     }
 
-    40% {
+    50% {
         transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0) translate(-5%, 0);
     }
 
@@ -230,38 +230,38 @@ canvas {
 
 img.donate-decoration:nth-of-type(1) {
     transform: translate(-35%, -40%);
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
 }
 
 img.donate-decoration:nth-of-type(2) {
     transform: translate(-65%, -60%) rotate(180deg);
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
 }
 
 img.donate-decoration:nth-of-type(3) {
     transform: translate(-35%, -60%) scale(1.0, -1.0);
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
 }
 
 img.donate-decoration:nth-of-type(4) {
     transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0);
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
 }
 
 .donate-button:hover img.donate-decoration:nth-of-type(1) {
-    animation: lockAnimation1 0.5s linear forwards;
+    animation: lockAnimation1 0.3s linear forwards;
 }
 
 .donate-button:hover img.donate-decoration:nth-of-type(2) {
-    animation: lockAnimation2 0.5s linear forwards;
+    animation: lockAnimation2 0.3s linear forwards;
 }
 
 .donate-button:hover img.donate-decoration:nth-of-type(3) {
-    animation: lockAnimation3 0.5s linear forwards;
+    animation: lockAnimation3 0.3s linear forwards;
 }
 
 .donate-button:hover img.donate-decoration:nth-of-type(4) {
-    animation: lockAnimation4 0.5s linear forwards;
+    animation: lockAnimation4 0.3s linear forwards;
 }
 
 
