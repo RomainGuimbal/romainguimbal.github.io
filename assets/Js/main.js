@@ -19,30 +19,40 @@ $('.without-caption').magnificPopup({
     tLoading: '@T("Media.MagnificPopup.Loading")'
 });
 
-$('.with-caption').magnificPopup({
-    type: 'image',
-    closeOnContentClick: true,
-    closeBtnInside: false,
-    mainClass: 'mfp-with-zoom mfp-img-mobile',
-    image: {
-        verticalFit: true,
-        titleSrc: function(item) {
-            return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+// $('.with-caption').magnificPopup({
+//     type: 'image',
+//     closeOnContentClick: true,
+//     closeBtnInside: false,
+//     mainClass: 'mfp-with-zoom mfp-img-mobile',
+//     image: {
+//         verticalFit: true,
+//         titleSrc: function(item) {
+//             return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+//         }
+//     },
+//     zoom: {
+//         enabled: true
+//     },
+//     gallery: {
+//         enabled: true,
+//         tPrev: '@T("Media.MagnificPopup.Previous")',
+//         tNext: '@T("Media.MagnificPopup.Next")',
+//     },
+//     tClose: '@T("Media.MagnificPopup.Close")',
+//     tLoading: '@T("Media.MagnificPopup.Loading")'
+// });
+
+$('.video-file-popup').magnificPopup({
+    type: 'inline',
+    mainClass: 'mfp-fade',
+    removalDelay: 160,
+    preloader: false,
+    callbacks: {
+        elementParse: function(item) {
+            item.src = '<video controls autoplay><source src="' + item.el.attr('href') + '" type="video/mp4"></video>';
         }
-    },
-    zoom: {
-        enabled: true
-    },
-    gallery: {
-        enabled: true,
-        tPrev: '@T("Media.MagnificPopup.Previous")',
-        tNext: '@T("Media.MagnificPopup.Next")',
-    },
-    tClose: '@T("Media.MagnificPopup.Close")',
-    tLoading: '@T("Media.MagnificPopup.Loading")'
+    }
 });
-
-
 
 $(document).ready(function(){
     var latest_index = 0;

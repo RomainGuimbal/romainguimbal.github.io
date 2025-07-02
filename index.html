@@ -40,8 +40,8 @@
         <h2>Portfolio</h2>
       </li>
       <div class="circle-menu" id="circleMenu">
-        <div class="menu-item" href="index.html#bio" onclick="handleMenuClick('About')">About</div>
-        <div class="menu-item" href="sp-donation/sp-donation.html" onclick="handleMenuClick('Donate')">Donate</div>
+        <div class="menu-item button" href="index.html#bio" onclick="handleMenuClick('About')">About</div>
+        <div class="menu-item button" href="sp-donation/sp-donation.html" onclick="handleMenuClick('Donate')">Donate</div>
       </div>
     </div>
   </header>
@@ -62,7 +62,7 @@
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/random car dessin.jpg"><img class="content-pic" src="assets/img/thumbnails/thumbnail_random car dessin.jpg"></a></div>
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/Lardon octobre 2019 copy.jpg"><img class="content-pic" src="assets/img/thumbnails/thumbnail_Lardon octobre 2019 copy.jpg"></a></div>
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/vaisseau scoot modif avril 2021.jpg"><img src="assets/img/thumbnails/thumbnail_vaisseau scoot modif avril 2021.jpg"></a></div>
-        <div class="grid-item video-container" id="videoContainer">
+        <div class="grid-item video-container">
           <video preload="metadata">
             <source src="assets/img/Precision living.mp4" type="video/mp4">
           </video>
@@ -70,26 +70,26 @@
             <div class="play-icon"></div>
           </button>
         </div>
-        <div class="grid-item">
-          <div id="spline-container">
-            <div>
-              <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.63/build/spline-viewer.js"></script>
-              <spline-viewer loading-anim-type="spinner-small-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode"></spline-viewer>
-            </div>
-          </div>
-        </div>
         <div class="grid-item project" id="archi-gene">
-          <div class="multi-image"><a class="without-caption image-link active" href="assets/img/Piliers spiral bois.jpg"><img src="assets/img/thumbnails/thumbnail_Piliers spiral bois.jpg"></a><a class="without-caption image-link" href="assets/img/batiments rubans.jpg"><img src="assets/img/thumbnails/thumbnail_batiments rubans.jpg"></a><a class="without-caption image-link" href="assets/img/effet ecran nodes.jpg"><img src="assets/img/thumbnails/thumbnail_effet ecran nodes.jpg"></a><a class="without-caption image-link" href="assets/img/maison d'allumettes.jpg"><img src="assets/img/thumbnails/thumbnail_maison d'allumettes.jpg"></a><a class="without-caption image-link" href="assets/img/le feizomj.jpg"><img src="assets/img/thumbnails/thumbnail_le feizomj.jpg"></a></div>
-          <div class="image-dots"><span class="image-dot active" data-index="0"></span><span class="image-dot" data-index="1"></span><span class="image-dot" data-index="2"></span><span class="image-dot" data-index="3"></span><span class="image-dot" data-index="4"></span></div>
+          <div class="multi-image"><a class="without-caption image-link active" href="assets/img/Piliers spiral bois.jpg"><img src="assets/img/thumbnails/thumbnail_Piliers spiral bois.jpg"></a><a class="without-caption image-link" href="assets/img/batiments rubans.jpg"><img src="assets/img/thumbnails/thumbnail_batiments rubans.jpg"></a><a class="without-caption image-link" href="assets/img/maison d'allumettes.jpg"><img src="assets/img/thumbnails/thumbnail_maison d'allumettes.jpg"></a><a class="without-caption image-link" href="assets/img/le feizomj.jpg"><img src="assets/img/thumbnails/thumbnail_le feizomj.jpg"></a></div>
+          <div class="image-dots"><span class="image-dot active" data-index="0"></span><span class="image-dot" data-index="1"></span><span class="image-dot" data-index="2"></span><span class="image-dot" data-index="3"></span></div>
         </div>
         <div class="grid-item project"><a class="without-caption image-link" href="assets/img/foulard electro.jpg"><img src="assets/img/thumbnails/thumbnail_foulard electro.jpg"></a></div>
         <div class="grid-item project" id="sword">
-          <video controls="" loop="" autoplay="">
-            <source src="assets/img/Sword 2017 3D 20230001-0100.mp4" type="video/mp4">
-          </video>
+          <div class="multi-image">
+            <div class="video-container active">
+              <video controls="" loop="" autoplay="">
+                <source src="assets/img/Sword 2017 3D 20230001-0100.mp4" type="video/mp4">
+              </video>
+              <button class="play-pause-btn" id="playPauseBtn">
+                <div class="play-icon"></div>
+              </button>
+            </div><a class="without-caption image-link" href="assets/img/Sword 2017 3D 2023 close1.jpg"><img src="assets/img/Sword 2017 3D 2023 close1.jpg"></a><a class="without-caption image-link" href="assets/img/Sword 2017 3D 2023 close2.jpg"><img src="assets/img/Sword 2017 3D 2023 close2.jpg"></a><a class="without-caption image-link" href="assets/img/Sword 2017 3D 2023 HD.jpg"><img src="assets/img/Sword 2017 3D 2023 HD.jpg"></a>
+          </div>
+          <div class="image-dots"><span class="image-dot active" data-index="0"></span><span class="image-dot" data-index="1"></span><span class="image-dot" data-index="2"></span><span class="image-dot" data-index="3"></span></div>
         </div>
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/Architecture classique no mat.jpg"><img src="assets/img/thumbnails/thumbnail_Architecture classique no mat.jpg"></a></div>
-        <div class="grid-item video-container" id="videoContainer">
+        <div class="grid-item video-container">
           <video preload="metadata">
             <source src="assets/img/Motion mandala0001-0198.mp4" type="video/mp4">
           </video>
@@ -101,14 +101,17 @@
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/Robe velour doré 2023.jpg"><img src="assets/img/thumbnails/thumbnail_Robe velour doré 2023.jpg"></a></div>
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/robe.jpg"><img src="assets/img/thumbnails/thumbnail_robe.jpg"></a></div>
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/head sculpt.jpg"><img src="assets/img/thumbnails/thumbnail_head sculpt.jpg"></a></div>
-        <div class="grid-item project" id="porsche">
+        <div class="grid-item project video-container" id="porsche">
           <video controls="" loop="" autoplay="">
             <source src="assets/img/porsche courbes.mp4" type="video/mp4">
           </video>
+          <button class="play-pause-btn" id="playPauseBtn">
+            <div class="play-icon"></div>
+          </button>
         </div>
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/shoes sim 4.jpg"><img src="assets/img/thumbnails/thumbnail_shoes sim 4.jpg"></a></div>
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/Maciek Jasik studdy 2.jpg"><img src="assets/img/thumbnails/thumbnail_Maciek Jasik studdy 2.jpg"></a></div>
-        <div class="grid-item video-container" id="videoContainer">
+        <div class="grid-item video-container">
           <video preload="metadata">
             <source src="assets/img/graphite final.mp4" type="video/mp4">
           </video>
@@ -116,7 +119,7 @@
             <div class="play-icon"></div>
           </button>
         </div>
-        <div class="grid-item video-container" id="videoContainer">
+        <div class="grid-item video-container">
           <video preload="metadata">
             <source src="assets/img/diamant holo 20001-0149.mp4" type="video/mp4">
           </video>
@@ -128,24 +131,35 @@
           <div class="multi-image"><a class="without-caption image-link active" href="assets/img/verrière bateau.jpg"><img src="assets/img/thumbnails/thumbnail_verrière bateau.jpg"></a><a class="without-caption image-link" href="assets/img/Salle de bal 1.jpg"><img src="assets/img/Salle de bal 1.jpg"></a><a class="without-caption image-link" href="assets/img/Salle de bal 2.jpg"><img src="assets/img/Salle de bal 2.jpg"></a><a class="without-caption image-link" href="assets/img/verrière bateau 1.jpg"><img src="assets/img/verrière bateau 1.jpg"></a><a class="without-caption image-link" href="assets/img/verrière bateau 2.jpg"><img src="assets/img/verrière bateau 2.jpg"></a></div>
           <div class="image-dots"><span class="image-dot active" data-index="0"></span><span class="image-dot" data-index="1"></span><span class="image-dot" data-index="2"></span><span class="image-dot" data-index="3"></span><span class="image-dot" data-index="4"></span></div>
         </div>
-        <div class="grid-item">
-          <video controls="" loop="" autoplay="">
+        <div class="grid-item video-container">
+          <video preload="metadata">
             <source src="assets/img/Origami procedurale.mp4" type="video/mp4">
           </video>
+          <button class="play-pause-btn" id="playPauseBtn">
+            <div class="play-icon"></div>
+          </button>
         </div>
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/Carte de voeuuu23 3.jpg"><img src="assets/img/thumbnails/thumbnail_Carte de voeuuu23 3.jpg"></a></div>
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/inviit.jpg"><img src="assets/img/thumbnails/thumbnail_inviit.jpg"></a></div>
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/Princesse Cation tete 3quarts.jpg"><img src="assets/img/thumbnails/thumbnail_Princesse Cation tete 3quarts.jpg"></a></div>
-        <div class="grid-item">
-          <video controls="" loop="" autoplay="">
+        <div class="grid-item video-container">
+          <video preload="metadata">
             <source src="assets/img/fleur0001-0033.mp4" type="video/mp4">
           </video>
+          <button class="play-pause-btn" id="playPauseBtn">
+            <div class="play-icon"></div>
+          </button>
         </div>
         <div class="grid-item project" id="surfacepsycho">
           <div class="multi-image">
-            <video class="active" controls="" loop="">
-              <source src="assets/img/SP - G4 continuity.mp4" type="video/mp4">
-            </video><a class="without-caption image-link" href="assets/img/SP hanger viewport.jpg"><img src="assets/img/SP hanger viewport.jpg"></a><a class="without-caption image-link" href="assets/img/SP hanger SW.jpg"><img src="assets/img/SP hanger SW.jpg"></a><a class="without-caption image-link" href="assets/img/SP cover.jpg"><img src="assets/img/SP cover.jpg"></a><a class="without-caption image-link" href="assets/img/SP screenshot1.jpg"><img src="assets/img/SP screenshot1.jpg"></a>
+            <div class="video-container active">
+              <video preload="metadata">
+                <source src="assets/img/SP - G4 continuity.mp4" type="video/mp4">
+              </video>
+              <button class="play-pause-btn" id="playPauseBtn">
+                <div class="play-icon"></div>
+              </button>
+            </div><a class="without-caption image-link" href="assets/img/SP hanger viewport.jpg"><img src="assets/img/SP hanger viewport.jpg"></a><a class="without-caption image-link" href="assets/img/SP hanger SW.jpg"><img src="assets/img/SP hanger SW.jpg"></a><a class="without-caption image-link" href="assets/img/SP cover.jpg"><img src="assets/img/SP cover.jpg"></a><a class="without-caption image-link" href="assets/img/SP screenshot1.jpg"><img src="assets/img/SP screenshot1.jpg"></a>
           </div>
           <div class="image-dots"><span class="image-dot active" data-index="0"></span><span class="image-dot" data-index="1"></span><span class="image-dot" data-index="2"></span><span class="image-dot" data-index="3"></span><span class="image-dot" data-index="4"></span></div>
         </div>

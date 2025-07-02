@@ -51,8 +51,8 @@ video {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     border: none;
     border-radius: 50%;
     color: white;
@@ -75,8 +75,8 @@ video {
     bottom: 0;
     filter: blur(10px);
     z-index: -1;
-    filter: blur(4px);
-    background: rgba(0, 0, 0, 0.5);
+    filter: blur(10px);
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .play-pause-btn:hover {
