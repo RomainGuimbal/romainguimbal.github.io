@@ -192,7 +192,7 @@ const canvas = document.getElementById('shaderCanvas');
 
         // Update time multiplier based on mouse distance
         function updateTimeMultiplier(distance) {
-            const maxDistance = 600; // Maximum distance for effect
+            const maxDistance = 500; // Maximum distance for effect
             const maxMultiplier = 25.0; // Maximum time acceleration
             
             if (distance <= maxDistance) {

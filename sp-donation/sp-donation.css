@@ -164,69 +164,55 @@ canvas {
     position: absolute;
 }
 
-
-.donate-button .donate-decoration {
-    top: 50%;
-    left: 50%;
-    position: absolute;
-}
-
-/* Individual keyframes for each decoration */
 @keyframes lockAnimation1 {
-    0% {
-        transform: translate(-35%, -40%) translate(0, 0);
-    }
-
-    50% {
-        transform: translate(-35%, -40%) translate(-5%, 0);
-    }
-
-    100% {
-        transform: translate(-35%, -40%) translate(-5%, -5%);
-    }
+    0% {transform: translate(-35%, -40%) translate(0, 0);}
+    50% {transform: translate(-35%, -40%) translate(-5%, 0);}
+    100% {transform: translate(-35%, -40%) translate(-5%, -5%);}
 }
 
 @keyframes lockAnimation2 {
-    0% {
-        transform: translate(-65%, -60%) rotate(180deg) translate(0, 0);
-    }
-
-    50% {
-        transform: translate(-65%, -60%) rotate(180deg) translate(-5%, 0);
-    }
-
-    100% {
-        transform: translate(-65%, -60%) rotate(180deg) translate(-5%, -5%);
-    }
+    0% {transform: translate(-65%, -60%) rotate(180deg) translate(0, 0);}
+    50% {transform: translate(-65%, -60%) rotate(180deg) translate(-5%, 0);}
+    100% {transform: translate(-65%, -60%) rotate(180deg) translate(-5%, -5%);}
 }
 
 @keyframes lockAnimation3 {
-    0% {
-        transform: translate(-35%, -60%) scale(1.0, -1.0) translate(0, 0);
-    }
-
-    50% {
-        transform: translate(-35%, -60%) scale(1.0, -1.0) translate(-5%, 0);
-    }
-
-    100% {
-        transform: translate(-35%, -60%) scale(1.0, -1.0) translate(-5%, -5%);
-    }
+    0% {transform: translate(-35%, -60%) scale(1.0, -1.0) translate(0, 0);}
+    50% {transform: translate(-35%, -60%) scale(1.0, -1.0) translate(-5%, 0);}
+    100% {transform: translate(-35%, -60%) scale(1.0, -1.0) translate(-5%, -5%);}
 }
 
 @keyframes lockAnimation4 {
-    0% {
-        transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0) translate(0, 0);
-    }
-
-    50% {
-        transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0) translate(-5%, 0);
-    }
-
-    100% {
-        transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0) translate(-5%, -5%);
-    }
+    0% {transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0) translate(0, 0);}
+    50% {transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0) translate(-5%, 0);}
+    100% {transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0) translate(-5%, -5%);}
 }
+
+/* Duplicate to avoid conflict on backward anim*/
+@keyframes lockAnimation11 {
+    0% {transform: translate(-35%, -40%) translate(0, 0);}
+    50% {transform: translate(-35%, -40%) translate(-5%, 0);}
+    100% {transform: translate(-35%, -40%) translate(-5%, -5%);}
+}
+
+@keyframes lockAnimation22 {
+    0% {transform: translate(-65%, -60%) rotate(180deg) translate(0, 0);}
+    50% {transform: translate(-65%, -60%) rotate(180deg) translate(-5%, 0);}
+    100% {transform: translate(-65%, -60%) rotate(180deg) translate(-5%, -5%);}
+}
+
+@keyframes lockAnimation33 {
+    0% {transform: translate(-35%, -60%) scale(1.0, -1.0) translate(0, 0);}
+    50% {transform: translate(-35%, -60%) scale(1.0, -1.0) translate(-5%, 0);}
+    100% {transform: translate(-35%, -60%) scale(1.0, -1.0) translate(-5%, -5%);}
+}
+
+@keyframes lockAnimation44 {
+    0% {transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0) translate(0, 0);}
+    50% {transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0) translate(-5%, 0);}
+    100% {transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0) translate(-5%, -5%);}
+}
+
 
 img.donate-decoration:nth-of-type(1) {
     transform: translate(-35%, -40%);
@@ -235,34 +221,52 @@ img.donate-decoration:nth-of-type(1) {
 
 img.donate-decoration:nth-of-type(2) {
     transform: translate(-65%, -60%) rotate(180deg);
-    transition: all 0.3s linear;
+    animation-fill-mode: both;
 }
 
 img.donate-decoration:nth-of-type(3) {
     transform: translate(-35%, -60%) scale(1.0, -1.0);
-    transition: all 0.3s linear;
+    animation-fill-mode: both;
 }
 
 img.donate-decoration:nth-of-type(4) {
     transform: translate(-65%, -40%) rotate(180deg) scale(1.0, -1.0);
-    transition: all 0.3s linear;
+    animation-fill-mode: both;
 }
 
 .donate-button:hover img.donate-decoration:nth-of-type(1) {
-    animation: lockAnimation1 0.3s linear forwards;
+    animation: lockAnimation1 0.2s linear forwards;
 }
 
 .donate-button:hover img.donate-decoration:nth-of-type(2) {
-    animation: lockAnimation2 0.3s linear forwards;
+    animation: lockAnimation2 0.2s linear forwards;
 }
 
 .donate-button:hover img.donate-decoration:nth-of-type(3) {
-    animation: lockAnimation3 0.3s linear forwards;
+    animation: lockAnimation3 0.2s linear forwards;
 }
 
 .donate-button:hover img.donate-decoration:nth-of-type(4) {
-    animation: lockAnimation4 0.3s linear forwards;
+    animation: lockAnimation4 0.2s linear forwards;
 }
+
+
+.donate-button:not(:hover) img.donate-decoration:nth-of-type(1) {
+    animation: lockAnimation11 0.5s linear reverse;
+}
+
+.donate-button:not(:hover) img.donate-decoration:nth-of-type(2) {
+    animation: lockAnimation22 0.5s linear reverse;
+}
+
+.donate-button:not(:hover) img.donate-decoration:nth-of-type(3) {
+    animation: lockAnimation33 0.5s linear reverse;
+}
+
+.donate-button:not(:hover) img.donate-decoration:nth-of-type(4) {
+    animation: lockAnimation44 0.5s linear reverse;
+}
+
 
 
 .donate-button .donate-frame {
