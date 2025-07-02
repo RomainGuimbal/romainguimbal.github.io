@@ -122,7 +122,7 @@ body
                 
                     
                 .grid-item.video-container#videoContainer
-                    video#test(preload="metadata")
+                    video(preload="metadata")
                         source(src='assets/img/Precision living.mp4' type='video/mp4')
 
                     button.play-pause-btn#playPauseBtn
@@ -186,9 +186,12 @@ body
                     //-     | 2024
 
 
-                .grid-item
-                    video(controls='')
+                .grid-item.video-container#videoContainer
+                    video(preload="metadata")
                         source(src='assets/img/Motion mandala0001-0198.mp4' type='video/mp4')
+                    
+                    button.play-pause-btn#playPauseBtn
+                        .play-icon
                     //- figcaption
                     //-         | 2023
                             //- br
@@ -253,18 +256,24 @@ body
                 //-         | 2022
                 //-     // <img src="assets/img/eau 8.jpg">
 
-                .grid-item
-                    video(controls='' loop='' autoplay='')
+                .grid-item.video-container#videoContainer
+                    video(preload="metadata")
                         source(src='assets/img/graphite final.mp4' type='video/mp4')
+
+                    button.play-pause-btn#playPauseBtn
+                        .play-icon
                 //- figcaption
                 //-     | Graphite
                 //-     br
                 //-     | 2020
 
-                .grid-item
+                .grid-item.video-container#videoContainer
                     //- .duo
-                    video(controls='' loop='' autoplay='')
+                    video(preload="metadata")
                         source(src='assets/img/diamant holo 20001-0149.mp4' type='video/mp4')
+
+                    button.play-pause-btn#playPauseBtn
+                        .play-icon
                     //- video(controls='' loop='' autoplay='')
                     //-     source(src='assets/img/diamant bleu0001-0149.mp4' type='video/mp4')
                 //-     figcaption

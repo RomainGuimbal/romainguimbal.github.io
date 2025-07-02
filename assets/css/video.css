@@ -53,23 +53,36 @@ video {
     transform: translate(-50%, -50%);
     width: 80px;
     height: 80px;
-    background: rgba(0, 0, 0, 0.7);
     border: none;
     border-radius: 50%;
     color: white;
-    font-size: 32px;
+    font-size: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    opacity: 0.8;
+    background: transparent;
+}
+
+.play-pause-btn::before{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(10px);
+    z-index: -1;
+    filter: blur(4px);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .play-pause-btn:hover {
-    background: rgba(0, 0, 0, 0.9);
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.1);
+    /* background: rgba(0, 0, 0, 0.3); */
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(0.95);
 }
 
 .play-pause-btn:active {
@@ -80,7 +93,7 @@ video {
 .video-container.playing .play-pause-btn {
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.5s ease 1s; /* Fade out after 1 second */
+    transition: opacity 0.5s ease; /* Fade out after 1 second */
 }
 
 /* Show button on hover when playing */
