@@ -31,19 +31,17 @@
 <!-- pug -w ./ -o . -P-->
 <body>
   <!-- Promo Banner-->
-  <div class="promo-banner" id="promoBanner">
-    <div class="promo-banner-content">
-      <div class="promo-text"><a class="promo-link" href="sp-donation/sp-donation.html">&#x1F389; <span class="promo-highlight">HELP MY OPEN-SOURCE WORK</span> - Donate to make design accessible and fun !</a></div>
-      <button class="promo-close" onclick="closeBanner()" aria-label="Close banner">&times;</button>
-    </div>
-  </div>
   <header>
-    <div id="page-title"><img src="assets/img/drop.jpg"><img id="bg-img2" src="assets/img/drop.jpg">
+    <div class="draggable-circle" id="draggableCircle"><img src="assets/img/drop.jpg"><img id="bg-img2" src="assets/img/drop.jpg">
       <li>
         <h1 id="romain">Romain</h1>
         <h1 id="guimbal">GUIMBAL</h1>
         <h2>Portfolio</h2>
       </li>
+      <div class="circle-menu" id="circleMenu">
+        <div class="menu-item" onclick="handleMenuClick('About')"></div>
+        <div class="menu-item" onclick="handleMenuClick('Contact')"></div>
+      </div>
     </div>
   </header>
   <main>
@@ -64,9 +62,12 @@
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/Lardon octobre 2019 copy.jpg"><img class="content-pic" src="assets/img/thumbnails/thumbnail_Lardon octobre 2019 copy.jpg"></a></div>
         <div class="grid-item"><a class="without-caption image-link" href="assets/img/vaisseau scoot modif avril 2021.jpg"><img src="assets/img/thumbnails/thumbnail_vaisseau scoot modif avril 2021.jpg"></a></div>
         <div class="grid-item video-container" id="videoContainer">
-          <video preload="metadata">
+          <video id="test" preload="metadata">
             <source src="assets/img/Precision living.mp4" type="video/mp4">
           </video>
+          <button class="play-pause-btn" id="playPauseBtn">
+            <div class="play-icon"></div>
+          </button>
         </div>
         <div class="grid-item">
           <div id="spline-container">
@@ -220,7 +221,7 @@
 <script src="assets/Js/jquery.magnific-popup.js"></script>
 <script src="assets/Js/main.js"></script>
 <!-- My Scripts-->
-<script src="assets/Js/morph_header.js"></script>
+<script src="assets/Js/draggable-circle.js"></script>
 <script src="assets/Js/back_to_top.js"></script>
 <script src="assets/Js/chapter_scrollbar.js"></script>
 <script src="assets/Js/masonry.js"></script>

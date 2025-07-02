@@ -7,8 +7,9 @@
     z-index: 1042;
     overflow: hidden;
     position: fixed;
-    background: #0b0b0b;
-    opacity: 0.8; }
+    opacity: 1;
+    backdrop-filter: blur(15px);
+  }
   
   .mfp-wrap {
     top: 0;
