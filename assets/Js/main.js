@@ -70,3 +70,49 @@ function closeBanner() {
     }, 300);
 }
 
+// SWIPE SUPPORT FOR MULTI-IMAGE GALLERIES ON MOBILE
+$(function() {
+    function setupSwipe($multiImage) {
+        let startX = null;
+        let threshold = 30; // Minimum px distance for swipe
+
+        $multiImage.on('touchstart', function(e) {
+            if (e.originalEvent.touches.length === 1) {
+                startX = e.originalEvent.touches[0].clientX;
+            }
+        });
+
+        $multiImage.on('touchend', function(e) {
+            if (startX === null) return;
+            let endX = e.originalEvent.changedTouches[0].clientX;
+            let dx = endX - startX;
+            if (Math.abs(dx) > threshold) {
+                let $links = $multiImage.find('a.image-link');
+                let $active = $links.filter('.active');
+                let idx = $links.index($active);
+                if (dx < 0 && idx < $links.length - 1) {
+                    // Swipe left: next
+                    $active.removeClass('active');
+                    $links.eq(idx + 1).addClass('active');
+                    // Update dots if present
+                    let $dots = $multiImage.siblings('.image-dots').find('.image-dot');
+                    $dots.removeClass('active');
+                    $dots.eq(idx + 1).addClass('active');
+                } else if (dx > 0 && idx > 0) {
+                    // Swipe right: previous
+                    $active.removeClass('active');
+                    $links.eq(idx - 1).addClass('active');
+                    let $dots = $multiImage.siblings('.image-dots').find('.image-dot');
+                    $dots.removeClass('active');
+                    $dots.eq(idx - 1).addClass('active');
+                }
+            }
+            startX = null;
+        });
+    }
+
+    $('.multi-image').each(function() {
+        setupSwipe($(this));
+    });
+});
+

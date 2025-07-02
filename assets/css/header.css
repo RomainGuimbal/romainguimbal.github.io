@@ -1,24 +1,10 @@
 /*-----------------------------------------------------
 # Header
 ------------------------------------------------------*/
-/* header{
-	width : 100%;
-	height: 10em;
-	position: relative;
-	background-color: black;
-    overflow: hidden;
+header h3 {
+	font-family: "Poppins", sans-serif;
 	margin: 0 auto 1em;
-	z-index: 1;
-	display:flow-root;
-	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
-} */
-
-
-
-header h3{
-	font-family:"Poppins", sans-serif;
-	margin: 0 auto 1em;
-	color :#FFFFFF;
+	color: #FFFFFF;
 	font-weight: 300;
 	font-size: clamp(0.5rem, -0.25rem + 4vw, 0.8rem);
 	text-align: center;
@@ -31,110 +17,83 @@ header h3{
 
 
 
-#draggableCircle{
+#draggableCircle {
 	background-color: black;
 	width: 18em;
-	height: 10em;
+	height: 18em;
 	border-radius: 999px;
 	margin-top: 0;
-    position: fixed;
-    display: flex;
-    /* width: fit-content; */
+	position: fixed;
+	display: flex;
+	/* width: fit-content; */
 	align-items: center;
 	justify-content: center;
-	z-index:2;
-	top: 30px; /* To account for promo-banner, easier for now */
-	left: 3vw;
+	z-index: 2;
+	/* top: 0;
+	left: 3vw; */
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
-	overflow: hidden;
+
 }
 
-
-
-
-
-
-#draggableCircle img{
+#draggableCircle img#logo {
 	width: 7rem;
 	height: 7rem;
 	border-radius: 50% 0 0 50%;
 	display: inline-block;
-	/* object-fit: cover; */
-	padding-left :2em;
+	padding-left: 2em;
+
 }
 
-/* #draggableCircle img::content{
-	width: 10rem;
-	height: 10rem;
-	display: inline-block;
-	object-fit: cover;
-} */
-
-#draggableCircle li{
-    width: fit-content;
-    text-align: left;
-    float: left;
-    margin : 2.5em 2.5em 2.1em 1em;
+#draggableCircle li {
+	width: fit-content;
+	text-align: left;
+	float: left;
+	margin: 2.5em 2.5em 2.1em 1em;
 	list-style-type: none;
 	transform: translate(0, 0);
 }
 
-header #bg-img2{
+
+#bg-img-container {
+	overflow: hidden;
+	border-radius: 999px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+#bg-img-container img {
 	filter: blur(0.4rem);
-    position: absolute;
+	position: absolute;
 	width: 25rem;
 	height: 25rem;
 	opacity: 80%;
-	transform: translate(100%,0%);
+	transform: translate(2.5%, -14%);
 }
 
-
-/* @media(max-width:1100px) {
-	#draggableCircle{
-		right: 18%;
-	}
-} */
-
-@media(max-width:700px) {
-	header{
-		height: 12em;
-	}
-
-	header #bg-img{
-		transform: translate(10%,-45%);
-	}
-
-	#draggableCircle{
-		right: 0;
-		margin: 0 auto;
-		background-color: transparent;
-		box-shadow: none;
-		position: absolute;
-		
-	}
-}
-
-
-header h1, header h2, header h3{
+header h1,
+header h2,
+header h3 {
 	text-transform: uppercase;
 }
 
-header h1{
+header h1 {
 	text-align: left;
 }
 
-#romain{
-	font-family:"Poppins", sans-serif;
+#romain {
+	font-family: "Poppins", sans-serif;
 	font-weight: 200;
-	font-size: 1.25em;;
-    line-height: 1.2em;
+	font-size: 1.25em;
+	;
+	line-height: 1.2em;
 	margin: 0;
-    letter-spacing: 0.245em;
-    color: #FFFFFF;
+	letter-spacing: 0.245em;
+	color: #FFFFFF;
 }
 
-#guimbal{
-	font-family:"Poppins", sans-serif;
+#guimbal {
+	font-family: "Poppins", sans-serif;
 	font-weight: 500;
 	font-size: 1.5em;
 	line-height: 1.2em;
@@ -144,7 +103,7 @@ header h1{
 	margin: 0;
 }
 
-header h2{
+header h2 {
 	font-weight: 500;
 	font-size: 0.5em;
 	line-height: 1.2em;

@@ -39,8 +39,8 @@ class DraggableCircle {
     setPosition(x, y) {
         // Keep within viewport bounds
         const rect = this.element.getBoundingClientRect();
-        const maxX = window.innerWidth - rect.width;
-        const maxY = window.innerHeight - rect.height;
+        const maxX = window.innerWidth - rect.width/2;
+        const maxY = window.innerHeight - rect.height/2;
         
         x = Math.max(0, Math.min(x, maxX));
         y = Math.max(0, Math.min(y, maxY));
