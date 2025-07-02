@@ -128,7 +128,7 @@ header h2 {
 }
 
 .draggable-circle:hover {
-	transform: scale(1.05);
+	transform: scale(1.02);
 	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -148,7 +148,7 @@ header h2 {
 	top: 90px;
 	left: 50%;
 	transform: translateX(-50%);
-	background: rgba(255, 255, 255, 0.95);
+	/* background: rgba(255, 255, 255, 0.95); */
 	backdrop-filter: blur(15px);
 	border-radius: 15px;
 	padding: 15px;
@@ -159,26 +159,26 @@ header h2 {
 	transform: translateX(-50%) translateY(-10px);
 	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	min-width: 200px;
-	z-index: 1001;
+	z-index: 999;
 }
 
 .circle-menu.active {
 	opacity: 1;
 	visibility: visible;
-	transform: translateX(-50%) translateY(0);
+	transform: translateX(-50%) translateY(15em);
 }
 
 .circle-menu::before {
 	content: '';
 	position: absolute;
-	top: -8px;
+	top: -9px;
 	left: 50%;
 	transform: translateX(-50%);
 	width: 0;
 	height: 0;
 	border-left: 8px solid transparent;
 	border-right: 8px solid transparent;
-	border-bottom: 8px solid rgba(255, 255, 255, 0.95);
+	border-bottom: 8px solid rgba(255, 255, 255, 0.3);;
 }
 
 .menu-item {
@@ -195,7 +195,8 @@ header h2 {
 }
 
 .menu-item:hover {
-	background: linear-gradient(45deg, #ff6b6b, #feca57);
+	/* background: linear-gradient(45deg, #ff6b6b, #feca57); */
+	border: 1px solid rgb(255, 255, 255);
 	color: white;
 	transform: translateX(5px);
 }

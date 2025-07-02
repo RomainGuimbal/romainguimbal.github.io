@@ -42,8 +42,8 @@ class DraggableCircle {
         const maxX = window.innerWidth - rect.width/2;
         const maxY = window.innerHeight - rect.height/2;
         
-        x = Math.max(0, Math.min(x, maxX));
-        y = Math.max(0, Math.min(y, maxY));
+        x = Math.max(- rect.width/2, Math.min(x, maxX));
+        y = Math.max(- rect.height/2, Math.min(y, maxY));
         
         this.element.style.left = x + 'px';
         this.element.style.top = y + 'px';
@@ -166,22 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // Handle menu item clicks
 function handleMenuClick(action) {
     console.log('Menu action:', action);
-    
-    // Add your menu action logic here
-    switch(action) {
-        case 'home':
-            alert('Home clicked!');
-            break;
-        case 'profile':
-            alert('Profile clicked!');
-            break;
-        case 'settings':
-            alert('Settings clicked!');
-            break;
-        case 'help':
-            alert('Help clicked!');
-            break;
-    }
     
     // Close menu after action
     if (window.draggableCircleInstance) {
