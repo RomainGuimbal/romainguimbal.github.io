@@ -189,32 +189,6 @@ spline-viewer{
 }
 
 
-/* .vertical-duo{
-	width : clamp(300px, 40%, 500px);
-	border: 2px solid red;
-	display: grid;
-	height: clamp(25em, 1vh, 1vh);
-	width : auto;
-
-	grid-column: 1;
-	grid-row: 2;
-}
-
-
-.vertical-duo img:not(:focus),
-.vertical-duo p{
-	height: auto;
-	width : 97%;
-}	
-
-.cont{
-	column-gap: 0.5em;
-	display: inline-block;
-	height: clamp(25em, 0.5vh, 1vh);
-	width : auto;
-} */
-
-
 
 footer{
 	padding: 0.1vh;

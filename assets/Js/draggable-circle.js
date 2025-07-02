@@ -13,7 +13,7 @@ class DraggableCircle {
         this.clickThreshold = 200; // Maximum time for a click (ms)
         
         // Set initial position (top-right corner)
-        this.setPosition(window.innerWidth - 120, 80);
+        this.setPosition(30, 30);
         
         this.init();
     }
