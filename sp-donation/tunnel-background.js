@@ -74,6 +74,13 @@ const canvas = document.getElementById('shaderCanvas');
                 base_coat = mix(base_coat, 0.0, 0.6)+.05;
                
                 col = vec3(base_coat*0.5, base_coat*0.6, base_coat) + highlights;
+
+                //Vignette
+                vec2 uv2 = fragCoord.xy / iResolution.xy;
+                uv2 *=  1.0 - uv2.yx;
+                float vig = uv2.x*uv2.y * 20.0;
+                vig = 0.2 + pow(vig, 0.8)*0.8;
+                col *= vig;
                 
                 gl_FragColor = vec4(col,1.0);
             }
