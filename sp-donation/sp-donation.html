@@ -12,7 +12,7 @@
 
     <div class="container">
         <div class="main-content">
-            <img id="frame" class="svg" src="baroque frame.svg"/>
+            <!-- <img id="frame" class="svg" src="baroque frame.svg"/> -->
             <div class="logo-stack">
                 <div class="dominus-flex">
                     <span class="dominus dominus-left">DOMINUS</span>
@@ -21,7 +21,6 @@
                 </div>
                 <h1 class="title">SurfacePsycho</h1>
             </div>
-            
             
             <p class="subtitle">Accelerate the project now</p>
             
@@ -36,70 +35,84 @@
                 <span class="hover-text">Donate</span>
             </a>
             
-            <div class="progress-section">
-                <div class="progress-label">
-                    <span>2025 Goal</span>
-                    <span id="balance-label">
-                        <span id="balance-amount">1 100 €</span>
-                        <span class="progress-total">/ 25 000 €</span>
-                    </span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progress-fill"></div>
-                </div>
-            </div>            
+
         </div>
 
-        <div class="links-grid">
-            <!-- <a href="https://github.com/RomainGuimbal/SurfacePsycho" class="link-frame">
-                <img class="link-icon" src="github-mark-white.svg" style="width: 30px; height: 30px">
-                <div class="link-title">Github</div>
-                <div class="link-desc">Add-on Source & Doc</div>
-                <div class="hover-text">Open-source babe 😎</div>
-            </a> -->
 
-            <a href="#" class="link-frame">
-                <div class="link-icon">🤔</div>
-                <!-- <img class="link-icon" src="github-mark-white.svg" style="width: 30px; height: 30px"> -->
-                <div class="link-title">About</div>
-                <div class="link-desc">Donate for what ?</div>
-                <div class="hover-text">For the developement of Blender native NURBS, and the SP add-on until native NURBS catch up</div>
-            </a>
+        <!-- <div class="menu-overlay" id="menuOverlay"></div> -->
 
-            <a href="#" class="link-frame">
-                <div class="link-icon">👑</div>
-                <div class="link-title">Top Donator</div>
-                <div class="link-desc">Sergey Troyanskiy</div>
-                <div class="hover-text">The lord paid<br><br>370€</div>
-            </a>
+         <!-- Menu Container (holds both button and panel) -->
+        <div class="menu-container" id="menuContainer">
+            <!-- Menu Button (Pull Tab) -->
+            <button class="menu-button" id="menuButton">
+                <div class="arrow"></div>
+            </button>
             
-            <a href="mailto:romain.guimbal@proton.me" class="link-frame" id="contact-frame">
-                <div class="link-icon">🧢</div>
-                <div class="link-title">Contact</div>
-                <div class="link-desc">Talk to the manager</div>
-                <div class="hover-text">romain.guimbal@proton.me</div>
-            </a>
+            <!-- Menu Panel -->
+            <div class="menu-panel" id="menuPanel">
+                <div class="progress-section">
+                    <div class="progress-label">
+                        <span>2025 Goal</span>
+                        <span id="balance-label">
+                            <span id="balance-amount">1 100 €</span>
+                            <span class="progress-total">/ 25 000 €</span>
+                        </span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>      
+                <div class="links-grid">
+                    <!-- <a href="https://github.com/RomainGuimbal/SurfacePsycho" class="link-frame">
+                        <img class="link-icon" src="github-mark-white.svg" style="width: 30px; height: 30px">
+                        <div class="link-title">Github</div>
+                        <div class="link-desc">Add-on Source & Doc</div>
+                        <div class="hover-text">Open-source babe 😎</div>
+                    </a> -->
 
-            <a href="https://blenderartists.org/t/surfacepsycho-addon-project/1487629" class="link-frame">
-                <div class="link-icon">📰</div>
-                <div class="link-title">News</div>
-                <div class="link-desc">It moves fast</div>
-                <div class="hover-text">blenderartists.org</div>
-            </a>
+                    <a href="#" class="link-frame">
+                        <div class="link-icon">🤔</div>
+                        <div class="link-title">About</div>
+                        <div class="link-desc">Donate for what ?</div>
+                        <div class="hover-text">For the developement of Blender native NURBS, and the SP add-on until native NURBS catch up</div>
+                    </a>
 
-            <a href="https://acideromineh.gumroad.com/l/SurfacePsycho" class="link-frame">
-                <div class="link-icon">⬇️</div>
-                <div class="link-title">Download</div>
-                <div class="link-desc">SurfacePsycho Add-on</div>
-                <div class="hover-text">Try it quick, but you are here to donate OKAY?</div>
-            </a>
+                    <a href="#" class="link-frame">
+                        <div class="link-icon">👑</div>
+                        <div class="link-title">Top Donator</div>
+                        <div class="link-desc">Sergey Troyanskiy</div>
+                        <div class="hover-text">The Lord paid<br><br>370€</div>
+                    </a>
+                    
+                    <a href="mailto:romain.guimbal@proton.me" class="link-frame" id="contact-frame">
+                        <div class="link-icon">🧢</div>
+                        <div class="link-title">Contact</div>
+                        <div class="link-desc">Talk to the manager</div>
+                        <div class="hover-text">romain.guimbal@proton.me</div>
+                    </a>
 
-            <a href="https://discord.gg/MJdxMBM6pm" class="link-frame">
-                <img class="link-icon" src="https://upload.wikimedia.org/wikipedia/fr/4/4f/Discord_Logo_sans_texte.svg" style="width: 30px; height: 30px">
-                <div class="link-title">Geometry Nerd&nbsp?</div>
-                <div class="link-desc">Join the discord</div>
-                <div class="hover-text">Bla bla bla cosine... bla bla... basis matrix.. bla bla</div>
-            </a>
+                    <a href="https://blenderartists.org/t/surfacepsycho-addon-project/1487629" class="link-frame">
+                        <div class="link-icon">📰</div>
+                        <div class="link-title">News</div>
+                        <div class="link-desc">It moves fast</div>
+                        <div class="hover-text">blenderartists.org</div>
+                    </a>
+
+                    <a href="https://acideromineh.gumroad.com/l/SurfacePsycho" class="link-frame">
+                        <div class="link-icon">⬇️</div>
+                        <div class="link-title">Download</div>
+                        <div class="link-desc">SurfacePsycho Add-on</div>
+                        <div class="hover-text">Try it quick, but you are here to donate OKAY?</div>
+                    </a>
+
+                    <a href="https://discord.gg/MJdxMBM6pm" class="link-frame">
+                        <img class="link-icon" src="https://upload.wikimedia.org/wikipedia/fr/4/4f/Discord_Logo_sans_texte.svg" style="width: 30px; height: 30px">
+                        <div class="link-title">Geometry Nerd&nbsp?</div>
+                        <div class="link-desc">Join the discord</div>
+                        <div class="hover-text">Bla bla bla cosine... bla bla... basis matrix.. bla bla</div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -234,6 +247,64 @@
         }
         enableTouchHover('.donate-button');
         enableTouchHover('.link-frame');
+    </script>
+    <script>
+        // Drawer menu
+        const menuButton = document.getElementById('menuButton');
+        // const menuOverlay = document.getElementById('menuOverlay');
+        const menuContainer = document.getElementById('menuContainer');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                openMenu();
+            } else {
+                closeMenu();
+            }
+        }
+
+        function openMenu() {
+            menuButton.classList.add('active');
+            // menuOverlay.classList.add('active');
+            menuContainer.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            menuButton.classList.remove('active');
+            // menuOverlay.classList.remove('active');
+            menuContainer.classList.remove('active');
+            document.body.style.overflow = '';
+            isMenuOpen = false;
+        }
+
+        // Event listeners
+        menuButton.addEventListener('click', toggleMenu);
+        
+        // menuOverlay.addEventListener('click', closeMenu);
+        
+        // Close menu with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMenu();
+            }
+        });
+
+        // Menu item click handlers
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                const title = item.querySelector('h3').textContent;
+                alert(`You clicked: ${title}`);
+                closeMenu();
+            });
+        });
+
+        // Prevent menu container clicks from closing the menu
+        menuContainer.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
     </script>
 </body>
 </html>
