@@ -622,7 +622,7 @@ img.donate-decoration:nth-of-type(4) {
 }
 
 .expand-height {
-    animation: expandHeight 0.8s forwards;
+    animation: expandHeight 0.7s forwards;
 }
 
 .retract-width {
@@ -630,7 +630,7 @@ img.donate-decoration:nth-of-type(4) {
 }
 
 .retract-height {
-    animation: retractHeight 0.8s forwards;
+    animation: retractHeight 0.7s forwards;
 }
 
 .menu-button {

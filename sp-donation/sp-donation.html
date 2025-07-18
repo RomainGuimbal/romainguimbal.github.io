@@ -80,7 +80,7 @@
                             <div class="link-icon">👑</div>
                             <div class="link-title">Top Donator</div>
                             <div class="link-desc">Sergey Troyanskiy</div>
-                            <div class="hover-text">The Lord paid<br><br>370€</div>
+                            <div class="hover-text">The King gave<br>370€</div>
                         </a>
 
                         <a href="mailto:romain.guimbal@proton.me" class="link-frame" id="contact-frame">
@@ -205,12 +205,14 @@
             menuContainer.classList.add('expand-width');
             setTimeout(() => {
                 menuContainer.classList.add('expand-height');
+                setTimeout(() => {
+                    isMenuOpen = true;
+                }, 700);
             }, 300);
-            isMenuOpen = true;
+            
         }
 
         function closeMenu() {
-            isMenuOpen = false;
             menuContainer.classList.remove('expand-height');
             menuContainer.classList.add('retract-height');
             setTimeout(() => {
@@ -219,14 +221,13 @@
                 setTimeout(() => {
                     menuContainer.classList.remove('retract-width');
                     panelContent.classList.add('hidden');
+                    isMenuOpen = false;
                 }, 300);
-            }, 800);
+            }, 700);
         }
 
         function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-
-            if (isMenuOpen) {
+            if (!isMenuOpen) {
                 openMenu();
             } else {
                 closeMenu();
