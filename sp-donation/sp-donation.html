@@ -8,7 +8,7 @@
     <link rel="icon" href="../assets/img/favicon.png">
 </head>
 <body>
-    <canvas id="shaderCanvas"></canvas>
+    <!-- <canvas id="shaderCanvas"></canvas> -->
 
     <div class="container">
         <div class="main-content">
@@ -35,21 +35,23 @@
                 <span class="hover-text">Donate</span>
             </a>
             
-
+            <div class="underbutton">
+                <div class="mini-bar">
+                    <hr class="mini-bar-space">
+                    <hr class="mini-bar-fill">
+                </div>
+            </div>
         </div>
 
-
-        <!-- <div class="menu-overlay" id="menuOverlay"></div> -->
-
-         <!-- Menu Container (holds both button and panel) -->
+        <!-- Menu Container (holds both button and panel) -->
         <div class="menu-container" id="menuContainer">
-            <!-- Menu Button (Pull Tab) -->
+            <!-- Menu Button -->
             <button class="menu-button" id="menuButton">
-                <div class="arrow"></div>
+                ...
             </button>
             
             <!-- Menu Panel -->
-            <div class="menu-panel" id="menuPanel">
+            <div class="panel-content hidden" id="panelContent">
                 <div class="progress-section">
                     <div class="progress-label">
                         <span>2025 Goal</span>
@@ -61,7 +63,7 @@
                     <div class="progress-bar">
                         <div class="progress-fill" id="progress-fill"></div>
                     </div>
-                </div>      
+                </div>
                 <div class="links-grid">
                     <!-- <a href="https://github.com/RomainGuimbal/SurfacePsycho" class="link-frame">
                         <img class="link-icon" src="github-mark-white.svg" style="width: 30px; height: 30px">
@@ -120,6 +122,7 @@
     <img id="lapin-donate" src="lapin donate.png" alt="Lapin Donate" />
     
     <script src="tunnel-background.js"></script>
+    <script src="lapin.js"></script>
     <script type="module">
         import { fetchCollectiveBalance } from "./get_project_balance.js";
         function handleLinkClick(section) {
@@ -149,72 +152,6 @@
                 }, 500);
             }
         });
-    </script>
-    <script>
-        // Lapin donate animation logic
-        const lapin = document.getElementById('lapin-donate');
-        let lapinTimeout = null;
-        let lapinIsFullyUp = false;
-
-        function clearLapinClasses() {
-            lapin.classList.remove('partial-rise');
-            lapin.classList.remove('full-rise');
-            lapinIsFullyUp = false;
-        }
-
-        function showLapinPartial() {
-            clearLapinClasses();
-            lapin.classList.add('partial-rise');
-            if (lapinTimeout) clearTimeout(lapinTimeout);
-            lapinTimeout = setTimeout(() => {
-                lapin.classList.remove('partial-rise');
-            }, 2500);
-        }
-
-        function showLapinFull() {
-            clearLapinClasses();
-            lapin.classList.add('full-rise');
-            if (lapinTimeout) clearTimeout(lapinTimeout);
-            lapinIsFullyUp = false;
-            // Wait for the CSS transition to finish before allowing "down"
-            setTimeout(() => {
-                lapinIsFullyUp = true;
-            }, 1200); // match the CSS transition duration
-            lapinTimeout = setTimeout(() => {
-                lapin.classList.remove('full-rise');
-                lapinTimeout = null;
-                lapinIsFullyUp = false;
-            }, 4000);
-        }
-
-        // Show partial rise every 10s
-        setInterval(showLapinPartial, 10000);
-        // Show partial rise on page load
-        setTimeout(showLapinPartial, 1000);
-
-        // Show full rise on click/touch/hover
-        lapin.addEventListener('click', function(e) {
-            // Only allow to animate down if lapin is fully up (not animating)
-            if (lapin.classList.contains('full-rise') && lapinIsFullyUp) {
-                lapin.classList.remove('full-rise');
-                lapinIsFullyUp = false;
-                if (lapinTimeout) clearTimeout(lapinTimeout);
-                lapinTimeout = null;
-            } else if (!lapin.classList.contains('full-rise')) {
-                showLapinFull();
-            }
-        });
-        lapin.addEventListener('touchstart', function(e) {
-            if (lapin.classList.contains('full-rise') && lapinIsFullyUp) {
-                lapin.classList.remove('full-rise');
-                lapinIsFullyUp = false;
-                if (lapinTimeout) clearTimeout(lapinTimeout);
-                lapinTimeout = null;
-            } else if (!lapin.classList.contains('full-rise')) {
-                showLapinFull();
-            }
-        });
-        lapin.addEventListener('mouseenter', showLapinFull);
     </script>
     <script>
         // Touch hover emulation for mobile devices
@@ -249,11 +186,14 @@
         enableTouchHover('.link-frame');
     </script>
     <script>
-        // Drawer menu
+        // // Drawer menu
         const menuButton = document.getElementById('menuButton');
         // const menuOverlay = document.getElementById('menuOverlay');
         const menuContainer = document.getElementById('menuContainer');
+        const panelContent = document.getElementById('panelContent');
+
         let isMenuOpen = false;
+        let lastScrollPosition = window.scrollY;
 
         function toggleMenu() {
             isMenuOpen = !isMenuOpen;
@@ -267,14 +207,15 @@
 
         function openMenu() {
             menuButton.classList.add('active');
-            // menuOverlay.classList.add('active');
+            panelContent.classList.remove('hidden');
             menuContainer.classList.add('active');
+            
             document.body.style.overflow = 'hidden';
         }
 
         function closeMenu() {
             menuButton.classList.remove('active');
-            // menuOverlay.classList.remove('active');
+            panelContent.classList.add('hidden');
             menuContainer.classList.remove('active');
             document.body.style.overflow = '';
             isMenuOpen = false;
@@ -284,13 +225,6 @@
         menuButton.addEventListener('click', toggleMenu);
         
         // menuOverlay.addEventListener('click', closeMenu);
-        
-        // Close menu with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && isMenuOpen) {
-                closeMenu();
-            }
-        });
 
         // Menu item click handlers
         document.querySelectorAll('.menu-item').forEach(item => {
@@ -305,6 +239,21 @@
         menuContainer.addEventListener('click', (e) => {
             e.stopPropagation();
         });
+
+        window.addEventListener('scroll', function() {
+            const currentScrollPosition = window.scrollY;
+
+            if (currentScrollPosition > lastScrollPosition && !isMenuOpen) {
+                openMenu();
+                isMenuOpen = true;
+            } else if (currentScrollPosition < lastScrollPosition && isMenuOpen) {
+                closeMenu();
+                isMenuOpen = false;
+            }
+
+            lastScrollPosition = currentScrollPosition;
+        });
     </script>
+    
 </body>
 </html>
