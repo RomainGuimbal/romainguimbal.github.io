@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <!-- <canvas id="shaderCanvas"></canvas> -->
+    <canvas id="shaderCanvas"></canvas>
 
     <div class="main-content">
         <!-- <img id="frame" class="svg" src="baroque frame.svg"/> -->
@@ -201,8 +201,8 @@
         let isMenuOpen = false;
 
         function openMenu() {
-            menuContainer.classList.add('expand-width');
             panelContent.classList.remove('hidden');
+            menuContainer.classList.add('expand-width');
             setTimeout(() => {
                 menuContainer.classList.add('expand-height');
             }, 300);
@@ -210,10 +210,17 @@
         }
 
         function closeMenu() {
-            panelContent.classList.add('hidden');
-            menuContainer.classList.remove('expand-height');
-            menuContainer.classList.remove('expand-width');
             isMenuOpen = false;
+            menuContainer.classList.remove('expand-height');
+            menuContainer.classList.add('retract-height');
+            setTimeout(() => {
+                menuContainer.classList.remove('expand-width', 'retract-height');
+                menuContainer.classList.add('retract-width');
+                setTimeout(() => {
+                    menuContainer.classList.remove('retract-width');
+                    panelContent.classList.add('hidden');
+                }, 300);
+            }, 800);
         }
 
         function toggleMenu() {
@@ -225,20 +232,6 @@
                 closeMenu();
             }
         }
-
-        // Menu item click handlers
-        document.querySelectorAll('.menu-item').forEach(item => {
-            item.addEventListener('click', (e) => {
-                const title = item.querySelector('h3').textContent;
-                alert(`You clicked: ${title}`);
-                closeMenu();
-            });
-        });
-
-        // // Prevent menu container clicks from closing the menu
-        // menuContainer.addEventListener('click', (e) => {
-        //     e.stopPropagation();
-        // });
 
         function handleScroll(event) {
             if (event.deltaY > 0 && !isMenuOpen) {
