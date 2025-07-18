@@ -34,8 +34,8 @@ function showLapinFull() {
     }, 4000);
 }
 
-// Show partial rise every 10s
-setInterval(showLapinPartial, 10000);
+// Show partial rise every 15s
+setInterval(showLapinPartial, 15000);
 // Show partial rise on page load
 setTimeout(showLapinPartial, 1000);
 

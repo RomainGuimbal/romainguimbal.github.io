@@ -1,126 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SurfacePsycho - Donate</title>
-    <link rel="stylesheet" href="sp-donation.css"/>
+    <link rel="stylesheet" href="sp-donation.css" />
     <link rel="icon" href="../assets/img/favicon.png">
 </head>
+
 <body>
     <!-- <canvas id="shaderCanvas"></canvas> -->
 
-    <div class="container">
-        <div class="main-content">
-            <!-- <img id="frame" class="svg" src="baroque frame.svg"/> -->
-            <div class="logo-stack">
-                <div class="dominus-flex">
-                    <span class="dominus dominus-left">DOMINUS</span>
-                    <img class="logo" src="../assets/img/splogo_alpha.png">
-                    <span class="dominus dominus-right">NURBSUS</span>
-                </div>
-                <h1 class="title">SurfacePsycho</h1>
+    <div class="main-content">
+        <!-- <img id="frame" class="svg" src="baroque frame.svg"/> -->
+        <div class="logo-stack">
+            <div class="dominus-flex">
+                <span class="dominus dominus-left">DOMINUS</span>
+                <img class="logo" src="../assets/img/splogo_alpha.png">
+                <span class="dominus dominus-right">NURBSUS</span>
             </div>
-            
-            <p class="subtitle">Accelerate the project now</p>
-            
-            <!-- DONATE BUTTON -->
-            <a class="donate-button" href="https://opencollective.com/surfacepsycho#category-CONTRIBUTE" id="centerButton">
-                <img class="donate-decoration" src="svg button ext.svg">
-                <img class="donate-decoration" src="svg button ext.svg">
-                <img class="donate-decoration" src="svg button ext.svg">
-                <img class="donate-decoration" src="svg button ext.svg">
-                <img class="donate-frame">
-                <span class="default-text">Accelerate</span>
-                <span class="hover-text">Donate</span>
-            </a>
-            
-            <div class="underbutton">
-                <div class="mini-bar">
-                    <hr class="mini-bar-space">
-                    <hr class="mini-bar-fill">
+            <h1 class="title">SurfacePsycho</h1>
+        </div>
+
+        <p class="subtitle">Accelerate the project now</p>
+
+        <!-- DONATE BUTTON -->
+        <a class="donate-button" href="https://opencollective.com/surfacepsycho#category-CONTRIBUTE" id="centerButton">
+            <img class="donate-decoration" src="svg button ext.svg">
+            <img class="donate-decoration" src="svg button ext.svg">
+            <img class="donate-decoration" src="svg button ext.svg">
+            <img class="donate-decoration" src="svg button ext.svg">
+            <img class="donate-frame">
+            <span class="default-text">Accelerate</span>
+            <span class="hover-text">Donate</span>
+        </a>
+
+        <div class="underbutton">
+            <div class="mini-bar">
+                <hr class="mini-bar-fill" id="miniBarFill">
+            </div>
+
+            <!-- Panel Button -->
+            <button class="menu-button" id="menuButton">...</button>
+
+                <!-- Panel -->
+            <div class="menu-container" id="menuContainer">
+                <!-- Panel -->
+                <div class="panel-content hidden" id="panelContent">
+                    <div class="progress-section">
+                        <div class="progress-label">
+                            <span>2025 Donation Goal</span>
+                            <span id="balance-label">
+                                <span id="balance-amount">1 100 €</span>
+                                <span class="progress-total">/ 25 000 €</span>
+                            </span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="links-grid">
+                        <!-- <a href="https://github.com/RomainGuimbal/SurfacePsycho" class="link-frame">
+                            <img class="link-icon" src="github-mark-white.svg" style="width: 30px; height: 30px">
+                            <div class="link-title">Github</div>
+                            <div class="link-desc">Add-on Source & Doc</div>
+                            <div class="hover-text">Open-source babe 😎</div>
+                        </a> -->
+
+                        <a href="#" class="link-frame">
+                            <div class="link-icon">🤔</div>
+                            <div class="link-title">About</div>
+                            <div class="link-desc">Donate for what ?</div>
+                            <div class="hover-text">For the developement of Blender native NURBS, as well as SP add-on until
+                                native NURBS catch up</div>
+                        </a>
+
+                        <a href="#" class="link-frame">
+                            <div class="link-icon">👑</div>
+                            <div class="link-title">Top Donator</div>
+                            <div class="link-desc">Sergey Troyanskiy</div>
+                            <div class="hover-text">The Lord paid<br><br>370€</div>
+                        </a>
+
+                        <a href="mailto:romain.guimbal@proton.me" class="link-frame" id="contact-frame">
+                            <div class="link-icon">🧢</div>
+                            <div class="link-title">Contact</div>
+                            <div class="link-desc">Talk to the manager</div>
+                            <div class="hover-text">romain.guimbal@proton.me</div>
+                        </a>
+
+                        <a href="https://blenderartists.org/t/surfacepsycho-addon-project/1487629" class="link-frame">
+                            <div class="link-icon">📰</div>
+                            <div class="link-title">News</div>
+                            <div class="link-desc">It moves fast</div>
+                            <div class="hover-text">blenderartists.org</div>
+                        </a>
+
+                        <a href="https://acideromineh.gumroad.com/l/SurfacePsycho" class="link-frame">
+                            <div class="link-icon">⬇️</div>
+                            <div class="link-title">Download</div>
+                            <div class="link-desc">SurfacePsycho Add-on</div>
+                            <div class="hover-text">Try it quick, but you are here to donate OKAY?</div>
+                        </a>
+
+                        <a href="https://discord.gg/MJdxMBM6pm" class="link-frame">
+                            <img class="link-icon"
+                                src="https://upload.wikimedia.org/wikipedia/fr/4/4f/Discord_Logo_sans_texte.svg"
+                                style="width: 30px; height: 30px">
+                            <div class="link-title">Geometry Nerd&nbsp?</div>
+                            <div class="link-desc">Join the discord</div>
+                            <div class="hover-text">Bla bla bla cosine... bla bla... basis matrix.. bla bla</div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Menu Container (holds both button and panel) -->
-        <div class="menu-container" id="menuContainer">
-            <!-- Menu Button -->
-            <button class="menu-button" id="menuButton">
-                ...
-            </button>
-            
-            <!-- Menu Panel -->
-            <div class="panel-content hidden" id="panelContent">
-                <div class="progress-section">
-                    <div class="progress-label">
-                        <span>2025 Goal</span>
-                        <span id="balance-label">
-                            <span id="balance-amount">1 100 €</span>
-                            <span class="progress-total">/ 25 000 €</span>
-                        </span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progress-fill"></div>
-                    </div>
-                </div>
-                <div class="links-grid">
-                    <!-- <a href="https://github.com/RomainGuimbal/SurfacePsycho" class="link-frame">
-                        <img class="link-icon" src="github-mark-white.svg" style="width: 30px; height: 30px">
-                        <div class="link-title">Github</div>
-                        <div class="link-desc">Add-on Source & Doc</div>
-                        <div class="hover-text">Open-source babe 😎</div>
-                    </a> -->
-
-                    <a href="#" class="link-frame">
-                        <div class="link-icon">🤔</div>
-                        <div class="link-title">About</div>
-                        <div class="link-desc">Donate for what ?</div>
-                        <div class="hover-text">For the developement of Blender native NURBS, and the SP add-on until native NURBS catch up</div>
-                    </a>
-
-                    <a href="#" class="link-frame">
-                        <div class="link-icon">👑</div>
-                        <div class="link-title">Top Donator</div>
-                        <div class="link-desc">Sergey Troyanskiy</div>
-                        <div class="hover-text">The Lord paid<br><br>370€</div>
-                    </a>
-                    
-                    <a href="mailto:romain.guimbal@proton.me" class="link-frame" id="contact-frame">
-                        <div class="link-icon">🧢</div>
-                        <div class="link-title">Contact</div>
-                        <div class="link-desc">Talk to the manager</div>
-                        <div class="hover-text">romain.guimbal@proton.me</div>
-                    </a>
-
-                    <a href="https://blenderartists.org/t/surfacepsycho-addon-project/1487629" class="link-frame">
-                        <div class="link-icon">📰</div>
-                        <div class="link-title">News</div>
-                        <div class="link-desc">It moves fast</div>
-                        <div class="hover-text">blenderartists.org</div>
-                    </a>
-
-                    <a href="https://acideromineh.gumroad.com/l/SurfacePsycho" class="link-frame">
-                        <div class="link-icon">⬇️</div>
-                        <div class="link-title">Download</div>
-                        <div class="link-desc">SurfacePsycho Add-on</div>
-                        <div class="hover-text">Try it quick, but you are here to donate OKAY?</div>
-                    </a>
-
-                    <a href="https://discord.gg/MJdxMBM6pm" class="link-frame">
-                        <img class="link-icon" src="https://upload.wikimedia.org/wikipedia/fr/4/4f/Discord_Logo_sans_texte.svg" style="width: 30px; height: 30px">
-                        <div class="link-title">Geometry Nerd&nbsp?</div>
-                        <div class="link-desc">Join the discord</div>
-                        <div class="hover-text">Bla bla bla cosine... bla bla... basis matrix.. bla bla</div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
     <!-- Lapin donate image -->
     <img id="lapin-donate" src="lapin donate.png" alt="Lapin Donate" />
-    
+
     <script src="tunnel-background.js"></script>
     <script src="lapin.js"></script>
     <script type="module">
@@ -133,9 +135,11 @@
         // Animate progress bar on load
         window.addEventListener('load', () => {
             const progressFill = document.getElementById('progress-fill');
+            const miniBarFill = document.getElementById('miniBarFill');
             progressFill.style.width = '0%';
+            miniBarFill.style.width = '0%';
         });
-        
+
         fetchCollectiveBalance('surfacepsycho').then(result => {
             if (result) {
                 // Use the formatted amount for display, raw amount for math
@@ -146,9 +150,12 @@
                 document.getElementById('balance-label').innerHTML =
                     `<span id='balance-amount'>${formattedAmount} €</span><span class="progress-total">/ 25 000 €</span>`;
                 const progressFill = document.getElementById('progress-fill');
+                const miniBarFill = document.getElementById('miniBarFill');
                 setTimeout(() => {
                     progressFill.style.transition = 'width 2s ease-out';
                     progressFill.style.width = percent + '%';
+                    miniBarFill.style.transition = 'width 2s ease-out';
+                    miniBarFill.style.width = percent + '%';
                 }, 500);
             }
         });
@@ -156,26 +163,26 @@
     <script>
         // Touch hover emulation for mobile devices
         function enableTouchHover(selector) {
-            document.querySelectorAll(selector).forEach(function(el) {
+            document.querySelectorAll(selector).forEach(function (el) {
                 // Add .touch-hover on touchstart (finger down)
-                el.addEventListener('touchstart', function(e) {
-                    document.querySelectorAll(selector).forEach(function(other) {
+                el.addEventListener('touchstart', function (e) {
+                    document.querySelectorAll(selector).forEach(function (other) {
                         if (other !== el) other.classList.remove('touch-hover');
                     });
                     el.classList.add('touch-hover');
                 });
                 // Remove .touch-hover on touchend (finger up)
-                el.addEventListener('touchend', function(e) {
+                el.addEventListener('touchend', function (e) {
                     el.classList.remove('touch-hover');
                 });
                 // Remove .touch-hover if finger leaves the element
-                el.addEventListener('touchcancel', function(e) {
+                el.addEventListener('touchcancel', function (e) {
                     el.classList.remove('touch-hover');
                 });
             });
             // Remove .touch-hover from all when touching anywhere else
-            document.addEventListener('touchstart', function(e) {
-                document.querySelectorAll(selector).forEach(function(el) {
+            document.addEventListener('touchstart', function (e) {
+                document.querySelectorAll(selector).forEach(function (el) {
                     if (!el.contains(e.target)) {
                         el.classList.remove('touch-hover');
                     }
@@ -186,45 +193,38 @@
         enableTouchHover('.link-frame');
     </script>
     <script>
-        // // Drawer menu
+        // Expanding Panel
         const menuButton = document.getElementById('menuButton');
-        // const menuOverlay = document.getElementById('menuOverlay');
         const menuContainer = document.getElementById('menuContainer');
         const panelContent = document.getElementById('panelContent');
 
         let isMenuOpen = false;
-        let lastScrollPosition = window.scrollY;
+
+        function openMenu() {
+            menuContainer.classList.add('expand-width');
+            panelContent.classList.remove('hidden');
+            setTimeout(() => {
+                menuContainer.classList.add('expand-height');
+            }, 300);
+            isMenuOpen = true;
+        }
+
+        function closeMenu() {
+            panelContent.classList.add('hidden');
+            menuContainer.classList.remove('expand-height');
+            menuContainer.classList.remove('expand-width');
+            isMenuOpen = false;
+        }
 
         function toggleMenu() {
             isMenuOpen = !isMenuOpen;
-            
+
             if (isMenuOpen) {
                 openMenu();
             } else {
                 closeMenu();
             }
         }
-
-        function openMenu() {
-            menuButton.classList.add('active');
-            panelContent.classList.remove('hidden');
-            menuContainer.classList.add('active');
-            
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMenu() {
-            menuButton.classList.remove('active');
-            panelContent.classList.add('hidden');
-            menuContainer.classList.remove('active');
-            document.body.style.overflow = '';
-            isMenuOpen = false;
-        }
-
-        // Event listeners
-        menuButton.addEventListener('click', toggleMenu);
-        
-        // menuOverlay.addEventListener('click', closeMenu);
 
         // Menu item click handlers
         document.querySelectorAll('.menu-item').forEach(item => {
@@ -235,25 +235,24 @@
             });
         });
 
-        // Prevent menu container clicks from closing the menu
-        menuContainer.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
+        // // Prevent menu container clicks from closing the menu
+        // menuContainer.addEventListener('click', (e) => {
+        //     e.stopPropagation();
+        // });
 
-        window.addEventListener('scroll', function() {
-            const currentScrollPosition = window.scrollY;
-
-            if (currentScrollPosition > lastScrollPosition && !isMenuOpen) {
+        function handleScroll(event) {
+            if (event.deltaY > 0 && !isMenuOpen) {
                 openMenu();
-                isMenuOpen = true;
-            } else if (currentScrollPosition < lastScrollPosition && isMenuOpen) {
+            } else if (event.deltaY < 0 && isMenuOpen) {
                 closeMenu();
-                isMenuOpen = false;
             }
+        }
 
-            lastScrollPosition = currentScrollPosition;
-        });
+        // Event listeners
+        menuButton.addEventListener('click', toggleMenu);
+        window.addEventListener('wheel', handleScroll, false);
     </script>
-    
+
 </body>
+
 </html>
