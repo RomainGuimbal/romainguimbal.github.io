@@ -47,7 +47,7 @@ const canvas = document.getElementById('shaderCanvas');
                 float radius_major = 1.0;
                 float radius_minor = .07;
                
-                for(int i=0; i<70; i++) {
+                for(int i=0; i<80; i++) {
                     p = ro + rd * dO;
                     dS = -(length(vec2(length(p.xz)- radius_major, p.y)) - radius_minor);
                     if(dS<.0001) break; // ray touched surface
@@ -58,13 +58,17 @@ const canvas = document.getElementById('shaderCanvas');
                 vec3 highlights = vec3(0.0);
                 vec3 col = vec3(0.0);
                
-                if(dS<.0001){
+                if(dS<.001){
                     float x = atan(p.x, p.z); // -pi to pi
                     float y = atan(length(p.xz)- 1.0, p.y);
                    
                     float x_noisy = x + sin(y*20.0)*.01 + sin(y*50.5)*.01;
                     float y_bands = smoothstep(0.1,1.0,sin(-y*250.0));
                     float x_bands = sin(x_noisy*20.0 + -t*12.0) * 5.0;
+
+                    float x_adaptiv = x * pow(mix(iResolution.x, iResolution.y, 0.5) /5000. + 0.8, 1.3);
+                    float anti_moire = smoothstep(1.7, 0.7, x_adaptiv);
+                    y_bands = mix(y_bands, 0.7, anti_moire);
                    
                     base_coat += (1.2 - smoothstep(-5.0,-3.0, x_bands)+ 0.5)*y_bands*0.8;
                     highlights += (sin(y*5. - t*2.1 - x*5.)*0.5 + 0.5) + (sin(y*1. + t*3.5 - x*5.)*0.5 + 0.5);    
