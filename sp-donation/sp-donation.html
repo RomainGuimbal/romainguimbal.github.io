@@ -13,14 +13,14 @@
     <canvas id="shaderCanvas"></canvas>
 
     <div class="main-content">
-        <!-- <img id="frame" class="svg" src="baroque frame.svg"/> -->
+        <img class="sunburst2" src="sunburst5.png">
         <div class="logo-stack">
             <div class="dominus-flex">
                 <span class="dominus dominus-left">DOMINUS</span>
                 <img class="logo" src="../assets/img/splogo_alpha.png">
                 <span class="dominus dominus-right">NURBSUS</span>
             </div>
-            <h1 class="title">SurfacePsycho</h1>
+            <h1 class="title">Surface Psycho</h1>
         </div>
 
         <p class="subtitle">Accelerate the project now</p>
@@ -36,6 +36,9 @@
             <span class="hover-text">Donate</span>
         </a>
 
+        <img class="sunburst1" src="sunburst1.png">
+        <img class="sunburst3" src="sunburst8.png">
+
         <div class="underbutton">
             <div class="mini-bar">
                 <hr class="mini-bar-fill" id="miniBarFill">
@@ -44,16 +47,16 @@
             <!-- Panel Button -->
             <button class="menu-button" id="menuButton">...</button>
 
-                <!-- Panel -->
-            <div class="menu-container" id="menuContainer">
+            <!-- Panel -->
+            <div class="panel-container" id="panelContainer">
                 <!-- Panel -->
                 <div class="panel-content hidden" id="panelContent">
                     <div class="progress-section">
                         <div class="progress-label">
                             <span>2025 Donation Goal</span>
                             <span id="balance-label">
-                                <span id="balance-amount">1 100 €</span>
-                                <span class="progress-total">/ 25 000 €</span>
+                                <span id="balance-amount">not loaded €</span>
+                                <span class="progress-total">/ 20 000 €</span>
                             </span>
                         </div>
                         <div class="progress-bar">
@@ -69,47 +72,46 @@
                         </a> -->
 
                         <a href="#" class="link-frame">
-                            <div class="link-icon">🤔</div>
+                            <img class="link-icon" src="SB-info.png" style="width: 30px; height: 30px">
                             <div class="link-title">About</div>
                             <div class="link-desc">Donate for what ?</div>
-                            <div class="hover-text">For the developement of Blender native NURBS, as well as SP add-on until
+                            <div class="hover-text">For the developement of Blender native NURBS, as well as SP add-on
+                                until
                                 native NURBS catch up</div>
                         </a>
 
                         <a href="#" class="link-frame">
-                            <div class="link-icon">👑</div>
+                            <img class="link-icon" src="SB-crown.png" style="width: 30px; height: 30px">
                             <div class="link-title">Top Donator</div>
                             <div class="link-desc">Sergey Troyanskiy</div>
                             <div class="hover-text">The King gave<br>370€</div>
                         </a>
 
                         <a href="mailto:romain.guimbal@proton.me" class="link-frame" id="contact-frame">
-                            <div class="link-icon">🧢</div>
+                            <img class="link-icon" src="SB-contact.png" style="width: 30px; height: 30px">
                             <div class="link-title">Contact</div>
                             <div class="link-desc">Talk to the manager</div>
-                            <div class="hover-text">romain.guimbal@proton.me</div>
+                            <div class="hover-text" style="word-break: break-word;">romain.guimbal@proton.me</div>
                         </a>
 
                         <a href="https://blenderartists.org/t/surfacepsycho-addon-project/1487629" class="link-frame">
-                            <div class="link-icon">📰</div>
+                            <img class="link-icon" src="SB-news.png" style="width: 30px; height: 30px">
                             <div class="link-title">News</div>
                             <div class="link-desc">It moves fast</div>
                             <div class="hover-text">blenderartists.org</div>
                         </a>
 
                         <a href="https://acideromineh.gumroad.com/l/SurfacePsycho" class="link-frame">
-                            <div class="link-icon">⬇️</div>
+                            <img class="link-icon" src="SB-dowload.png" style="width: 30px; height: 30px">
                             <div class="link-title">Download</div>
                             <div class="link-desc">SurfacePsycho Add-on</div>
                             <div class="hover-text">Try it quick, but you are here to donate OKAY?</div>
                         </a>
 
                         <a href="https://discord.gg/MJdxMBM6pm" class="link-frame">
-                            <img class="link-icon"
-                                src="https://upload.wikimedia.org/wikipedia/fr/4/4f/Discord_Logo_sans_texte.svg"
-                                style="width: 30px; height: 30px">
+                            <img class="link-icon" src="Discord_Logo_sans_texte.svg" style="width: 30px; height: 30px">
                             <div class="link-title">Geometry Nerd&nbsp?</div>
-                            <div class="link-desc">Join the discord</div>
+                            <div class="link-desc">Join the Discord</div>
                             <div class="hover-text">Bla bla bla cosine... bla bla... basis matrix.. bla bla</div>
                         </a>
                     </div>
@@ -117,7 +119,7 @@
             </div>
         </div>
 
-        
+
     </div>
 
     <!-- Lapin donate image -->
@@ -145,10 +147,10 @@
                 // Use the formatted amount for display, raw amount for math
                 const amount = result.amount;
                 const formattedAmount = result.formattedAmount;
-                const percent = Math.min((amount / 25000) * 100, 100);
+                const percent = Math.min((amount / 20000) * 100, 100);
                 document.getElementById('balance-amount').textContent = `${formattedAmount} €`;
                 document.getElementById('balance-label').innerHTML =
-                    `<span id='balance-amount'>${formattedAmount} €</span><span class="progress-total">/ 25 000 €</span>`;
+                    `<span id='balance-amount'>${formattedAmount} €</span><span class="progress-total">/ 20 000 €</span>`;
                 const progressFill = document.getElementById('progress-fill');
                 const miniBarFill = document.getElementById('miniBarFill');
                 setTimeout(() => {
@@ -195,31 +197,31 @@
     <script>
         // Expanding Panel
         const menuButton = document.getElementById('menuButton');
-        const menuContainer = document.getElementById('menuContainer');
+        const panelContainer = document.getElementById('panelContainer');
         const panelContent = document.getElementById('panelContent');
 
         let isMenuOpen = false;
 
         function openMenu() {
             panelContent.classList.remove('hidden');
-            menuContainer.classList.add('expand-width');
+            panelContainer.classList.add('expand-width');
             setTimeout(() => {
-                menuContainer.classList.add('expand-height');
+                panelContainer.classList.add('expand-height');
                 setTimeout(() => {
                     isMenuOpen = true;
                 }, 700);
             }, 300);
-            
+
         }
 
         function closeMenu() {
-            menuContainer.classList.remove('expand-height');
-            menuContainer.classList.add('retract-height');
+            panelContainer.classList.remove('expand-height');
+            panelContainer.classList.add('retract-height');
             setTimeout(() => {
-                menuContainer.classList.remove('expand-width', 'retract-height');
-                menuContainer.classList.add('retract-width');
+                panelContainer.classList.remove('expand-width', 'retract-height');
+                panelContainer.classList.add('retract-width');
                 setTimeout(() => {
-                    menuContainer.classList.remove('retract-width');
+                    panelContainer.classList.remove('retract-width');
                     panelContent.classList.add('hidden');
                     isMenuOpen = false;
                 }, 300);
