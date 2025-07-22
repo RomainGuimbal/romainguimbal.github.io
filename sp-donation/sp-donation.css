@@ -572,6 +572,7 @@ img.donate-decoration:nth-of-type(4) {
 }
 
 #lapin-donate {
+    image-rendering: pixelated;
     position: fixed;
     left: 0;
     bottom: 0;
