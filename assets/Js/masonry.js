@@ -68,60 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Function to add new items dynamically
-function addNewItem() {
-    const grid = document.querySelector('.masonry-grid');
-    const randomHeight = Math.floor(Math.random() * 200) + 200;
-    const randomNum = Math.floor(Math.random() * 1000);
-    
-    const newItem = document.createElement('div');
-    newItem.className = 'grid-item';
-    newItem.style.opacity = '0';
-    newItem.style.transform = 'scale(0.8)';
-    
-    const itemTypes = ['image', 'quote', 'wide'];
-    const itemType = itemTypes[Math.floor(Math.random() * itemTypes.length)];
-    
-    if (itemType === 'quote') {
-        newItem.className += ' tall';
-        newItem.innerHTML = `
-            <div>
-                <h3>Dynamic Quote #${randomNum}</h3>
-                <p>"Creativity is intelligence having fun. Every new addition brings fresh perspective."</p>
-            </div>
-        `;
-    } else if (itemType === 'wide') {
-        newItem.className += ' wide';
-        newItem.innerHTML = `
-            <h3>Wide Item #${randomNum}</h3>
-            <p>This is a dynamically added wide item to demonstrate the masonry layout's flexibility.</p>
-        `;
-    } else {
-        newItem.innerHTML = `
-            <img src="https://picsum.photos/300/${randomHeight}?random=${randomNum}" alt="Random image">
-            <div class="content">
-                <h3>New Item #${randomNum}</h3>
-                <p>This item was added dynamically to showcase how masonry handles new content.</p>
-            </div>
-        `;
-    }
-    
-    // Add to grid
-    grid.appendChild(newItem);
-    
-    // Wait for image to load if it's an image item
-    if (itemType === 'image') {
-        const img = newItem.querySelector('img');
-        img.onload = function() {
-            msnry.appended(newItem);
-            animateIn(newItem);
-        };
-    } else {
-        msnry.appended(newItem);
-        animateIn(newItem);
-    }
-}
-
 function animateIn(element) {
     setTimeout(() => {
         element.style.transition = 'opacity 0.3s, transform 0.3s';
