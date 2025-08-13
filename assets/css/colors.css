@@ -179,7 +179,7 @@ footer{
 # tags
 ------------------------------------------------------*/
 .tag-item#all{
-	--col: #866ab4;
+	--col: #6b6ab4;
 }
 .tag-item#product{
 	--col: #4ba19d;
