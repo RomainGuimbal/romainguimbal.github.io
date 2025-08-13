@@ -3,16 +3,17 @@ let msnry;
 
 document.addEventListener('DOMContentLoaded', function() {
     const grid = document.querySelector('.masonry-grid');
-    
-    msnry = new Masonry(grid, {
-        itemSelector: '.grid-item',
-        columnWidth: 300,
-        gutter: 20,
-        fitWidth: true,
-        transitionDuration: '0.3s'
+    imagesLoaded(grid, function() {
+        msnry = new Masonry(grid, {
+            itemSelector: '.grid-item',
+            columnWidth: 300,
+            gutter: 20,
+            fitWidth: true,
+            transitionDuration: '0.3s'
+        });
     });
 
-    // Ensure .grid-item.project applies border-radius to both images and videos
+    // Ensure .grid-item.project applies border-radius to videos
     document.querySelectorAll('.grid-item.project').forEach(function(item) {
         // Add border-radius to images and videos inside .grid-item.project
         item.querySelectorAll('img, video').forEach(function(media) {
