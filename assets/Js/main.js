@@ -169,7 +169,8 @@ function toggleTag(element) {
     } else if(element.id === "all"){
         const allGridItems = document.querySelectorAll('.grid-item');
         allGridItems.forEach(item => {
-            item.style.opacity = '';
+            // item.style.opacity = '';
+            item.style.display = '';
         })
     }
 
