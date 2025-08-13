@@ -132,6 +132,10 @@ function toggleTag(element) {
     // Button Display
     if (!element.classList.contains("enabled")) {
         element.classList.add("enabled");
+    }  else {
+        const allTag = document.getElementById("all");
+        allTag.classList.add("enabled");
+        element = allTag;
     }
 
     const allTagItems = document.querySelectorAll('.tag-item');

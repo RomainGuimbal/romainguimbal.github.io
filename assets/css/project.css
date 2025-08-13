@@ -35,6 +35,16 @@
 	--bg-color-light: #533ebf;
 }
 
+#foulard{
+	--bg-color-dark: #236958;
+	--bg-color-light: #437563;
+}
+
+#robe-doree{
+	--bg-color-dark: #332417;
+	--bg-color-light: #eab775;
+}
+
 
 
 

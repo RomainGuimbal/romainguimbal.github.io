@@ -170,11 +170,15 @@ body
                         span.image-dot(data-index='2')
                         span.image-dot(data-index='3')
 
-                .grid-item.project.product.graphic
-                    a.without-caption.image-link(href='assets/img/foulard electro.jpg')
-                        img(src='assets/img/thumbnails/thumbnail_foulard electro.jpg')
-                    //- a.without-caption.image-link(href='assets/img/foulard 2.jpg')
-                    //-     img(src='assets/img/foulard 2.jpg')
+                .grid-item.project#foulard.product.graphic
+                    .multi-image
+                        a.without-caption.image-link(href='assets/img/foulard electro.jpg' class='active')
+                            img(src='assets/img/thumbnails/thumbnail_foulard electro.jpg')
+                        a.without-caption.image-link(href='assets/img/foulard 2.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_foulard 2.jpg')
+                    .image-dots
+                        span.image-dot.active(data-index='0')
+                        span.image-dot(data-index='1')
                     //- figcaption
                     //-     | Foulard carte électronique
                     //-     br
@@ -229,21 +233,19 @@ body
                     //-     br
                     //-     | 2023
             
-                .grid-item.product.rendering
-                    a.without-caption.image-link(href='assets/img/Robe velour doré 2023.jpg')
-                        img(src='assets/img/thumbnails/thumbnail_Robe velour doré 2023.jpg')
+                .grid-item.project#robe-doree.product.rendering
+                    .multi-image(style='aspect-ratio: 0.7')
+                        a.without-caption.image-link(href='assets/img/Robe velour doré 2023.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_Robe velour doré 2023.jpg')
+                        a.without-caption.image-link(href='assets/img/robe.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_robe.jpg')
+                    //-     | 2023
+                    //-     | 2020
                     //- figcaption
                     //-     | Robe velour doré
-                    //-     br
-                    //-     | 2023
-
-                .grid-item.product
-                    a.without-caption.image-link(href='assets/img/robe.jpg')
-                        img(src='assets/img/thumbnails/thumbnail_robe.jpg')
-                //-     figcaption
-                //-         | Robe dorée
-                //-         br
-                //-         | 2020
+                    .image-dots
+                        span.image-dot.active(data-index='0')
+                        span.image-dot(data-index='1')
 
 
                 .grid-item.modeling
