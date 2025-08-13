@@ -34,6 +34,14 @@ body
             //- h3 Design - Ingénierie - 3D - Art graphique
             .fullscreen-backdrop#backdrop
 
+            li.tag-list
+                .tag-item.enabled#tag-design(onclick='toggleTag(this)') Graphique
+                .tag-item.enabled#tag-engineering(onclick='toggleTag(this)') Ingénierie
+                .tag-item.enabled#tag-rendering(onclick='toggleTag(this)') Product rendering
+                .tag-item.enabled#tag-programming(onclick='toggleTag(this)') Programmation
+                .tag-item.enabled#tag-vfx(onclick='toggleTag(this)') VFX
+                .tag-item.enabled#tag-3d(onclick='toggleTag(this)') 3D Modeling
+
             .masonry-grid
                 .grid-item.project#agrume
                     // Multiple images example

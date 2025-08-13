@@ -173,3 +173,27 @@ main h2 {
 footer{
 	background-color: #1a2330;
 }
+
+
+/*-----------------------------------------------------
+# tags
+------------------------------------------------------*/
+
+.tag-item#tag-design{
+	--col: #403dff;
+}
+.tag-item#tag-engineering{
+	--col: #ff6f61;
+}
+.tag-item#tag-rendering{
+	--col: #618bff;
+}
+.tag-item#tag-programming{
+	--col: #ff61ab;
+}
+.tag-item#tag-vfx{
+	--col: #61ff76;
+}
+.tag-item#tag-3d{
+	--col: #ffbd61;
+}

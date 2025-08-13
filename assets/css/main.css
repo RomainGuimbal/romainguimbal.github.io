@@ -234,3 +234,31 @@ footer .bio-split{
 video::-webkit-media-controls-enclosure {
     display: none !important;
 } */
+
+.tag-list{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 0.5em;
+	margin-bottom: 2em;
+	list-style: none;
+}
+
+.tag-item{
+	display: inline-block;
+	padding: 0.5em 1em;
+	margin: 0.2em;
+	background-color: transparent;
+	border: 1px solid var(--col);
+	color: var(--col);
+	user-select: none;
+	border-radius: 999px;
+	font-size: 0.9em;
+	cursor: pointer;
+}
+
+.tag-item.enabled{
+	background-color: var(--col);
+	color: black;
+}

@@ -126,3 +126,11 @@ $(function() {
     });
 });
 
+
+function toggleTag(element) {
+    if (element.classList.contains("enabled")) {
+        element.classList.remove("enabled");
+    } else {
+        element.classList.add("enabled");
+    }
+}
