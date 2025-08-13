@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="assets/css/colors.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/project.css">
-  <link rel="stylesheet" href="assets/css/badges.css">
-  <link rel="stylesheet" href="assets/css/chapter_scrollbar.css">
   <link rel="stylesheet" href="assets/css/promo-banner.css">
   <link rel="stylesheet" href="assets/css/masonry.css">
   <link rel="stylesheet" href="assets/css/video.css">
@@ -49,28 +47,32 @@
     <div class="container-main">
       <div class="fullscreen-backdrop" id="backdrop"></div>
       <li class="tag-list">
-        <div class="tag-item enabled" id="tag-design" onclick="toggleTag(this)">Graphique</div>
-        <div class="tag-item enabled" id="tag-engineering" onclick="toggleTag(this)">Ingénierie</div>
-        <div class="tag-item enabled" id="tag-rendering" onclick="toggleTag(this)">Product rendering</div>
-        <div class="tag-item enabled" id="tag-programming" onclick="toggleTag(this)">Programmation</div>
-        <div class="tag-item enabled" id="tag-vfx" onclick="toggleTag(this)">VFX</div>
-        <div class="tag-item enabled" id="tag-3d" onclick="toggleTag(this)">3D Modeling</div>
+        <div class="tag-item enabled" id="all" onclick="toggleTag(this)">All</div>
+        <div class="tag-item" id="product" onclick="toggleTag(this)">Product Design</div>
+        <div class="tag-item" id="graphic" onclick="toggleTag(this)">Graphic</div>
+        <div class="tag-item" id="rendering" onclick="toggleTag(this)">Rendering</div>
+        <div class="tag-item" id="programming" onclick="toggleTag(this)">Programming</div>
+        <div class="tag-item" id="vfx" onclick="toggleTag(this)">VFX</div>
+        <div class="tag-item" id="modeling" onclick="toggleTag(this)">3D Modeling</div>
+        <div class="tag-item" id="animation" onclick="toggleTag(this)">Animation</div>
+        <div class="tag-item" id="procedural" onclick="toggleTag(this)">Procedural</div>
+        <div class="tag-item" id="painting" onclick="toggleTag(this)">Drawing &amp Painting</div>
       </li>
       <div class="masonry-grid">
-        <div class="grid-item project" id="agrume">
+        <div class="grid-item project product rendering modeling" id="agrume">
           <!-- Multiple images example-->
           <div class="multi-image"><a class="without-caption image-link active" href="assets/img/Kaijus2024 -1.jpg"><img src="assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg"></a><a class="without-caption image-link" href="assets/img/Kaijus2024 -2.jpg"><img src="assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg"></a><a class="without-caption image-link" href="assets/img/Mood board.jpg"><img src="assets/img/thumbnails/thumbnail_Mood board.jpg"></a><a class="without-caption image-link" href="assets/img/multi sketch presse agrume.jpg"><img src="assets/img/thumbnails/thumbnail_multi sketch presse agrume.jpg"></a><a class="without-caption image-link" href="assets/img/Presse agrume.jpg"><img src="assets/img/thumbnails/thumbnail_Presse agrume.jpg"></a><a class="without-caption image-link" href="assets/img/Kaijus2024 -1.jpg"><img src="assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg"></a><a class="without-caption image-link" href="assets/img/Kaijus2024 -2.jpg"><img src="assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg"></a></div>
           <div class="image-dots"><span class="image-dot active" data-index="0"></span><span class="image-dot" data-index="1"></span><span class="image-dot" data-index="2"></span><span class="image-dot" data-index="3"></span><span class="image-dot" data-index="4"></span><span class="image-dot" data-index="5"></span><span class="image-dot" data-index="6"></span></div>
         </div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/phare design.jpg"><img src="assets/img/thumbnails/thumbnail_phare design.jpg" style="margin-bottom: .4em;"></a></div>
-        <div class="grid-item project" id="sp-logo">
+        <div class="grid-item rendering modeling"><a class="without-caption image-link" href="assets/img/phare design.jpg"><img src="assets/img/thumbnails/thumbnail_phare design.jpg" style="margin-bottom: .4em;"></a></div>
+        <div class="grid-item project graphic" id="sp-logo">
           <div class="multi-image"><a class="without-caption image-link active" href="assets/img/splogo_alpha.png" style="box-shadow: none;"><img src="assets/img/thumbnails/thumbnail_splogo_alpha.png" style="box-shadow: none; filter: drop-shadow(0 0 1em rgba(0, 17, 90, 0.5));"></a><a class="without-caption image-link" href="assets/img/splogomoodboard.jpg"><img src="assets/img/thumbnails/thumbnail_splogomoodboard.jpg"></a><a class="without-caption image-link" href="assets/img/splogowires.jpg"><img src="assets/img/thumbnails/thumbnail_splogowires.jpg"></a><a class="without-caption image-link" href="assets/img/splogo_wire_clean.jpg"><img src="assets/img/thumbnails/thumbnail_splogo_wire_clean.jpg"></a><a class="without-caption image-link" href="assets/img/splogo_color.jpg"><img src="assets/img/thumbnails/thumbnail_splogo_color.jpg"></a></div>
           <div class="image-dots"><span class="image-dot active" data-index="0"></span><span class="image-dot" data-index="1"></span><span class="image-dot" data-index="2"></span><span class="image-dot" data-index="3"></span><span class="image-dot" data-index="4"></span></div>
         </div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/random car dessin.jpg"><img class="content-pic" src="assets/img/thumbnails/thumbnail_random car dessin.jpg"></a></div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/Lardon octobre 2019 copy.jpg"><img class="content-pic" src="assets/img/thumbnails/thumbnail_Lardon octobre 2019 copy.jpg"></a></div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/vaisseau scoot modif avril 2021.jpg"><img src="assets/img/thumbnails/thumbnail_vaisseau scoot modif avril 2021.jpg"></a></div>
-        <div class="grid-item video-container">
+        <div class="grid-item product painting"><a class="without-caption image-link" href="assets/img/random car dessin.jpg"><img class="content-pic" src="assets/img/thumbnails/thumbnail_random car dessin.jpg"></a></div>
+        <div class="grid-item product rendering modeling"><a class="without-caption image-link" href="assets/img/Lardon octobre 2019 copy.jpg"><img class="content-pic" src="assets/img/thumbnails/thumbnail_Lardon octobre 2019 copy.jpg"></a></div>
+        <div class="grid-item product modeling"><a class="without-caption image-link" href="assets/img/vaisseau scoot modif avril 2021.jpg"><img src="assets/img/thumbnails/thumbnail_vaisseau scoot modif avril 2021.jpg"></a></div>
+        <div class="grid-item video-container animation">
           <video preload="metadata">
             <source src="assets/img/Precision living.mp4" type="video/mp4">
           </video>
@@ -78,12 +80,12 @@
             <div class="play-icon"></div>
           </button>
         </div>
-        <div class="grid-item project" id="archi-gene">
+        <div class="grid-item project modeling procedural rendering" id="archi-gene">
           <div class="multi-image"><a class="without-caption image-link active" href="assets/img/Piliers spiral bois.jpg"><img src="assets/img/thumbnails/thumbnail_Piliers spiral bois.jpg"></a><a class="without-caption image-link" href="assets/img/batiments rubans.jpg"><img src="assets/img/thumbnails/thumbnail_batiments rubans.jpg"></a><a class="without-caption image-link" href="assets/img/maison d'allumettes.jpg"><img src="assets/img/thumbnails/thumbnail_maison d'allumettes.jpg"></a><a class="without-caption image-link" href="assets/img/le feizomj.jpg"><img src="assets/img/thumbnails/thumbnail_le feizomj.jpg"></a></div>
           <div class="image-dots"><span class="image-dot active" data-index="0"></span><span class="image-dot" data-index="1"></span><span class="image-dot" data-index="2"></span><span class="image-dot" data-index="3"></span></div>
         </div>
-        <div class="grid-item project"><a class="without-caption image-link" href="assets/img/foulard electro.jpg"><img src="assets/img/thumbnails/thumbnail_foulard electro.jpg"></a></div>
-        <div class="grid-item project" id="sword">
+        <div class="grid-item project product graphic"><a class="without-caption image-link" href="assets/img/foulard electro.jpg"><img src="assets/img/thumbnails/thumbnail_foulard electro.jpg"></a></div>
+        <div class="grid-item project product rendering modeling" id="sword">
           <div class="multi-image">
             <div class="video-container active">
               <video controls="" loop="" autoplay="">
@@ -96,8 +98,8 @@
           </div>
           <div class="image-dots"><span class="image-dot active" data-index="0"></span><span class="image-dot" data-index="1"></span><span class="image-dot" data-index="2"></span><span class="image-dot" data-index="3"></span></div>
         </div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/Architecture classique no mat.jpg"><img src="assets/img/thumbnails/thumbnail_Architecture classique no mat.jpg"></a></div>
-        <div class="grid-item video-container">
+        <div class="grid-item modeling procedural"><a class="without-caption image-link" href="assets/img/Architecture classique no mat.jpg"><img src="assets/img/thumbnails/thumbnail_Architecture classique no mat.jpg"></a></div>
+        <div class="grid-item video-container vfx procedural">
           <video preload="metadata">
             <source src="assets/img/Motion mandala0001-0198.mp4" type="video/mp4">
           </video>
@@ -105,11 +107,11 @@
             <div class="play-icon"></div>
           </button>
         </div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/Prince des murs.jpg"><img src="assets/img/thumbnails/thumbnail_Prince des murs.jpg"></a></div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/Robe velour doré 2023.jpg"><img src="assets/img/thumbnails/thumbnail_Robe velour doré 2023.jpg"></a></div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/robe.jpg"><img src="assets/img/thumbnails/thumbnail_robe.jpg"></a></div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/head sculpt.jpg"><img src="assets/img/thumbnails/thumbnail_head sculpt.jpg"></a></div>
-        <div class="grid-item project video-container" id="porsche">
+        <div class="grid-item painting"><a class="without-caption image-link" href="assets/img/Prince des murs.jpg"><img src="assets/img/thumbnails/thumbnail_Prince des murs.jpg"></a></div>
+        <div class="grid-item product rendering"><a class="without-caption image-link" href="assets/img/Robe velour doré 2023.jpg"><img src="assets/img/thumbnails/thumbnail_Robe velour doré 2023.jpg"></a></div>
+        <div class="grid-item product"><a class="without-caption image-link" href="assets/img/robe.jpg"><img src="assets/img/thumbnails/thumbnail_robe.jpg"></a></div>
+        <div class="grid-item modeling"><a class="without-caption image-link" href="assets/img/head sculpt.jpg"><img src="assets/img/thumbnails/thumbnail_head sculpt.jpg"></a></div>
+        <div class="grid-item project video-container vfx" id="porsche">
           <video controls="" loop="" autoplay="">
             <source src="assets/img/porsche courbes.mp4" type="video/mp4">
           </video>
@@ -117,9 +119,9 @@
             <div class="play-icon"></div>
           </button>
         </div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/shoes sim 4.jpg"><img src="assets/img/thumbnails/thumbnail_shoes sim 4.jpg"></a></div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/Maciek Jasik studdy 2.jpg"><img src="assets/img/thumbnails/thumbnail_Maciek Jasik studdy 2.jpg"></a></div>
-        <div class="grid-item video-container">
+        <div class="grid-item modeling"><a class="without-caption image-link" href="assets/img/shoes sim 4.jpg"><img src="assets/img/thumbnails/thumbnail_shoes sim 4.jpg"></a></div>
+        <div class="grid-item vfx rendering"><a class="without-caption image-link" href="assets/img/Maciek Jasik studdy 2.jpg"><img src="assets/img/thumbnails/thumbnail_Maciek Jasik studdy 2.jpg"></a></div>
+        <div class="grid-item video-container vfx procedural">
           <video preload="metadata">
             <source src="assets/img/graphite final.mp4" type="video/mp4">
           </video>
@@ -127,7 +129,7 @@
             <div class="play-icon"></div>
           </button>
         </div>
-        <div class="grid-item video-container">
+        <div class="grid-item video-container vfx">
           <video preload="metadata">
             <source src="assets/img/diamant holo 20001-0149.mp4" type="video/mp4">
           </video>
@@ -135,11 +137,11 @@
             <div class="play-icon"></div>
           </button>
         </div>
-        <div class="grid-item project" id="verriere">
+        <div class="grid-item project procedural modeling" id="verriere">
           <div class="multi-image"><a class="without-caption image-link active" href="assets/img/verrière bateau.jpg"><img src="assets/img/thumbnails/thumbnail_verrière bateau.jpg"></a><a class="without-caption image-link" href="assets/img/Salle de bal 1.jpg"><img src="assets/img/Salle de bal 1.jpg"></a><a class="without-caption image-link" href="assets/img/Salle de bal 2.jpg"><img src="assets/img/Salle de bal 2.jpg"></a><a class="without-caption image-link" href="assets/img/verrière bateau 1.jpg"><img src="assets/img/verrière bateau 1.jpg"></a><a class="without-caption image-link" href="assets/img/verrière bateau 2.jpg"><img src="assets/img/verrière bateau 2.jpg"></a></div>
           <div class="image-dots"><span class="image-dot active" data-index="0"></span><span class="image-dot" data-index="1"></span><span class="image-dot" data-index="2"></span><span class="image-dot" data-index="3"></span><span class="image-dot" data-index="4"></span></div>
         </div>
-        <div class="grid-item video-container">
+        <div class="grid-item video-container procedural">
           <video preload="metadata">
             <source src="assets/img/Origami procedurale.mp4" type="video/mp4">
           </video>
@@ -147,10 +149,10 @@
             <div class="play-icon"></div>
           </button>
         </div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/Carte de voeuuu23 3.jpg"><img src="assets/img/thumbnails/thumbnail_Carte de voeuuu23 3.jpg"></a></div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/inviit.jpg"><img src="assets/img/thumbnails/thumbnail_inviit.jpg"></a></div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/Princesse Cation tete 3quarts.jpg"><img src="assets/img/thumbnails/thumbnail_Princesse Cation tete 3quarts.jpg"></a></div>
-        <div class="grid-item video-container">
+        <div class="grid-item graphic vfx procedural"><a class="without-caption image-link" href="assets/img/Carte de voeuuu23 3.jpg"><img src="assets/img/thumbnails/thumbnail_Carte de voeuuu23 3.jpg"></a></div>
+        <div class="grid-item vfx"><a class="without-caption image-link" href="assets/img/inviit.jpg"><img src="assets/img/thumbnails/thumbnail_inviit.jpg"></a></div>
+        <div class="grid-item painting"><a class="without-caption image-link" href="assets/img/Princesse Cation tete 3quarts.jpg"><img src="assets/img/thumbnails/thumbnail_Princesse Cation tete 3quarts.jpg"></a></div>
+        <div class="grid-item video-container animation graphic">
           <video preload="metadata">
             <source src="assets/img/fleur0001-0033.mp4" type="video/mp4">
           </video>
@@ -158,7 +160,7 @@
             <div class="play-icon"></div>
           </button>
         </div>
-        <div class="grid-item project" id="surfacepsycho">
+        <div class="grid-item project programming product" id="surfacepsycho">
           <div class="multi-image">
             <div class="video-container active">
               <video preload="metadata">
@@ -171,8 +173,8 @@
           </div>
           <div class="image-dots"><span class="image-dot active" data-index="0"></span><span class="image-dot" data-index="1"></span><span class="image-dot" data-index="2"></span><span class="image-dot" data-index="3"></span><span class="image-dot" data-index="4"></span></div>
         </div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/artiche.jpg"><img src="assets/img/thumbnails/thumbnail_artiche.jpg"></a></div>
-        <div class="grid-item"><a class="without-caption image-link" href="assets/img/G-co 2.jpg"><img src="assets/img/thumbnails/thumbnail_G-co 2.jpg"></a></div>
+        <div class="grid-item rendering vfx procedural"><a class="without-caption image-link" href="assets/img/artiche.jpg"><img src="assets/img/thumbnails/thumbnail_artiche.jpg"></a></div>
+        <div class="grid-item graphic"><a class="without-caption image-link" href="assets/img/G-co 2.jpg"><img src="assets/img/thumbnails/thumbnail_G-co 2.jpg"></a></div>
       </div>
     </div>
   </main>
@@ -180,7 +182,7 @@
     <div class="item">
       <div class="bio-split">
         <div class="container" id="bio"><img id="profile_picture" src="assets/img/photo_portrait.jpg">
-          <p> Ingénieur mécanique et mécatronique<br> Mange des modèles 3D au petit-déjeuné<br><br><b>CONTACTEZ-MOI</b><br> &emsp; romain.guimbal@proton.me</p>
+          <p> Ingénieur mécanique et mécatronique<br> Mange des modèles 3D au petit-déjeuné<br><br><b>CONTACTEZ-MOI</b><br> romain.guimbal@proton.me</p>
         </div>
       </div>
     </div>

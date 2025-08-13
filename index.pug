@@ -35,15 +35,21 @@ body
             .fullscreen-backdrop#backdrop
 
             li.tag-list
-                .tag-item.enabled#tag-design(onclick='toggleTag(this)') Graphique
-                .tag-item.enabled#tag-engineering(onclick='toggleTag(this)') Ingénierie
-                .tag-item.enabled#tag-rendering(onclick='toggleTag(this)') Product rendering
-                .tag-item.enabled#tag-programming(onclick='toggleTag(this)') Programmation
-                .tag-item.enabled#tag-vfx(onclick='toggleTag(this)') VFX
-                .tag-item.enabled#tag-3d(onclick='toggleTag(this)') 3D Modeling
+                .tag-item.enabled#all(onclick='toggleTag(this)') All
+                .tag-item#product(onclick='toggleTag(this)') Product Design
+                .tag-item#graphic(onclick='toggleTag(this)') Graphic
+                //- .tag-item#engineering(onclick='toggleTag(this)') Engineering
+                .tag-item#rendering(onclick='toggleTag(this)') Rendering
+                .tag-item#programming(onclick='toggleTag(this)') Programming
+                .tag-item#vfx(onclick='toggleTag(this)') VFX
+                .tag-item#modeling(onclick='toggleTag(this)') 3D Modeling
+                .tag-item#animation(onclick='toggleTag(this)') Animation
+                .tag-item#procedural(onclick='toggleTag(this)') Procedural
+                .tag-item#painting(onclick='toggleTag(this)') Drawing &amp Painting
+                //- more tags : surfacepsycho ? archi ? CAD ?
 
             .masonry-grid
-                .grid-item.project#agrume
+                .grid-item.project#agrume.product.rendering.modeling
                     // Multiple images example
                     .multi-image
                         a.without-caption.image-link(href='assets/img/Kaijus2024 -1.jpg' class='active')
@@ -72,7 +78,7 @@ body
                             h3.numero
                     //-     .image-index-dots
 
-                .grid-item
+                .grid-item.rendering.modeling
                     a.without-caption.image-link(href='assets/img/phare design.jpg')
                         img(src='assets/img/thumbnails/thumbnail_phare design.jpg' style='margin-bottom: .4em;')
                     //-     figcaption
@@ -81,7 +87,7 @@ body
                     //-         | 2021
 
 
-                .grid-item.project#sp-logo
+                .grid-item.project#sp-logo.graphic
                     .multi-image
                         a.without-caption.image-link(href='assets/img/splogo_alpha.png' style='box-shadow: none;' class='active')
                             img(src='assets/img/thumbnails/thumbnail_splogo_alpha.png' style='box-shadow: none; filter: drop-shadow(0 0 1em rgba(0, 17, 90, 0.5));')
@@ -101,7 +107,7 @@ body
                         span.image-dot(data-index='4')
 
 
-                .grid-item
+                .grid-item.product.painting
                     a.without-caption.image-link(href='assets/img/random car dessin.jpg')
                         img.content-pic(src='assets/img/thumbnails/thumbnail_random car dessin.jpg')
                     //- a.without-caption.image-link(href='assets/img/random car dessin paintover.jpg')
@@ -111,7 +117,7 @@ body
                     //-     br
                     //-     | 2024
 
-                .grid-item
+                .grid-item.product.rendering.modeling
                     a.without-caption.image-link(href='assets/img/Lardon octobre 2019 copy.jpg')
                         img.content-pic(src='assets/img/thumbnails/thumbnail_Lardon octobre 2019 copy.jpg')
                     //- figcaption
@@ -121,14 +127,14 @@ body
                     //- br
                     //- | Model 2016
                     
-                .grid-item
+                .grid-item.product.modeling
                     a.without-caption.image-link(href="assets/img/vaisseau scoot modif avril 2021.jpg")
                         img(src="assets/img/thumbnails/thumbnail_vaisseau scoot modif avril 2021.jpg")
                     //- figcaption
                     //-     | Le Marsouin
                 
                     
-                .grid-item.video-container
+                .grid-item.video-container.animation
                     video(preload="metadata")
                         source(src='assets/img/Precision living.mp4' type='video/mp4')
                     button.play-pause-btn#playPauseBtn
@@ -148,7 +154,7 @@ body
                 //-             spline-viewer(loading-anim-type="spinner-small-light" url="https://prod.spline.design/QOq53kzRH-IHPGsI/scene.splinecode")
 
             
-                .grid-item.project#archi-gene
+                .grid-item.project#archi-gene.modeling.procedural.rendering
                     .multi-image
                         a.without-caption.image-link(href='assets/img/Piliers spiral bois.jpg' class='active')
                                 img(src='assets/img/thumbnails/thumbnail_Piliers spiral bois.jpg')
@@ -164,7 +170,7 @@ body
                         span.image-dot(data-index='2')
                         span.image-dot(data-index='3')
 
-                .grid-item.project
+                .grid-item.project.product.graphic
                     a.without-caption.image-link(href='assets/img/foulard electro.jpg')
                         img(src='assets/img/thumbnails/thumbnail_foulard electro.jpg')
                     //- a.without-caption.image-link(href='assets/img/foulard 2.jpg')
@@ -174,7 +180,7 @@ body
                     //-     br
                     //-     | 2015
 
-                .grid-item.project#sword
+                .grid-item.project#sword.product.rendering.modeling
                     .multi-image
                         .video-container.active
                             video(controls='' loop='' autoplay='')
@@ -193,7 +199,7 @@ body
                         span.image-dot(data-index='2')
                         span.image-dot(data-index='3')
 
-                .grid-item
+                .grid-item.modeling.procedural
                     a.without-caption.image-link(href='assets/img/Architecture classique no mat.jpg')
                         img(src='assets/img/thumbnails/thumbnail_Architecture classique no mat.jpg')
                     //- figcaption
@@ -202,7 +208,7 @@ body
                     //-     | 2024
 
 
-                .grid-item.video-container
+                .grid-item.video-container.vfx.procedural
                     video(preload="metadata")
                         source(src='assets/img/Motion mandala0001-0198.mp4' type='video/mp4')
                     button.play-pause-btn#playPauseBtn
@@ -213,7 +219,7 @@ body
                             //- | Son : création personnelle
 
                     
-                .grid-item
+                .grid-item.painting
                     a.without-caption.image-link(href='assets/img/Prince des murs.jpg')
                         img(src='assets/img/thumbnails/thumbnail_Prince des murs.jpg')
                     //- figcaption
@@ -223,7 +229,7 @@ body
                     //-     br
                     //-     | 2023
             
-                .grid-item
+                .grid-item.product.rendering
                     a.without-caption.image-link(href='assets/img/Robe velour doré 2023.jpg')
                         img(src='assets/img/thumbnails/thumbnail_Robe velour doré 2023.jpg')
                     //- figcaption
@@ -231,7 +237,7 @@ body
                     //-     br
                     //-     | 2023
 
-                .grid-item
+                .grid-item.product
                     a.without-caption.image-link(href='assets/img/robe.jpg')
                         img(src='assets/img/thumbnails/thumbnail_robe.jpg')
                 //-     figcaption
@@ -240,7 +246,7 @@ body
                 //-         | 2020
 
 
-                .grid-item
+                .grid-item.modeling
                     a.without-caption.image-link(href='assets/img/head sculpt.jpg')
                         img(src='assets/img/thumbnails/thumbnail_head sculpt.jpg')
                 //-     figcaption
@@ -248,13 +254,13 @@ body
                 //-         br
                 //-         | 2022
 
-                .grid-item.project#porsche.video-container
+                .grid-item.project#porsche.video-container.vfx
                     video(controls='' loop='' autoplay='')
                         source(src='assets/img/porsche courbes.mp4' type='video/mp4')
                     button.play-pause-btn#playPauseBtn
                         .play-icon
 
-                .grid-item
+                .grid-item.modeling
                     a.without-caption.image-link(href='assets/img/shoes sim 4.jpg')
                         img(src='assets/img/thumbnails/thumbnail_shoes sim 4.jpg')
                     //-     figcaption
@@ -262,7 +268,7 @@ body
                     //-         br
                     //-         | 2018
 
-                .grid-item
+                .grid-item.vfx.rendering
                     a.without-caption.image-link(href='assets/img/Maciek Jasik studdy 2.jpg')
                         img(src='assets/img/thumbnails/thumbnail_Maciek Jasik studdy 2.jpg')
                 //-     figcaption
@@ -273,7 +279,7 @@ body
                 //-         | 2022
                 //-     // <img src="assets/img/eau 8.jpg">
 
-                .grid-item.video-container
+                .grid-item.video-container.vfx.procedural
                     video(preload="metadata")
                         source(src='assets/img/graphite final.mp4' type='video/mp4')
                     button.play-pause-btn#playPauseBtn
@@ -283,7 +289,7 @@ body
                 //-     br
                 //-     | 2020
 
-                .grid-item.video-container
+                .grid-item.video-container.vfx
                     video(preload="metadata")
                         source(src='assets/img/diamant holo 20001-0149.mp4' type='video/mp4')
                     button.play-pause-btn#playPauseBtn
@@ -296,7 +302,7 @@ body
                 //-         | 2020        
 
 
-                .grid-item.project#verriere
+                .grid-item.project#verriere.procedural.modeling
                     .multi-image
                         a.without-caption.image-link(href='assets/img/verrière bateau.jpg' class='active')
                             img(src='assets/img/thumbnails/thumbnail_verrière bateau.jpg')
@@ -315,7 +321,7 @@ body
                         span.image-dot(data-index='3')
                         span.image-dot(data-index='4')
             
-                .grid-item.video-container
+                .grid-item.video-container.procedural
                     video(preload="metadata")
                         source(src='assets/img/Origami procedurale.mp4' type='video/mp4')
                     button.play-pause-btn#playPauseBtn
@@ -327,7 +333,7 @@ body
                     //-         br
                     //-         | 2023
 
-                .grid-item
+                .grid-item.graphic.vfx.procedural
                     a.without-caption.image-link(href='assets/img/Carte de voeuuu23 3.jpg')
                         img(src='assets/img/thumbnails/thumbnail_Carte de voeuuu23 3.jpg')
                 //-     figcaption
@@ -335,7 +341,7 @@ body
                 //-         br
                 //-         | 2023
 
-                .grid-item
+                .grid-item.vfx
                     a.without-caption.image-link(href='assets/img/inviit.jpg')
                         img(src='assets/img/thumbnails/thumbnail_inviit.jpg')
                 //-     figcaption
@@ -343,7 +349,7 @@ body
                 //-         br
                 //-         | 2018
 
-                .grid-item
+                .grid-item.painting
                     a.without-caption.image-link(href='assets/img/Princesse Cation tete 3quarts.jpg')
                         img(src='assets/img/thumbnails/thumbnail_Princesse Cation tete 3quarts.jpg')
                     //-     figcaption
@@ -354,7 +360,7 @@ body
                     //-         | 2021
         
             
-                .grid-item.video-container
+                .grid-item.video-container.animation.graphic
                     video(preload="metadata")
                         source(src='assets/img/fleur0001-0033.mp4' type='video/mp4')
                     button.play-pause-btn#playPauseBtn
@@ -364,7 +370,7 @@ body
                     //-     br
                     //-     | 2016
 
-                .grid-item.project#surfacepsycho
+                .grid-item.project#surfacepsycho.programming.product
                     .multi-image
                         .video-container.active
                             video(preload="metadata")
@@ -388,7 +394,7 @@ body
 
                 //- include ./assets/html/items/CAO.pug
 
-                .grid-item
+                .grid-item.rendering.vfx.procedural
                     a.without-caption.image-link(href='assets/img/artiche.jpg')
                         img(src='assets/img/thumbnails/thumbnail_artiche.jpg')
                     //- figcaption
@@ -400,7 +406,7 @@ body
                     //-     br
                     //-     | 2023
                 
-                .grid-item
+                .grid-item.graphic
                     a.without-caption.image-link(href='assets/img/G-co 2.jpg')
                         img(src='assets/img/thumbnails/thumbnail_G-co 2.jpg')
                     //- figcaption
@@ -424,7 +430,7 @@ body
                         br
                         b CONTACTEZ-MOI
                         br
-                        |  &emsp; romain.guimbal@proton.me
+                        |  romain.guimbal@proton.me
 
                 //- .container(style='width:auto')
                 //-     include ./assets/html/skills.pug

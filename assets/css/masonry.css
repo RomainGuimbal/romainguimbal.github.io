@@ -45,8 +45,8 @@
 
 
 .grid-item.project {
-    outline: var(--bg-color-light) 4px solid;
-    outline-offset: 6px;
+    outline: var(--bg-color-light) 2px solid;
+    outline-offset: 4px;
     border-radius : 3px;
     /* Ensure child media elements inherit border-radius */
     aspect-ratio: auto; /* Allow JS to set aspect-ratio inline */
@@ -61,7 +61,7 @@
     display: flex;
     justify-content: center;
     gap: 0.4em;
-    margin-bottom: 0;
+    margin-bottom: 2px;
     margin-top: 0.5em; /* Remove top margin so dots are above images */
 }
 

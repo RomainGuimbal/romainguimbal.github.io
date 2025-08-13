@@ -62,7 +62,7 @@ body{
 	z-index:1;
 	max-width: 1200px;
 	margin: auto;
-	margin-top: 6em;
+	/* margin-top: 6em; */
 }
 
 
@@ -238,9 +238,7 @@ video::-webkit-media-controls-enclosure {
 .tag-list{
 	position: relative;
 	width: 100%;
-	display: flex;
-	justify-content: center;
-	gap: 0.5em;
+	display: inline-block;
 	margin-bottom: 2em;
 	list-style: none;
 }
@@ -256,9 +254,11 @@ video::-webkit-media-controls-enclosure {
 	border-radius: 999px;
 	font-size: 0.9em;
 	cursor: pointer;
+	font-weight: bold;
 }
 
 .tag-item.enabled{
 	background-color: var(--col);
+	/* opacity: 0.8; */
 	color: black;
 }

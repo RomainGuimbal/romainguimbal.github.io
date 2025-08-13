@@ -178,22 +178,36 @@ footer{
 /*-----------------------------------------------------
 # tags
 ------------------------------------------------------*/
-
-.tag-item#tag-design{
-	--col: #403dff;
+.tag-item#all{
+	--col: #866ab4;
 }
-.tag-item#tag-engineering{
-	--col: #ff6f61;
+.tag-item#product{
+	--col: #4ba19d;
 }
-.tag-item#tag-rendering{
-	--col: #618bff;
+.tag-item#graphic{
+	--col: #7e7ead;
 }
-.tag-item#tag-programming{
-	--col: #ff61ab;
+/* .tag-item#engineering{
+	--col: #96679b;
+} */
+.tag-item#rendering{
+	--col: #707fa4;
 }
-.tag-item#tag-vfx{
-	--col: #61ff76;
+.tag-item#programming{
+	--col: #81437c;
 }
-.tag-item#tag-3d{
-	--col: #ffbd61;
+.tag-item#vfx{
+	--col: #6d4a8e;
+}
+.tag-item#modeling{
+	--col: #514c8c;
+}
+.tag-item#animation{
+	--col: #6b91a9;
+}
+.tag-item#procedural{
+	--col: #4ba18c;
+}
+.tag-item#painting{
+	--col: #706fa0;
 }

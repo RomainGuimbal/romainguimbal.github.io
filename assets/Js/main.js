@@ -128,9 +128,67 @@ $(function() {
 
 
 function toggleTag(element) {
-    if (element.classList.contains("enabled")) {
-        element.classList.remove("enabled");
-    } else {
+
+    // Button Display
+    if (!element.classList.contains("enabled")) {
         element.classList.add("enabled");
     }
-}
+
+    const allTagItems = document.querySelectorAll('.tag-item');
+    
+    allTagItems.forEach(item => {
+        if (item != element) {
+            if (item.classList.contains("enabled")) {
+                item.classList.remove("enabled");
+            }
+        }
+        
+    });
+
+    // Grid Item Display
+    if(element.id === "product"){ 
+        filterTag("product");
+    } else if(element.id === "graphic"){
+        filterTag("graphic");
+    // } else if(element.id === "engineering"){
+    //     filterTag("engineering");
+    } else if(element.id === "rendering"){
+        filterTag("rendering");
+    } else if(element.id === "programming"){
+        filterTag("programming");
+    } else if(element.id === "vfx"){
+        filterTag("vfx");
+    } else if(element.id === "modeling"){
+        filterTag("modeling");
+    } else if(element.id === "animation") {
+        filterTag("animation");
+    } else if(element.id === "procedural"){
+        filterTag("procedural");
+    } else if(element.id === "painting"){
+        filterTag("painting");
+    } else if(element.id === "all"){
+        const allGridItems = document.querySelectorAll('.grid-item');
+        allGridItems.forEach(item => {
+            item.style.opacity = '';
+        })
+    }
+
+    if (msnry) {
+        msnry.layout();
+    }
+};
+
+
+function filterTag(tag) {
+    const allGridItems = document.querySelectorAll('.grid-item');
+    allGridItems.forEach(item => {
+        if (!item.classList.contains(tag)) {
+            item.style.display = 'none';
+            // item.style.opacity = '0.2';
+        } else {
+            item.style.display = '';
+            // item.style.opacity = '';
+        }
+    })
+};
+
