@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <canvas id="shaderCanvas"></canvas>
+    <!-- <canvas id="shaderCanvas"></canvas> -->
 
     <div class="main-content">
         <img class="sunburst2" src="sunburst5-smaller.png">
@@ -40,81 +40,85 @@
         <img class="sunburst3" src="sunburst8-smaller.png">
 
         <div class="underbutton">
+            <div id="balance-label" class="progress-text">
+                <span id="balance-amount2">xxxx €</span>
+                <span class="progress-total">/ 20 000 €</span>
+            </div>
+
             <div class="mini-bar">
                 <hr class="mini-bar-fill" id="miniBarFill">
             </div>
 
             <!-- Panel Button -->
-            <button class="menu-button" id="menuButton">...</button>
-
+            <button class="menu-button" id="menuButton">☰</button>
+        </div>
             <!-- Panel -->
-            <div class="panel-container" id="panelContainer">
-                <!-- Panel -->
-                <div class="panel-content hidden" id="panelContent">
-                    <div class="progress-section">
-                        <div class="progress-label">
-                            <span>2025 Donation Goal</span>
-                            <span id="balance-label">
-                                <span id="balance-amount">not loaded €</span>
-                                <span class="progress-total">/ 20 000 €</span>
-                            </span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progress-fill"></div>
-                        </div>
+        <div class="panel-container" id="panelContainer">
+            <!-- Panel -->
+            <div class="panel-content hidden" id="panelContent">
+                <div class="progress-section">
+                    <div class="progress-label">
+                        <span>2025 Donation Goal</span>
+                        <span>
+                            <span id="balance-amount">xxxx €</span>
+                            <span class="progress-total"> / 20 000 €</span>
+                        </span>
                     </div>
-                    <div class="links-grid">
-                        <!-- <a href="https://github.com/RomainGuimbal/SurfacePsycho" class="link-frame">
-                            <img class="link-icon" src="github-mark-white.svg" style="width: 30px; height: 30px">
-                            <div class="link-title">Github</div>
-                            <div class="link-desc">Add-on Source & Doc</div>
-                            <div class="hover-text">Open-source babe 😎</div>
-                        </a> -->
-
-                        <a href="#" class="link-frame">
-                            <img class="link-icon" src="SB-info.png" style="width: 30px; height: 30px">
-                            <div class="link-title">About</div>
-                            <div class="link-desc">Donate for what ?</div>
-                            <div class="hover-text">For the developement of Blender native NURBS, as well as SP add-on
-                                until
-                                native NURBS catch up</div>
-                        </a>
-
-                        <a href="#" class="link-frame">
-                            <img class="link-icon" src="SB-crown.png" style="width: 30px; height: 30px">
-                            <div class="link-title">Top Donator</div>
-                            <div class="link-desc">Sergey Troyanskiy</div>
-                            <div class="hover-text">The King gave<br>370€</div>
-                        </a>
-
-                        <a href="mailto:romain.guimbal@proton.me" class="link-frame" id="contact-frame">
-                            <img class="link-icon" src="SB-contact.png" style="width: 30px; height: 30px">
-                            <div class="link-title">Contact</div>
-                            <div class="link-desc">Talk to the manager</div>
-                            <div class="hover-text" style="word-break: break-word;">romain.guimbal@proton.me</div>
-                        </a>
-
-                        <a href="https://blenderartists.org/t/surfacepsycho-addon-project/1487629" class="link-frame">
-                            <img class="link-icon" src="SB-news.png" style="width: 30px; height: 30px">
-                            <div class="link-title">News</div>
-                            <div class="link-desc">It moves fast</div>
-                            <div class="hover-text">blenderartists.org</div>
-                        </a>
-
-                        <a href="https://acideromineh.gumroad.com/l/SurfacePsycho" class="link-frame">
-                            <img class="link-icon" src="SB-dowload.png" style="width: 30px; height: 30px">
-                            <div class="link-title">Download</div>
-                            <div class="link-desc">SurfacePsycho Add-on</div>
-                            <div class="hover-text">Try it quick, but you are here to donate OKAY?</div>
-                        </a>
-
-                        <a href="https://discord.gg/MJdxMBM6pm" class="link-frame">
-                            <img class="link-icon" src="Discord_Logo_sans_texte.svg" style="width: 30px; height: 30px">
-                            <div class="link-title">Geometry Nerd&nbsp?</div>
-                            <div class="link-desc">Join the Discord</div>
-                            <div class="hover-text">Bla bla bla cosine... bla bla... basis matrix.. bla bla</div>
-                        </a>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
                     </div>
+                </div>
+                <div class="links-grid">
+                    <!-- <a href="https://github.com/RomainGuimbal/SurfacePsycho" class="link-frame">
+                        <img class="link-icon" src="github-mark-white.svg" style="width: 30px; height: 30px">
+                        <div class="link-title">Github</div>
+                        <div class="link-desc">Add-on Source & Doc</div>
+                        <div class="hover-text">Open-source babe 😎</div>
+                    </a> -->
+
+                    <a href="#" class="link-frame">
+                        <img class="link-icon" src="SB-info.png" style="width: 30px; height: 30px">
+                        <div class="link-title">About</div>
+                        <div class="link-desc">Donate for what ?</div>
+                        <div class="hover-text">For the developement of Blender native NURBS, as well as SP add-on
+                            until
+                            native NURBS catch up</div>
+                    </a>
+
+                    <a href="#" class="link-frame">
+                        <img class="link-icon" src="SB-crown.png" style="width: 30px; height: 30px">
+                        <div class="link-title">Top Donator</div>
+                        <div class="link-desc">Sergey Troyanskiy</div>
+                        <div class="hover-text">The King gave<br>370€</div>
+                    </a>
+
+                    <a href="mailto:romain.guimbal@proton.me" class="link-frame" id="contact-frame">
+                        <img class="link-icon" src="SB-contact.png" style="width: 30px; height: 30px">
+                        <div class="link-title">Contact</div>
+                        <div class="link-desc">Talk to the manager</div>
+                        <div class="hover-text" style="word-break: break-word;">romain.guimbal@proton.me</div>
+                    </a>
+
+                    <a href="https://blenderartists.org/t/surfacepsycho-addon-project/1487629" class="link-frame">
+                        <img class="link-icon" src="SB-news.png" style="width: 30px; height: 30px">
+                        <div class="link-title">News</div>
+                        <div class="link-desc">It moves fast</div>
+                        <div class="hover-text">blenderartists.org</div>
+                    </a>
+
+                    <a href="https://acideromineh.gumroad.com/l/SurfacePsycho" class="link-frame">
+                        <img class="link-icon" src="SB-dowload.png" style="width: 30px; height: 30px">
+                        <div class="link-title">Download</div>
+                        <div class="link-desc">SurfacePsycho Add-on</div>
+                        <div class="hover-text">Try it quick, but you are here to donate OKAY?</div>
+                    </a>
+
+                    <a href="https://discord.gg/MJdxMBM6pm" class="link-frame">
+                        <img class="link-icon" src="Discord_Logo_sans_texte.svg" style="width: 30px; height: 30px">
+                        <div class="link-title">Geometry Nerd&nbsp?</div>
+                        <div class="link-desc">Join the Discord</div>
+                        <div class="hover-text">Bla bla bla cosine... bla bla... basis matrix.. bla bla</div>
+                    </a>
                 </div>
             </div>
         </div>

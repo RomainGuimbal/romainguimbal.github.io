@@ -41,7 +41,10 @@ export async function fetchCollectiveBalance(slug) {
 
         // Update your HTML elements
         document.getElementById('balance-amount').textContent =
-            formattedAmount + ' €'; // Add euro symbol
+            formattedAmount + ' € '; // Add euro symbol
+        document.getElementById('balance-amount2').textContent =
+            formattedAmount + ' € '; // Add euro symbol
+        
         if (document.getElementById('collective-name')) {
             document.getElementById('collective-name').textContent =
                 collective.name;
