@@ -755,7 +755,6 @@ img.donate-decoration:nth-of-type(4) {
 }
 
 
-
 .underbutton {
     position: absolute;
     display: block;
@@ -889,10 +888,64 @@ img.donate-decoration:nth-of-type(4) {
     .links-grid {
         width: 90vw;
         grid-template-columns: repeat(auto-fit, minmax(120px, 3fr));
+        height: 500px;
     }
 
     .sunburst1 {
         width: 140%;
     }
 
+    .panel-container {
+        margin-top: 100px;
+    }
+
+    
+    @keyframes expandWidth {
+        from {
+            width: 0;
+            height: 4px;
+        }
+
+        to {
+            width: 560px;
+            height: 4px;
+        }
+    }
+
+    @keyframes expandHeight {
+        from {
+            width: 560px;
+            height: 4px;
+        }
+
+        to {
+            width: fit-content;
+            height: 517px;
+        }
+    }
+
+    @keyframes retractWidth {
+        from {
+            width: 560px;
+            height: 4px;
+        }
+
+        to {
+            width: 0;
+            height: 4px;
+        }
+    }
+
+
+    @keyframes retractHeight {
+        from {
+            width: 560px;
+            height: 517px;
+        }
+
+        to {
+            width: 560px;
+            height: 4px;
+        }
+    }
 }

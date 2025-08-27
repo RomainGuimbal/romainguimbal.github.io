@@ -49,6 +49,7 @@ body
                 //- more tags : surfacepsycho ? archi ? CAD ?
 
             .masonry-grid
+                //- .grid-sizer
                 .grid-item.project#agrume.product.rendering.modeling
                     // Multiple images example
                     .multi-image
@@ -186,17 +187,17 @@ body
 
                 .grid-item.project#sword.product.rendering.modeling
                     .multi-image
-                        .video-container.active
+                        a.video-container.active
                             video(controls='' loop='' autoplay='')
                                 source(src='assets/img/Sword 2017 3D 20230001-0100.mp4' type='video/mp4')
                             button.play-pause-btn#playPauseBtn
                                 .play-icon
                         a.without-caption.image-link(href='assets/img/Sword 2017 3D 2023 close1.jpg')
-                            img(src='assets/img/Sword 2017 3D 2023 close1.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_Sword 2017 3D 2023 close1.jpg')
                         a.without-caption.image-link(href='assets/img/Sword 2017 3D 2023 close2.jpg')
-                            img(src='assets/img/Sword 2017 3D 2023 close2.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_Sword 2017 3D 2023 close2.jpg')
                         a.without-caption.image-link(href='assets/img/Sword 2017 3D 2023 HD.jpg')
-                            img(src='assets/img/Sword 2017 3D 2023 HD.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_Sword 2017 3D 2023 HD.jpg')
                     .image-dots
                         span.image-dot.active(data-index='0')
                         span.image-dot(data-index='1')
@@ -374,9 +375,10 @@ body
 
                 .grid-item.project#surfacepsycho.programming.product
                     .multi-image
-                        .video-container.active
+                        a.video-container.active
                             video(preload="metadata")
                                 source(src='assets/img/SP - G4 continuity.mp4' type='video/mp4')
+                            //- .thumbnail-overlay(style="background-image: url('https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg');")
                             button.play-pause-btn#playPauseBtn
                                 .play-icon
                         a.without-caption.image-link(href='assets/img/SP hanger viewport.jpg')
@@ -440,12 +442,10 @@ body
         button#backToTop(onclick='topFunction()' title='Go to top')
             |↑
 
-// jQuery 3.6.0
+// Libs
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
-
-script(src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js")
-
 script(src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js")
 
 // Magnific Popup core JS file
 script(src='assets/Js/jquery.magnific-popup.js')

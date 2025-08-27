@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
     imagesLoaded(grid, function() {
         msnry = new Masonry(grid, {
             itemSelector: '.grid-item',
+            // columnWidth: '.grid-sizer',
+            // gutter: 15,
+            // percentPosition: true,
+            // horizontalOrder: true,
+            // // fitWidth: true,
+            // transitionDuration: '0.0s'
             columnWidth: 300,
             gutter: 20,
             fitWidth: true,
@@ -26,10 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const multiImage = item.querySelector('.multi-image');
         const dots = item.querySelectorAll('.image-dot');
         if (multiImage && dots.length > 0) {
-            // Support both <a.without-caption.image-link> and <video> as carousel items
             const imageLinks = Array.from(multiImage.children).filter(child =>
-                (child.tagName === 'A' && child.classList.contains('without-caption') && child.classList.contains('image-link')) ||
-                child.tagName === 'VIDEO'
+                (child.classList.contains('image-link') || 
+                child.classList.contains('video-container'))
             );
             dots.forEach(function(dot, idx) {
                 dot.addEventListener('click', function() {
