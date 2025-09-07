@@ -159,10 +159,23 @@ spline-viewer {
 }
 
 .item .without-caption,
-.item video {
+.item video,
+.item .note-card {
 	margin: 0 auto 0;
 }
 
+.note-card{
+	background-color: var(--bg-color-dark);
+	box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	text-align: left;
+	color: var(--text-color);
+	font-size: 1em;
+}
+
+.note-card-content {
+	padding: 1em;
+}
 
 /* .item img{
     margin: 0em;
@@ -201,20 +214,16 @@ footer {
 }
 
 footer .bio-split {
-	display: flex;
-	height: auto;
-	width: clamp(300px, 40%, 500px);
-	margin: 0 auto;
-	width: auto;
-	column-gap: 10em;
+	width: fit-content;
+	margin: auto;
 }
 
-@media (max-width:600px) {
+/* @media (max-width:600px) {
 	footer .bio-split {
 		display: inline-block;
 		width: 95%;
 	}
-}
+} */
 
 #profile_picture {
 	height: 20em;

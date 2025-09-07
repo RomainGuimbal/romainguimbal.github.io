@@ -97,7 +97,7 @@ $(function() {
             let endX = e.originalEvent.changedTouches[0].clientX;
             let dx = endX - startX;
             if (Math.abs(dx) > threshold) {
-                let $links = $multiImage.find('.image-link, .video-container');
+                let $links = $multiImage.find('.image-link, .video-container, .note-card');
                 let $active = $links.filter('.active');
                 let idx = $links.index($active);
                 if (dx < 0 && idx < $links.length - 1) {
@@ -126,6 +126,10 @@ $(function() {
     });
 });
 
+
+//############################################
+// TAG SYSTEM
+//############################################
 
 function toggleTag(element) {
 
@@ -197,3 +201,108 @@ function filterTag(tag) {
     })
 };
 
+
+
+// //############################################
+// // VIDEO PLAYER
+// //############################################
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const videoContainer = document.querySelector('.video-container');
+//     const video = videoContainer.querySelector('video');
+//     const thumbnailOverlay = videoContainer.querySelector('.thumbnail-overlay');
+//     const playPauseBtn = document.getElementById('playPauseBtn');
+//     const loadingIndicator = document.getElementById('loadingIndicator');
+//     const resetBtn = document.getElementById('resetBtn');
+    
+//     let isPlaying = false;
+    
+//     // Function to play video
+//     function playVideo() {
+//         loadingIndicator.style.display = 'block';
+        
+//         // Load the video if it hasn't been loaded yet
+//         if (video.readyState === 0) {
+//             video.load();
+//         }
+        
+//         const playPromise = video.play();
+        
+//         if (playPromise !== undefined) {
+//             playPromise.then(() => {
+//                 // Video played successfully
+//                 isPlaying = true;
+//                 thumbnailOverlay.style.opacity = '0';
+//                 setTimeout(() => {
+//                     thumbnailOverlay.style.display = 'none';
+//                     video.style.display = 'block';
+//                 }, 300);
+//                 loadingIndicator.style.display = 'none';
+                
+//                 // Change button to pause icon
+//                 playPauseBtn.innerHTML = '<div class="pause-icon"></div>';
+//             }).catch(error => {
+//                 // Auto-play was prevented
+//                 loadingIndicator.style.display = 'none';
+//                 console.log('Playback requires user interaction:', error);
+//             });
+//         }
+//     }
+    
+//     // Function to pause video
+//     function pauseVideo() {
+//         video.pause();
+//         isPlaying = false;
+        
+//         // Change button to play icon
+//         playPauseBtn.innerHTML = '<div class="play-icon"></div>';
+//     }
+    
+//     // Play/Pause button click handler
+//     playPauseBtn.addEventListener('click', function() {
+//         if (isPlaying) {
+//             pauseVideo();
+//         } else {
+//             playVideo();
+//         }
+//     });
+    
+//     // Video click to play/pause
+//     video.addEventListener('click', function() {
+//         if (isPlaying) {
+//             pauseVideo();
+//         } else {
+//             playVideo();
+//         }
+//     });
+    
+//     // Reset button functionality
+//     resetBtn.addEventListener('click', function() {
+//         pauseVideo();
+//         video.currentTime = 0;
+//         thumbnailOverlay.style.display = 'block';
+//         setTimeout(() => {
+//             thumbnailOverlay.style.opacity = '1';
+//         }, 10);
+//         video.style.display = 'none';
+//     });
+    
+//     // When video ends, show thumbnail again
+//     video.addEventListener('ended', function() {
+//         isPlaying = false;
+//         playPauseBtn.innerHTML = '<div class="play-icon"></div>';
+//         thumbnailOverlay.style.display = 'block';
+//         setTimeout(() => {
+//             thumbnailOverlay.style.opacity = '1';
+//         }, 10);
+//         video.style.display = 'none';
+//     });
+    
+//     // Hide native controls until video is playing
+//     video.removeAttribute('controls');
+    
+//     // Show native controls when video starts playing
+//     video.addEventListener('play', function() {
+//         video.setAttribute('controls', 'true');
+//     });
+// });

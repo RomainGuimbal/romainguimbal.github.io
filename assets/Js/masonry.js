@@ -6,14 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     imagesLoaded(grid, function() {
         msnry = new Masonry(grid, {
             itemSelector: '.grid-item',
-            // columnWidth: '.grid-sizer',
-            // gutter: 15,
-            // percentPosition: true,
-            // horizontalOrder: true,
-            // // fitWidth: true,
-            // transitionDuration: '0.0s'
-            columnWidth: 300,
-            gutter: 20,
+            columnWidth: getColumnWidth(),
+            gutter: getGutterSize(),
             fitWidth: true,
             transitionDuration: '0.3s'
         });
@@ -34,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (multiImage && dots.length > 0) {
             const imageLinks = Array.from(multiImage.children).filter(child =>
                 (child.classList.contains('image-link') || 
-                child.classList.contains('video-container'))
+                child.classList.contains('video-container') ||
+                child.classList.contains('note-card'))
             );
             dots.forEach(function(dot, idx) {
                 dot.addEventListener('click', function() {
@@ -82,9 +77,32 @@ function animateIn(element) {
     }, 100);
 }
 
+// Add these functions before the window resize event handler
+function getColumnWidth() {
+    if (window.innerWidth <= 480) {
+        return '.grid-item';
+    }
+    if (window.innerWidth <= 767) {
+        return '.grid-item';
+    }
+    return 300;
+}
+
+function getGutterSize() {
+    if (window.innerWidth <= 480) {
+        return 10;
+    }
+    if (window.innerWidth <= 767) {
+        return 20;
+    }
+    return 20;
+}
+
 // Handle window resize
 window.addEventListener('resize', function() {
     if (msnry) {
+        msnry.options.columnWidth = getColumnWidth();
+        msnry.options.gutter = getGutterSize();
         msnry.layout();
     }
 });

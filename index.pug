@@ -156,7 +156,7 @@ body
 
             
                 .grid-item.project#archi-gene.modeling.procedural.rendering
-                    .multi-image
+                    .multi-image(style='aspect-ratio: 16/9')
                         a.without-caption.image-link(href='assets/img/Piliers spiral bois.jpg' class='active')
                                 img(src='assets/img/thumbnails/thumbnail_Piliers spiral bois.jpg')
                         a.without-caption.image-link(href='assets/img/batiments rubans.jpg')
@@ -306,7 +306,7 @@ body
 
 
                 .grid-item.project#verriere.procedural.modeling
-                    .multi-image
+                    .multi-image(style='aspect-ratio: 16/9')
                         a.without-caption.image-link(href='assets/img/verrière bateau.jpg' class='active')
                             img(src='assets/img/thumbnails/thumbnail_verrière bateau.jpg')
                         a.without-caption.image-link(href='assets/img/Salle de bal 1.jpg')
@@ -374,27 +374,32 @@ body
                     //-     | 2016
 
                 .grid-item.project#surfacepsycho.programming.product
-                    .multi-image
+                    .multi-image(style='aspect-ratio: 1')
                         a.video-container.active
                             video(preload="metadata")
                                 source(src='assets/img/SP - G4 continuity.mp4' type='video/mp4')
                             //- .thumbnail-overlay(style="background-image: url('https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg');")
                             button.play-pause-btn#playPauseBtn
                                 .play-icon
+                        a.note-card
+                            .note-card-content
+                                h3 SurfacePsycho
+                                p Good Project
                         a.without-caption.image-link(href='assets/img/SP hanger viewport.jpg')
-                            img(src='assets/img/SP hanger viewport.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_SP hanger viewport.jpg')
                         a.without-caption.image-link(href='assets/img/SP hanger SW.jpg')
-                            img(src='assets/img/SP hanger SW.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_SP hanger SW.jpg')
                         a.without-caption.image-link(href='assets/img/SP cover.jpg')
-                            img(src='assets/img/SP cover.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_SP cover.jpg')
                         a.without-caption.image-link(href='assets/img/SP screenshot1.jpg')
-                            img(src='assets/img/SP screenshot1.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_SP screenshot1.jpg')
                     .image-dots
                         span.image-dot.active(data-index='0')
                         span.image-dot(data-index='1')
                         span.image-dot(data-index='2')
                         span.image-dot(data-index='3')
                         span.image-dot(data-index='4')
+                        span.image-dot(data-index='5')
 
                 //- include ./assets/html/items/CAO.pug
 
