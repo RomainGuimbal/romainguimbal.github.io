@@ -1,8 +1,29 @@
 // Initialize Masonry
 let msnry;
+let refreshTimeout;
+
+// Debounce function to limit the rate of layout updates
+function debounce(func, wait) {
+    return function() {
+        clearTimeout(refreshTimeout);
+        refreshTimeout = setTimeout(() => func(), wait);
+    }
+}
+
+// Refresh Masonry layout
+function refreshMasonryLayout() {
+    if (msnry) {
+        clearTimeout(refreshTimeout);
+        refreshTimeout = setTimeout(() => {
+            msnry.layout();
+        }, 300); // Increased from 100ms to 300ms
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     const grid = document.querySelector('.masonry-grid');
+    
+    // Initialize Masonry only after ALL images are loaded
     imagesLoaded(grid, function() {
         msnry = new Masonry(grid, {
             itemSelector: '.grid-item',
@@ -10,6 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
             gutter: getGutterSize(),
             fitWidth: true,
             transitionDuration: '0.3s'
+        });
+
+        // Add layout refresh after each individual image loads
+        grid.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', refreshMasonryLayout);
         });
     });
 
@@ -31,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 child.classList.contains('video-container') ||
                 child.classList.contains('note-card'))
             );
+            // Update the dots click handler inside the .forEach loop
             dots.forEach(function(dot, idx) {
                 dot.addEventListener('click', function() {
                     // Remove active from all
@@ -46,6 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     });
                     dot.classList.add('active');
+                    // Add this after updating visibility
+                    refreshMasonryLayout();
                 });
             });
             // Ensure only one item is active at start
@@ -98,11 +127,31 @@ function getGutterSize() {
     return 20;
 }
 
-// Handle window resize
-window.addEventListener('resize', function() {
+// Add this new function before the resize handler
+function handleResize() {
     if (msnry) {
         msnry.options.columnWidth = getColumnWidth();
         msnry.options.gutter = getGutterSize();
-        msnry.layout();
+        refreshMasonryLayout();
     }
+}
+
+// Replace all resize handlers with this simpler version
+let resizeTimer;
+window.addEventListener('resize', () => {
+    // Immediately update column width and gutter
+    if (msnry) {
+        msnry.options.columnWidth = getColumnWidth();
+        msnry.options.gutter = getGutterSize();
+    }
+    
+    // Clear the existing timer
+    clearTimeout(resizeTimer);
+    
+    // Set a new timer
+    resizeTimer = setTimeout(() => {
+        if (msnry) {
+            msnry.layout();
+        }
+    }, 500); // Wait until resize is complete
 });
