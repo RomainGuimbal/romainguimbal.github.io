@@ -81,7 +81,7 @@ body
 
                 .grid-item.rendering.modeling
                     a.without-caption.image-link(href='assets/img/phare design.jpg')
-                        img(src='assets/img/thumbnails/thumbnail_phare design.jpg' style='margin-bottom: .4em;')
+                        img(src='assets/img/thumbnails/thumbnail_phare design.jpg')
                     //-     figcaption
                     //-         | Reproduction du feu avant de la Smart Fourjoy Concept
                     //-         br
@@ -188,7 +188,7 @@ body
                 .grid-item.project#sword.product.rendering.modeling
                     .multi-image
                         a.video-container.active
-                            video(controls='' loop='' autoplay='')
+                            video(preload="metadata")
                                 source(src='assets/img/Sword 2017 3D 20230001-0100.mp4' type='video/mp4')
                             button.play-pause-btn#playPauseBtn
                                 .play-icon
@@ -258,7 +258,7 @@ body
                 //-         | 2022
 
                 .grid-item.project#porsche.video-container.vfx
-                    video(controls='' loop='' autoplay='')
+                    video(preload="metadata")
                         source(src='assets/img/porsche courbes.mp4' type='video/mp4')
                     button.play-pause-btn#playPauseBtn
                         .play-icon
@@ -297,7 +297,7 @@ body
                         source(src='assets/img/diamant holo 20001-0149.mp4' type='video/mp4')
                     button.play-pause-btn#playPauseBtn
                         .play-icon
-                    //- video(controls='' loop='' autoplay='')
+                    //- video(preload="metadata")
                     //-     source(src='assets/img/diamant bleu0001-0149.mp4' type='video/mp4')
                 //-     figcaption
                 //-         | Diamants en duo
@@ -384,7 +384,7 @@ body
                         a.note-card
                             .note-card-content
                                 h3 SurfacePsycho
-                                p Good Project
+                                p Import, Edit and Export STEP data inside Blender 
                         a.without-caption.image-link(href='assets/img/SP hanger viewport.jpg')
                             img(src='assets/img/thumbnails/thumbnail_SP hanger viewport.jpg')
                         a.without-caption.image-link(href='assets/img/SP hanger SW.jpg')
