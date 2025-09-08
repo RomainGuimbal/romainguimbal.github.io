@@ -248,16 +248,20 @@ video::-webkit-media-controls-enclosure {
 
 .tag-list {
 	position: relative;
-	width: 100%;
+	width: fit-content;
 	display: inline-block;
-	margin-bottom: 2em;
+	margin: 2em auto 2em auto;
 	list-style: none;
+	background-color: black;
+	border-radius: 28.5px;
+	padding: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .tag-item {
 	display: inline-block;
-	padding: 0.5em 1em;
-	margin: 0.2em;
+	padding: 7px 14px;
+	margin: 2px;
 	background-color: transparent;
 	border: 1px solid var(--col);
 	color: var(--col);
@@ -266,12 +270,17 @@ video::-webkit-media-controls-enclosure {
 	font-size: 0.9em;
 	cursor: pointer;
 	font-weight: bold;
+	transition: 200ms;
+}
+
+.tag-item:hover {
+	box-shadow: 0 0 15px var(--col);
 }
 
 .tag-item.enabled {
 	background-color: var(--col);
-	/* opacity: 0.8; */
 	color: black;
+	/* box-shadow: 0 0 6px var(--col); */
 }
 
 .thumbnail-overlay {
