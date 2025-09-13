@@ -292,4 +292,5 @@ video::-webkit-media-controls-enclosure {
 	padding: 4px 6px;
 	border-radius: 6px;
 	font-weight: bold !important;
+	color: rgb(227, 233, 255) !important;
 }
