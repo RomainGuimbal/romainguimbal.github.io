@@ -11,9 +11,9 @@ $('.without-caption').magnificPopup({
         duration: 0 // don't foget to change the duration also in CSS
     },
     gallery: {
-        enabled: true,
-        tPrev: '@T("Media.MagnificPopup.Previous")',
-        tNext: '@T("Media.MagnificPopup.Next")',
+        enabled: false,
+        // tPrev: '@T("Media.MagnificPopup.Previous")',
+        // tNext: '@T("Media.MagnificPopup.Next")',
     },
     tClose: '@T("Media.MagnificPopup.Close")',
     tLoading: '@T("Media.MagnificPopup.Loading")'

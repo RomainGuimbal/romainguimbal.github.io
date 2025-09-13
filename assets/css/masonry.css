@@ -59,11 +59,17 @@
 	padding: 10px;
 }
 
-.grid-item figcaption {
-            font-size: 16px;
-            color: #333;
+.grid-item figcaption,
+.grid-item .multi-image figcaption {
+    margin-top: 5px;
+	height: auto;
+	text-align: left;
+	/* white-space: nowrap; */
+	color: rgb(124, 127, 161);
+    font-size: 0.8em;
+    width: 100%;
+    display: block;
 }
-
 
 
 .grid-item.project {
@@ -80,6 +86,7 @@
 }
 
 .grid-item .image-dots {
+    width: 100%;
     display: flex;
     justify-content: center;
     gap: 0.4em;
