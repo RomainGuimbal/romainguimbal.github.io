@@ -154,7 +154,7 @@ spline-viewer {
 	border-radius: 3px;
 	text-align: left;
 	color: var(--text-color);
-	font-size: 1em;
+	font-size: 1em !important;
 }
 
 .note-card-content {
