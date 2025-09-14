@@ -59,7 +59,7 @@ canvas {
 
 .donate-button {
     padding: 35px 80px;
-    font-size: 1.5rem;
+    font-size: 27px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -101,7 +101,7 @@ canvas {
 }
 
 .donate-button .hover-text {
-    font-size: 1.5rem;
+    font-size: 27px;
     color: #9b18ff;
     position: absolute;
     top: 50%;
@@ -520,7 +520,7 @@ img.donate-decoration:nth-of-type(4) {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 27px;
     transition: all 0.3s ease;
 }
 
@@ -533,7 +533,7 @@ img.donate-decoration:nth-of-type(4) {
 }
 
 .link-desc {
-    font-size: 0.9rem;
+    font-size: 14px;
     color: #ffffff7d;
     transition: all 0.3s ease;
 }
@@ -552,7 +552,7 @@ img.donate-decoration:nth-of-type(4) {
 
 
 .link-frame .hover-text {
-    font-size: 0.9rem;
+    font-size: 14px;
     color: #ffffff7d;
     opacity: 0.0;
     transition: all 0.3s ease;
@@ -827,7 +827,7 @@ img.donate-decoration:nth-of-type(4) {
     }
 
     .link-frame .hover-text{
-        font-size: 0.75rem;
+        font-size: 12px;
 
     }
 
@@ -885,7 +885,7 @@ img.donate-decoration:nth-of-type(4) {
     .links-grid {
         width: 90vw;
         grid-template-columns: repeat(auto-fit, minmax(120px, 3fr));
-        height: 500px;
+        height: 300px;
     }
 
     .sunburst1 {
