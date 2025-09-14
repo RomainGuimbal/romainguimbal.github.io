@@ -142,7 +142,7 @@ spline-viewer {
 	}
 }
 
-.item .without-caption,
+.item .image-item,
 .item video,
 .item .note-card {
 	margin: 0 auto 0;
@@ -281,7 +281,7 @@ video::-webkit-media-controls-enclosure {
 }
 
 
-.without-caption figcaption{
+.image-item figcaption{
 	margin: 0 auto;
 	position: relative;
 	transform: translate(0, calc(-10px - 100%));
