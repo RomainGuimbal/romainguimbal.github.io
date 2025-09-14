@@ -52,31 +52,68 @@ document.addEventListener('DOMContentLoaded', function() {
         const multiImage = item.querySelector('.multi-image');
         const dots = item.querySelectorAll('.image-dot');
         if (multiImage && dots.length > 0) {
+            
+            // Get all image links, video containers, and note cards
             const imageLinks = Array.from(multiImage.children).filter(child =>
                 (child.classList.contains('image-link') || 
                 child.classList.contains('video-container') ||
                 child.classList.contains('note-card'))
             );
+            
+            function updateActiveImage(imageLinks, dots, dot, idx) {
+                // Remove active from all
+                imageLinks.forEach(a => a.classList.remove('active'));
+                dots.forEach(d => d.classList.remove('active'));
+
+                // Show only the active item
+                imageLinks.forEach((a, i) => {
+                    if (i === idx) {
+                        a.classList.add('active');
+                        a.style.display = '';
+                    } else {
+                        a.style.display = 'none';
+                    }
+                });
+                dot.classList.add('active');
+            }
+
             // Update the dots click handler inside the .forEach loop
             dots.forEach(function(dot, idx) {
                 dot.addEventListener('click', function() {
-                    // Remove active from all
-                    imageLinks.forEach(a => a.classList.remove('active'));
-                    dots.forEach(d => d.classList.remove('active'));
-                    // Show only the active item
-                    imageLinks.forEach((a, i) => {
-                        if (i === idx) {
-                            a.classList.add('active');
-                            a.style.display = '';
-                        } else {
-                            a.style.display = 'none';
-                        }
-                    });
-                    dot.classList.add('active');
-                    // Add this after updating visibility
-                    refreshMasonryLayout();
+                    updateActiveImage(imageLinks, dots, dot, idx);
                 });
             });
+
+            // Add navigation arrows
+            // $(multiImage).append('<button class="nav-arrow prev">&#60;</button>');
+            $(multiImage).append('<button class="nav-arrow next">&#62</button>');
+
+            // // Handle arrow navigation
+            $(document).on('click', '.nav-arrow', function(e) {
+                e.preventDefault();
+                const $multiImage = $(this).closest('.multi-image');
+                const $links = $multiImage.find('.image-link, .video-container, .note-card');
+                const $active = $links.filter('.active');
+                const idx = $links.index($active);
+                const dots = $(this).closest('.image-dots').children;
+                const dot = dots[idx];
+                
+                if ($(this).hasClass('prev') && idx > 0) {
+                    updateActiveImage(imageLinks, dots, dot, idx-1);
+                    if (idx === 0) {
+                        $(multiImage).remove("nav-arrow previous");
+                    }
+                    if (idx === 1) {
+                        $(multiImage).append('<button class="nav-arrow prev">&#60;</button>');
+                    }
+                } else if ($(this).hasClass('next') && idx < $links.length - 1) {
+                    updateActiveImage(imageLinks, dots, dot, idx+1);
+                    if (idx === $links.length - 1) {
+                        $(multiImage).remove("nav-arrow next");
+                    }
+                }
+            });
+
             // Ensure only one item is active at start
             let foundActive = false;
             imageLinks.forEach((a, i) => {
@@ -89,6 +126,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     a.style.display = 'none';
                 }
             });
+
+            // If none active, activate the first
             if (!foundActive && imageLinks.length > 0) {
                 imageLinks[0].classList.add('active');
                 dots[0]?.classList.add('active');
