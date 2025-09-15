@@ -51,28 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 child.classList.contains('video-container') ||
                 child.classList.contains('note-card'))
             );
-            
-            function updateActiveImage(imageLinks, dots, dot, idx) {
-                // Remove active from all
-                imageLinks.forEach(a => a.classList.remove('active'));
-                dots.forEach(d => d.classList.remove('active'));
-
-                // Show only the active item
-                imageLinks.forEach((a, i) => {
-                    if (i === idx) {
-                        a.classList.add('active');
-                        a.style.display = '';
-                    } else {
-                        a.style.display = 'none';
-                    }
-                });
-                dot.classList.add('active');
-            }
 
             // Add dots click handler
             dots.forEach(function(dot, idx) {
                 dot.addEventListener('click', function() {
-                    updateActiveImage(imageLinks, dots, dot, idx);
+                    updateActiveImage(imageLinks, dots, idx);
                 });
             });
             
@@ -106,7 +89,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-});  
+});
+
+function updateActiveImage(imageLinks, dots, idx) {
+    // Remove active from all
+    imageLinks.forEach(a => a.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    const dot = dots[idx];
+
+    // Show only the active item
+    imageLinks.forEach((a, i) => {
+        if (i === idx) {
+            a.classList.add('active');
+            a.style.display = '';
+        } else {
+            a.style.display = 'none';
+        }
+    });
+    dot.classList.add('active');
+}
 
 function update_image_and_dots_from_nav_arrow(multiImage, arrowBtn) {
     const $links = $(multiImage).find('.image-link, .video-container, .note-card');
@@ -114,19 +115,19 @@ function update_image_and_dots_from_nav_arrow(multiImage, arrowBtn) {
     const idx = $links.index($active);
     const dots = $(multiImage).closest('.grid-item').find('.image-dot');
     const dot = dots[idx];
-    
+
     if ($(arrowBtn).hasClass('prev') && idx > 0) {
-        updateActiveImage($links.toArray(), dots.toArray(), dot, idx-1);
-        if (idx === 0) {
+        updateActiveImage($links.toArray(), dots.toArray(), idx-1);
+        if (idx === 1) {
             $(multiImage).find('.nav-arrow.prev').remove();
         }
-        if (idx === 1) {
-            $(multiImage).append('<button class="nav-arrow prev">&#60;</button>');
-        }
+        // if (idx === 1) {
+        //     $(multiImage).append('<button class="nav-arrow prev">&#60;</button>');
+        // }
     } else if ($(arrowBtn).hasClass('next') && idx < $links.length - 1) {
-        updateActiveImage($links.toArray(), dots.toArray(), dot, idx+1);
-        if (idx === $links.length - 1) {
-            $(multiImage).remove("nav-arrow next");
+        updateActiveImage($links.toArray(), dots.toArray(), idx+1);
+        if (idx === $links.length - 2) {
+            $(multiImage).find('.nav-arrow.next').remove();
         }
     }
 }
