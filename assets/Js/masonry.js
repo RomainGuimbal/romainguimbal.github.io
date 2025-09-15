@@ -38,14 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
             img.addEventListener('load', refreshMasonryLayout);
         });
     });
-
-    // Ensure .grid-item.project applies border-radius to videos
-    document.querySelectorAll('.grid-item.project').forEach(function(item) {
-        // Add border-radius to images and videos inside .grid-item.project
-        item.querySelectorAll('img, video').forEach(function(media) {
-            media.style.borderRadius = '3px';
-        });
-    });
     
     // Multi-image logic for .grid-item.project
     document.querySelectorAll('.grid-item.project').forEach(function(item) {
@@ -77,41 +69,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 dot.classList.add('active');
             }
 
-            // Update the dots click handler inside the .forEach loop
+            // Add dots click handler
             dots.forEach(function(dot, idx) {
                 dot.addEventListener('click', function() {
                     updateActiveImage(imageLinks, dots, dot, idx);
                 });
             });
-
+            
             // Add navigation arrows
             // $(multiImage).append('<button class="nav-arrow prev">&#60;</button>');
             $(multiImage).append('<button class="nav-arrow next">&#62</button>');
 
-            // // Handle arrow navigation
-            $(document).on('click', '.nav-arrow', function(e) {
-                e.preventDefault();
-                const $multiImage = $(this).closest('.multi-image');
-                const $links = $multiImage.find('.image-link, .video-container, .note-card');
-                const $active = $links.filter('.active');
-                const idx = $links.index($active);
-                const dots = $(this).closest('.image-dots').children;
-                const dot = dots[idx];
-                
-                if ($(this).hasClass('prev') && idx > 0) {
-                    updateActiveImage(imageLinks, dots, dot, idx-1);
-                    if (idx === 0) {
-                        $(multiImage).remove("nav-arrow previous");
-                    }
-                    if (idx === 1) {
-                        $(multiImage).append('<button class="nav-arrow prev">&#60;</button>');
-                    }
-                } else if ($(this).hasClass('next') && idx < $links.length - 1) {
-                    updateActiveImage(imageLinks, dots, dot, idx+1);
-                    if (idx === $links.length - 1) {
-                        $(multiImage).remove("nav-arrow next");
-                    }
-                }
+            // Handle arrow navigation
+            $(multiImage).on('click', '.nav-arrow', function(e) {
+                update_image_and_dots_from_nav_arrow(multiImage, e.currentTarget);
             });
 
             // Ensure only one item is active at start
@@ -135,7 +106,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-});
+});  
+
+function update_image_and_dots_from_nav_arrow(multiImage, arrowBtn) {
+    const $links = $(multiImage).find('.image-link, .video-container, .note-card');
+    const $active = $links.filter('.active');
+    const idx = $links.index($active);
+    const dots = $(multiImage).closest('.grid-item').find('.image-dot');
+    const dot = dots[idx];
+    
+    if ($(arrowBtn).hasClass('prev') && idx > 0) {
+        updateActiveImage($links.toArray(), dots.toArray(), dot, idx-1);
+        if (idx === 0) {
+            $(multiImage).find('.nav-arrow.prev').remove();
+        }
+        if (idx === 1) {
+            $(multiImage).append('<button class="nav-arrow prev">&#60;</button>');
+        }
+    } else if ($(arrowBtn).hasClass('next') && idx < $links.length - 1) {
+        updateActiveImage($links.toArray(), dots.toArray(), dot, idx+1);
+        if (idx === $links.length - 1) {
+            $(multiImage).remove("nav-arrow next");
+        }
+    }
+}
+
 
 function animateIn(element) {
     setTimeout(() => {

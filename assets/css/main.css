@@ -142,16 +142,16 @@ spline-viewer {
 	}
 }
 
-.item .image-item,
-.item video,
-.item .note-card {
+.grid-item .image-item,
+.grid-item video,
+.grid-item .note-card {
 	margin: 0 auto 0;
+	border-radius: 3px;
 }
 
 .note-card{
 	background-color: var(--bg-color-dark);
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
-	border-radius: 3px;
 	text-align: left;
 	color: var(--text-color);
 	font-size: 1em !important;
