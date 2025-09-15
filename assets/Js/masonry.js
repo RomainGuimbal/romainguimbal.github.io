@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             dots.forEach(function(dot, idx) {
                 dot.addEventListener('click', function() {
                     updateActiveImage(imageLinks, dots, idx);
+                    add_or_remove_nav_arrows(multiImage);
                 });
             });
             
@@ -114,21 +115,32 @@ function update_image_and_dots_from_nav_arrow(multiImage, arrowBtn) {
     const $active = $links.filter('.active');
     const idx = $links.index($active);
     const dots = $(multiImage).closest('.grid-item').find('.image-dot');
-    const dot = dots[idx];
 
     if ($(arrowBtn).hasClass('prev') && idx > 0) {
         updateActiveImage($links.toArray(), dots.toArray(), idx-1);
-        if (idx === 1) {
-            $(multiImage).find('.nav-arrow.prev').remove();
-        }
-        // if (idx === 1) {
-        //     $(multiImage).append('<button class="nav-arrow prev">&#60;</button>');
-        // }
     } else if ($(arrowBtn).hasClass('next') && idx < $links.length - 1) {
         updateActiveImage($links.toArray(), dots.toArray(), idx+1);
-        if (idx === $links.length - 2) {
-            $(multiImage).find('.nav-arrow.next').remove();
-        }
+    }
+
+    add_or_remove_nav_arrows(multiImage);
+}
+
+function add_or_remove_nav_arrows(multiImage) {
+    const $links = $(multiImage).find('.image-link, .video-container, .note-card');
+    const $active = $links.filter('.active');
+    const idx = $links.index($active);
+    if (idx > 0 && $(multiImage).find('.nav-arrow.prev').length === 0) {
+        $(multiImage).append('<button class="nav-arrow prev">&#60;</button>');
+    }
+    if (idx < $links.length - 1 && $(multiImage).find('.nav-arrow.next').length === 0) {
+        $(multiImage).append('<button class="nav-arrow next">&#62</button>');
+    }
+
+    if (idx === 0) {
+        $(multiImage).find('.nav-arrow.prev').remove();
+    }
+    if (idx === $links.length - 1) {
+        $(multiImage).find('.nav-arrow.next').remove();
     }
 }
 
