@@ -95,7 +95,6 @@ html(lang="fr")
                             br
                             | 2021
 
-
                     .grid-item.project#sp-logo.graphic
                         .multi-image
                             a.image-item.image-link(href='assets/img/splogo_alpha.png' style='box-shadow: none;' class='active')
@@ -117,6 +116,43 @@ html(lang="fr")
                             span.image-dot(data-index='4')
                         figcaption
                             | Logo SurfacePsycho
+                    
+                    .grid-item.project#surfacepsycho.programming.product
+                        .multi-image(style='aspect-ratio: 1')
+                            a.image-item.image-link(href='assets/img/bateau demo sp.jpg').active
+                                img(src='assets/img/thumbnails/thumbnail_bateau demo sp.jpg')
+                            a.video-container
+                                video(preload="metadata")
+                                    source(src='assets/img/SP - G4 continuity.mp4' type='video/mp4')
+                                //- .thumbnail-overlay(style="background-image: url('https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg');")
+                                button.play-pause-btn#playPauseBtn
+                                    .play-icon
+                            a.note-card
+                                .note-card-content
+                                    h3 SurfacePsycho
+                                    p
+                                        | Blender add-on to Import, Edit and Export STEP data.
+                                        | The promise of a fluid NURBS editing experience.
+                                        | Fully free and open-source
+                                        //- | #[a.sp-portal-button(href="sp-donation/sp-donation.html") → Portal here ←]
+
+                            a.image-item.image-link(href='assets/img/SP hanger viewport.jpg')
+                                img(src='assets/img/thumbnails/thumbnail_SP hanger viewport.jpg')
+                                figcaption 
+                                    | Hanger test product
+                            a.image-item.image-link(href='assets/img/SP hanger SW.jpg')
+                                img(src='assets/img/thumbnails/thumbnail_SP hanger SW.jpg')
+                                figcaption 
+                                    | Hanger imported in SolidWorks
+                        .image-dots
+                            span.image-dot.active(data-index='0')
+                            span.image-dot(data-index='1')
+                            span.image-dot(data-index='2')
+                            span.image-dot(data-index='3')
+                            span.image-dot(data-index='4')
+                            span.image-dot(data-index='5')
+                        figcaption
+                            | SurfacePsycho Blender add-on
 
                     .grid-item.product.painting
                         a.image-item.image-link(href='assets/img/random car dessin.jpg')
@@ -392,42 +428,7 @@ html(lang="fr")
                             .play-icon
                         figcaption 2016
 
-                    .grid-item.project#surfacepsycho.programming.product
-                        .multi-image(style='aspect-ratio: 1')
-                            a.image-item.image-link(href='assets/img/bateau demo sp.jpg').active
-                                img(src='assets/img/thumbnails/thumbnail_bateau demo sp.jpg')
-                            a.video-container
-                                video(preload="metadata")
-                                    source(src='assets/img/SP - G4 continuity.mp4' type='video/mp4')
-                                //- .thumbnail-overlay(style="background-image: url('https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg');")
-                                button.play-pause-btn#playPauseBtn
-                                    .play-icon
-                            a.note-card
-                                .note-card-content
-                                    h3 SurfacePsycho
-                                    p
-                                        | Blender add-on to Import, Edit and Export STEP data.
-                                        | The promise of a fluid NURBS editing experience.
-                                        | Fully free and open-source
-                                        //- | #[a.sp-portal-button(href="sp-donation/sp-donation.html") → Portal here ←]
-
-                            a.image-item.image-link(href='assets/img/SP hanger viewport.jpg')
-                                img(src='assets/img/thumbnails/thumbnail_SP hanger viewport.jpg')
-                                figcaption 
-                                    | Hanger test product
-                            a.image-item.image-link(href='assets/img/SP hanger SW.jpg')
-                                img(src='assets/img/thumbnails/thumbnail_SP hanger SW.jpg')
-                                figcaption 
-                                    | Hanger imported in SolidWorks
-                        .image-dots
-                            span.image-dot.active(data-index='0')
-                            span.image-dot(data-index='1')
-                            span.image-dot(data-index='2')
-                            span.image-dot(data-index='3')
-                            span.image-dot(data-index='4')
-                            span.image-dot(data-index='5')
-                        figcaption
-                            | SurfacePsycho Blender add-on
+                    
 
                     //- include ./assets/html/items/CAO.pug
 
