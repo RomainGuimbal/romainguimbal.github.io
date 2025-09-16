@@ -167,7 +167,7 @@ html(lang="fr")
                 
                     .grid-item.project#archi-gene.modeling.procedural.rendering
                         .multi-image(style='aspect-ratio: 16/9')
-                            a.image-item.image-link(href='assets/img/Piliers spiral bois.jpg' class='active')
+                            a.image-item.image-link(href='assets/img/Piliers spiral bois.jpg').active
                                     img(src='assets/img/thumbnails/thumbnail_Piliers spiral bois.jpg')
                             a.image-item.image-link(href='assets/img/batiments rubans.jpg')
                                 img(src='assets/img/thumbnails/thumbnail_batiments rubans.jpg')
@@ -180,10 +180,32 @@ html(lang="fr")
                             span.image-dot(data-index='1')
                             span.image-dot(data-index='2')
                             span.image-dot(data-index='3')
+                        figcaption Architecture procédurale
+
+
+                    .grid-item.project#toiture.procedural
+                        .multi-image(style='aspect-ratio: 16/9')
+                            a.image-item.image-link(href='assets/img/toiture 1.jpg').active
+                                img(src='assets/img/thumbnails/thumbnail_toiture 1.jpg')
+                            a.image-item.image-link(href='assets/img/toiture 2.jpg')
+                                img(src='assets/img/thumbnails/thumbnail_toiture 2.jpg')
+                            a.image-item.image-link(href='assets/img/toiture 3.jpg')
+                                img(src='assets/img/thumbnails/thumbnail_toiture 3.jpg')
+                            a.image-item.image-link(href='assets/img/toiture 4.jpg')
+                                img(src='assets/img/thumbnails/thumbnail_toiture 4.jpg')
+                        .image-dots
+                            span.image-dot.active(data-index='0')
+                            span.image-dot(data-index='1')
+                            span.image-dot(data-index='2')
+                        figcaption
+                            | Toiture procédurale
+                            br
+                            | 2024
+
 
                     .grid-item.project#foulard.product.graphic
                         .multi-image
-                            a.image-item.image-link(href='assets/img/foulard electro.jpg' class='active')
+                            a.image-item.image-link(href='assets/img/foulard electro.jpg').active
                                 img(src='assets/img/thumbnails/thumbnail_foulard electro.jpg')
                             a.image-item.image-link(href='assets/img/foulard 2.jpg')
                                 img(src='assets/img/thumbnails/thumbnail_foulard 2.jpg')
@@ -372,7 +394,9 @@ html(lang="fr")
 
                     .grid-item.project#surfacepsycho.programming.product
                         .multi-image(style='aspect-ratio: 1')
-                            a.video-container.active
+                            a.image-item.image-link(href='assets/img/bateau demo sp.jpg').active
+                                img(src='assets/img/thumbnails/thumbnail_bateau demo sp.jpg')
+                            a.video-container
                                 video(preload="metadata")
                                     source(src='assets/img/SP - G4 continuity.mp4' type='video/mp4')
                                 //- .thumbnail-overlay(style="background-image: url('https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg');")
@@ -395,10 +419,6 @@ html(lang="fr")
                                 img(src='assets/img/thumbnails/thumbnail_SP hanger SW.jpg')
                                 figcaption 
                                     | Hanger imported in SolidWorks
-                            a.image-item.image-link(href='assets/img/SP cover.jpg')
-                                img(src='assets/img/thumbnails/thumbnail_SP cover.jpg')
-                            a.image-item.image-link(href='assets/img/SP screenshot1.jpg')
-                                img(src='assets/img/thumbnails/thumbnail_SP screenshot1.jpg')
                         .image-dots
                             span.image-dot.active(data-index='0')
                             span.image-dot(data-index='1')

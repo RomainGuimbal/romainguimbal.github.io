@@ -13,6 +13,15 @@ from pathlib import Path
 from PIL import Image, ImageOps
 import argparse
 
+
+#######################################################################################################################
+#                                                                                                                     #
+#    Execute with this command :                                                                                      #
+#    python ./assets/img/thumbnails_generator.py ./assets/img ./assets/img/thumbnails --size  512 512 --quality 80    #
+#                                                                                                                     #
+#######################################################################################################################
+
+
 def create_thumbnail(source_path, dest_path, size=(200, 200), quality=85):
     """
     Create a thumbnail from source image and save to destination.
@@ -151,5 +160,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-#python ./assets/img/thumbnails_generator.py ./assets/img ./assets/img/thumbnails --size  256 256
