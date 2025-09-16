@@ -11,10 +11,12 @@ header {
 }
 
 .card-container {
-            perspective: 1000px;
-            width: 288px;
-            height: 288px;
-        }
+	perspective: 1000px;
+	width: 288px;
+	height: 288px;
+	margin-top : 15px;
+	margin-left: 15px;
+}
 
 .card {
 	position: relative;
@@ -82,8 +84,7 @@ header {
 @media screen and (max-width: 767px) {
 	.card-container{
 		position: relative;
-		margin: 0 auto;
-		top : 16px;
+		margin: 15px auto 0;
 	}
 
 	.tag-list {
