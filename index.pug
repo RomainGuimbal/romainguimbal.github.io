@@ -1,9 +1,6 @@
 doctype html
 html(lang="fr")
     include ./assets/html/head.pug
-    // start pug commandx : 
-    // Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-    // pug -w ./ -o . -P
     body
         // Promo Banner
         //- #promoBanner.promo-banner
@@ -16,17 +13,39 @@ html(lang="fr")
         //-         button.promo-close(onclick='closeBanner()' aria-label='Close banner') &times;
         
         header
-            .draggable-circle#draggableCircle
-                img#logo(src='assets/img/drop.jpg')
-                #bg-img-container
-                    img(src='assets/img/drop.jpg')
-                li
-                    h1#romain Romain
-                    h1#guimbal GUIMBAL
-                    h2 Portfolio
-                #circleMenu.circle-menu
-                    .menu-item.button(href="index.html#bio" onclick="handleMenuClick('About')") About
-                    .menu-item.button(href="sp-donation/sp-donation.html" onclick="handleMenuClick('Donate')") Donate
+            //- .draggable-circle#draggableCircle
+            //-     img#logo(src='assets/img/drop.jpg')
+            //-     #bg-img-container
+            //-         img(src='assets/img/drop.jpg')
+            //-     li
+            //-         h1#romain Romain
+            //-         h1#guimbal GUIMBAL
+            //-         h2 Portfolio
+            //-     //- #circleMenu.circle-menu
+            //-     //-     .menu-item.button(href="index.html#bio" onclick="handleMenuClick('About')") About
+            //-     //-     .menu-item.button(href="sp-donation/sp-donation.html" onclick="handleMenuClick('Donate')") Donate
+
+            .card-container
+                #flipCard.card
+                    .card-face.card-front.draggable-circle
+                        img#logo(src='assets/img/drop.jpg')
+                        #bg-img-container
+                            img(src='assets/img/drop.jpg')
+                        li
+                            h1#romain Romain
+                            h1#guimbal GUIMBAL
+                            h2#portfolio Portfolio
+                    .card-face.card-back.bio
+                        img#profile_picture(src='assets/img/photo_portrait.jpg') 
+                        p
+                            |  Ingénieur-Designer
+                            br
+                            |  3D ❤︎
+                            br
+                        p
+                            b CONTACTEZ-MOI
+                            br
+                            |  romain.guimbal@proton.me
 
 
 
@@ -454,27 +473,27 @@ html(lang="fr")
 
 
         footer
+            p © 2025-2030 Romain Guimbal
             
-            
-            .item
-                .bio-split
-                    .container#bio
-                        img#profile_picture(src='assets/img/photo_portrait.jpg') 
-                        p
-                            |  Ingénieur mécanique et mécatronique
-                            br
-                            |  Mange des modèles 3D au petit-déjeuné
-                            br
-                            br
-                            b CONTACTEZ-MOI
-                            br
-                            |  romain.guimbal@proton.me
+            //- .item
+            //-     .bio-split
+            //-         .container#bio
+            //-             img#profile_picture(src='assets/img/photo_portrait.jpg') 
+            //-             p
+            //-                 |  Ingénieur mécanique et mécatronique
+            //-                 br
+            //-                 |  Mange des modèles 3D au petit-déjeuné
+            //-                 br
+            //-                 br
+            //-                 b CONTACTEZ-MOI
+            //-                 br
+            //-                 |  romain.guimbal@proton.me
 
                     //- .container(style='width:auto')
                     //-     include ./assets/html/skills.pug
                 
-            button#backToTop(onclick='topFunction()' title='Go to top')
-                |↑
+            //- button#backToTop(onclick='topFunction()' title='Go to top')
+            //-     |↑
 
 // Libs
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
@@ -484,7 +503,6 @@ script(src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.mi
 
 // My Scripts
 script(src='assets/Js/main.js')
-//- script(src='assets/Js/draggable-circle.js')
 script(src='assets/Js/back_to_top.js')
 script(src='assets/Js/chapter_scrollbar.js')
 script(src='assets/Js/masonry.js')

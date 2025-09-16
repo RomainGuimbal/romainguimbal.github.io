@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Auto: Set Execution Policy & Run Pug Watch",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; pug -w ./ -o . -P"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}

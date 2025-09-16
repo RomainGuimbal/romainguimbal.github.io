@@ -25,22 +25,23 @@
     <link rel="icon" href="assets/img/favicon.png">
     <div id="svg_icons" style="position:fixed"></div>
   </head>
-  <!-- start pug commandx : -->
-  <!-- Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass-->
-  <!-- pug -w ./ -o . -P-->
   <body>
     <!-- Promo Banner-->
     <header>
-      <div class="draggable-circle" id="draggableCircle"><img id="logo" src="assets/img/drop.jpg">
-        <div id="bg-img-container"><img src="assets/img/drop.jpg"></div>
-        <li>
-          <h1 id="romain">Romain</h1>
-          <h1 id="guimbal">GUIMBAL</h1>
-          <h2>Portfolio</h2>
-        </li>
-        <div class="circle-menu" id="circleMenu">
-          <div class="menu-item button" href="index.html#bio" onclick="handleMenuClick('About')">About</div>
-          <div class="menu-item button" href="sp-donation/sp-donation.html" onclick="handleMenuClick('Donate')">Donate</div>
+      <div class="card-container">
+        <div class="card" id="flipCard">
+          <div class="card-face card-front draggable-circle"><img id="logo" src="assets/img/drop.jpg">
+            <div id="bg-img-container"><img src="assets/img/drop.jpg"></div>
+            <li>
+              <h1 id="romain">Romain</h1>
+              <h1 id="guimbal">GUIMBAL</h1>
+              <h2 id="portfolio">Portfolio</h2>
+            </li>
+          </div>
+          <div class="card-face card-back bio"><img id="profile_picture" src="assets/img/photo_portrait.jpg">
+            <p> Ingénieur-Designer<br> 3D ❤︎<br></p>
+            <p><b>CONTACTEZ-MOI</b><br> romain.guimbal@proton.me</p>
+          </div>
         </div>
       </div>
     </header>
@@ -242,14 +243,7 @@
       </div>
     </main>
     <footer>
-      <div class="item">
-        <div class="bio-split">
-          <div class="container" id="bio"><img id="profile_picture" src="assets/img/photo_portrait.jpg">
-            <p> Ingénieur mécanique et mécatronique<br> Mange des modèles 3D au petit-déjeuné<br><br><b>CONTACTEZ-MOI</b><br> romain.guimbal@proton.me</p>
-          </div>
-        </div>
-      </div>
-      <button id="backToTop" onclick="topFunction()" title="Go to top">↑</button>
+      <p>© 2025-2030 Romain Guimbal</p>
     </footer>
   </body>
 </html>

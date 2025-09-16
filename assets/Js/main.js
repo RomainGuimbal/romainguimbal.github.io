@@ -178,6 +178,15 @@ function filterTag(tag) {
 };
 
 
+//############################################
+// FLIP CARD
+//############################################
+const card = document.getElementById('flipCard');
+        
+card.addEventListener('click', function() {
+    this.classList.toggle('flipped');
+});
+
 
 // //############################################
 // // VIDEO PLAYER
