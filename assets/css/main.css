@@ -129,7 +129,7 @@ spline-viewer {
  
 footer {
 	padding: 0.1vh;
-	box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.2);
 	width: 100%;
 	height: fit-content;
 	margin: auto;
@@ -164,7 +164,7 @@ video::-webkit-media-controls-enclosure {
 	position: relative;
 	width: fit-content;
 	display: inline-block;
-	margin: 10px auto 2em auto;
+	margin: 0 auto 32px auto;
 	list-style: none;
 	background-color: black;
 	border-radius: 28.5px;
@@ -226,6 +226,14 @@ video::-webkit-media-controls-enclosure {
 
 @media screen and (max-width: 767px) {
 	.tag-list {
-		margin: 10px 10px 2em 10px;
+		margin: 10px 10px 32px 10px;
+	}
+
+	.container-main {
+		margin-top : 70px;
+	}
+
+	.container-main {
+		margin-top : 340px;
 	}
 }
