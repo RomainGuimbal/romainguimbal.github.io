@@ -42,10 +42,17 @@ html(lang="fr")
                             br
                             |  3D ❤︎
                             br
-                        p
-                            b CONTACTEZ-MOI
-                            br
-                            |  romain.guimbal@proton.me
+
+                .contact-section
+                    h3 CONTACTEZ-MOI
+                    .social-links
+                        a(href="https://www.linkedin.com/in/romain-guimbal-378995147/")
+                            img.social-icon(src='assets/icons/linkedin.svg' alt='LinkedIn icon')
+                        a(href="https://www.youtube.com/@Romain_Guimbal")
+                            img.social-icon(src='assets/icons/youtube.svg' alt='YouTube icon')
+                        a(href="mailto:romain.guimbal@proton.me")
+                            img.social-icon(src='assets/icons/mail.svg' alt='Mail icon')
+
 
 
 
@@ -492,8 +499,8 @@ html(lang="fr")
                     //- .container(style='width:auto')
                     //-     include ./assets/html/skills.pug
                 
-            //- button#backToTop(onclick='topFunction()' title='Go to top')
-            //-     |↑
+            button#backToTop(onclick='topFunction()' title='Go to top')
+                |↑
 
 // Libs
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')

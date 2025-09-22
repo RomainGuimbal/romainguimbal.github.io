@@ -140,6 +140,10 @@ footer .bio-split {
 	margin: auto;
 }
 
+footer p {
+	color : rgba(255, 255, 255, 0.5);
+}
+
 /* @media (max-width:600px) {
 	footer .bio-split {
 		display: inline-block;

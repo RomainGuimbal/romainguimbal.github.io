@@ -54,17 +54,17 @@ header {
 }
 
 .card-back {
-	background: linear-gradient(135deg, #130d82, #2a22ca);
+	background: linear-gradient(135deg, #0c086a, #3b31ff);
 	color: white;
 	font-size: 16px;
 	font-weight: bold;
 	transform: rotateY(180deg);
-	outline: black 1px solid;
+	/* outline: black 1px solid; */
 }
 
 .card-container:hover {
-	transform: scale(1.05);
-	transition: transform 0.3s ease;
+	transform: scale(1.02);
+	transition: transform 0.4s ease;
 }
 
 .icon {
@@ -176,16 +176,17 @@ header #portfolio {
 }
 
 .bio img#profile_picture {
-	height: 120px;
-	width: 120px;
+	height: 150px;
+	width: 150px;
 	object-fit: cover;
 	border-radius: 10000px;
-	margin: 10px auto 0;
+	margin: 25px auto 0;
 	mix-blend-mode: luminosity;
 }
 
 .bio p {
 	margin: 0 auto 10px;
+	padding: 10px;
 }
 
 /* .circle-menu.active {
@@ -226,3 +227,20 @@ header #portfolio {
 	transform: translateX(5px);
 } */
 
+.social-icon {
+	color: "white";
+	width: 25px;
+	height: 25px;
+	padding: 5px;
+}
+
+header h3 {
+	font-weight: bold;
+	margin : 15px auto 0;
+	font-size: 15px;
+}
+
+.contact-section{
+	padding: 10px;
+	margin-top: -10px;
+}
