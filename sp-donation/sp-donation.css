@@ -11,7 +11,7 @@ body {
     overflow-x: hidden;
     background: #151515;
     overflow: hidden;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Arial, sans-serif;
     height: 100%;
     width: 100%;
     color: white;
@@ -903,6 +903,10 @@ img.donate-decoration:nth-of-type(4) {
 }
 
 @media (max-width: 480px) {
+    .main-content {
+        transform: translate(-50%, -50%) scale(0.7) ;
+    }
+
     .links-grid {
         width: 90vw;
         grid-template-columns: repeat(auto-fit, minmax(120px, 3fr));
