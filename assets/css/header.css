@@ -63,10 +63,10 @@ header {
 	/* outline: black 1px solid; */
 }
 
-.card-container:hover {
-	transform: scale(1.02);
+/* .card:hover {
+	transform: scale(1.01);
 	transition: transform 0.4s ease;
-}
+} */
 
 .icon {
 	font-size: 32px;
