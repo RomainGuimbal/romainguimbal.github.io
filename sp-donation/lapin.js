@@ -61,4 +61,4 @@ lapin.addEventListener('touchstart', function(e) {
         showLapinFull();
     }
 });
-lapin.addEventListener('mouseenter', showLapinFull);
+// lapin.addEventListener('mouseenter', showLapinFull);

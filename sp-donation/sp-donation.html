@@ -13,7 +13,7 @@
     <canvas id="shaderCanvas"></canvas>
 
     <div class="main-content">
-        <img class="sunburst2" src="sunburst5-smaller.png">
+        <img class="sunburst2" src="assets/sunburst5-smaller.png">
         <div class="logo-stack">
             <div class="dominus-flex">
                 <span class="dominus dominus-left">DOMINUS</span>
@@ -23,25 +23,27 @@
             <h1 class="title">Surface Psycho</h1>
         </div>
 
+        <!-- Over button -->
         <p class="subtitle">Accelerate the project now</p>
 
         <!-- DONATE BUTTON -->
         <a class="donate-button" href="https://opencollective.com/surfacepsycho#category-CONTRIBUTE" id="centerButton">
-            <img class="donate-decoration" src="svg button ext.svg">
-            <img class="donate-decoration" src="svg button ext.svg">
-            <img class="donate-decoration" src="svg button ext.svg">
-            <img class="donate-decoration" src="svg button ext.svg">
+            <img class="donate-decoration" src="assets/svg button ext.svg">
+            <img class="donate-decoration" src="assets/svg button ext.svg">
+            <img class="donate-decoration" src="assets/svg button ext.svg">
+            <img class="donate-decoration" src="assets/svg button ext.svg">
             <img class="donate-frame">
             <span class="default-text">Accelerate</span>
             <span class="hover-text">Donate</span>
         </a>
 
-        <img class="sunburst1" src="sunburst1-smaller.png">
-        <img class="sunburst3" src="sunburst8-smaller.png">
+        <img class="sunburst1" src="assets/sunburst1-smaller.png">
+        <img class="sunburst3" src="assets/sunburst8-smaller.png">
 
+        <!-- Under button -->
         <div class="underbutton">
             <div id="balance-label" class="progress-text">
-                <span id="balance-amount2">xxxx €</span>
+                <span id="balance-amount2">**** €</span>
                 <span class="progress-total">/ 20 000 €</span>
             </div>
 
@@ -52,7 +54,10 @@
             <!-- Panel Button -->
             <button class="menu-button" id="menuButton">☰</button>
         </div>
-            <!-- Panel -->
+    </div>
+
+    <!-- Panel -->
+    <div class="panel-container-container">
         <div class="panel-container" id="panelContainer">
             <!-- Panel -->
             <div class="panel-content hidden" id="panelContent">
@@ -60,7 +65,7 @@
                     <div class="progress-label">
                         <span>2025 Donation Goal</span>
                         <span>
-                            <span id="balance-amount">xxxx €</span>
+                            <span id="balance-amount">**** €</span>
                             <span class="progress-total"> / 20 000 €</span>
                         </span>
                     </div>
@@ -70,14 +75,14 @@
                 </div>
                 <div class="links-grid">
                     <!-- <a href="https://github.com/RomainGuimbal/SurfacePsycho" class="link-frame">
-                        <img class="link-icon" src="github-mark-white.svg" style="width: 30px; height: 30px">
+                        <img class="link-icon" src="assets/github-mark-white.svg" style="width: 30px; height: 30px">
                         <div class="link-title">Github</div>
                         <div class="link-desc">Add-on Source & Doc</div>
                         <div class="hover-text">Open-source babe 😎</div>
                     </a> -->
 
                     <a href="#" class="link-frame">
-                        <img class="link-icon" src="SB-info.png" style="width: 30px; height: 30px">
+                        <img class="link-icon" src="assets/SB-info.png" style="width: 30px; height: 30px">
                         <div class="link-title">About</div>
                         <div class="link-desc">Donate for what ?</div>
                         <div class="hover-text">For the developement of Blender native NURBS, as well as SP add-on
@@ -86,35 +91,35 @@
                     </a>
 
                     <a href="#" class="link-frame">
-                        <img class="link-icon" src="SB-crown.png" style="width: 30px; height: 30px">
+                        <img class="link-icon" src="assets/SB-crown.png" style="width: 30px; height: 30px">
                         <div class="link-title">Top Donator</div>
                         <div class="link-desc">Sergey Troyanskiy</div>
                         <div class="hover-text">The King gave<br>370€</div>
                     </a>
 
                     <a href="mailto:romain.guimbal@proton.me" class="link-frame" id="contact-frame">
-                        <img class="link-icon" src="SB-contact.png" style="width: 30px; height: 30px">
+                        <img class="link-icon" src="assets/SB-contact.png" style="width: 30px; height: 30px">
                         <div class="link-title">Contact</div>
                         <div class="link-desc">Talk to the manager</div>
                         <div class="hover-text" style="word-break: break-word;">romain.guimbal@proton.me<br><span style="color: #a5a5a5; font-size: 12px; background-color: black; border-radius: 99px;">👆 Click to start a mail</span></div>
                     </a>
 
                     <a href="https://blenderartists.org/t/surfacepsycho-addon-project/1487629" class="link-frame">
-                        <img class="link-icon" src="SB-news.png" style="width: 30px; height: 30px">
+                        <img class="link-icon" src="assets/SB-news.png" style="width: 30px; height: 30px">
                         <div class="link-title">News</div>
                         <div class="link-desc">It moves fast</div>
                         <div class="hover-text">blenderartists.org</div>
                     </a>
 
                     <a href="https://extensions.blender.org/add-ons/surfacepsycho/" class="link-frame">
-                        <img class="link-icon" src="SB-dowload.png" style="width: 30px; height: 30px">
+                        <img class="link-icon" src="assets/SB-download.png" style="width: 30px; height: 30px">
                         <div class="link-title">Download</div>
                         <div class="link-desc">SurfacePsycho Add-on</div>
                         <div class="hover-text">Try it quick, but you are here to donate OKAY?</div>
                     </a>
 
                     <a href="https://discord.gg/MJdxMBM6pm" class="link-frame">
-                        <img class="link-icon" src="Discord_Logo_sans_texte.svg" style="width: 30px; height: 30px">
+                        <img class="link-icon" src="assets/Discord_Logo_sans_texte.svg" style="width: 30px; height: 30px">
                         <div class="link-title">Geometry Nerd&nbsp?</div>
                         <div class="link-desc">Join the Discord</div>
                         <div class="hover-text">Bla bla bla cosine... bla bla... basis matrix.. bla bla</div>
@@ -122,146 +127,18 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 
+
     <!-- Lapin donate image -->
-    <img id="lapin-donate" src="lapin donate.png" alt="Lapin Donate" />
+    <!-- <div id="lapin-container"> -->
+        <!-- <p>text</p> -->
+    <img id="lapin-donate" src="assets/lapin donate.png" alt="Lapin Donate" />
+    <!-- </div> -->
 
     <script src="tunnel-background.js"></script>
     <script src="lapin.js"></script>
-    <script type="module">
-        import { fetchCollectiveBalance } from "./get_project_balance.js";
-        function handleLinkClick(section) {
-            // Add navigation logic here
-            alert(`Navigating to ${section} section`);
-        }
+    <script src="sp-donation.js" type="module" ></script>
 
-        // Animate progress bar on load
-        window.addEventListener('load', () => {
-            const progressFill = document.getElementById('progress-fill');
-            const miniBarFill = document.getElementById('miniBarFill');
-            progressFill.style.width = '0%';
-            miniBarFill.style.width = '0%';
-        });
-
-        fetchCollectiveBalance('surfacepsycho').then(result => {
-            if (result) {
-                // Use the formatted amount for display, raw amount for math
-                const amount = result.amount;
-                const formattedAmount = result.formattedAmount;
-                const percent = Math.min((amount / 20000) * 100, 100);
-                document.getElementById('balance-amount').textContent = `${formattedAmount} €`;
-                document.getElementById('balance-label').innerHTML =
-                    `<span id='balance-amount'>${formattedAmount} €</span><span class="progress-total">/ 20 000 €</span>`;
-                const progressFill = document.getElementById('progress-fill');
-                const miniBarFill = document.getElementById('miniBarFill');
-                setTimeout(() => {
-                    progressFill.style.transition = 'width 2s ease-out';
-                    progressFill.style.width = percent + '%';
-                    miniBarFill.style.transition = 'width 2s ease-out';
-                    miniBarFill.style.width = percent + '%';
-                }, 500);
-            }
-        });
-    </script>
-    <script>
-        // Touch hover emulation for mobile devices
-        function enableTouchHover(selector) {
-            document.querySelectorAll(selector).forEach(function (el) {
-                // Add .touch-hover on touchstart (finger down)
-                el.addEventListener('touchstart', function (e) {
-                    document.querySelectorAll(selector).forEach(function (other) {
-                        if (other !== el) other.classList.remove('touch-hover');
-                    });
-                    el.classList.add('touch-hover');
-                });
-                // Remove .touch-hover on touchend (finger up)
-                el.addEventListener('touchend', function (e) {
-                    el.classList.remove('touch-hover');
-                });
-                // Remove .touch-hover if finger leaves the element
-                el.addEventListener('touchcancel', function (e) {
-                    el.classList.remove('touch-hover');
-                });
-            });
-            // Remove .touch-hover from all when touching anywhere else
-            document.addEventListener('touchstart', function (e) {
-                document.querySelectorAll(selector).forEach(function (el) {
-                    if (!el.contains(e.target)) {
-                        el.classList.remove('touch-hover');
-                    }
-                });
-            });
-        }
-        enableTouchHover('.donate-button');
-        enableTouchHover('.link-frame');
-    </script>
-    <script>
-        // Expanding Panel
-        const menuButton = document.getElementById('menuButton');
-        const panelContainer = document.getElementById('panelContainer');
-        const panelContent = document.getElementById('panelContent');
-
-        let isMenuOpen = false;
-
-        function openMenu() {
-            panelContent.classList.remove('hidden');
-            panelContainer.classList.add('expand-width');
-            setTimeout(() => {
-                panelContainer.classList.add('expand-height');
-                setTimeout(() => {
-                    isMenuOpen = true;
-                }, 700);
-            }, 300);
-
-        }
-
-        function closeMenu() {
-            panelContainer.classList.remove('expand-height');
-            panelContainer.classList.add('retract-height');
-            setTimeout(() => {
-                panelContainer.classList.remove('expand-width', 'retract-height');
-                panelContainer.classList.add('retract-width');
-                setTimeout(() => {
-                    panelContainer.classList.remove('retract-width');
-                    panelContent.classList.add('hidden');
-                    isMenuOpen = false;
-                }, 300);
-            }, 700);
-        }
-
-        function toggleMenu() {
-            if (!isMenuOpen) {
-                openMenu();
-            } else {
-                closeMenu();
-            }
-        }
-
-        function handleScroll(event) {
-            if (event.deltaY > 0 && !isMenuOpen) {
-                openMenu();
-            } else if (event.deltaY < 0 && isMenuOpen) {
-                closeMenu();
-            }
-        }
-
-        // Event listeners
-        menuButton.addEventListener('click', toggleMenu);
-        window.addEventListener('wheel', handleScroll, false);
-
-        // Add click outside listener
-        document.addEventListener('click', function(event) {
-            if (isMenuOpen && 
-                !panelContainer.contains(event.target) && 
-                !menuButton.contains(event.target)) {
-                closeMenu();
-            }
-        });
-    </script>
-
-    </body>
-
+</body>
 </html>

@@ -66,7 +66,7 @@ canvas {
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1px;
-    background: url('svg buttons bg.svg') center/contain no-repeat;
+    background: url('assets/svg buttons bg.svg') center/contain no-repeat;
     position: absolute;
     display: flex;
     align-items: center;
@@ -74,15 +74,15 @@ canvas {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fe0957;
+    color: #ff2268;
     text-align: center;
     transition: all 0.2s ease;
     z-index: 10;
     width: 300px;
     height: auto;
 
-    -webkit-filter: drop-shadow(0px 0px 20px rgba(255, 68, 99, 0.8));
-    filter: drop-shadow(0px 0px 20px rgba(255, 68, 99, 0.8));
+    -webkit-filter: drop-shadow(0px 0px 20px rgba(255, 81, 154, 0.8));
+    filter: drop-shadow(0px 0px 20px rgba(255, 81, 154, 0.8));
 }
 
 .donate-button:hover {
@@ -315,8 +315,8 @@ img.donate-decoration:nth-of-type(4) {
     ;
     background-size: 500% 100%;
     animation: gradientShift 10s ease-in-out infinite;
-    -webkit-mask: url('svg button.svg') center/contain no-repeat;
-    mask: url('svg button.svg') center/contain no-repeat;
+    -webkit-mask: url('assets/svg button.svg') center/contain no-repeat;
+    mask: url('assets/svg button.svg') center/contain no-repeat;
 }
 
 
@@ -569,8 +569,22 @@ img.donate-decoration:nth-of-type(4) {
     opacity: 1.0;
 }
 
+#lapin-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    animation: oscillation 6s linear infinite;
+}
+
+@keyframes oscillation{
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(0, 100px); }
+    100% { transform: translate(0, 0); }
+}
+
 #lapin-donate {
     image-rendering: pixelated;
+    position: relative;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -609,13 +623,13 @@ img.donate-decoration:nth-of-type(4) {
 }
 
 #contact-frame:hover {
-    background-image: url('my eye small.jpg') !important;
+    background-image: url('assets/my eye small.jpg') !important;
     background-color: rgba(0, 12, 43, 0.4) !important;
     background-blend-mode: darken !important;
 }
 
 #contact-frame.touch-hover {
-    background-image: url('my eye small.jpg') !important;
+    background-image: url('assets/my eye small.jpg') !important;
     background-color: rgba(0, 12, 43, 0.4) !important;
     background-blend-mode: darken !important;
 }
@@ -636,9 +650,18 @@ img.donate-decoration:nth-of-type(4) {
     width: 100%;
 }
 
+.panel-container-container{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transform: translate(calc(-50% + 50vw), -10px);
+    z-index: 2000;
+    width: fit-content;
+    height: fit-content;
+}
 
 .panel-container {
-    margin: 240px auto 0;
+    margin: 0 auto 0;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     width: fit-content;
@@ -669,7 +692,7 @@ img.donate-decoration:nth-of-type(4) {
 
     to {
         width: fit-content;
-        height: 266px;
+        height: 264px;
     }
 }
 
@@ -690,7 +713,7 @@ img.donate-decoration:nth-of-type(4) {
 @keyframes retractHeight {
     from {
         width: 560px;
-        height: 266px;
+        height: 264px;
     }
 
     to {
@@ -915,7 +938,7 @@ img.donate-decoration:nth-of-type(4) {
 
         to {
             width: fit-content;
-            height: 517px;
+            height: 380px;
         }
     }
 
@@ -935,7 +958,7 @@ img.donate-decoration:nth-of-type(4) {
     @keyframes retractHeight {
         from {
             width: 560px;
-            height: 517px;
+            height: 380px;
         }
 
         to {
