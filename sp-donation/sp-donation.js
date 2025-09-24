@@ -104,7 +104,14 @@ function toggleMenu() {
     }
 }
 
+let isScrolling = false;
+
 function handleScroll(event) {
+    if (isScrolling) return;
+    
+    isScrolling = true;
+    setTimeout(() => { isScrolling = false; }, 1000); // Cooldown period
+
     if (event.deltaY > 0 && !isMenuOpen) {
         openMenu();
     } else if (event.deltaY < 0 && isMenuOpen) {
