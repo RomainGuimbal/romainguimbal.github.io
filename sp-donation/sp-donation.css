@@ -311,7 +311,7 @@ img.donate-decoration:nth-of-type(4) {
     top: 50%;
     left: 50%;
 
-    background: linear-gradient(90deg, #000, #453e4c, #000, #414348);
+    background: linear-gradient(90deg, #ffffff, #453e4c, #ffffff, #414348);
     ;
     background-size: 500% 100%;
     animation: gradientShift 10s ease-in-out infinite;
