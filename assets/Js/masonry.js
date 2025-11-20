@@ -22,9 +22,20 @@ function refreshMasonryLayout() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const grid = document.querySelector('.masonry-grid');
+
+    // console.info('masonry: DOMContentLoaded');
+
+    if (!grid) {
+        console.error('masonry: .masonry-grid element not found — aborting Masonry init');
+        return;
+    }
+
+    // Use imagesLoaded instance so we can trace progress and final events
+    const imgLoad = imagesLoaded(grid);
     
-    // Initialize Masonry only after ALL images are loaded
-    imagesLoaded(grid, function() {
+    imgLoad.on('always', function() {
+        // console.info('masonry: imagesLoaded finished (always) — initializing Masonry');
+
         msnry = new Masonry(grid, {
             itemSelector: '.grid-item',
             columnWidth: getColumnWidth(),
@@ -32,6 +43,20 @@ document.addEventListener('DOMContentLoaded', function() {
             fitWidth: true,
             transitionDuration: '0.3s'
         });
+
+        // Force an initial layout and log when layout completes
+        if (msnry) {
+            msnry.on('layoutComplete', function() {
+                // console.info('masonry: layoutComplete — revealing grid');
+                grid.classList.add('masonry-loaded');
+            });
+            // call layout explicitly to kick things off
+            try {
+                msnry.layout();
+            } catch (e) {
+                console.error('masonry: error calling msnry.layout():', e);
+            }
+        }
 
         // Add layout refresh after each individual image loads
         grid.querySelectorAll('img').forEach(img => {

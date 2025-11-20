@@ -8,7 +8,7 @@ $('.image-item').magnificPopup({
     },
     zoom: {
         enabled: true,
-        duration: 0 // don't foget to change the duration also in CSS
+        duration: 0 // change duration also in CSS
     },
     gallery: {
         enabled: false,

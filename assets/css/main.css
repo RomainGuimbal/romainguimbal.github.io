@@ -267,6 +267,17 @@ img.to-sp-decoration {
 	height : auto;
 }
 
+/* Masonry grid: keep hidden until layout is ready to avoid FOUC (flash of unstyled content) */
+.masonry-grid {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+.masonry-grid.masonry-loaded {
+	opacity: 1;
+	visibility: visible;
+}
+
 a.to-sp-portal .content div{
 	display: grid;
 	width: 0;
@@ -278,4 +289,4 @@ a.to-sp-portal .content div p,
 a.to-sp-portal .content div img{
 	position: absolute;
 	transform: translate(-50%, -50%);
-} */
+}
