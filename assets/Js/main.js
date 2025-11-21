@@ -187,6 +187,15 @@ card.addEventListener('click', function() {
     this.classList.toggle('flipped');
 });
 
+function autoflipCard() {
+    card.classList.toggle('flipped');
+    setTimeout(() => {
+        card.classList.toggle('flipped');
+    }, 800);
+
+}
+setInterval(autoflipCard, 15000);
+setTimeout(autoflipCard, 2000);
 
 // //############################################
 // // VIDEO PLAYER
