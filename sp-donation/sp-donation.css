@@ -519,6 +519,7 @@ img.donate-decoration:nth-of-type(4) {
     color: white;
     font-size: 27px;
     transition: all 0.3s ease;
+    filter: saturate(50%);
 }
 
 .link-title {
@@ -818,6 +819,7 @@ img.donate-decoration:nth-of-type(4) {
     transform: translate(-50%, -50%);
     width: 640px;
     pointer-events: none;
+    filter: saturate(50%);
 }
 
 .sunburst2 {
@@ -829,6 +831,7 @@ img.donate-decoration:nth-of-type(4) {
     pointer-events: none;
     /* -webkit-filter: drop-shadow(0px 0px 12px rgb(255, 221, 97)); */
     /* filter: drop-shadow(0px 0px 12px rgb(255, 221, 97)); */
+    filter: saturate(50%);
 }
 
 .sunburst3 {
@@ -838,6 +841,7 @@ img.donate-decoration:nth-of-type(4) {
     transform: translate(-50%, -50%);
     width: 110px;
     pointer-events: none;
+    filter: saturate(50%);
 }
 
 
