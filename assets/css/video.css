@@ -94,7 +94,7 @@ video {
 .video-container.playing .play-pause-btn {
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.5s ease; /* Fade out after 1 second */
+    transition: opacity 0.3s ease;
 }
 
 /* Show button on hover when playing */
