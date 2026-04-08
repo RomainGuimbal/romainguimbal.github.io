@@ -1,9 +1,10 @@
 /*-----------------------------------------------------
 # color #000
 ------------------------------------------------------*/
-html, body{
-	color : #e6e6e7; /* font color /!\ ? */
-	/* background: repeating-linear-gradient(
+html,
+body {
+  color: #e6e6e7; /* font color /!\ ? */
+  /* background: repeating-linear-gradient(
 	0deg,
 	#1f2937,
 	#1f2937 19px,
@@ -11,7 +12,7 @@ html, body{
 	#1a2330 20px
 	); */
 
-	/* White Theme
+  /* White Theme
 	background: repeating-linear-gradient(
 	0deg,
 	#ffffff,
@@ -20,27 +21,24 @@ html, body{
 	#f3f4f8 20px
 	); */
 
-	/* Dots */
-	background-color: #1a2330;
-	background-image: radial-gradient(#1c3047 0.08em, transparent 0);
-	background-size: 30px 30px;
+  /* Dots */
+  background-color: #1a2330;
+  background-image: radial-gradient(#1c3047 0.08em, transparent 0);
+  background-size: 30px 30px;
 }
 
-a:link{
-	color : #e6e6e7;
+a:link {
+  color: #e6e6e7;
 }
-
-
 
 .contact-info a,
 .hero .social-links li a,
-.featured-works .item{
-	color: #000;
+.featured-works .item {
+  color: #000;
 }
 
-
-header h1{
-	color:#1f2937;
+header h1 {
+  color: #1f2937;
 }
 
 /*-----------------------------------------------------
@@ -48,20 +46,20 @@ header h1{
 ------------------------------------------------------*/
 
 .open-nav,
-.contact-form input[type=submit],
+.contact-form input[type="submit"],
 .btn {
-	background: #000;
+  background: #000;
 }
 
 .aside-navigation-overlay {
-	background: rgba(0, 0, 0, .7)
+  background: rgba(0, 0, 0, 0.7);
 }
 
 /*-----------------------------------------------------
 # color #222
 ------------------------------------------------------*/
 .single-project .info {
-	color: #222;
+  color: #222;
 }
 
 /*-----------------------------------------------------
@@ -69,7 +67,7 @@ header h1{
 ------------------------------------------------------*/
 
 .contact-form textarea::-webkit-scrollbar-thumb {
-	background: #333;
+  background: #333;
 }
 
 /*-----------------------------------------------------
@@ -77,7 +75,7 @@ header h1{
 ------------------------------------------------------*/
 
 .blog-post .entry-date {
-	color: #444;
+  color: #444;
 }
 
 /*-----------------------------------------------------
@@ -87,7 +85,7 @@ header h1{
 .portfolio-item-category,
 .team-member .overlay .info h3,
 .single-project .intro ul li {
-	color: #666;
+  color: #666;
 }
 
 /*-----------------------------------------------------
@@ -95,7 +93,7 @@ header h1{
 ------------------------------------------------------*/
 .share-links li a,
 .contact-form textarea::-webkit-scrollbar-track {
-	background: #eee;
+  background: #eee;
 }
 
 /*-----------------------------------------------------
@@ -105,109 +103,127 @@ header h1{
 .contact-form input,
 .contact-form textarea,
 .contact-info {
-	background: #f8f8f8;
+  background: #f8f8f8;
 }
 
 /*-----------------------------------------------------
 # color #fff
 ------------------------------------------------------*/
 .share-links li a:hover,
-.contact-form input[type=submit],
+.contact-form input[type="submit"],
 .btn {
-	color: #fff;
+  color: #fff;
 }
-
 
 /*-----------------------------------------------------
 # color #ff6f61
 ------------------------------------------------------*/
 
-
 main h2 {
-	background-image: linear-gradient(to right, #403dff,#403dff,#403dff, rgb(160, 168, 255), rgb(160, 168, 255));
-	/* color: #403dff; */
-	-webkit-background-clip: text;
-	background-clip: text;
-	color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #403dff,
+    #403dff,
+    #403dff,
+    rgb(160, 168, 255),
+    rgb(160, 168, 255)
+  );
+  /* color: #403dff; */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* header h1:hover{
 	color:#403dff;
 } */
 
-.item .badge-backg{
-    background-color: rgb(21, 25, 49);
+.item .badge-backg {
+  background-color: rgb(21, 25, 49);
 }
 
-.project .badge-backg{
-    background-color: rgba(55, 57, 75, 0);
-	/* opacity: 20%; */
-	transition: all 0.5s ease-in-out;
-    transition-delay:0.5s;
+.project .badge-backg {
+  background-color: rgba(55, 57, 75, 0);
+  /* opacity: 20%; */
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
 }
 
-.project .badge-backg:hover{
-	/* opacity: 80%; */
-	background-color: rgba(55, 57, 75, 0.842);
-	box-shadow: 0 0 0.5em #2925ff7e;
-	transition: all 0s linear;
+.project .badge-backg:hover {
+  /* opacity: 80%; */
+  background-color: rgba(55, 57, 75, 0.842);
+  box-shadow: 0 0 0.5em #2925ff7e;
+  transition: all 0s linear;
 }
 
-.skill-title{
-	color: rgb(160, 141, 255);
+.skill-title {
+  color: rgb(160, 141, 255);
 }
-
 
 /*-----------------------------------------------------
 # background #ff6f61
 ------------------------------------------------------*/
 
-.title-line{
-	/* background: #403dff; */
-	background-image: linear-gradient(to right, #403dff,#403dff, rgb(160, 168, 255));
+.title-line {
+  /* background: #403dff; */
+  background-image: linear-gradient(
+    to right,
+    #403dff,
+    #403dff,
+    rgb(160, 168, 255)
+  );
 }
 
-
-
-
-footer{
-	background-color: #1a2330;
+footer {
+  background-color: #1a2330;
 }
-
 
 /*-----------------------------------------------------
-# tags
+# projects
 ------------------------------------------------------*/
-.tag-item#all{
-	--col: #6b6ab4;
+.grid-item {
+  --bg-color: #ededed;
+  --half-color: color-mix(in srgb, var(--bg-color) 50%, white);
 }
-.tag-item#product{
-	--col: #4ba19d;
+
+#sword {
+  --bg-color: #4d517d;
 }
-.tag-item#graphic{
-	--col: #7e7ead;
+
+#porsche {
+  --bg-color: rgb(63, 70, 105);
+  /* #838b96; */
 }
-/* .tag-item#engineering{
-	--col: #96679b;
-} */
-.tag-item#rendering{
-	--col: #707fa4;
+
+#agrume {
+  --bg-color: #FFAA5B;
+  /* --half-color: color-mix(in srgb, var(--bg-color) 50%, white); */
 }
-.tag-item#programming{
-	--col: #81437c;
+
+#archi-gene {
+  --bg-color: rgb(128, 189, 109);
 }
-.tag-item#vfx{
-	--col: #6d4a8e;
+
+#surfacepsycho {
+  --bg-color: rgb(38, 156, 174);
 }
-.tag-item#modeling{
-	--col: #514c8c;
+
+#sp-logo {
+  --bg-color: #ff0290;
 }
-.tag-item#animation{
-	--col: #6b91a9;
+
+#verriere {
+  --bg-color: #533ebf;
 }
-.tag-item#procedural{
-	--col: #4ba18c;
+
+#foulard {
+  --bg-color: #437563;
 }
-.tag-item#painting{
-	--col: #706fa0;
+
+#robe-doree {
+  --bg-color: #eab775;
+}
+
+#toiture {
+  --bg-color: #ffffff;
 }

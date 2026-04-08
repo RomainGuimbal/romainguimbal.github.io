@@ -4,25 +4,25 @@
 }
 
 .grid-item {
-    width: 290px; /* To rm with grid sizer */
-    margin: 0 15px 30px 15px;
-    overflow: hidden;
-    transition: 0.2s;
+  width: 290px; /* To rm with grid sizer */
+  margin: 0 15px 30px 15px;
+  overflow: hidden;
+  transition: 0.2s;
 }
 
 /* Add responsive breakpoints */
 @media screen and (max-width: 767px) {
-    .grid-item {
-        width: calc(50% - 30px); /* Two columns, accounting for margins */
-        margin: 0 10px 20px 10px; /* Slightly reduced margins on mobile */
-    }
+  .grid-item {
+    width: calc(50% - 30px); /* Two columns, accounting for margins */
+    margin: 0 10px 20px 10px; /* Slightly reduced margins on mobile */
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .grid-item {
-        width: calc(50% - 20px); /* Keep two columns but reduce margins further */
-        margin: 0 5px 15px 5px;
-    }
+  .grid-item {
+    width: calc(50% - 20px); /* Keep two columns but reduce margins further */
+    margin: 0 5px 15px 5px;
+  }
 }
 
 /* .grid-sizer,
@@ -48,71 +48,73 @@
 .grid-item video,
 .grid-item div#spline-container,
 .grid-item .duo {
-	width: 100%;
-	height: auto;
-	display: block;
-    box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
-    border-radius: 3px;
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  transition: 1s ease;
 }
 
+/* .grid-item img:hover,
+.grid-item video:hover,
+.grid-item div#spline-container:hover,
+.grid-item .duo:hover {
+  filter: grayscale(0%);
+} */
+
 .grid-item .content {
-	padding: 10px;
+  padding: 10px;
 }
 
 .grid-item figcaption,
 .grid-item .multi-image figcaption {
-    margin-top: 5px;
-	height: auto;
-	text-align: left;
-	/* white-space: nowrap; */
-	color: rgb(124, 127, 161);
-    font-size: 0.8em;
-    width: 100%;
-    display: block;
+  margin-top: 5px;
+  height: auto;
+  text-align: left;
+  /* white-space: nowrap; */
+  color: rgb(124, 127, 161);
+  font-size: 0.8em;
+  width: 100%;
+  display: block;
 }
-
 
 .grid-item.project {
-    outline: var(--bg-color-light) 2px solid;
-    outline-offset: 4px;
-    border-radius : 3px;
-    /* Ensure child media elements inherit border-radius */
-    aspect-ratio: auto; /* Allow JS to set aspect-ratio inline */
-}
-.grid-item.project img,
-.grid-item.project video {
-    border-radius: 3px;
-    /* Inherit outline from parent, but browsers don't support outline on media, so border-radius only */
+  outline: var(--bg-color) 2px solid;
+  outline-offset: 4px;
+  border-radius: 3px;
+  /* Ensure child media elements inherit border-radius */
+  aspect-ratio: auto; /* Allow JS to set aspect-ratio inline */
 }
 
 .grid-item .image-dots {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 0.4em;
-    margin: 4px 0 0 0;
-    background-color: var(--bg-color-light);
-    border-radius: 1000px;
-    padding: 2px;
-    width: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.4em;
+  margin: 4px 0 0 0;
+  background-color: var(--bg-color);
+  border-radius: 1000px;
+  padding: 2px;
+  width: fit-content;
 }
 
 .grid-item .image-dot {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: #0000006b;
-    display: inline-block;
-    cursor: pointer;
-    transition: background 0.2s;
-    margin: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #0000006b;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 2px;
 }
 
 .grid-item .image-dot.active {
-    background: #000000;
-    margin: 0px;
-    width: 8px;
-    height: 8px;
+  background: #000000;
+  margin: 0px;
+  width: 8px;
+  height: 8px;
 }
 
 .grid-item .image-dot::after {
@@ -123,36 +125,36 @@
 }
 
 .grid-item .multi-image {
-    position: relative;
-    width: 100%;
-    display: block;
-    aspect-ratio: 1 / 1;
+  position: relative;
+  width: 100%;
+  display: block;
+  aspect-ratio: 1 / 1;
 }
 
 .grid-item .multi-image .image-link,
 .grid-item .multi-image .video-container,
 .grid-item .multi-image .note-card {
-    width: 100%;
-    height: 100%;
-    display: block;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    transition: opacity 0.4s;
-    z-index: 1;
-    position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 1;
+  position: absolute;
 }
 
 .grid-item .multi-image .image-link.active,
 .grid-item .multi-image .video-container.active,
 .grid-item .multi-image .note-card.active {
-    opacity: 1;
-    z-index: 2;
-    position: static; /* Let the active item define the container height */
+  opacity: 1;
+  z-index: 2;
+  position: static; /* Let the active item define the container height */
 }
 
 .grid-item .multi-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
