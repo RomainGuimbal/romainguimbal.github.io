@@ -38,6 +38,9 @@ class VideoPlayer {
         this.dataSrc = this.video.dataset.src;
         this.dataMime = this.video.dataset.type || 'video/mp4';
 
+        // Try to display a pre-generated static thumbnail immediately (no video load needed)
+        this.loadStaticThumbnail();
+
         // Begin loading when the container nears the viewport
         this.observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -49,6 +52,26 @@ class VideoPlayer {
         }, { rootMargin: '400px 0px' });
 
         this.observer.observe(this.container);
+    }
+
+    // ── Static thumbnail ──────────────────────────────────────────────────────
+
+    loadStaticThumbnail() {
+        if (!this.thumbnail || !this.dataSrc) return;
+
+        // Derive path: assets/video/Foo.mp4 → assets/img/thumbnails/thumbnail_Foo.jpg
+        const stem = this.dataSrc.split('/').pop().replace(/\.[^.]+$/, '');
+        const thumbSrc = `assets/img/thumbnails/thumbnail_${stem}.jpg`;
+
+        const img = new Image();
+        img.onload = () => {
+            if (this.thumbnailCaptured) return; // canvas already beat us
+            this.thumbnail.appendChild(img);
+            this.thumbnail.classList.remove('loading');
+            this.thumbnailCaptured = true;
+        };
+        // On error: silently fall back to canvas capture when the video loads
+        img.src = thumbSrc;
     }
 
     loadSource() {
@@ -63,9 +86,11 @@ class VideoPlayer {
         this.video.preload = 'metadata';
         this.video.load();
 
-        // Seek to first frame once metadata is ready, then capture thumbnail
+        // Only seek to first frame if we don't already have a static thumbnail
         this.video.addEventListener('loadedmetadata', () => {
-            this.video.currentTime = 0.001;
+            if (!this.thumbnailCaptured) {
+                this.video.currentTime = 0.001;
+            }
         }, { once: true });
 
         this.video.addEventListener('seeked', () => {

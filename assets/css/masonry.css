@@ -66,14 +66,14 @@
   height: auto;
   text-align: left;
   /* white-space: nowrap; */
-  color: rgb(124, 127, 161);
+  color: var(--project-caption-color);
   font-size: 0.8em;
   width: 100%;
   display: block;
 }
 
 .grid-item.project {
-  outline: var(--bg-color) 2px solid;
+  outline: var(--project-color) 2px solid;
   outline-offset: 4px;
   border-radius: 3px;
   /* Ensure child media elements inherit border-radius */
@@ -86,7 +86,7 @@
   justify-content: center;
   gap: 0.4em;
   margin: 4px 0 0 0;
-  background-color: var(--bg-color);
+  background-color: var(--project-color);
   border-radius: 1000px;
   padding: 2px;
   width: fit-content;

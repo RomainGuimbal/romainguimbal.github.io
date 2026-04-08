@@ -126,11 +126,12 @@ spline-viewer {
   filter: grayscale(0%);
 }
 
-.media-wrap::after {
+.media-wrap::after,
+.video-thumbnail::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var(--bg-color);
+  background-color: var(--project-color);
   mix-blend-mode: overlay;
   pointer-events: none;
   transition: 0.3s ease;

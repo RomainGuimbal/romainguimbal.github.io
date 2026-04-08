@@ -44,7 +44,6 @@ video {
     width: 100%;
     height: auto;
     display: block;
-    aspect-ratio: 1 / 1;
 }
 
 .play-pause-btn {
@@ -131,7 +130,7 @@ video {
     z-index: 2;
     overflow: hidden;
     pointer-events: none;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.3s ease;
 }
 
 .video-thumbnail img {
