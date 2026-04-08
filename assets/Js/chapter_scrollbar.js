@@ -31,6 +31,18 @@ function init() {
         container.appendChild(div);
     });
 
+    // Throttle function to limit expensive layout calculations
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            if (!inThrottle) {
+                func.apply(this, arguments);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    }
+
     // Update position function
     function updatePosition() {
         const chapters = document.querySelectorAll('.numero');
@@ -56,9 +68,12 @@ function init() {
         });
     }
 
+    // Throttle position updates to 150ms intervals (prevent jank from getBoundingClientRect)
+    const throttledUpdatePosition = throttle(updatePosition, 150);
+
     // Event listeners
-    window.addEventListener('scroll', updatePosition);
-    window.addEventListener('resize', updatePosition);
+    window.addEventListener('scroll', throttledUpdatePosition);
+    window.addEventListener('resize', throttledUpdatePosition);
     updatePosition();
 }
 

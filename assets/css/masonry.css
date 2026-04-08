@@ -56,13 +56,6 @@
   transition: 1s ease;
 }
 
-/* .grid-item img:hover,
-.grid-item video:hover,
-.grid-item div#spline-container:hover,
-.grid-item .duo:hover {
-  filter: grayscale(0%);
-} */
-
 .grid-item .content {
   padding: 10px;
 }
@@ -131,8 +124,7 @@
   aspect-ratio: 1 / 1;
 }
 
-.grid-item .multi-image .image-link,
-.grid-item .multi-image .video-container,
+.grid-item .multi-image .media-wrap,
 .grid-item .multi-image .note-card {
   width: 100%;
   height: 100%;
@@ -145,8 +137,7 @@
   position: absolute;
 }
 
-.grid-item .multi-image .image-link.active,
-.grid-item .multi-image .video-container.active,
+.grid-item .multi-image .media-wrap.active,
 .grid-item .multi-image .note-card.active {
   opacity: 1;
   z-index: 2;

@@ -44,6 +44,7 @@ video {
     width: 100%;
     height: auto;
     display: block;
+    aspect-ratio: 1 / 1;
 }
 
 .play-pause-btn {

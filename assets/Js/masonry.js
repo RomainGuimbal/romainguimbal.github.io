@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const imgLoad = imagesLoaded(grid);
     
     imgLoad.on('always', function() {
-        // console.info('masonry: imagesLoaded finished (always) — initializing Masonry');
+        console.info('masonry: imagesLoaded finished — initializing Masonry');
 
         msnry = new Masonry(grid, {
             itemSelector: '.grid-item',
@@ -46,13 +46,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Force an initial layout and log when layout completes
         if (msnry) {
-            msnry.on('layoutComplete', function() {
-                // console.info('masonry: layoutComplete — revealing grid');
+            msnry.on('layoutComplete', function(items) {
+                console.info(`masonry: layoutComplete — ${items.length} items laid out`);
+
+                // Log any items with zero or near-zero height (likely culprits)
+                items.forEach(function(item) {
+                    const h = item.element.getBoundingClientRect().height;
+                    if (h < 10) {
+                        console.warn('masonry: zero-height grid-item detected:', item.element, 'height =', h);
+                    }
+                });
+
                 grid.classList.add('masonry-loaded');
                 const preloader = document.getElementById('masonry-preloader');
                 if (preloader) preloader.classList.add('hidden');
             });
-            // call layout explicitly to kick things off
+
             try {
                 msnry.layout();
             } catch (e) {
@@ -64,6 +73,30 @@ document.addEventListener('DOMContentLoaded', function() {
         grid.querySelectorAll('img').forEach(img => {
             img.addEventListener('load', refreshMasonryLayout);
         });
+
+        // Watch video elements — they start with no src so the browser
+        // measures them asynchronously after aspect-ratio CSS kicks in.
+        // Re-trigger layout whenever a video element is resized.
+        if (typeof ResizeObserver !== 'undefined') {
+            const videoObserver = new ResizeObserver(function(entries) {
+                let needsLayout = false;
+                entries.forEach(function(entry) {
+                    if (entry.contentRect.height > 0) {
+                        needsLayout = true;
+                        console.info('masonry: video resized to', entry.contentRect.width.toFixed(0), 'x', entry.contentRect.height.toFixed(0), '— scheduling relayout');
+                    }
+                });
+                if (needsLayout) refreshMasonryLayout();
+            });
+
+            grid.querySelectorAll('.video-container video').forEach(function(video) {
+                videoObserver.observe(video);
+            });
+        } else {
+            // Fallback: re-layout after a short delay to let the browser paint
+            setTimeout(refreshMasonryLayout, 200);
+            setTimeout(refreshMasonryLayout, 600);
+        }
     });
     
     // Multi-image logic for .grid-item.project
@@ -74,8 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get all image links, video containers, and note cards
             const imageLinks = Array.from(multiImage.children).filter(child =>
-                (child.classList.contains('image-link') || 
-                child.classList.contains('video-container') ||
+                (child.classList.contains('media-wrap') || 
                 child.classList.contains('note-card'))
             );
 
@@ -138,7 +170,7 @@ function updateActiveImage(imageLinks, dots, idx) {
 }
 
 function update_image_and_dots_from_nav_arrow(multiImage, arrowBtn) {
-    const $links = $(multiImage).find('.image-link, .video-container, .note-card');
+    const $links = $(multiImage).find('.media-wrap, .note-card');
     const $active = $links.filter('.active');
     const idx = $links.index($active);
     const dots = $(multiImage).closest('.grid-item').find('.image-dot');
@@ -153,7 +185,7 @@ function update_image_and_dots_from_nav_arrow(multiImage, arrowBtn) {
 }
 
 function add_or_remove_nav_arrows(multiImage) {
-    const $links = $(multiImage).find('.image-link, .video-container, .note-card');
+    const $links = $(multiImage).find('.media-wrap, .note-card');
     const $active = $links.filter('.active');
     const idx = $links.index($active);
     if (idx > 0 && $(multiImage).find('.nav-arrow.prev').length === 0) {

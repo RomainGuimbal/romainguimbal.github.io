@@ -74,7 +74,7 @@ $(function() {
             let endX = e.originalEvent.changedTouches[0].clientX;
             let dx = endX - startX;
             if (Math.abs(dx) > threshold) {
-                let $links = $multiImage.find('.image-link, .video-container, .note-card');
+                let $links = $multiImage.find('.media-wrap, .note-card');
                 let $active = $links.filter('.active');
                 let idx = $links.index($active);
                 if (dx < 0 && idx < $links.length - 1) {
