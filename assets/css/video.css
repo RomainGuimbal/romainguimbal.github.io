@@ -1,7 +1,7 @@
 .video-container {
     overflow: hidden;
-    transition: all 0.5s ease;
     z-index: 1;
+    position: relative;
 }
 
 .video-container.fullscreen {
@@ -63,6 +63,7 @@ video {
     justify-content: center;
     transition: all 0.3s ease;
     background: transparent;
+    z-index: 3;
 }
 
 .play-pause-btn::before{
@@ -119,4 +120,32 @@ video {
     width: 16px;
     height: 24px;
     background: linear-gradient(to right, white 0%, white 35%, transparent 35%, transparent 65%, white 65%, white 100%);
+}
+
+/* ── Video thumbnail overlay ─────────────────────────────────────────────── */
+
+.video-thumbnail {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Gradient placeholder shown before the frame is captured */
+.video-thumbnail.loading {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* Fade out once the video has started playing */
+.video-thumbnail.hidden {
+    opacity: 0;
 }

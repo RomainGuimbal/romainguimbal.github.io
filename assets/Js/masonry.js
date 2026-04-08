@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
             msnry.on('layoutComplete', function() {
                 // console.info('masonry: layoutComplete — revealing grid');
                 grid.classList.add('masonry-loaded');
+                const preloader = document.getElementById('masonry-preloader');
+                if (preloader) preloader.classList.add('hidden');
             });
             // call layout explicitly to kick things off
             try {
