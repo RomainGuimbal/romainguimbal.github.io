@@ -119,25 +119,27 @@ spline-viewer {
 .media-wrap video {
   filter: grayscale(100%);
   transition: filter 0.5s ease;
+  mix-blend-mode: luminosity;
 }
 
 .media-wrap:hover img,
 .media-wrap:hover video {
   filter: grayscale(0%);
+  mix-blend-mode: normal;
 }
 
-.media-wrap::after,
-.video-thumbnail::after {
+.media-wrap::before,
+.video-thumbnail::before {
   content: "";
   position: absolute;
   inset: 0;
   background-color: var(--project-color);
-  mix-blend-mode: overlay;
+  /* mix-blend-mode: overlay; */
   pointer-events: none;
   transition: 0.3s ease;
 }
 
-.media-wrap:hover::after {
+.media-wrap:hover::before {
   background-color: transparent;
 }
 
