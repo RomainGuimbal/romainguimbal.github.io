@@ -49,10 +49,10 @@ html(lang="fr")
                     .social-links
                         a(href="https://www.linkedin.com/in/romain-guimbal-378995147/")
                             img.social-icon(src='assets/icons/linkedin.svg' alt='LinkedIn icon')
-                        a(href="https://www.youtube.com/@Romain_Guimbal")
-                            img.social-icon(src='assets/icons/youtube.svg' alt='YouTube icon')
                         a(href="mailto:romain.guimbal@proton.me")
                             img.social-icon(src='assets/icons/mail.svg' alt='Mail icon')
+                        a(href="https://www.youtube.com/@Romain_Guimbal")
+                            img.social-icon(src='assets/icons/youtube.svg' alt='YouTube icon')
 
         main
             .container-main
@@ -61,6 +61,7 @@ html(lang="fr")
 
                 .cursor-light
 
+                img(src="assets/icons/filter.svg" alt="Filter icon")
                 li.tag-list
                     .tag-item.enabled#all(onclick='toggleTag(this)') All
                     .tag-item#product(onclick='toggleTag(this)') Product Design
@@ -119,7 +120,7 @@ html(lang="fr")
                         a.media-wrap.image-item(href='assets/img/phare design.jpg')
                             img(src='assets/img/thumbnails/thumbnail_phare design.jpg')
                         figcaption
-                            | Reproduction du Feu avant de la Smart Fourjoy Concept. 
+                            | Reproduction du Feu avant de la Smart Fourjoy Concept. SubD modeling.
                             br
                             | 2021
 
@@ -489,23 +490,6 @@ html(lang="fr")
 
         footer
             p © 2025-2030 Romain Guimbal
-
-            //- .item
-            //-     .bio-split
-            //-         .container#bio
-            //-             img#profile_picture(src='assets/img/photo_portrait.jpg') 
-            //-             p
-            //-                 |  Ingénieur mécanique et mécatronique
-            //-                 br
-            //-                 |  Mange des modèles 3D au petit-déjeuné
-            //-                 br
-            //-                 br
-            //-                 b CONTACTEZ-MOI
-            //-                 br
-            //-                 |  romain.guimbal@proton.me
-
-                //- .container(style='width:auto')
-                //-     include ./assets/html/skills.pug
 
             button#backToTop(onclick='topFunction()' title='Go to top')
                 |↑

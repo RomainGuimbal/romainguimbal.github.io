@@ -134,10 +134,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (a.classList.contains('active')) {
                     foundActive = true;
                     dots[i]?.classList.add('active');
-                    a.style.display = '';
                 } else {
                     dots[i]?.classList.remove('active');
-                    a.style.display = 'none';
                 }
             });
 
@@ -145,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!foundActive && imageLinks.length > 0) {
                 imageLinks[0].classList.add('active');
                 dots[0]?.classList.add('active');
-                imageLinks[0].style.display = '';
             }
         }
     });
@@ -161,9 +158,6 @@ function updateActiveImage(imageLinks, dots, idx) {
     imageLinks.forEach((a, i) => {
         if (i === idx) {
             a.classList.add('active');
-            a.style.display = '';
-        } else {
-            a.style.display = 'none';
         }
     });
     dot.classList.add('active');
