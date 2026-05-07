@@ -1,7 +1,10 @@
 doctype html
-html(lang="fr")
+html(lang="en")
     include ./assets/html/head.pug
     body
+        .lang-switcher
+            button.lang-btn(data-lang='fr' onclick='setLanguage("fr")') 🇫🇷
+            button.lang-btn(data-lang='en' onclick='setLanguage("en")') 🇬🇧
         // Promo Banner
         //- #promoBanner.promo-banner
         //-     .promo-banner-content
@@ -38,14 +41,14 @@ html(lang="fr")
                     .card-face.card-back.bio
                         img#profile_picture(src='assets/img/photo_portrait.jpg') 
                         p
-                            |  Ingénieur-Designer
+                            span(data-i18n='bio.role') Ingénieur-Designer
                             br
                             |  3D ❤︎
                             br
                             |  France
 
                 .contact-section
-                    h3 CONTACTEZ-MOI
+                    h3(data-i18n='header.contact') CONTACTEZ-MOI
                     .social-links
                         a(href="https://www.linkedin.com/in/romain-guimbal-378995147/")
                             img.social-icon(src='assets/icons/linkedin.svg' alt='LinkedIn icon')
@@ -63,17 +66,17 @@ html(lang="fr")
 
                 img(src="assets/icons/filter.svg" alt="Filter icon")
                 li.tag-list
-                    .tag-item.enabled#all(onclick='toggleTag(this)') All
-                    .tag-item#product(onclick='toggleTag(this)') Product Design
-                    .tag-item#graphic(onclick='toggleTag(this)') Graphic
-                    //- .tag-item#engineering(onclick='toggleTag(this)') Engineering
-                    .tag-item#rendering(onclick='toggleTag(this)') Rendering
-                    .tag-item#programming(onclick='toggleTag(this)') Programming
-                    .tag-item#vfx(onclick='toggleTag(this)') VFX
-                    .tag-item#modeling(onclick='toggleTag(this)') 3D Modeling
-                    .tag-item#animation(onclick='toggleTag(this)') Animation
-                    .tag-item#procedural(onclick='toggleTag(this)') Procedural
-                    .tag-item#painting(onclick='toggleTag(this)') Drawing &amp Painting
+                    .tag-item.enabled#all(onclick='toggleTag(this)' data-i18n='tag.all') All
+                    .tag-item#product(onclick='toggleTag(this)' data-i18n='tag.product') Product Design
+                    .tag-item#graphic(onclick='toggleTag(this)' data-i18n='tag.graphic') Graphic
+                    //- .tag-item#engineering(onclick='toggleTag(this)' data-i18n='tag.engineering') Engineering
+                    .tag-item#rendering(onclick='toggleTag(this)' data-i18n='tag.rendering') Rendering
+                    .tag-item#programming(onclick='toggleTag(this)' data-i18n='tag.programming') Programming
+                    .tag-item#vfx(onclick='toggleTag(this)' data-i18n='tag.vfx') VFX
+                    .tag-item#modeling(onclick='toggleTag(this)' data-i18n='tag.modeling') 3D Modeling
+                    .tag-item#animation(onclick='toggleTag(this)' data-i18n='tag.animation') Animation
+                    .tag-item#procedural(onclick='toggleTag(this)' data-i18n='tag.procedural') Procedural
+                    .tag-item#painting(onclick='toggleTag(this)' data-i18n='tag.painting') Drawing &amp Painting
                     //- more tags : surfacepsycho ? archi ? CAD ?
 
 
@@ -94,12 +97,16 @@ html(lang="fr")
                                 figcaption Moodboard
                             a.media-wrap.image-item(href='assets/img/multi sketch presse agrume.jpg')
                                 img(src='assets/img/thumbnails/thumbnail_multi sketch presse agrume.jpg')
+                                figcaption(data-i18n='fig.ideation') Idéation
                             a.media-wrap.image-item(href='assets/img/Presse agrume.jpg')
-                                img(src='assets/img/thumbnails/thumbnail_Presse agrume.jpg')    
+                                img(src='assets/img/thumbnails/thumbnail_Presse agrume.jpg')
+                                figcaption Final concept
                             a.media-wrap.image-item(href='assets/img/Kaijus2024 -1.jpg')
                                 img(src='assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg')
+                                figcaption 3D model
                             a.media-wrap.image-item(href='assets/img/Kaijus2024 -2.jpg')
                                 img(src='assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg')
+                                figcaption 3D model
                         .image-dots
                             span.image-dot.active(data-index='0')
                             span.image-dot(data-index='1')
@@ -119,32 +126,39 @@ html(lang="fr")
                     .grid-item.rendering.modeling
                         a.media-wrap.image-item(href='assets/img/phare design.jpg')
                             img(src='assets/img/thumbnails/thumbnail_phare design.jpg')
-                        figcaption
-                            | Reproduction du Feu avant de la Smart Fourjoy Concept. SubD modeling.
-                            br
-                            | 2021
+                        figcaption(data-i18n-html='html.fig.phare') Reproduction du Feu avant de la Smart Fourjoy Concept. SubD modeling.<br>2021
 
                     .grid-item.project#sp-logo.graphic
                         .multi-image
-                            a.media-wrap.image-item(href='assets/img/splogo_alpha.png' style='box-shadow: none;' class='active')
-                                img(src='assets/img/thumbnails/thumbnail_splogo_alpha.png' style='box-shadow: none; filter: drop-shadow(0 0 1em rgba(0, 17, 90, 0.5));')
+                            a.media-wrap.image-item(href='assets/img/splogo_color.jpg')
+                                img(src='assets/img/thumbnails/thumbnail_splogo_color.jpg')
                             a.media-wrap.image-item(href='assets/img/splogomoodboard.jpg')
                                 img(src='assets/img/thumbnails/thumbnail_splogomoodboard.jpg')
                                 figcaption Moodboard
                             a.media-wrap.image-item(href='assets/img/splogowires.jpg')
                                 img(src='assets/img/thumbnails/thumbnail_splogowires.jpg')
+                                figcaption Construction
                             a.media-wrap.image-item(href='assets/img/splogo_wire_clean.jpg')
                                 img(src='assets/img/thumbnails/thumbnail_splogo_wire_clean.jpg')
-                            a.media-wrap.image-item(href='assets/img/splogo_color.jpg')
-                                img(src='assets/img/thumbnails/thumbnail_splogo_color.jpg')
+                                figcaption Outline
+
                         .image-dots
                             span.image-dot.active(data-index='0')
                             span.image-dot(data-index='1')
                             span.image-dot(data-index='2')
                             span.image-dot(data-index='3')
-                            span.image-dot(data-index='4')
                         figcaption
                             | Logo SurfacePsycho
+                            br
+                            | 2024
+
+                    .grid-item.graphic
+                        a.media-wrap.image-item(href='assets/img/Logo recycling - savan ranger.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_Logo recycling - savan ranger.jpg')
+                        figcaption
+                            | Logo
+                            br
+                            | 2025
 
                     .grid-item.project#surfacepsycho.programming.product
                         .multi-image(style='aspect-ratio: 1')
@@ -181,16 +195,23 @@ html(lang="fr")
                             span.image-dot(data-index='5')
                         figcaption
                             | SurfacePsycho Blender add-on
+                    
+                    .grid-item.graphism 
+                        a.media-wrap.image-item(href='assets/img/Deco imperiale thiner.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_Deco imperiale thiner.jpg')
+                        figcaption
+                            | Décoration impériale minimale
+                            br
+                            | Réalisée avec SurfacePsycho
+                            br
+                            | 2026
 
                     .grid-item.product.painting
                         a.media-wrap.image-item(href='assets/img/random car dessin.jpg')
                             img.content-pic(src='assets/img/thumbnails/thumbnail_random car dessin.jpg')
                         //- a.media-wrap.image-item(href='assets/img/random car dessin paintover.jpg')
                         //-     img.content-pic(src='assets/img/random car dessin paintover.jpg')
-                        figcaption
-                            //- | Concept voiture
-                            //- br
-                            | 2024
+                        figcaption(data-i18n-html='html.fig.sketch') Croquis d'entrainement<br>2024
 
                     .grid-item.product.rendering.modeling
                         a.media-wrap.image-item(href='assets/img/Lardon octobre 2019 copy.jpg')
@@ -215,12 +236,7 @@ html(lang="fr")
                             .video-thumbnail.loading
                             button.play-pause-btn#playPauseBtn
                                 .play-icon
-                        figcaption
-                            | Precision living
-                            br
-                            | 2022
-                            br
-                            | Musique : Vibin' Out - FKJ, ((( O )))
+                        figcaption(data-i18n-html='html.fig.precision') Precision living<br>2022<br>Musique : Vibin' Out - FKJ, ((( O )))
 
 
                     //- .grid-item
@@ -245,7 +261,7 @@ html(lang="fr")
                             span.image-dot(data-index='1')
                             span.image-dot(data-index='2')
                             span.image-dot(data-index='3')
-                        figcaption Architecture procédurale
+                        figcaption(data-i18n='fig.archi-gene') Architecture procédurale
 
 
                     .grid-item.project#toiture.procedural
@@ -262,10 +278,8 @@ html(lang="fr")
                             span.image-dot.active(data-index='0')
                             span.image-dot(data-index='1')
                             span.image-dot(data-index='2')
-                        figcaption
-                            | Toiture procédurale
-                            br
-                            | 2024
+                            span.image-dot(data-index='3')
+                        figcaption(data-i18n-html='html.fig.toiture') Toiture procédurale<br>2024
 
 
                     .grid-item.project#foulard.product.graphic
@@ -277,10 +291,7 @@ html(lang="fr")
                         .image-dots
                             span.image-dot.active(data-index='0')
                             span.image-dot(data-index='1')
-                        figcaption
-                            | Foulard carte électronique
-                            br
-                            | 2015
+                        figcaption(data-i18n-html='html.fig.foulard') Foulard carte électronique<br>2015
 
                     .grid-item.project#sword.product.rendering.modeling
                         .multi-image
@@ -304,10 +315,7 @@ html(lang="fr")
                     .grid-item.modeling.procedural
                         a.media-wrap.image-item(href='assets/img/Architecture classique no mat.jpg')
                             img(src='assets/img/thumbnails/thumbnail_Architecture classique no mat.jpg')
-                        figcaption
-                            | Exercice d'architecture classique
-                            br
-                            | 2024
+                        figcaption(data-i18n-html='html.fig.archi-classique') Exercice d'architecture classique<br>2024
 
 
                     .grid-item.vfx.procedural
@@ -316,10 +324,7 @@ html(lang="fr")
                             .video-thumbnail.loading
                             button.play-pause-btn#playPauseBtn
                                 .play-icon
-                        figcaption
-                            | 2023
-                            br
-                            | Son de création personnelle
+                        figcaption(data-i18n-html='html.fig.mandala') 2023<br>Son de création personnelle
 
 
                     .grid-item.painting
@@ -340,8 +345,7 @@ html(lang="fr")
                         .image-dots
                             span.image-dot.active(data-index='0')
                             span.image-dot(data-index='1')
-                        figcaption
-                            | Robe velour doré
+                        figcaption(data-i18n='fig.robe') Robe velour doré
 
 
                     .grid-item.modeling
@@ -368,16 +372,11 @@ html(lang="fr")
                     .grid-item.vfx.rendering
                         a.media-wrap.image-item(href='assets/img/Maciek Jasik studdy 2.jpg')
                             img(src='assets/img/thumbnails/thumbnail_Maciek Jasik studdy 2.jpg')
-                        figcaption
-                            | Dissolution
-                            br
-                            | Flou-net façon Maciek Jasik
-                            br
-                            | 2022
+                        figcaption(data-i18n-html='html.fig.dissolution') Dissolution<br>Flou-net façon Maciek Jasik<br>2022
                     //-     // <img src="assets/img/eau 8.jpg">
 
                     .grid-item.vfx.procedural
-                        a.media-wrap.video-container
+                        a.media-wrap.video-container(style='aspect-ratio: 16/9')
                             video(preload="none" data-src='assets/video/graphite final.mp4' data-type='video/mp4')
                             .video-thumbnail.loading
                             button.play-pause-btn#playPauseBtn
@@ -417,8 +416,7 @@ html(lang="fr")
                             span.image-dot(data-index='2')
                             span.image-dot(data-index='3')
                             span.image-dot(data-index='4')
-                        figcaption
-                            | Verrière de bateau "royal", architecture procédurale
+                        figcaption(data-i18n-html='html.fig.verriere') Verrière de bateau "royal", architecture procédurale
 
                     .grid-item.procedural
                         a.media-wrap.video-container
@@ -426,18 +424,12 @@ html(lang="fr")
                             .video-thumbnail.loading
                             button.play-pause-btn#playPauseBtn
                                 .play-icon
-                        figcaption
-                            | Origami Procédurale
-                            br
-                            | Génération temps réel des patrons de découpe numérotés
-                            br
-                            | 2023
+                        figcaption(data-i18n-html='html.fig.origami') Origami Procédurale<br>Génération temps réel des patrons de découpe numérotés<br>2023
 
                     .grid-item.graphic.vfx.procedural
                         a.media-wrap.image-item(href='assets/img/Carte de voeuuu23 3.jpg')
                             img(src='assets/img/thumbnails/thumbnail_Carte de voeuuu23 3.jpg')
-                        figcaption
-                            | Carte de Voeux 2023
+                        figcaption(data-i18n='fig.carte-voeux') Carte de Voeux 2023
 
                     .grid-item.vfx
                         a.media-wrap.image-item(href='assets/img/inviit.jpg')
@@ -456,7 +448,7 @@ html(lang="fr")
 
 
                     .grid-item.graphic.animation
-                        a.media-wrap.video-container
+                        a.media-wrap.video-container(style='aspect-ratio: 10/13')
                             video(preload="none" data-src='assets/video/fleur0001-0033.mp4' data-type='video/mp4')
                             .video-thumbnail.loading
                             button.play-pause-btn#playPauseBtn
@@ -470,14 +462,15 @@ html(lang="fr")
                     .grid-item.rendering.vfx.procedural
                         a.media-wrap.image-item(href='assets/img/artiche.jpg')
                             img(src='assets/img/thumbnails/thumbnail_artiche.jpg')
+                        figcaption(data-i18n-html='html.fig.artiche') Image extraite du court-métrage<br><i>Born to Wear, The Vegetal Revange</i><br>Réalisé en collaboration avec Tom Février<br>2023
+
+                    .grid-item.graphism.rendering
+                        a.media-wrap.image-item(href='assets/img/0.9 cover.jpg')
+                            img(src='assets/img/thumbnails/thumbnail_0.9 cover.jpg')
                         figcaption
-                            | Image extraite du court-métrage 
+                            | Image de couverture SurfacePsycho version 0.9
                             br
-                            i Born to Wear, The Vegetal Revange
-                            br
-                            | Realisé en collaboration avec Tom Février
-                            br
-                            | 2023
+                            | 2025
 
                     .grid-item.graphic
                         a.media-wrap.image-item(href='assets/img/G-co 2.jpg')

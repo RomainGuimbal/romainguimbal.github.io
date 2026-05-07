@@ -134,9 +134,9 @@ spline-viewer {
   position: absolute;
   inset: 0;
   background-color: var(--project-color);
-  /* mix-blend-mode: overlay; */
   pointer-events: none;
   transition: 0.3s ease;
+  border-radius: 3px;
 }
 
 .media-wrap:hover::before {
@@ -382,4 +382,40 @@ a.to-sp-portal .content div img {
   transition: all 0.1s ease;
   /* mask: var(--noise); */
   /* mask-mode: ; */
+}
+
+/* ============================================================
+   Language switcher
+   ============================================================ */
+
+.lang-switcher {
+  position: fixed;
+  top: 0.9rem;
+  right: 1rem;
+  z-index: 1000;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  line-height: 1;
+  opacity: 0.35;
+  transition: opacity 0.2s, transform 0.2s;
+  padding: 0.15rem;
+  border-radius: 4px;
+}
+
+.lang-btn:hover {
+  opacity: 0.75;
+  transform: scale(1.15);
+}
+
+.lang-btn.active {
+  opacity: 1;
+  transform: scale(1.1);
 }

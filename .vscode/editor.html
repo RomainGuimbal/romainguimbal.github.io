@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Editor</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f5f3;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    /* ── Layout ── */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: #fff;
+      border-bottom: 1px solid #e0e0dc;
+      padding: 14px 24px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    header h1 { font-size: 15px; font-weight: 600; flex: 1; }
+    main { max-width: 780px; margin: 0 auto; padding: 32px 24px 80px; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px; border-radius: 8px; border: none;
+      font-size: 13px; font-weight: 500; cursor: pointer;
+      transition: opacity .15s, box-shadow .15s;
+    }
+    .btn:hover { opacity: .85; }
+    .btn:active { opacity: .7; }
+    .btn-primary   { background: #1a1a1a; color: #fff; }
+    .btn-secondary { background: #fff; color: #1a1a1a; border: 1px solid #d0d0cc; }
+    .btn-danger    { background: #fff; color: #c0392b; border: 1px solid #f5c6c2; }
+    .btn-apply     { background: #2563eb; color: #fff; font-size: 14px; padding: 10px 24px; }
+    .btn-sm        { padding: 5px 10px; font-size: 12px; border-radius: 6px; }
+
+    /* ── Status bar ── */
+    #status {
+      font-size: 13px; color: #666; padding: 6px 14px;
+      border-radius: 6px; background: transparent;
+      transition: background .2s, color .2s;
+    }
+    #status.ok    { background: #ecfdf5; color: #065f46; }
+    #status.error { background: #fef2f2; color: #991b1b; }
+
+    /* ── Card list ── */
+    #card-list { display: flex; flex-direction: column; gap: 16px; }
+
+    /* ── Project card ── */
+    .project-card {
+      background: #fff;
+      border: 1px solid #e0e0dc;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow .15s;
+    }
+    .project-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,.07); }
+
+    .card-header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 16px;
+      background: #fafaf8;
+      border-bottom: 1px solid #e0e0dc;
+      cursor: pointer;
+      user-select: none;
+    }
+    .card-header .card-title-preview {
+      flex: 1; font-size: 14px; font-weight: 500; color: #1a1a1a;
+    }
+    .card-header .card-title-preview.untitled { color: #999; font-style: italic; }
+    .card-chevron { font-size: 11px; color: #999; transition: transform .2s; }
+    .project-card.open .card-chevron { transform: rotate(180deg); }
+
+    .card-body { padding: 16px; display: none; flex-direction: column; gap: 14px; }
+    .project-card.open .card-body { display: flex; }
+
+    /* ── Form fields ── */
+    .field { display: flex; flex-direction: column; gap: 5px; }
+    .field label { font-size: 12px; font-weight: 500; color: #555; }
+    .field input[type="text"],
+    .field input[type="url"],
+    .field textarea {
+      padding: 8px 11px;
+      border: 1px solid #d0d0cc;
+      border-radius: 7px;
+      font-size: 13px;
+      font-family: inherit;
+      color: #1a1a1a;
+      background: #fff;
+      transition: border-color .15s, box-shadow .15s;
+      resize: vertical;
+    }
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    }
+    textarea { min-height: 72px; }
+
+    /* ── Image upload ── */
+    .image-upload-area {
+      border: 1.5px dashed #c8c8c4;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+      position: relative;
+    }
+    .image-upload-area:hover,
+    .image-upload-area.drag-over {
+      border-color: #2563eb;
+      background: #f0f5ff;
+    }
+    .image-upload-area input[type="file"] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+    }
+    .image-upload-area .upload-hint { font-size: 13px; color: #888; pointer-events: none; }
+    .image-preview {
+      margin-top: 10px;
+      display: none;
+      position: relative;
+      border-radius: 7px;
+      overflow: hidden;
+    }
+    .image-preview img {
+      width: 100%; height: 160px; object-fit: cover; display: block;
+      border-radius: 7px; border: 1px solid #e0e0dc;
+    }
+    .image-preview .remove-image {
+      position: absolute; top: 6px; right: 6px;
+      background: rgba(0,0,0,.55); color: #fff;
+      border: none; border-radius: 50%; width: 24px; height: 24px;
+      font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ── Tags field ── */
+    .tags-input-wrapper {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      padding: 7px 10px;
+      border: 1px solid #d0d0cc;
+      border-radius: 7px;
+      background: #fff;
+      min-height: 40px;
+      cursor: text;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .tags-input-wrapper:focus-within {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    }
+    .tag-pill {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: #f0f5ff; color: #1e40af;
+      font-size: 12px; font-weight: 500;
+      padding: 2px 8px; border-radius: 20px;
+    }
+    .tag-pill button {
+      background: none; border: none; cursor: pointer;
+      color: #6b7280; font-size: 11px; padding: 0; line-height: 1;
+    }
+    .tags-input-wrapper input {
+      border: none; outline: none; font-size: 13px;
+      font-family: inherit; flex: 1; min-width: 80px; padding: 0;
+      background: transparent;
+    }
+
+    /* ── Card footer ── */
+    .card-footer {
+      display: flex; justify-content: flex-end;
+      padding-top: 4px;
+    }
+
+    /* ── Add project button ── */
+    #add-btn-wrap { text-align: center; padding-top: 8px; }
+
+    /* ── Upload progress ── */
+    .upload-progress {
+      font-size: 12px; color: #2563eb; margin-top: 6px; display: none;
+    }
+
+    /* ── Drag handle ── */
+    .drag-handle {
+      cursor: grab; color: #bbb; font-size: 16px; padding: 0 2px;
+    }
+    .drag-handle:active { cursor: grabbing; }
+    .project-card.dragging { opacity: .4; }
+
+    /* ── Empty state ── */
+    #empty-state {
+      text-align: center; padding: 48px 24px;
+      color: #999; font-size: 14px; display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Portfolio Editor</h1>
+  <span id="status"></span>
+  <button class="btn btn-secondary" onclick="loadProjects()">↺ Reload</button>
+  <button class="btn btn-apply" onclick="applyChanges()">Apply changes</button>
+</header>
+
+<main>
+  <div id="card-list"></div>
+  <div id="empty-state">No projects yet. Add your first one below.</div>
+  <div id="add-btn-wrap" style="padding-top:16px">
+    <button class="btn btn-primary" onclick="addProject()">+ Add project</button>
+  </div>
+</main>
+
+<script>
+// ─── State ───────────────────────────────────────────────────────────────────
+let projects = [];
+
+// ─── Boot ────────────────────────────────────────────────────────────────────
+loadProjects();
+
+async function loadProjects() {
+  try {
+    setStatus("Loading…");
+    const res = await fetch("/projects");
+    if (!res.ok) throw new Error(await res.text());
+    projects = await res.json();
+    renderAll();
+    setStatus("Loaded", "ok");
+  } catch (e) {
+    setStatus("Error loading: " + e.message, "error");
+  }
+}
+
+// ─── Render ──────────────────────────────────────────────────────────────────
+function renderAll() {
+  const list = document.getElementById("card-list");
+  const empty = document.getElementById("empty-state");
+  list.innerHTML = "";
+
+  if (projects.length === 0) {
+    empty.style.display = "block";
+    return;
+  }
+  empty.style.display = "none";
+
+  projects.forEach((p, i) => list.appendChild(buildCard(p, i)));
+  initDragSort();
+}
+
+function buildCard(project, index) {
+  const card = document.createElement("div");
+  card.className = "project-card";
+  card.dataset.index = index;
+
+  // ── Determine display title ──
+  const titleText = project.title || "";
+
+  card.innerHTML = `
+    <div class="card-header" onclick="toggleCard(this)">
+      <span class="drag-handle" title="Drag to reorder">⠿</span>
+      <span class="card-title-preview ${titleText ? "" : "untitled"}">
+        ${titleText || "Untitled project"}
+      </span>
+      <span class="card-chevron">▼</span>
+    </div>
+
+    <div class="card-body">
+
+      <!-- ══ IMAGE UPLOAD ══ -->
+      <div class="field">
+        <label>Thumbnail image</label>
+        <div class="image-upload-area" id="upload-area-${index}"
+             ondragover="handleDragOver(event,${index})"
+             ondragleave="handleDragLeave(event,${index})"
+             ondrop="handleDrop(event,${index})">
+          <input type="file" accept="image/*" onchange="handleImageSelect(event,${index})"/>
+          <div class="upload-hint">Click or drag an image here</div>
+        </div>
+        <div class="upload-progress" id="upload-progress-${index}">Uploading…</div>
+        <div class="image-preview" id="preview-${index}"
+             style="${project.thumb ? "display:block" : ""}">
+          <img src="${project.thumb || ""}" alt="preview" />
+          <button class="remove-image" onclick="removeImage(${index})" title="Remove image">✕</button>
+        </div>
+      </div>
+
+      <!-- ══ TODO: Add your own fields below. ══
+           Each field should call updateField(index, 'fieldName', value)
+           on input so the state stays in sync.
+           The examples below are a starting point — rename, add, or remove
+           fields to match your project card structure.           ══ -->
+
+      <div class="field">
+        <label>Title <span style="color:#c00">*</span></label>
+        <input type="text" value="${esc(project.title)}"
+               placeholder="My awesome project"
+               oninput="updateField(${index},'title',this.value)" />
+      </div>
+
+      <div class="field">
+        <label>Description</label>
+        <textarea placeholder="A short description of the project…"
+                  oninput="updateField(${index},'description',this.value)">${esc(project.description)}</textarea>
+      </div>
+
+      <div class="field">
+        <label>Link (URL)</label>
+        <input type="url" value="${esc(project.link)}"
+               placeholder="https://github.com/you/project"
+               oninput="updateField(${index},'link',this.value)" />
+      </div>
+
+      <div class="field">
+        <label>Tags <span style="color:#999;font-weight:400">(press Enter or comma to add)</span></label>
+        <div class="tags-input-wrapper" id="tags-wrapper-${index}" onclick="focusTagInput(${index})">
+          ${renderTagPills(project.tags || [], index)}
+          <input type="text" id="tag-input-${index}"
+                 placeholder="e.g. React"
+                 onkeydown="handleTagKey(event,${index})" />
+        </div>
+      </div>
+
+      <!-- ══ End of fields ══ -->
+
+      <div class="card-footer">
+        <button class="btn btn-danger btn-sm" onclick="removeProject(${index})">Remove project</button>
+      </div>
+    </div>`;
+
+  return card;
+}
+
+function renderTagPills(tags, index) {
+  return tags.map((t, ti) => `
+    <span class="tag-pill">
+      ${esc(t)}
+      <button onclick="removeTag(${index},${ti})" title="Remove tag">✕</button>
+    </span>`).join("");
+}
+
+// ─── Toggle open/close ────────────────────────────────────────────────────────
+function toggleCard(header) {
+  header.closest(".project-card").classList.toggle("open");
+}
+
+// ─── Field updates ────────────────────────────────────────────────────────────
+function updateField(index, key, value) {
+  projects[index][key] = value;
+
+  // Keep the header title preview in sync
+  if (key === "title") {
+    const card = document.querySelector(`.project-card[data-index="${index}"]`);
+    const preview = card?.querySelector(".card-title-preview");
+    if (preview) {
+      preview.textContent = value || "Untitled project";
+      preview.classList.toggle("untitled", !value);
+    }
+  }
+}
+
+// ─── Image handling ───────────────────────────────────────────────────────────
+function handleDragOver(e, index) {
+  e.preventDefault();
+  document.getElementById("upload-area-" + index).classList.add("drag-over");
+}
+
+function handleDragLeave(e, index) {
+  document.getElementById("upload-area-" + index).classList.remove("drag-over");
+}
+
+function handleDrop(e, index) {
+  e.preventDefault();
+  handleDragLeave(e, index);
+  const file = e.dataTransfer.files[0];
+  if (file) uploadImage(file, index);
+}
+
+function handleImageSelect(e, index) {
+  const file = e.target.files[0];
+  if (file) uploadImage(file, index);
+}
+
+async function uploadImage(file, index) {
+  const progress = document.getElementById("upload-progress-" + index);
+  progress.style.display = "block";
+
+  try {
+    const formData = new FormData();
+    formData.append("image", file);
+
+    const res = await fetch("/upload-image", { method: "POST", body: formData });
+    if (!res.ok) throw new Error(await res.text());
+
+    const { thumb, full } = await res.json();
+    projects[index].thumb = thumb;
+    projects[index].full = full;
+
+    const preview = document.getElementById("preview-" + index);
+    preview.querySelector("img").src = thumb + "?t=" + Date.now();
+    preview.style.display = "block";
+    setStatus("Image uploaded ✓", "ok");
+  } catch (e) {
+    setStatus("Upload failed: " + e.message, "error");
+  } finally {
+    progress.style.display = "none";
+  }
+}
+
+function removeImage(index) {
+  projects[index].thumb = "";
+  projects[index].full = "";
+  const preview = document.getElementById("preview-" + index);
+  preview.style.display = "none";
+  preview.querySelector("img").src = "";
+}
+
+// ─── Tags ─────────────────────────────────────────────────────────────────────
+function focusTagInput(index) {
+  document.getElementById("tag-input-" + index)?.focus();
+}
+
+function handleTagKey(e, index) {
+  if (e.key === "Enter" || e.key === ",") {
+    e.preventDefault();
+    const input = e.target;
+    const value = input.value.replace(/,/g, "").trim();
+    if (!value) return;
+    if (!projects[index].tags) projects[index].tags = [];
+    projects[index].tags.push(value);
+    input.value = "";
+    // Re-render pills only
+    const wrapper = document.getElementById("tags-wrapper-" + index);
+    const inp = wrapper.querySelector("input");
+    wrapper.innerHTML = renderTagPills(projects[index].tags, index);
+    wrapper.appendChild(inp);
+    inp.focus();
+  }
+}
+
+function removeTag(projIndex, tagIndex) {
+  projects[projIndex].tags.splice(tagIndex, 1);
+  const wrapper = document.getElementById("tags-wrapper-" + projIndex);
+  const inp = wrapper.querySelector("input");
+  wrapper.innerHTML = renderTagPills(projects[projIndex].tags, projIndex);
+  wrapper.appendChild(inp);
+}
+
+// ─── Add / Remove projects ────────────────────────────────────────────────────
+function addProject() {
+  projects.push({ title: "", description: "", link: "", thumb: "", full: "", tags: [] });
+  renderAll();
+  // Auto-open the new card
+  const cards = document.querySelectorAll(".project-card");
+  const last = cards[cards.length - 1];
+  last?.classList.add("open");
+  last?.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+function removeProject(index) {
+  if (!confirm(`Remove "${projects[index].title || "this project"}"?`)) return;
+  projects.splice(index, 1);
+  renderAll();
+}
+
+// ─── Apply ───────────────────────────────────────────────────────────────────
+async function applyChanges() {
+  // Basic validation
+  const missing = projects.filter(p => !p.title.trim());
+  if (missing.length) {
+    setStatus("Every project needs a title.", "error");
+    return;
+  }
+
+  try {
+    setStatus("Applying…");
+    const res = await fetch("/apply", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(projects),
+    });
+    if (!res.ok) throw new Error(await res.text());
+    setStatus("index.html updated ✓ — ready to commit!", "ok");
+  } catch (e) {
+    setStatus("Error: " + e.message, "error");
+  }
+}
+
+// ─── Drag-to-sort ─────────────────────────────────────────────────────────────
+function initDragSort() {
+  const list = document.getElementById("card-list");
+  let dragged = null;
+
+  list.querySelectorAll(".drag-handle").forEach(handle => {
+    const card = handle.closest(".project-card");
+    card.draggable = true;
+
+    card.addEventListener("dragstart", () => {
+      dragged = card;
+      setTimeout(() => card.classList.add("dragging"), 0);
+    });
+
+    card.addEventListener("dragend", () => {
+      card.classList.remove("dragging");
+      dragged = null;
+      // Sync projects array to DOM order
+      const newOrder = [...list.querySelectorAll(".project-card")]
+        .map(c => projects[+c.dataset.index]);
+      projects = newOrder;
+      renderAll();
+    });
+
+    card.addEventListener("dragover", e => {
+      e.preventDefault();
+      if (dragged && dragged !== card) {
+        const rect = card.getBoundingClientRect();
+        const mid = rect.top + rect.height / 2;
+        if (e.clientY < mid) {
+          list.insertBefore(dragged, card);
+        } else {
+          list.insertBefore(dragged, card.nextSibling);
+        }
+      }
+    });
+  });
+}
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+function esc(str = "") {
+  return str.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function setStatus(msg, type = "") {
+  const el = document.getElementById("status");
+  el.textContent = msg;
+  el.className = type;
+  if (type === "ok") setTimeout(() => { if (el.className === "ok") el.textContent = ""; el.className = ""; }, 3000);
+}
+</script>
+</body>
+</html>
