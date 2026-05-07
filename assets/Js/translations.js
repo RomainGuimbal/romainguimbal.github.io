@@ -26,6 +26,8 @@ const i18nData = {
     'html.fig.phare':
       'Reproduction du Feu avant de la Smart Fourjoy Concept. SubD modeling.<br>2021',
 
+    'html.fig.sp-logo':"Logo SurfacePsycho<br>2024",
+
     'html.fig.sketch': "Croquis d'entraînement<br>2024",
 
     'html.fig.precision':
@@ -82,6 +84,8 @@ const i18nData = {
     /* --- Figcaptions --- */
     'html.fig.phare':
       'Smart Fourjoy Concept front light reproduction. SubD modeling.<br>2021',
+
+    'html.fig.sp-logo':"SurfacePsycho Logo<br>2024",
 
     'html.fig.sketch': 'Training sketch<br>2024',
 

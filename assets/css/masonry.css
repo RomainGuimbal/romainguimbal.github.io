@@ -4,41 +4,39 @@
 }
 
 .grid-item {
-  width: 290px; /* To rm with grid sizer */
+  width: 290px; 
   margin: 0 15px 30px 15px;
   overflow: hidden;
-  transition: 0.2s;
+  /* transition: 0.2s; */
 }
 
+/* SIZING ALREADY INSIDE masonry.js */
 /* Add responsive breakpoints */
 @media screen and (max-width: 767px) {
   .grid-item {
-    width: calc(50% - 30px); /* Two columns, accounting for margins */
-    margin: 0 10px 20px 10px; /* Slightly reduced margins on mobile */
+    width: calc(50% - 30px);
+    margin: 0 10px 20px 10px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .grid-item {
-    width: calc(50% - 20px); /* Keep two columns but reduce margins further */
+    width: calc(50% - 20px);
     margin: 0 5px 15px 5px;
   }
 }
 
-/* .grid-sizer,
-.grid-item {
+/* .grid-item {
     width: 33.333%;
 }
 
 @media (max-width: 768px) {
-    .grid-sizer,
     .grid-item {
         width: 50%;
     }
 } 
 
 @media (max-width: 480px) {
-    .grid-sizer,
     .grid-item {
         width: 100%;
     }

@@ -27,12 +27,11 @@
     <!-- i18n — must load before DOMContentLoaded fires-->
     <script src="assets/Js/translations.js"></script>
     <script src="assets/Js/i18n.js"></script>
-    <div id="svg_icons" style="position:fixed"></div>
   </head>
   <body>
     <div class="lang-switcher">
-      <button class="lang-btn" data-lang="fr" onclick="setLanguage(&quot;fr&quot;)">🇫🇷</button>
-      <button class="lang-btn" data-lang="en" onclick="setLanguage(&quot;en&quot;)">🇬🇧</button>
+      <button class="lang-btn" data-lang="fr" onclick="setLanguage(`fr`)">🇫🇷</button>
+      <button class="lang-btn" data-lang="en" onclick="setLanguage(`en`)">🇬🇧</button>
     </div>
     <!-- Promo Banner-->
     <header>
@@ -95,7 +94,7 @@
                 <figcaption>Construction</figcaption></a><a class="media-wrap image-item" href="assets/img/splogo_wire_clean.jpg"><img src="assets/img/thumbnails/thumbnail_splogo_wire_clean.jpg">
                 <figcaption>Outline</figcaption></a></div>
             <div class="image-dots"><span class="image-dot active" data-index="0"></span><span class="image-dot" data-index="1"></span><span class="image-dot" data-index="2"></span><span class="image-dot" data-index="3"></span></div>
-            <figcaption>Logo SurfacePsycho<br>2024</figcaption>
+            <figcaption data-i18n-html="html.fig.sp-logo">Logo SurfacePsycho<br>2024</figcaption>
           </div>
           <div class="grid-item graphic"><a class="media-wrap image-item" href="assets/img/Logo recycling - savan ranger.jpg"><img src="assets/img/thumbnails/thumbnail_Logo recycling - savan ranger.jpg"></a>
             <figcaption>Logo<br>2025</figcaption>

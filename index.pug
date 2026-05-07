@@ -3,8 +3,8 @@ html(lang="en")
     include ./assets/html/head.pug
     body
         .lang-switcher
-            button.lang-btn(data-lang='fr' onclick='setLanguage("fr")') 🇫🇷
-            button.lang-btn(data-lang='en' onclick='setLanguage("en")') 🇬🇧
+            button.lang-btn(data-lang='fr' onclick='setLanguage(`fr`)') 🇫🇷
+            button.lang-btn(data-lang='en' onclick='setLanguage(`en`)') 🇬🇧
         // Promo Banner
         //- #promoBanner.promo-banner
         //-     .promo-banner-content
@@ -85,7 +85,6 @@ html(lang="en")
 
                 .masonry-grid
                     //PROJECTS-START
-                    //- .grid-sizer
                     .grid-item.project#agrume.product.rendering.modeling
                         // Multiple images example
                         .multi-image
@@ -148,7 +147,7 @@ html(lang="en")
                             span.image-dot(data-index='1')
                             span.image-dot(data-index='2')
                             span.image-dot(data-index='3')
-                        figcaption
+                        figcaption(data-i18n-html='html.fig.sp-logo')
                             | Logo SurfacePsycho
                             br
                             | 2024
