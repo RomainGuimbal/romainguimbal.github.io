@@ -1,18 +1,9 @@
 // Initialize Masonry
 let msnry;
 let refreshTimeout;
-let isLayoutInProgress = false;
 
 // Refresh Masonry layout
 function refreshMasonryLayout() {
-  if (isLayoutInProgress) {
-    console.error(
-      "Layout not finished",
-    );
-    return;
-  }
-  isLayoutInProgress = true;
-
   if (msnry) {
     msnry.layout();
   }
@@ -72,48 +63,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (preloader) preloader.classList.add("hidden");
       });
 
-      try {
-        refreshMasonryLayout();
-      } catch (e) {
-        console.error("masonry: error calling refreshMasonryLayout():", e);
-      }
-      isLayoutInProgress = false;
-    }
-
-    // // Add layout refresh after each individual image loads
-    // grid.querySelectorAll("img").forEach((img) => {
-    //   img.addEventListener("load", refreshMasonryLayout);
-    // });
-
-    // Watch video elements — they start with no src so the browser
-    // measures them asynchronously after aspect-ratio CSS kicks in.
-    // Re-trigger layout whenever a video element is resized.
-    if (typeof ResizeObserver !== 'undefined') {
-        const videoObserver = new ResizeObserver(function(entries) {
-            let needsLayout = false;
-            entries.forEach(function(entry) {
-                if (entry.contentRect.height > 0) {
-                    needsLayout = true;
-                    console.info('masonry: video resized to', entry.contentRect.width.toFixed(0), 'x', entry.contentRect.height.toFixed(0), '— scheduling relayout');
-                }
-            });
-            if (needsLayout) {
-                refreshMasonryLayout();
-                isLayoutInProgress = false;
-            }
-        });
-
-        grid.querySelectorAll('.video-container video').forEach(function(video) {
-            videoObserver.observe(video);
-        });
-    } else {
-        // Fallback: re-layout after a short delay to let the browser paint
-        // setTimeout(refreshMasonryLayout, 200);
-        setTimeout(refreshMasonryLayout, 600);
+      refreshMasonryLayout();
     }
   });
 
-  // Multi-image logic for .grid-item.project
+  init_multi_image_logic();
+});
+
+function init_multi_image_logic() {
   document.querySelectorAll(".grid-item.project").forEach(function (item) {
     const multiImage = item.querySelector(".multi-image");
     const dots = item.querySelectorAll(".image-dot");
@@ -134,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       // Add navigation arrows
-      // $(multiImage).append('<button class="nav-arrow prev">&#60;</button>');
       $(multiImage).append('<button class="nav-arrow next">&#62</button>');
 
       // Handle arrow navigation
@@ -160,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-});
+}
 
 function updateActiveImage(imageLinks, dots, idx) {
   // Remove active from all
@@ -240,6 +196,5 @@ window.addEventListener("resize", () => {
     msnry.options.columnWidth = getColumnWidth();
     msnry.options.gutter = getGutterSize();
     refreshMasonryLayout();
-    isLayoutInProgress = false;
   }
 });

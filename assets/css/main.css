@@ -176,19 +176,15 @@ spline-viewer {
 } */
 
 footer {
-  padding: 0.1vh;
-  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.3);
   width: 100%;
-  height: 100%;
-  margin: auto;
-}
-
-footer .bio-split {
-  width: fit-content;
-  margin: auto;
+  margin: 0;
+  padding: 0 0 30vh 0;
 }
 
 footer p {
+  margin: 0;
+  padding: 20px;
   color: rgba(255, 255, 255, 0.5);
 }
 

@@ -93,6 +93,7 @@ $(function () {
 // TAG SYSTEM
 //############################################
 
+// Event at tag click
 function toggleTag(element) {
   // Button Display
   if (!element.classList.contains("enabled")) {
@@ -118,8 +119,8 @@ function toggleTag(element) {
     filterTag("product");
   } else if (element.id === "graphic") {
     filterTag("graphic");
-    // } else if(element.id === "engineering"){
-    //     filterTag("engineering");
+  // } else if(element.id === "engineering"){
+  //     filterTag("engineering");
   } else if (element.id === "rendering") {
     filterTag("rendering");
   } else if (element.id === "programming") {
@@ -147,6 +148,7 @@ function toggleTag(element) {
   }
 }
 
+// Finds images to display
 function filterTag(tag) {
   const allGridItems = document.querySelectorAll(".grid-item");
   allGridItems.forEach((item) => {

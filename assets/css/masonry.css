@@ -1,5 +1,6 @@
 .masonry-grid {
   margin: auto;
+  min-height: 70vh;
   /* width: 100%; */
 }
 
@@ -10,7 +11,7 @@
   /* transition: 0.2s; */
 }
 
-/* SIZING ALREADY INSIDE masonry.js */
+/* SIZING ALREADY INSIDE masonry.js TO CLARIFY*/
 /* Add responsive breakpoints */
 @media screen and (max-width: 767px) {
   .grid-item {
@@ -25,22 +26,6 @@
     margin: 0 5px 15px 5px;
   }
 }
-
-/* .grid-item {
-    width: 33.333%;
-}
-
-@media (max-width: 768px) {
-    .grid-item {
-        width: 50%;
-    }
-} 
-
-@media (max-width: 480px) {
-    .grid-item {
-        width: 100%;
-    }
-} */
 
 .grid-item img,
 .grid-item video,
