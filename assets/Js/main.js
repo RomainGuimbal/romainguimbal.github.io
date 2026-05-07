@@ -159,7 +159,7 @@ function toggleTag(element) {
     }
 
     if (msnry) {
-        msnry.layout();
+        refreshMasonryLayout();
     }
 };
 

@@ -139,7 +139,7 @@ app.post("/apply", (req, res) => {
 // TODO: Replace this function body with your actual card HTML structure.
 function renderCard(project) {
   return `
-  <article class="project-card">
+  <article class="grid-item">
     <a href="${project.link}" target="_blank" rel="noopener">
       <img
         src="${project.thumb}"
@@ -149,18 +149,18 @@ function renderCard(project) {
         loading="lazy"
       />
     </a>
-    <div class="project-card__body">
-      <h3 class="project-card__title">
+    <div class="grid-item__body">
+      <h3 class="grid-item__title">
         <a href="${project.link}" target="_blank" rel="noopener">${escapeHtml(
     project.title
   )}</a>
       </h3>
-      <p class="project-card__description">${escapeHtml(
+      <p class="grid-item__description">${escapeHtml(
         project.description
       )}</p>
       ${
         project.tags && project.tags.length
-          ? `<ul class="project-card__tags">${project.tags
+          ? `<ul class="grid-item__tags">${project.tags
               .map((t) => `<li>${escapeHtml(t)}</li>`)
               .join("")}</ul>`
           : ""

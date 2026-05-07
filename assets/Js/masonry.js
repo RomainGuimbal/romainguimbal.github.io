@@ -1,6 +1,7 @@
 // Initialize Masonry
 let msnry;
 let refreshTimeout;
+let isLayoutInProgress = false;
 
 // Debounce function to limit the rate of layout updates
 function debounce(func, wait) {
@@ -10,14 +11,21 @@ function debounce(func, wait) {
     }
 }
 
+
+
 // Refresh Masonry layout
 function refreshMasonryLayout() {
+    if (isLayoutInProgress) return;
+    isLayoutInProgress = true;
+
     if (msnry) {
-        clearTimeout(refreshTimeout);
-        refreshTimeout = setTimeout(() => {
-            msnry.layout();
-        }, 300); // Increased from 100ms to 300ms
+        msnry.layout();
     }
+
+    // Reset the flag after a delay
+    setTimeout(() => {
+        isLayoutInProgress = false;
+    }, 500);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -47,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Force an initial layout and log when layout completes
         if (msnry) {
             msnry.on('layoutComplete', function(items) {
+                isLayoutInProgress = false;
                 console.info(`masonry: layoutComplete — ${items.length} items laid out`);
 
                 // Log any items with zero or near-zero height (likely culprits)
@@ -63,9 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             try {
-                msnry.layout();
+                refreshMasonryLayout();
             } catch (e) {
-                console.error('masonry: error calling msnry.layout():', e);
+                console.error('masonry: error calling refreshMasonryLayout():', e);
             }
         }
 
@@ -251,7 +260,7 @@ window.addEventListener('resize', () => {
     // Set a new timer
     resizeTimer = setTimeout(() => {
         if (msnry) {
-            msnry.layout();
+            refreshMasonryLayou();
         }
     }, 500); // Wait until resize is complete
 });
