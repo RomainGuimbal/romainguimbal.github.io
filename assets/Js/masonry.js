@@ -62,8 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const preloader = document.getElementById("masonry-preloader");
         if (preloader) preloader.classList.add("hidden");
       });
-
-      refreshMasonryLayout();
+      msnry.layout();
     }
   });
 
@@ -195,6 +194,6 @@ window.addEventListener("resize", () => {
   if (msnry) {
     msnry.options.columnWidth = getColumnWidth();
     msnry.options.gutter = getGutterSize();
-    refreshMasonryLayout();
+    msnry.layout();
   }
 });
