@@ -178,7 +178,7 @@ footer{
 /*-----------------------------------------------------
 # tags
 ------------------------------------------------------*/
-.tag-item#all{
+/* .tag-item#all{
 	--col: #6b6ab4;
 }
 .tag-item#product{
@@ -187,9 +187,9 @@ footer{
 .tag-item#graphic{
 	--col: #7e7ead;
 }
-/* .tag-item#engineering{
+.tag-item#engineering{
 	--col: #96679b;
-} */
+}
 .tag-item#rendering{
 	--col: #707fa4;
 }
@@ -210,4 +210,4 @@ footer{
 }
 .tag-item#painting{
 	--col: #706fa0;
-}
+} */
