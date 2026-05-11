@@ -24,5 +24,18 @@
         "runOn": "folderOpen"
       }
     }
+    ,
+    {
+      "label": "Generate Thumbnails",
+      "type": "shell",
+      "command": "python",
+      "args": [".vscode/generate_thumbnails.py"],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    }
   ]
 }
