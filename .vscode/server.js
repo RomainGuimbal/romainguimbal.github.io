@@ -48,7 +48,7 @@ app.post("/upload-image", upload.single("image"), async (req, res) => {
     // Thumbnail
     await sharp(req.file.buffer)
       .resize(THUMB_WIDTH, THUMB_HEIGHT, { fit: "cover" })
-      .toFile(path.join(IMAGES_DIR, thumbName));
+      .toFile(path.join(IMAGES_DIR, "thumbnails", thumbName));
 
     // Full-size (capped at 1600px wide, preserving ratio)
     await sharp(req.file.buffer)
@@ -56,8 +56,8 @@ app.post("/upload-image", upload.single("image"), async (req, res) => {
       .toFile(path.join(IMAGES_DIR, fullName));
 
     res.json({
-      thumb: `assets/projects/${thumbName}`,
-      full: `assets/projects/${fullName}`,
+      thumb: `assets/img/thumbnails/${thumbName}`,
+      full: `assets/img/${fullName}`,
     });
   } catch (err) {
     console.error("Image processing error:", err);
@@ -66,21 +66,14 @@ app.post("/upload-image", upload.single("image"), async (req, res) => {
 });
 
 // ─── Read current projects from index.html ───────────────────────────────────
+const PROJECTS_PATH = path.join(ROOT, ".vscode", "projects.json");
+
 app.get("/projects", (req, res) => {
   try {
-    const html = fs.readFileSync(INDEX_PATH, "utf8");
-
-    // Extract the JSON blob injected between the editor markers.
-    // If none exists yet, return an empty array.
-    const match = html.match(
-      /<!--EDITOR-DATA-START-->([\s\S]*?)<!--EDITOR-DATA-END-->/
-    );
-    if (!match) return res.json([]);
-
-    const projects = JSON.parse(match[1].trim());
+    if (!fs.existsSync(PROJECTS_PATH)) return res.json([]);
+    const projects = JSON.parse(fs.readFileSync(PROJECTS_PATH, "utf8"));
     res.json(projects);
   } catch (err) {
-    console.error("Error reading projects:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -88,46 +81,23 @@ app.get("/projects", (req, res) => {
 // ─── Apply changes → rewrite index.html ──────────────────────────────────────
 app.post("/apply", (req, res) => {
   try {
-    const projects = req.body; // array of project objects
-    if (!Array.isArray(projects))
-      return res.status(400).json({ error: "Expected an array of projects" });
+    const projects = req.body;
+    if (!Array.isArray(projects)) return res.status(400).json({ error: "Expected array" });
 
+    // Save data to projects.json
+    fs.writeFileSync(PROJECTS_PATH, JSON.stringify(projects, null, 2), "utf8");
+
+    // Rewrite the cards in index.html
     let html = fs.readFileSync(INDEX_PATH, "utf8");
-    const dataBlock = `<!--EDITOR-DATA-START-->\n${JSON.stringify(
-      projects,
-      null,
-      2
-    )}\n<!--EDITOR-DATA-END-->`;
-
-    // ── 1. Update the data marker ──────────────────────────────────────────
-    if (html.includes("<!--EDITOR-DATA-START-->")) {
-      html = html.replace(
-        /<!--EDITOR-DATA-START-->[\s\S]*?<!--EDITOR-DATA-END-->/,
-        dataBlock
-      );
-    } else {
-      // First run: append before </body>
-      html = html.replace("</body>", `${dataBlock}\n</body>`);
-    }
-
-    // ── 2. Regenerate the project cards in the DOM ─────────────────────────
-    //    Replace everything between <!--PROJECTS-START--> and <!--PROJECTS-END-->
-    //    with freshly rendered HTML.
-    //    Add those comments around your project list in index.html once.
     const cardsHtml = projects.map(renderCard).join("\n");
     const projectsBlock = `<!--PROJECTS-START-->\n${cardsHtml}\n<!--PROJECTS-END-->`;
-
     if (html.includes("<!--PROJECTS-START-->")) {
-      html = html.replace(
-        /<!--PROJECTS-START-->[\s\S]*?<!--PROJECTS-END-->/,
-        projectsBlock
-      );
+      html = html.replace(/<!--PROJECTS-START-->[\s\S]*?<!--PROJECTS-END-->/, projectsBlock);
+      fs.writeFileSync(INDEX_PATH, html, "utf8");
     }
 
-    fs.writeFileSync(INDEX_PATH, html, "utf8");
     res.json({ ok: true });
   } catch (err) {
-    console.error("Error applying changes:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -174,10 +144,10 @@ function escapeHtml(str = "") {
     .replace(/"/g, "&quot;");
 }
 
+// Serve static assets from the project root (so the editor can preview index.html styles etc.)
+app.use(express.static(ROOT));
+
 // ─── Start ────────────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
   console.log(`\n  Portfolio editor running at http://localhost:${PORT}\n`);
 });
-
-// Serve static assets from the project root (so the editor can preview index.html styles etc.)
-app.use(express.static(ROOT));
