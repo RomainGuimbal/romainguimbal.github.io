@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Auto: Set Execution Policy & Run Pug Watch",
+      "label": "Set Execution Policy & Run Pug Watch",
       "type": "shell",
       "command": "powershell",
       "args": [
