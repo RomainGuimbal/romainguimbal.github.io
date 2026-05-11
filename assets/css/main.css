@@ -115,7 +115,7 @@ spline-viewer {
   transition: 0.3s ease;
 }
 
-.media-wrap img,
+/* .media-wrap img,
 .media-wrap video {
   filter: grayscale(100%);
   transition: filter 0.5s ease;
@@ -126,9 +126,9 @@ spline-viewer {
 .media-wrap:hover video {
   filter: grayscale(0%);
   mix-blend-mode: normal;
-}
+} */
 
-.media-wrap::before,
+/* .media-wrap::before,
 .video-thumbnail::before {
   content: "";
   position: absolute;
@@ -141,7 +141,7 @@ spline-viewer {
 
 .media-wrap:hover::before {
   background-color: transparent;
-}
+} */
 
 .note-card {
   background-color: var(--half-color);
