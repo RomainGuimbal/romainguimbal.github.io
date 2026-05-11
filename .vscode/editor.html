@@ -393,7 +393,7 @@
       async function loadProjects() {
         try {
           setStatus("Loading…");
-          const res = await fetch("/projects");
+          const res = await fetch("../html/projects");
           if (!res.ok) throw new Error(await res.text());
           projects = await res.json();
           renderAll();

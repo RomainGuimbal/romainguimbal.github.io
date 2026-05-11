@@ -1,6 +1,6 @@
 /**
  * Portfolio Editor Server
- * Run: node editor/server.js
+ * Run: node .vscode/server.js
  * Then open: http://localhost:3000
  */
 
@@ -16,7 +16,7 @@ const PORT = 3000;
 // ─── Paths (relative to project root) ────────────────────────────────────────
 const ROOT = path.resolve(__dirname, "..");
 const INDEX_PATH = path.join(ROOT, "index.html");
-const IMAGES_DIR = path.join(ROOT, "assets", "projects");
+const IMAGES_DIR = path.join(ROOT, "assets", "img");
 
 // Thumbnail dimensions — adjust to match your design
 const THUMB_WIDTH = 600;
@@ -30,11 +30,8 @@ app.use(express.json());
 
 // Serve editor.html at /
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "editor.html"));
+  res.sendFile("editor.html", { root: __dirname });
 });
-
-// Serve static assets from the project root (so the editor can preview index.html styles etc.)
-app.use(express.static(ROOT));
 
 // ─── Image upload ─────────────────────────────────────────────────────────────
 const upload = multer({ storage: multer.memoryStorage() });
@@ -181,3 +178,6 @@ function escapeHtml(str = "") {
 app.listen(PORT, () => {
   console.log(`\n  Portfolio editor running at http://localhost:${PORT}\n`);
 });
+
+// Serve static assets from the project root (so the editor can preview index.html styles etc.)
+app.use(express.static(ROOT));
