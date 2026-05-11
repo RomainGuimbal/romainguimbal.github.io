@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
     <title>Portfolio Editor</title>
     <style>
       *,
@@ -38,7 +39,7 @@
         flex: 1;
       }
       main {
-        max-width: 780px;
+        max-width: 450px;
         margin: 0 auto;
         padding: 32px 24px 80px;
       }
@@ -456,17 +457,21 @@
         </div>
       </div>
 
-      <!-- ══ TODO: Add your own fields below. ══
-           Each field should call updateField(index, 'fieldName', value)
-           on input so the state stays in sync.
-           The examples below are a starting point — rename, add, or remove
-           fields to match your project card structure.           ══ -->
-
       <div class="field">
         <label>Title <span style="color:#c00">*</span></label>
         <input type="text" value="${esc(project.title)}"
-               placeholder="My awesome project"
+               placeholder="Format like that no-cap"
                oninput="updateField(${index},'title',this.value)" />
+      </div>
+
+      <div class="field">
+        <label>Year</label>
+        <input type="number"
+               min="2000" 
+               max="2100" 
+               step="1" 
+               value="2020"
+               oninput="updateField(${index},'year',this.value)" />
       </div>
 
       <div class="field">
@@ -476,20 +481,20 @@
       </div>
 
       <div class="field">
-        <label>Link (URL)</label>
-        <input type="url" value="${esc(project.link)}"
-               placeholder="https://github.com/you/project"
-               oninput="updateField(${index},'link',this.value)" />
-      </div>
-
-      <div class="field">
         <label>Tags <span style="color:#999;font-weight:400">(press Enter or comma to add)</span></label>
         <div class="tags-input-wrapper" id="tags-wrapper-${index}" onclick="focusTagInput(${index})">
           ${renderTagPills(project.tags || [], index)}
           <input type="text" id="tag-input-${index}"
-                 placeholder="e.g. React"
+                 placeholder="product, graphic, rendering, programming; vfx, modeling, animation, procedural, painting"
                  onkeydown="handleTagKey(event,${index})" />
         </div>
+      </div>
+      
+      <div class="field">
+        <label>Link (URL)</label>
+        <input type="url" value="${esc(project.link)}"
+               placeholder="https://hh"
+               oninput="updateField(${index},'link',this.value)" />
       </div>
 
       <!-- ══ End of fields ══ -->

@@ -19,8 +19,8 @@ const INDEX_PATH = path.join(ROOT, "index.html");
 const IMAGES_DIR = path.join(ROOT, "assets", "img");
 
 // Thumbnail dimensions — adjust to match your design
-const THUMB_WIDTH = 600;
-const THUMB_HEIGHT = 400;
+const THUMB_WIDTH = 512;
+const THUMB_HEIGHT = 512;
 
 // ─── Ensure images folder exists ─────────────────────────────────────────────
 fs.mkdirSync(IMAGES_DIR, { recursive: true });
@@ -82,7 +82,8 @@ app.get("/projects", (req, res) => {
 app.post("/apply", (req, res) => {
   try {
     const projects = req.body;
-    if (!Array.isArray(projects)) return res.status(400).json({ error: "Expected array" });
+    if (!Array.isArray(projects))
+      return res.status(400).json({ error: "Expected array" });
 
     // Save data to projects.json
     fs.writeFileSync(PROJECTS_PATH, JSON.stringify(projects, null, 2), "utf8");
@@ -92,7 +93,10 @@ app.post("/apply", (req, res) => {
     const cardsHtml = projects.map(renderCard).join("\n");
     const projectsBlock = `<!--PROJECTS-START-->\n${cardsHtml}\n<!--PROJECTS-END-->`;
     if (html.includes("<!--PROJECTS-START-->")) {
-      html = html.replace(/<!--PROJECTS-START-->[\s\S]*?<!--PROJECTS-END-->/, projectsBlock);
+      html = html.replace(
+        /<!--PROJECTS-START-->[\s\S]*?<!--PROJECTS-END-->/,
+        projectsBlock,
+      );
       fs.writeFileSync(INDEX_PATH, html, "utf8");
     }
 
@@ -103,38 +107,29 @@ app.post("/apply", (req, res) => {
 });
 
 // ─── Card renderer ────────────────────────────────────────────────────────────
-// TODO: Replace this function body with your actual card HTML structure.
 function renderCard(project) {
   return `
-  <article class="grid-item">
+  <article class="grid-item ${String(project.tags).replace(/,/g, " ")}">
     <a href="${project.link}" target="_blank" rel="noopener">
       <img
         src="${project.thumb}"
         alt="${escapeHtml(project.title)}"
-        width="${THUMB_WIDTH}"
-        height="${THUMB_HEIGHT}"
-        loading="lazy"
       />
     </a>
-    <div class="grid-item__body">
-      <h3 class="grid-item__title">
-        <a href="${project.link}" target="_blank" rel="noopener">${escapeHtml(
-    project.title
-  )}</a>
-      </h3>
-      <p class="grid-item__description">${escapeHtml(
-        project.description
-      )}</p>
-      ${
-        project.tags && project.tags.length
-          ? `<ul class="grid-item__tags">${project.tags
-              .map((t) => `<li>${escapeHtml(t)}</li>`)
-              .join("")}</ul>`
-          : ""
-      }
-    </div>
+    <figcaption data-i18n-html="html.fig.${escapeHtml(project.title)}">${escapeHtml(project.description)}<br />${escapeHtml(project.year)}
+    </figcaption>
   </article>`.trim();
 }
+// width="${THUMB_WIDTH}"
+// height="${THUMB_HEIGHT}"
+// loading="lazy"
+// ${
+//   project.tags && project.tags.length
+//     ? `<ul class="grid-item__tags">${project.tags
+//         .map((t) => `<li>${escapeHtml(t)}</li>`)
+//         .join("")}</ul>`
+//     : ""
+// }
 
 function escapeHtml(str = "") {
   return str

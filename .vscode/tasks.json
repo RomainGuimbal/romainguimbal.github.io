@@ -23,8 +23,7 @@
       "runOptions": {
         "runOn": "folderOpen"
       }
-    }
-    ,
+    },
     {
       "label": "Generate Thumbnails",
       "type": "shell",
@@ -36,6 +35,13 @@
         "panel": "shared",
         "clear": true
       }
+    },
+    {
+      "label": "Start Editor",
+      "type": "shell",
+      "command": "node",
+      "args": [".vscode/server.js"],
+      "group": "build"
     }
   ]
 }
