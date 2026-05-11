@@ -92,659 +92,644 @@
       </div>
     </header>
     <main>
-      <div class="container-main">
-        <div class="fullscreen-backdrop" id="backdrop"></div>
-        <li class="tag-list">
-          <div
-            class="tag-item enabled"
-            id="all"
-            onclick="toggleTag(this)"
-            data-i18n="tag.all"
-          >
-            All
-          </div>
-          <div
-            class="tag-item"
-            id="product"
-            onclick="toggleTag(this)"
-            data-i18n="tag.product"
-          >
-            Product Design
-          </div>
-          <div
-            class="tag-item"
-            id="graphic"
-            onclick="toggleTag(this)"
-            data-i18n="tag.graphic"
-          >
-            Graphic
-          </div>
-          <div
-            class="tag-item"
-            id="rendering"
-            onclick="toggleTag(this)"
-            data-i18n="tag.rendering"
-          >
-            Rendering
-          </div>
-          <div
-            class="tag-item"
-            id="programming"
-            onclick="toggleTag(this)"
-            data-i18n="tag.programming"
-          >
-            Programming
-          </div>
-          <div
-            class="tag-item"
-            id="vfx"
-            onclick="toggleTag(this)"
-            data-i18n="tag.vfx"
-          >
-            VFX
-          </div>
-          <div
-            class="tag-item"
-            id="modeling"
-            onclick="toggleTag(this)"
-            data-i18n="tag.modeling"
-          >
-            3D Modeling
-          </div>
-          <div
-            class="tag-item"
-            id="animation"
-            onclick="toggleTag(this)"
-            data-i18n="tag.animation"
-          >
-            Animation
-          </div>
-          <div
-            class="tag-item"
-            id="procedural"
-            onclick="toggleTag(this)"
-            data-i18n="tag.procedural"
-          >
-            Procedural
-          </div>
-          <div
-            class="tag-item"
-            id="painting"
-            onclick="toggleTag(this)"
-            data-i18n="tag.painting"
-          >
-            Drawing &amp Painting
-          </div>
-        </li>
-        <div id="masonry-preloader">
-          <img src="assets/icons/preload-animation.svg" alt="Loading..." />
+      <div class="fullscreen-backdrop" id="backdrop"></div>
+      <li class="tag-list">
+        <div
+          class="tag-item enabled"
+          id="all"
+          onclick="toggleTag(this)"
+          data-i18n="tag.all"
+        >
+          All
         </div>
-        <div class="masonry-grid">
-          <div class="grid-item project product rendering modeling" id="agrume">
-            <div class="multi-image">
-              <a
-                class="media-wrap image-item active"
-                href="assets/img/Kaijus2024 -1.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg" /></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/Kaijus2024 -2.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg" /></a
-              ><a class="media-wrap image-item" href="assets/img/Mood board.jpg"
-                ><img src="assets/img/thumbnails/thumbnail_Mood board.jpg" />
-                <figcaption>Moodboard</figcaption></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/multi sketch presse agrume.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_multi sketch presse agrume.jpg"
-                />
-                <figcaption data-i18n="fig.ideation">Idéation</figcaption></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/Presse agrume.jpg"
-                ><img src="assets/img/thumbnails/thumbnail_Presse agrume.jpg" />
-                <figcaption>Final concept</figcaption></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/Kaijus2024 -1.jpg"
-                ><img src="assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg" />
-                <figcaption>3D model</figcaption></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/Kaijus2024 -2.jpg"
-                ><img src="assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg" />
-                <figcaption>3D model</figcaption></a
-              >
-            </div>
-            <div class="image-dots">
-              <span class="image-dot active" data-index="0"></span
-              ><span class="image-dot" data-index="1"></span
-              ><span class="image-dot" data-index="2"></span
-              ><span class="image-dot" data-index="3"></span
-              ><span class="image-dot" data-index="4"></span
-              ><span class="image-dot" data-index="5"></span
-              ><span class="image-dot" data-index="6"></span>
-            </div>
-            <figcaption>Presse agrume<br />2021</figcaption>
-          </div>
-          <div class="grid-item rendering modeling">
-            <a class="media-wrap image-item" href="assets/img/phare design.jpg"
-              ><img src="assets/img/thumbnails/thumbnail_phare design.jpg"
-            /></a>
-            <figcaption data-i18n-html="html.fig.phare">
-              Reproduction du Feu avant de la Smart Fourjoy Concept. SubD
-              modeling.<br />2021
-            </figcaption>
-          </div>
-          <div class="grid-item project graphic" id="sp-logo">
-            <div class="multi-image">
-              <a
-                class="media-wrap image-item"
-                href="assets/img/splogo_color.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_splogo_color.jpg" /></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/splogomoodboard.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_splogomoodboard.jpg"
-                />
-                <figcaption>Moodboard</figcaption></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/splogowires.jpg"
-                ><img src="assets/img/thumbnails/thumbnail_splogowires.jpg" />
-                <figcaption>Construction</figcaption></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/splogo_wire_clean.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_splogo_wire_clean.jpg"
-                />
-                <figcaption>Outline</figcaption></a
-              >
-            </div>
-            <div class="image-dots">
-              <span class="image-dot active" data-index="0"></span
-              ><span class="image-dot" data-index="1"></span
-              ><span class="image-dot" data-index="2"></span
-              ><span class="image-dot" data-index="3"></span>
-            </div>
-            <figcaption data-i18n-html="html.fig.sp-logo">
-              Logo SurfacePsycho<br />2024
-            </figcaption>
-          </div>
-          <div class="grid-item graphic">
-            <a
-              class="media-wrap image-item"
-              href="assets/img/Logo recycling - savan ranger.jpg"
-              ><img
-                src="assets/img/thumbnails/thumbnail_Logo recycling - savan ranger.jpg"
-            /></a>
-            <figcaption>Logo<br />2025</figcaption>
-          </div>
-          <div class="grid-item project programming product" id="surfacepsycho">
-            <div class="multi-image" style="aspect-ratio: 1">
-              <a
-                class="media-wrap image-item active"
-                href="assets/img/bateau demo sp.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_bateau demo sp.jpg" /></a
-              ><a class="media-wrap video-container">
-                <video
-                  preload="none"
-                  data-src="assets/video/SP - G4 continuity.mp4"
-                  data-type="video/mp4"
-                ></video>
-                <div class="video-thumbnail loading"></div>
-                <button class="play-pause-btn" id="playPauseBtn">
-                  <div class="play-icon"></div></button></a
-              ><a class="media-wrap note-card">
-                <div class="note-card-content">
-                  <h3>SurfacePsycho</h3>
-                  <p>
-                    Blender add-on to Import, Edit and Export STEP data. The
-                    promise of a fluid NURBS editing experience. Fully free and
-                    open-source
-                  </p>
-                </div></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/SP hanger viewport.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_SP hanger viewport.jpg"
-                />
-                <figcaption>Hanger test product</figcaption></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/SP hanger SW.jpg"
-                ><img src="assets/img/thumbnails/thumbnail_SP hanger SW.jpg" />
-                <figcaption>Hanger imported in SolidWorks</figcaption></a
-              >
-            </div>
-            <div class="image-dots">
-              <span class="image-dot active" data-index="0"></span
-              ><span class="image-dot" data-index="1"></span
-              ><span class="image-dot" data-index="2"></span
-              ><span class="image-dot" data-index="3"></span
-              ><span class="image-dot" data-index="4"></span
-              ><span class="image-dot" data-index="5"></span>
-            </div>
-            <figcaption>SurfacePsycho Blender add-on</figcaption>
-          </div>
-          <div class="grid-item graphism">
-            <a
-              class="media-wrap image-item"
-              href="assets/img/Deco imperiale thiner.jpg"
-              ><img
-                src="assets/img/thumbnails/thumbnail_Deco imperiale thiner.jpg"
-            /></a>
-            <figcaption>
-              Décoration impériale minimale<br />Réalisée avec SurfacePsycho<br />2026
-            </figcaption>
-          </div>
-          <div class="grid-item product painting">
-            <a
-              class="media-wrap image-item"
-              href="assets/img/random car dessin.jpg"
-              ><img
-                class="content-pic"
-                src="assets/img/thumbnails/thumbnail_random car dessin.jpg"
-            /></a>
-            <figcaption data-i18n-html="html.fig.sketch">
-              Croquis d'entrainement<br />2024
-            </figcaption>
-          </div>
-          <div class="grid-item product rendering modeling">
-            <a
-              class="media-wrap image-item"
-              href="assets/img/Lardon octobre 2019 copy.jpg"
-              ><img
-                class="content-pic"
-                src="assets/img/thumbnails/thumbnail_Lardon octobre 2019 copy.jpg"
-            /></a>
-            <figcaption>Le Lardon<br />Render 2019<br />Model 2016</figcaption>
-          </div>
-          <div class="grid-item product modeling">
-            <a
-              class="media-wrap image-item"
-              href="assets/img/vaisseau scoot modif avril 2021.jpg"
-              ><img
-                src="assets/img/thumbnails/thumbnail_vaisseau scoot modif avril 2021.jpg"
-            /></a>
-          </div>
-          <div class="grid-item animation">
-            <a class="media-wrap video-container">
-              <video
-                preload="none"
-                data-src="assets/video/Precision living.mp4"
-                data-type="video/mp4"
-              ></video>
-              <div class="video-thumbnail loading"></div>
-              <button class="play-pause-btn" id="playPauseBtn">
-                <div class="play-icon"></div></button
-            ></a>
-            <figcaption data-i18n-html="html.fig.precision">
-              Precision living<br />2022<br />Musique : Vibin' Out - FKJ, ((( O
-              )))
-            </figcaption>
-          </div>
-          <div
-            class="grid-item project modeling procedural rendering"
-            id="archi-gene"
-          >
-            <div class="multi-image" style="aspect-ratio: 16/9">
-              <a
-                class="media-wrap image-item active"
-                href="assets/img/Piliers spiral bois.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_Piliers spiral bois.jpg" /></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/batiments rubans.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_batiments rubans.jpg" /></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/maison d'allumettes.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_maison d'allumettes.jpg" /></a
-              ><a class="media-wrap image-item" href="assets/img/le feizomj.jpg"
-                ><img src="assets/img/thumbnails/thumbnail_le feizomj.jpg"
-              /></a>
-            </div>
-            <div class="image-dots">
-              <span class="image-dot active" data-index="0"></span
-              ><span class="image-dot" data-index="1"></span
-              ><span class="image-dot" data-index="2"></span
-              ><span class="image-dot" data-index="3"></span>
-            </div>
-            <figcaption data-i18n="fig.archi-gene">
-              Architecture procédurale
-            </figcaption>
-          </div>
-          <div class="grid-item project procedural" id="toiture">
-            <div class="multi-image" style="aspect-ratio: 16/9">
-              <a
-                class="media-wrap image-item active"
-                href="assets/img/toiture 1.jpg"
-                ><img src="assets/img/thumbnails/thumbnail_toiture 1.jpg" /></a
-              ><a class="media-wrap image-item" href="assets/img/toiture 2.jpg"
-                ><img src="assets/img/thumbnails/thumbnail_toiture 2.jpg" /></a
-              ><a class="media-wrap image-item" href="assets/img/toiture 3.jpg"
-                ><img src="assets/img/thumbnails/thumbnail_toiture 3.jpg" /></a
-              ><a class="media-wrap image-item" href="assets/img/toiture 4.jpg"
-                ><img src="assets/img/thumbnails/thumbnail_toiture 4.jpg"
-              /></a>
-            </div>
-            <div class="image-dots">
-              <span class="image-dot active" data-index="0"></span
-              ><span class="image-dot" data-index="1"></span
-              ><span class="image-dot" data-index="2"></span
-              ><span class="image-dot" data-index="3"></span>
-            </div>
-            <figcaption data-i18n-html="html.fig.toiture">
-              Toiture procédurale<br />2024
-            </figcaption>
-          </div>
-          <div class="grid-item project product graphic" id="foulard">
-            <div class="multi-image">
-              <a
-                class="media-wrap image-item active"
-                href="assets/img/foulard electro.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_foulard electro.jpg" /></a
-              ><a class="media-wrap image-item" href="assets/img/foulard 2.jpg"
-                ><img src="assets/img/thumbnails/thumbnail_foulard 2.jpg"
-              /></a>
-            </div>
-            <div class="image-dots">
-              <span class="image-dot active" data-index="0"></span
-              ><span class="image-dot" data-index="1"></span>
-            </div>
-            <figcaption data-i18n-html="html.fig.foulard">
-              Foulard carte électronique<br />2015
-            </figcaption>
-          </div>
-          <div class="grid-item project product rendering modeling" id="sword">
-            <div class="multi-image">
-              <a class="media-wrap video-container active">
-                <video
-                  preload="none"
-                  data-src="assets/video/Sword 2017 3D 20230001-0100.mp4"
-                  data-type="video/mp4"
-                ></video>
-                <div class="video-thumbnail loading"></div>
-                <button class="play-pause-btn" id="playPauseBtn">
-                  <div class="play-icon"></div></button></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/Sword 2017 3D 2023 close1.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_Sword 2017 3D 2023 close1.jpg" /></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/Sword 2017 3D 2023 close2.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_Sword 2017 3D 2023 close2.jpg" /></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/Sword 2017 3D 2023 HD.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_Sword 2017 3D 2023 HD.jpg"
-              /></a>
-            </div>
-            <div class="image-dots">
-              <span class="image-dot active" data-index="0"></span
-              ><span class="image-dot" data-index="1"></span
-              ><span class="image-dot" data-index="2"></span
-              ><span class="image-dot" data-index="3"></span>
-            </div>
-          </div>
-          <div class="grid-item modeling procedural">
-            <a
-              class="media-wrap image-item"
-              href="assets/img/Architecture classique no mat.jpg"
-              ><img
-                src="assets/img/thumbnails/thumbnail_Architecture classique no mat.jpg"
-            /></a>
-            <figcaption data-i18n-html="html.fig.archi-classique">
-              Exercice d'architecture classique<br />2024
-            </figcaption>
-          </div>
-          <div class="grid-item vfx procedural">
-            <div class="media-wrap video-container">
-              <video
-                preload="none"
-                data-src="assets/video/Motion mandala0001-0198.mp4"
-                data-type="video/mp4"
-              ></video>
-              <div class="video-thumbnail loading"></div>
-              <button class="play-pause-btn" id="playPauseBtn">
-                <div class="play-icon"></div>
-              </button>
-            </div>
-            <figcaption data-i18n-html="html.fig.mandala">
-              2023<br />Son de création personnelle
-            </figcaption>
-          </div>
-          <div class="grid-item painting">
-            <a
-              class="media-wrap image-item"
-              href="assets/img/Prince des murs.jpg"
-              ><img src="assets/img/thumbnails/thumbnail_Prince des murs.jpg"
-            /></a>
-            <figcaption>Prince des murs 2023</figcaption>
-          </div>
-          <div class="grid-item project product rendering" id="robe-doree">
-            <div class="multi-image" style="aspect-ratio: 0.7">
-              <a
-                class="media-wrap image-item"
-                href="assets/img/Robe velour doré 2023.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_Robe velour doré 2023.jpg"
-                />
-                <figcaption>2023</figcaption></a
-              ><a class="media-wrap image-item" href="assets/img/robe.jpg"
-                ><img src="assets/img/thumbnails/thumbnail_robe.jpg" />
-                <figcaption>2020</figcaption></a
-              >
-            </div>
-            <div class="image-dots">
-              <span class="image-dot active" data-index="0"></span
-              ><span class="image-dot" data-index="1"></span>
-            </div>
-            <figcaption data-i18n="fig.robe">Robe velour doré</figcaption>
-          </div>
-          <div class="grid-item modeling">
-            <a class="media-wrap image-item" href="assets/img/head sculpt.jpg"
-              ><img src="assets/img/thumbnails/thumbnail_head sculpt.jpg"
-            /></a>
-            <figcaption>Head sculpt<br />2022</figcaption>
-          </div>
-          <div class="grid-item project vfx" id="porsche">
-            <div class="media-wrap video-container">
-              <video
-                preload="none"
-                data-src="assets/video/porsche courbes.mp4"
-                data-type="video/mp4"
-              ></video>
-              <div class="video-thumbnail loading"></div>
-              <button class="play-pause-btn" id="playPauseBtn">
-                <div class="play-icon"></div>
-              </button>
-            </div>
-          </div>
-          <div class="grid-item modeling">
-            <a class="media-wrap image-item" href="assets/img/shoes sim 4.jpg"
-              ><img src="assets/img/thumbnails/thumbnail_shoes sim 4.jpg"
-            /></a>
-            <figcaption>2018</figcaption>
-          </div>
-          <div class="grid-item vfx rendering">
-            <a
-              class="media-wrap image-item"
-              href="assets/img/Maciek Jasik studdy 2.jpg"
-              ><img
-                src="assets/img/thumbnails/thumbnail_Maciek Jasik studdy 2.jpg"
-            /></a>
-            <figcaption data-i18n-html="html.fig.dissolution">
-              Dissolution<br />Flou-net façon Maciek Jasik<br />2022
-            </figcaption>
-          </div>
-          <div class="grid-item vfx procedural">
-            <a class="media-wrap video-container" style="aspect-ratio: 16/9">
-              <video
-                preload="none"
-                data-src="assets/video/graphite final.mp4"
-                data-type="video/mp4"
-              ></video>
-              <div class="video-thumbnail loading"></div>
-              <button class="play-pause-btn" id="playPauseBtn">
-                <div class="play-icon"></div></button
-            ></a>
-            <figcaption>Graphite <br />2020</figcaption>
-          </div>
-          <div class="grid-item vfx">
-            <a class="media-wrap video-container">
-              <video
-                preload="none"
-                data-src="assets/video/diamant holo 20001-0149.mp4"
-                data-type="video/mp4"
-              ></video>
-              <div class="video-thumbnail loading"></div>
-              <button class="play-pause-btn" id="playPauseBtn">
-                <div class="play-icon"></div></button
-            ></a>
-            <figcaption>2020</figcaption>
-          </div>
-          <div class="grid-item project procedural modeling" id="verriere">
-            <div class="multi-image" style="aspect-ratio: 16/9">
-              <a
-                class="media-wrap image-item active"
-                href="assets/img/verrière bateau.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_verrière bateau.jpg" /></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/Salle de bal 1.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_Salle de bal 1.jpg" /></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/Salle de bal 2.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_Salle de bal 2.jpg" /></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/verrière bateau 1.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_verrière bateau 1.jpg" /></a
-              ><a
-                class="media-wrap image-item"
-                href="assets/img/verrière bateau 2.jpg"
-                ><img
-                  src="assets/img/thumbnails/thumbnail_verrière bateau 2.jpg"
-              /></a>
-            </div>
-            <div class="image-dots">
-              <span class="image-dot active" data-index="0"></span
-              ><span class="image-dot" data-index="1"></span
-              ><span class="image-dot" data-index="2"></span
-              ><span class="image-dot" data-index="3"></span
-              ><span class="image-dot" data-index="4"></span>
-            </div>
-            <figcaption data-i18n-html="html.fig.verriere">
-              Verrière de bateau "royal", architecture procédurale
-            </figcaption>
-          </div>
-          <div class="grid-item procedural">
-            <a class="media-wrap video-container">
-              <video
-                preload="none"
-                data-src="assets/video/Origami procedurale.mp4"
-                data-type="video/mp4"
-              ></video>
-              <div class="video-thumbnail loading"></div>
-              <button class="play-pause-btn" id="playPauseBtn">
-                <div class="play-icon"></div></button
-            ></a>
-            <figcaption data-i18n-html="html.fig.origami">
-              Origami Procédurale<br />Génération temps réel des patrons de
-              découpe numérotés<br />2023
-            </figcaption>
-          </div>
-          <div class="grid-item graphic vfx procedural">
-            <a
-              class="media-wrap image-item"
-              href="assets/img/Carte de voeuuu23 3.jpg"
-              ><img
-                src="assets/img/thumbnails/thumbnail_Carte de voeuuu23 3.jpg"
-            /></a>
-            <figcaption data-i18n="fig.carte-voeux">
-              Carte de Voeux 2023
-            </figcaption>
-          </div>
-          <div class="grid-item vfx">
-            <a class="media-wrap image-item" href="assets/img/inviit.jpg"
-              ><img src="assets/img/thumbnails/thumbnail_inviit.jpg"
-            /></a>
-            <figcaption>2018</figcaption>
-          </div>
-          <div class="grid-item painting">
-            <a
-              class="media-wrap image-item"
-              href="assets/img/Princesse Cation tete 3quarts.jpg"
-              ><img
-                src="assets/img/thumbnails/thumbnail_Princesse Cation tete 3quarts.jpg"
-            /></a>
-            <figcaption>
-              Princesse Cation<br />Character design<br />2021
-            </figcaption>
-          </div>
-          <div class="grid-item graphic animation">
-            <a class="media-wrap video-container" style="aspect-ratio: 10/13">
-              <video
-                preload="none"
-                data-src="assets/video/fleur0001-0033.mp4"
-                data-type="video/mp4"
-              ></video>
-              <div class="video-thumbnail loading"></div>
-              <button class="play-pause-btn" id="playPauseBtn">
-                <div class="play-icon"></div></button
-            ></a>
-            <figcaption>2016</figcaption>
-          </div>
-          <div class="grid-item rendering vfx procedural">
-            <a class="media-wrap image-item" href="assets/img/artiche.jpg"
-              ><img src="assets/img/thumbnails/thumbnail_artiche.jpg"
-            /></a>
-            <figcaption data-i18n-html="html.fig.artiche">
-              Image extraite du court-métrage<br /><i
-                >Born to Wear, The Vegetal Revange</i
-              ><br />Réalisé en collaboration avec Tom Février<br />2023
-            </figcaption>
-          </div>
-          <div class="grid-item graphism rendering">
-            <a class="media-wrap image-item" href="assets/img/0.9 cover.jpg"
-              ><img src="assets/img/thumbnails/thumbnail_0.9 cover.jpg"
-            /></a>
-            <figcaption>
-              Image de couverture SurfacePsycho version 0.9<br />2025
-            </figcaption>
-          </div>
-          <div class="grid-item graphic">
-            <a class="media-wrap image-item" href="assets/img/G-co 2.jpg"
-              ><img src="assets/img/thumbnails/thumbnail_G-co 2.jpg"
-            /></a>
-            <figcaption>Illustrator<br />2014</figcaption>
-          </div>
-          <!--PROJECTS-START-->
-          <!--PROJECTS-END-->
+        <div
+          class="tag-item"
+          id="product"
+          onclick="toggleTag(this)"
+          data-i18n="tag.product"
+        >
+          Product Design
         </div>
+        <div
+          class="tag-item"
+          id="graphic"
+          onclick="toggleTag(this)"
+          data-i18n="tag.graphic"
+        >
+          Graphic
+        </div>
+        <div
+          class="tag-item"
+          id="rendering"
+          onclick="toggleTag(this)"
+          data-i18n="tag.rendering"
+        >
+          Rendering
+        </div>
+        <div
+          class="tag-item"
+          id="programming"
+          onclick="toggleTag(this)"
+          data-i18n="tag.programming"
+        >
+          Programming
+        </div>
+        <div
+          class="tag-item"
+          id="vfx"
+          onclick="toggleTag(this)"
+          data-i18n="tag.vfx"
+        >
+          VFX
+        </div>
+        <div
+          class="tag-item"
+          id="modeling"
+          onclick="toggleTag(this)"
+          data-i18n="tag.modeling"
+        >
+          3D Modeling
+        </div>
+        <div
+          class="tag-item"
+          id="animation"
+          onclick="toggleTag(this)"
+          data-i18n="tag.animation"
+        >
+          Animation
+        </div>
+        <div
+          class="tag-item"
+          id="procedural"
+          onclick="toggleTag(this)"
+          data-i18n="tag.procedural"
+        >
+          Procedural
+        </div>
+        <div
+          class="tag-item"
+          id="painting"
+          onclick="toggleTag(this)"
+          data-i18n="tag.painting"
+        >
+          Drawing &amp Painting
+        </div>
+      </li>
+      <div id="masonry-preloader">
+        <img src="assets/icons/preload-animation.svg" alt="Loading..." />
+      </div>
+      <div class="masonry-grid">
+        <div class="grid-item project product rendering modeling" id="agrume">
+          <div class="multi-image">
+            <a
+              class="media-wrap image-item active"
+              href="assets/img/Kaijus2024 -1.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg" /></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/Kaijus2024 -2.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg" /></a
+            ><a class="media-wrap image-item" href="assets/img/Mood board.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_Mood board.jpg" />
+              <figcaption>Moodboard</figcaption></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/multi sketch presse agrume.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_multi sketch presse agrume.jpg"
+              />
+              <figcaption data-i18n="fig.ideation">Idéation</figcaption></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/Presse agrume.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_Presse agrume.jpg" />
+              <figcaption>Final concept</figcaption></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/Kaijus2024 -1.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_Kaijus2024 -1.jpg" />
+              <figcaption>3D model</figcaption></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/Kaijus2024 -2.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_Kaijus2024 -2.jpg" />
+              <figcaption>3D model</figcaption></a
+            >
+          </div>
+          <div class="image-dots">
+            <span class="image-dot active" data-index="0"></span
+            ><span class="image-dot" data-index="1"></span
+            ><span class="image-dot" data-index="2"></span
+            ><span class="image-dot" data-index="3"></span
+            ><span class="image-dot" data-index="4"></span
+            ><span class="image-dot" data-index="5"></span
+            ><span class="image-dot" data-index="6"></span>
+          </div>
+          <figcaption>Presse agrume<br />2021</figcaption>
+        </div>
+        <div class="grid-item rendering modeling">
+          <a class="media-wrap image-item" href="assets/img/phare design.jpg"
+            ><img src="assets/img/thumbnails/thumbnail_phare design.jpg"
+          /></a>
+          <figcaption data-i18n-html="html.fig.phare">
+            Reproduction du Feu avant de la Smart Fourjoy Concept. SubD
+            modeling.<br />2021
+          </figcaption>
+        </div>
+        <div class="grid-item project graphic" id="sp-logo">
+          <div class="multi-image">
+            <a class="media-wrap image-item" href="assets/img/splogo_color.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_splogo_color.jpg" /></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/splogomoodboard.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_splogomoodboard.jpg" />
+              <figcaption>Moodboard</figcaption></a
+            ><a class="media-wrap image-item" href="assets/img/splogowires.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_splogowires.jpg" />
+              <figcaption>Construction</figcaption></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/splogo_wire_clean.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_splogo_wire_clean.jpg"
+              />
+              <figcaption>Outline</figcaption></a
+            >
+          </div>
+          <div class="image-dots">
+            <span class="image-dot active" data-index="0"></span
+            ><span class="image-dot" data-index="1"></span
+            ><span class="image-dot" data-index="2"></span
+            ><span class="image-dot" data-index="3"></span>
+          </div>
+          <figcaption data-i18n-html="html.fig.sp-logo">
+            Logo SurfacePsycho<br />2024
+          </figcaption>
+        </div>
+        <div class="grid-item graphic">
+          <a
+            class="media-wrap image-item"
+            href="assets/img/Logo recycling - savan ranger.jpg"
+            ><img
+              src="assets/img/thumbnails/thumbnail_Logo recycling - savan ranger.jpg"
+          /></a>
+          <figcaption>Logo<br />2025</figcaption>
+        </div>
+        <div class="grid-item project programming product" id="surfacepsycho">
+          <div class="multi-image" style="aspect-ratio: 1">
+            <a
+              class="media-wrap image-item active"
+              href="assets/img/bateau demo sp.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_bateau demo sp.jpg" /></a
+            ><a class="media-wrap video-container">
+              <video
+                preload="none"
+                data-src="assets/video/SP - G4 continuity.mp4"
+                data-type="video/mp4"
+              ></video>
+              <div class="video-thumbnail loading"></div>
+              <button class="play-pause-btn" id="playPauseBtn">
+                <div class="play-icon"></div></button></a
+            ><a class="media-wrap note-card">
+              <div class="note-card-content">
+                <h3>SurfacePsycho</h3>
+                <p>
+                  Blender add-on to Import, Edit and Export STEP data. The
+                  promise of a fluid NURBS editing experience. Fully free and
+                  open-source
+                </p>
+              </div></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/SP hanger viewport.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_SP hanger viewport.jpg"
+              />
+              <figcaption>Hanger test product</figcaption></a
+            ><a class="media-wrap image-item" href="assets/img/SP hanger SW.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_SP hanger SW.jpg" />
+              <figcaption>Hanger imported in SolidWorks</figcaption></a
+            >
+          </div>
+          <div class="image-dots">
+            <span class="image-dot active" data-index="0"></span
+            ><span class="image-dot" data-index="1"></span
+            ><span class="image-dot" data-index="2"></span
+            ><span class="image-dot" data-index="3"></span
+            ><span class="image-dot" data-index="4"></span
+            ><span class="image-dot" data-index="5"></span>
+          </div>
+          <figcaption>SurfacePsycho Blender add-on</figcaption>
+        </div>
+        <div class="grid-item graphism">
+          <a
+            class="media-wrap image-item"
+            href="assets/img/Deco imperiale thiner.jpg"
+            ><img
+              src="assets/img/thumbnails/thumbnail_Deco imperiale thiner.jpg"
+          /></a>
+          <figcaption>
+            Décoration impériale minimale<br />Réalisée avec SurfacePsycho<br />2026
+          </figcaption>
+        </div>
+        <div class="grid-item product painting">
+          <a
+            class="media-wrap image-item"
+            href="assets/img/random car dessin.jpg"
+            ><img
+              class="content-pic"
+              src="assets/img/thumbnails/thumbnail_random car dessin.jpg"
+          /></a>
+          <figcaption data-i18n-html="html.fig.sketch">
+            Croquis d'entrainement<br />2024
+          </figcaption>
+        </div>
+        <div class="grid-item product rendering modeling">
+          <a
+            class="media-wrap image-item"
+            href="assets/img/Lardon octobre 2019 copy.jpg"
+            ><img
+              class="content-pic"
+              src="assets/img/thumbnails/thumbnail_Lardon octobre 2019 copy.jpg"
+          /></a>
+          <figcaption>Le Lardon<br />Render 2019<br />Model 2016</figcaption>
+        </div>
+        <div class="grid-item product modeling">
+          <a
+            class="media-wrap image-item"
+            href="assets/img/vaisseau scoot modif avril 2021.jpg"
+            ><img
+              src="assets/img/thumbnails/thumbnail_vaisseau scoot modif avril 2021.jpg"
+          /></a>
+        </div>
+        <div class="grid-item animation">
+          <a class="media-wrap video-container">
+            <video
+              preload="none"
+              data-src="assets/video/Precision living.mp4"
+              data-type="video/mp4"
+            ></video>
+            <div class="video-thumbnail loading"></div>
+            <button class="play-pause-btn" id="playPauseBtn">
+              <div class="play-icon"></div></button
+          ></a>
+          <figcaption data-i18n-html="html.fig.precision">
+            Precision living<br />2022<br />Musique : Vibin' Out - FKJ, ((( O
+            )))
+          </figcaption>
+        </div>
+        <div
+          class="grid-item project modeling procedural rendering"
+          id="archi-gene"
+        >
+          <div class="multi-image" style="aspect-ratio: 16/9">
+            <a
+              class="media-wrap image-item active"
+              href="assets/img/Piliers spiral bois.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_Piliers spiral bois.jpg" /></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/batiments rubans.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_batiments rubans.jpg" /></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/maison d'allumettes.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_maison d'allumettes.jpg" /></a
+            ><a class="media-wrap image-item" href="assets/img/le feizomj.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_le feizomj.jpg"
+            /></a>
+          </div>
+          <div class="image-dots">
+            <span class="image-dot active" data-index="0"></span
+            ><span class="image-dot" data-index="1"></span
+            ><span class="image-dot" data-index="2"></span
+            ><span class="image-dot" data-index="3"></span>
+          </div>
+          <figcaption data-i18n="fig.archi-gene">
+            Architecture procédurale
+          </figcaption>
+        </div>
+        <div class="grid-item project procedural" id="toiture">
+          <div class="multi-image" style="aspect-ratio: 16/9">
+            <a
+              class="media-wrap image-item active"
+              href="assets/img/toiture 1.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_toiture 1.jpg" /></a
+            ><a class="media-wrap image-item" href="assets/img/toiture 2.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_toiture 2.jpg" /></a
+            ><a class="media-wrap image-item" href="assets/img/toiture 3.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_toiture 3.jpg" /></a
+            ><a class="media-wrap image-item" href="assets/img/toiture 4.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_toiture 4.jpg"
+            /></a>
+          </div>
+          <div class="image-dots">
+            <span class="image-dot active" data-index="0"></span
+            ><span class="image-dot" data-index="1"></span
+            ><span class="image-dot" data-index="2"></span
+            ><span class="image-dot" data-index="3"></span>
+          </div>
+          <figcaption data-i18n-html="html.fig.toiture">
+            Toiture procédurale<br />2024
+          </figcaption>
+        </div>
+        <div class="grid-item project product graphic" id="foulard">
+          <div class="multi-image">
+            <a
+              class="media-wrap image-item active"
+              href="assets/img/foulard electro.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_foulard electro.jpg" /></a
+            ><a class="media-wrap image-item" href="assets/img/foulard 2.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_foulard 2.jpg"
+            /></a>
+          </div>
+          <div class="image-dots">
+            <span class="image-dot active" data-index="0"></span
+            ><span class="image-dot" data-index="1"></span>
+          </div>
+          <figcaption data-i18n-html="html.fig.foulard">
+            Foulard carte électronique<br />2015
+          </figcaption>
+        </div>
+        <div class="grid-item project product rendering modeling" id="sword">
+          <div class="multi-image">
+            <a class="media-wrap video-container active">
+              <video
+                preload="none"
+                data-src="assets/video/Sword 2017 3D 20230001-0100.mp4"
+                data-type="video/mp4"
+              ></video>
+              <div class="video-thumbnail loading"></div>
+              <button class="play-pause-btn" id="playPauseBtn">
+                <div class="play-icon"></div></button></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/Sword 2017 3D 2023 close1.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_Sword 2017 3D 2023 close1.jpg" /></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/Sword 2017 3D 2023 close2.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_Sword 2017 3D 2023 close2.jpg" /></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/Sword 2017 3D 2023 HD.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_Sword 2017 3D 2023 HD.jpg"
+            /></a>
+          </div>
+          <div class="image-dots">
+            <span class="image-dot active" data-index="0"></span
+            ><span class="image-dot" data-index="1"></span
+            ><span class="image-dot" data-index="2"></span
+            ><span class="image-dot" data-index="3"></span>
+          </div>
+        </div>
+        <div class="grid-item modeling procedural">
+          <a
+            class="media-wrap image-item"
+            href="assets/img/Architecture classique no mat.jpg"
+            ><img
+              src="assets/img/thumbnails/thumbnail_Architecture classique no mat.jpg"
+          /></a>
+          <figcaption data-i18n-html="html.fig.archi-classique">
+            Exercice d'architecture classique<br />2024
+          </figcaption>
+        </div>
+        <div class="grid-item vfx procedural">
+          <div class="media-wrap video-container">
+            <video
+              preload="none"
+              data-src="assets/video/Motion mandala0001-0198.mp4"
+              data-type="video/mp4"
+            ></video>
+            <div class="video-thumbnail loading"></div>
+            <button class="play-pause-btn" id="playPauseBtn">
+              <div class="play-icon"></div>
+            </button>
+          </div>
+          <figcaption data-i18n-html="html.fig.mandala">
+            2023<br />Son de création personnelle
+          </figcaption>
+        </div>
+        <div class="grid-item painting">
+          <a class="media-wrap image-item" href="assets/img/Prince des murs.jpg"
+            ><img src="assets/img/thumbnails/thumbnail_Prince des murs.jpg"
+          /></a>
+          <figcaption>Prince des murs 2023</figcaption>
+        </div>
+        <div class="grid-item project product rendering" id="robe-doree">
+          <div class="multi-image" style="aspect-ratio: 0.7">
+            <a
+              class="media-wrap image-item"
+              href="assets/img/Robe velour doré 2023.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_Robe velour doré 2023.jpg"
+              />
+              <figcaption>2023</figcaption></a
+            ><a class="media-wrap image-item" href="assets/img/robe.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_robe.jpg" />
+              <figcaption>2020</figcaption></a
+            >
+          </div>
+          <div class="image-dots">
+            <span class="image-dot active" data-index="0"></span
+            ><span class="image-dot" data-index="1"></span>
+          </div>
+          <figcaption data-i18n="fig.robe">Robe velour doré</figcaption>
+        </div>
+        <div class="grid-item modeling">
+          <a class="media-wrap image-item" href="assets/img/head sculpt.jpg"
+            ><img src="assets/img/thumbnails/thumbnail_head sculpt.jpg"
+          /></a>
+          <figcaption>Head sculpt<br />2022</figcaption>
+        </div>
+        <div class="grid-item project vfx" id="porsche">
+          <div class="media-wrap video-container">
+            <video
+              preload="none"
+              data-src="assets/video/porsche courbes.mp4"
+              data-type="video/mp4"
+            ></video>
+            <div class="video-thumbnail loading"></div>
+            <button class="play-pause-btn" id="playPauseBtn">
+              <div class="play-icon"></div>
+            </button>
+          </div>
+        </div>
+        <div class="grid-item modeling">
+          <a class="media-wrap image-item" href="assets/img/shoes sim 4.jpg"
+            ><img src="assets/img/thumbnails/thumbnail_shoes sim 4.jpg"
+          /></a>
+          <figcaption>2018</figcaption>
+        </div>
+        <div class="grid-item vfx rendering">
+          <a
+            class="media-wrap image-item"
+            href="assets/img/Maciek Jasik studdy 2.jpg"
+            ><img
+              src="assets/img/thumbnails/thumbnail_Maciek Jasik studdy 2.jpg"
+          /></a>
+          <figcaption data-i18n-html="html.fig.dissolution">
+            Dissolution<br />Flou-net façon Maciek Jasik<br />2022
+          </figcaption>
+        </div>
+        <div class="grid-item vfx procedural">
+          <a class="media-wrap video-container" style="aspect-ratio: 16/9">
+            <video
+              preload="none"
+              data-src="assets/video/graphite final.mp4"
+              data-type="video/mp4"
+            ></video>
+            <div class="video-thumbnail loading"></div>
+            <button class="play-pause-btn" id="playPauseBtn">
+              <div class="play-icon"></div></button
+          ></a>
+          <figcaption>Graphite <br />2020</figcaption>
+        </div>
+        <div class="grid-item vfx">
+          <a class="media-wrap video-container">
+            <video
+              preload="none"
+              data-src="assets/video/diamant holo 20001-0149.mp4"
+              data-type="video/mp4"
+            ></video>
+            <div class="video-thumbnail loading"></div>
+            <button class="play-pause-btn" id="playPauseBtn">
+              <div class="play-icon"></div></button
+          ></a>
+          <figcaption>2020</figcaption>
+        </div>
+        <div class="grid-item project procedural modeling" id="verriere">
+          <div class="multi-image" style="aspect-ratio: 16/9">
+            <a
+              class="media-wrap image-item active"
+              href="assets/img/verrière bateau.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_verrière bateau.jpg" /></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/Salle de bal 1.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_Salle de bal 1.jpg" /></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/Salle de bal 2.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_Salle de bal 2.jpg" /></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/verrière bateau 1.jpg"
+              ><img
+                src="assets/img/thumbnails/thumbnail_verrière bateau 1.jpg" /></a
+            ><a
+              class="media-wrap image-item"
+              href="assets/img/verrière bateau 2.jpg"
+              ><img src="assets/img/thumbnails/thumbnail_verrière bateau 2.jpg"
+            /></a>
+          </div>
+          <div class="image-dots">
+            <span class="image-dot active" data-index="0"></span
+            ><span class="image-dot" data-index="1"></span
+            ><span class="image-dot" data-index="2"></span
+            ><span class="image-dot" data-index="3"></span
+            ><span class="image-dot" data-index="4"></span>
+          </div>
+          <figcaption data-i18n-html="html.fig.verriere">
+            Verrière de bateau "royal", architecture procédurale
+          </figcaption>
+        </div>
+        <div class="grid-item procedural">
+          <a class="media-wrap video-container">
+            <video
+              preload="none"
+              data-src="assets/video/Origami procedurale.mp4"
+              data-type="video/mp4"
+            ></video>
+            <div class="video-thumbnail loading"></div>
+            <button class="play-pause-btn" id="playPauseBtn">
+              <div class="play-icon"></div></button
+          ></a>
+          <figcaption data-i18n-html="html.fig.origami">
+            Origami Procédurale<br />Génération temps réel des patrons de
+            découpe numérotés<br />2023
+          </figcaption>
+        </div>
+        <div class="grid-item graphic vfx procedural">
+          <a
+            class="media-wrap image-item"
+            href="assets/img/Carte de voeuuu23 3.jpg"
+            ><img src="assets/img/thumbnails/thumbnail_Carte de voeuuu23 3.jpg"
+          /></a>
+          <figcaption data-i18n="fig.carte-voeux">
+            Carte de Voeux 2023
+          </figcaption>
+        </div>
+        <div class="grid-item vfx">
+          <a class="media-wrap image-item" href="assets/img/inviit.jpg"
+            ><img src="assets/img/thumbnails/thumbnail_inviit.jpg"
+          /></a>
+          <figcaption>2018</figcaption>
+        </div>
+        <div class="grid-item painting">
+          <a
+            class="media-wrap image-item"
+            href="assets/img/Princesse Cation tete 3quarts.jpg"
+            ><img
+              src="assets/img/thumbnails/thumbnail_Princesse Cation tete 3quarts.jpg"
+          /></a>
+          <figcaption>
+            Princesse Cation<br />Character design<br />2021
+          </figcaption>
+        </div>
+        <div class="grid-item graphic animation">
+          <a class="media-wrap video-container" style="aspect-ratio: 10/13">
+            <video
+              preload="none"
+              data-src="assets/video/fleur0001-0033.mp4"
+              data-type="video/mp4"
+            ></video>
+            <div class="video-thumbnail loading"></div>
+            <button class="play-pause-btn" id="playPauseBtn">
+              <div class="play-icon"></div></button
+          ></a>
+          <figcaption>2016</figcaption>
+        </div>
+        <div class="grid-item rendering vfx procedural">
+          <a class="media-wrap image-item" href="assets/img/artiche.jpg"
+            ><img src="assets/img/thumbnails/thumbnail_artiche.jpg"
+          /></a>
+          <figcaption data-i18n-html="html.fig.artiche">
+            Image extraite du court-métrage<br /><i
+              >Born to Wear, The Vegetal Revange</i
+            ><br />Réalisé en collaboration avec Tom Février<br />2023
+          </figcaption>
+        </div>
+        <div class="grid-item graphism rendering">
+          <a class="media-wrap image-item" href="assets/img/0.9 cover.jpg"
+            ><img src="assets/img/thumbnails/thumbnail_0.9 cover.jpg"
+          /></a>
+          <figcaption>
+            Image de couverture SurfacePsycho version 0.9<br />2025
+          </figcaption>
+        </div>
+        <div class="grid-item graphic">
+          <a class="media-wrap image-item" href="assets/img/G-co 2.jpg"
+            ><img src="assets/img/thumbnails/thumbnail_G-co 2.jpg"
+          /></a>
+          <figcaption>Illustrator<br />2014</figcaption>
+        </div>
+        <!--PROJECTS-START-->
+        <!--PROJECTS-END-->
       </div>
     </main>
     <footer>
