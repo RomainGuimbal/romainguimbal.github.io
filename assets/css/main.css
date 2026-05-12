@@ -1,6 +1,6 @@
-html,
-body {
-  max-width: 100%;
+html {
+  height: 100%;
+  width: 100%;
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
   text-align: center;
@@ -9,11 +9,26 @@ body {
   margin: 0;
   padding: 0;
   color: var(--text-color);
-  /*-----------------------------------------------------
-  # Background
-  ------------------------------------------------------*/
-  /* 
-  .notebook-line{
+  background-color: var(--page-bg-color);
+
+  /* Dots */
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--page-bg-color) 93%, white) 0.08em,
+    transparent 0
+  );
+  background-size: 30px 30px;
+
+  /* background: repeating-linear-gradient(
+	0deg,
+	#1f2937,
+	#1f2937 19px,
+	#1a2330 1px,
+	#1a2330 20px
+	);*/
+}
+
+/*
+.notebook-line{
     z-index:1;
     position: fixed;
 
@@ -27,7 +42,7 @@ body {
     width:100%; 
   }
 
-  .notebook-holes{
+.notebook-holes{
     z-index:1;
     border: 40px;
       height: 100vh;
@@ -36,34 +51,20 @@ body {
 
     background-image: radial-gradient(#1a2330 8px, transparent 0);
     background-size: 80px 80px;
-  } */
+} */
 
-  /* background: repeating-linear-gradient(
-	0deg,
-	#1f2937,
-	#1f2937 19px,
-	#1a2330 1px,
-	#1a2330 20px
-	); */
+body {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-  /* White Theme
-	background: repeating-linear-gradient(
-	0deg,
-	#ffffff,
-	#ffffff 19px,
-	#f3f4f8 1px,
-	#f3f4f8 20px
-	); */
-
-  /* Dots */
-  /* background-color: #1a2330; */
-  background-color: var(--page-bg-color);
-  /* background-image: radial-gradient(#1c3047 0.08em, transparent 0); */
-  background-image: radial-gradient(
-    color-mix(in srgb, var(--page-bg-color) 93%, white) 0.08em,
-    transparent 0
-  );
-  background-size: 30px 30px;
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 0;
 }
 
 a {
@@ -74,17 +75,7 @@ a:link {
   color: var(--text-color);
 }
 
-/*-----------------------------------------------------
-# Content
-------------------------------------------------------*/
-.container-main {
-  max-width: 1200px;
-  margin: auto;
-  margin-top: 0;
-}
-
-main img:hover:not(:focus),
-main video:hover:not(:focus) {
+media-wrap:hover:not(:focus){
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
   transition: box-shadow 0.1s ease-in-out;
 }
@@ -94,8 +85,8 @@ main video:hover:not(:focus) {
 }
 
 spline-viewer {
-  /* width: 80vw; */
-  /* width: 70em; */
+/*   width: 80vw;
+  width: 70em; */
   height: auto;
   margin: 0 auto;
   /* display: inline-block; */
@@ -158,28 +149,28 @@ spline-viewer {
 }
 
 /* .numero {
-	font: bold 12em "Poppins", sans-serif;
-	font-size: clamp(3rem, -5rem + 20vw, 12rem);
-	text-align: left;
-	position: absolute;
-	margin: 0;
-	mix-blend-mode: overlay;
-	line-height: 0.85em;
-	color: #e6e6e794;
-} */
+  font:
+    bold 12em "Poppins",
+    sans-serif;
+  font-size: clamp(3rem, -5rem + 20vw, 12rem);
+  text-align: left;
+  position: absolute;
+  margin: 0;
+  mix-blend-mode: overlay;
+  line-height: 0.85em;
+  color: #e6e6e794;
+}
 
-/* .item .numero {
-	position: absolute;
-	transform: translate(-50vw, 0);
-	right: clamp(150px, 20%, 250px);
-	text-align: right;
+.item .numero {
+  position: absolute;
+  transform: translate(-50vw, 0);
+  right: clamp(150px, 20%, 250px);
+  text-align: right;
 } */
 
 footer {
   box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.3);
   width: 100%;
-  margin: 0;
-  padding: 0 0 30vh 0;
 }
 
 footer p {
@@ -260,14 +251,6 @@ footer p {
   .tag-list {
     margin: 10px 10px 32px 10px;
   }
-
-  .container-main {
-    margin-top: 70px;
-  }
-
-  .container-main {
-    margin-top: 340px;
-  }
 }
 
 a.to-sp-portal .content {
@@ -300,7 +283,7 @@ a.to-sp-portal .content {
 img.to-sp-decoration {
 	width : 100px;
 	height : auto;
-}
+}*/
 
 /* Masonry grid: keep hidden until layout is ready to avoid FOUC (flash of unstyled content) */
 .masonry-grid {
@@ -356,7 +339,7 @@ a.to-sp-portal .content div img {
   transform: translate(-50%, -50%);
 }
 
-.cursor-light {
+/*.cursor-light {
   position: fixed;
   top: 0;
   left: 0;
@@ -377,9 +360,10 @@ a.to-sp-portal .content div img {
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: all 0.1s ease;
-  /* mask: var(--noise); */
-  /* mask-mode: ; */
 }
+  mask: var(--noise);
+  mask-mode: ;
+*/
 
 /* ============================================================
    Language switcher
