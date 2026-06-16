@@ -53,7 +53,7 @@ const i18nData = {
     'html.fig.origami':
       'Origami Procédurale<br>Génération temps réel des patrons de découpe numérotés<br>2023',
 
-    'fig.carte-voeux': 'Carte de Voeux 2023',
+    'fig.carte-voeux': 'Carte de voeux freestyle 2023',
 
     'html.fig.artiche':
       'Image extraite du court-métrage<br><i>Born to Wear, The Vegetal Revange</i><br>Réalisé en collaboration avec Tom Février<br>2023',
@@ -112,7 +112,7 @@ const i18nData = {
     'html.fig.origami':
       'Procedural Origami<br>Real-time generation of numbered cutting patterns<br>2023',
 
-    'fig.carte-voeux': '2023 New Year Card',
+    'fig.carte-voeux': '2023 Freestyle new year card',
 
     'html.fig.artiche':
       'Still from the short film<br><i>Born to Wear, The Vegetal Revange</i><br>Made in collaboration with Tom Février<br>2023',
