@@ -104,7 +104,7 @@ function toggleTag(element) {
     element = allTag;
   }
 
-  const allTagItems = document.querySelectorAll(".tag-item");
+  const allTagItems = document.querySelectorAll(".filter");
 
   allTagItems.forEach((item) => {
     if (item != element) {
@@ -119,8 +119,8 @@ function toggleTag(element) {
     filterTag("product");
   } else if (element.id === "graphic") {
     filterTag("graphic");
-  // } else if(element.id === "engineering"){
-  //     filterTag("engineering");
+    // } else if(element.id === "engineering"){
+    //     filterTag("engineering");
   } else if (element.id === "rendering") {
     filterTag("rendering");
   } else if (element.id === "programming") {
@@ -162,25 +162,6 @@ function filterTag(tag) {
   });
 }
 
-//############################################
-// FLIP CARD
-//############################################
-const card = document.getElementById("flipCard");
-
-card.addEventListener("click", function () {
-  this.classList.toggle("flipped");
-});
-
-function autoflipCard() {
-  card.classList.toggle("flipped");
-  setTimeout(() => {
-    card.classList.toggle("flipped");
-  }, 800);
-}
-setInterval(autoflipCard, 15000);
-setTimeout(autoflipCard, 2000);
-
-
 // function closeBanner() {
 //   const banner = document.getElementById("promoBanner");
 //   banner.style.transform = "translateY(-100%)";
@@ -191,3 +172,16 @@ setTimeout(autoflipCard, 2000);
 //     document.body.style.marginTop = "0";
 //   }, 300);
 // }
+
+function toggleMenu(element) {
+  const menu = document.getElementById("main-menu");
+  if (!element.classList.contains("enabled")) {
+    element.classList.add("enabled");
+    menu.classList.add("enabled");
+    element.textContent = "✖";
+  } else {
+    element.classList.remove("enabled");
+    menu.classList.remove("enabled");
+    element.textContent = "☰";
+  }
+}

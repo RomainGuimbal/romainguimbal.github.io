@@ -22,13 +22,21 @@
     <link rel="stylesheet" href="assets/css/magnific-popup.css" />
     <!-- Google Fonts-->
     <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:500,600%7COpen+Sans%7CPoppins:100,200,400,500,600&amp;display=swap"
+      href="https://fonts.googleapis.com/css?family=Montserrat:500,600%7COpen+Sans%7CPoppins:100,200,400,500,600&display=swap"
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&amp;display=swap"
+      href="https://fonts.googleapis.com/css?family=Roboto:100;300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bitcount+Single:400"
       rel="stylesheet"
     />
     <!-- Favicon-->
@@ -48,109 +56,104 @@
     </div>
     <!-- Promo Banner-->
     <header>
-        <div class="card" id="flipCard">
-          <div class="card-face card-front draggable-circle">
-            <img id="logo" src="assets/img/drop.jpg" />
-            <div id="bg-img-container"><img src="assets/img/drop.jpg" /></div>
-            <li>
-              <h1 id="romain">Romain</h1>
-              <h1 id="guimbal">GUIMBAL</h1>
-              <h2 id="portfolio">Portfolio</h2>
-            </li>
-          </div>
-          <div class="card-face card-back bio">
-            <img id="profile_picture" src="assets/img/photo_portrait.jpg" />
-            <p>
-              <span data-i18n="bio.role">Ingénieur-Designer</span><br />
-              3D ❤︎<br />
-              France
-            </p>
-          </div>
+      <div id="title-box">
+        <img id="logo" src="assets/img/drop.jpg" />
+        <h1 id="name">Romain GUIMBAL</h1>
+        <h2 id="portfolio">Portfolio</h2>
+        <!-- <img id="profile_picture" src="assets/img/photo_portrait.jpg" /> -->
+        <!-- France -->
+        <button id="menu-burger" class="enabled" onclick="toggleMenu(this)">
+          ☰
+        </button>
+      </div>
+      <menu id="main-menu" class="">
+        <div id="filter-section" class="menu-section">
+          <h3 data-i18n="header.filter">FILTRER LES PROJETS</h3>
+
+          <li class="filter-list">
+            <div
+              class="filter enabled"
+              id="all"
+              onclick="toggleTag(this)"
+              data-i18n="tag.all"
+            >
+              All
+            </div>
+            <div
+              class="filter"
+              id="product"
+              onclick="toggleTag(this)"
+              data-i18n="tag.product"
+            >
+              Product Design
+            </div>
+            <div
+              class="filter"
+              id="graphic"
+              onclick="toggleTag(this)"
+              data-i18n="tag.graphic"
+            >
+              Graphic
+            </div>
+            <div
+              class="filter"
+              id="rendering"
+              onclick="toggleTag(this)"
+              data-i18n="tag.rendering"
+            >
+              Rendering
+            </div>
+            <div
+              class="filter"
+              id="programming"
+              onclick="toggleTag(this)"
+              data-i18n="tag.programming"
+            >
+              Programming
+            </div>
+            <div
+              class="filter"
+              id="vfx"
+              onclick="toggleTag(this)"
+              data-i18n="tag.vfx"
+            >
+              VFX
+            </div>
+            <div
+              class="filter"
+              id="modeling"
+              onclick="toggleTag(this)"
+              data-i18n="tag.modeling"
+            >
+              3D Modeling
+            </div>
+            <div
+              class="filter"
+              id="animation"
+              onclick="toggleTag(this)"
+              data-i18n="tag.animation"
+            >
+              Animation
+            </div>
+            <div
+              class="filter"
+              id="procedural"
+              onclick="toggleTag(this)"
+              data-i18n="tag.procedural"
+            >
+              Procedural
+            </div>
+            <div
+              class="filter"
+              id="painting"
+              onclick="toggleTag(this)"
+              data-i18n="tag.painting"
+            >
+              Drawing &amp Painting
+            </div>
+          </li>
         </div>
-        
-      <li class="tag-list">
-        <div
-          class="tag-item enabled"
-          id="all"
-          onclick="toggleTag(this)"
-          data-i18n="tag.all"
-        >
-          All
-        </div>
-        <div
-          class="tag-item"
-          id="product"
-          onclick="toggleTag(this)"
-          data-i18n="tag.product"
-        >
-          Product Design
-        </div>
-        <div
-          class="tag-item"
-          id="graphic"
-          onclick="toggleTag(this)"
-          data-i18n="tag.graphic"
-        >
-          Graphic
-        </div>
-        <div
-          class="tag-item"
-          id="rendering"
-          onclick="toggleTag(this)"
-          data-i18n="tag.rendering"
-        >
-          Rendering
-        </div>
-        <div
-          class="tag-item"
-          id="programming"
-          onclick="toggleTag(this)"
-          data-i18n="tag.programming"
-        >
-          Programming
-        </div>
-        <div
-          class="tag-item"
-          id="vfx"
-          onclick="toggleTag(this)"
-          data-i18n="tag.vfx"
-        >
-          VFX
-        </div>
-        <div
-          class="tag-item"
-          id="modeling"
-          onclick="toggleTag(this)"
-          data-i18n="tag.modeling"
-        >
-          3D Modeling
-        </div>
-        <div
-          class="tag-item"
-          id="animation"
-          onclick="toggleTag(this)"
-          data-i18n="tag.animation"
-        >
-          Animation
-        </div>
-        <div
-          class="tag-item"
-          id="procedural"
-          onclick="toggleTag(this)"
-          data-i18n="tag.procedural"
-        >
-          Procedural
-        </div>
-        <div
-          class="tag-item"
-          id="painting"
-          onclick="toggleTag(this)"
-          data-i18n="tag.painting"
-        >
-          Drawing &amp Painting
-        </div>
-      </li>
-      <div class="contact-section">
+        <div id="contact-section" class="menu-section">
           <h3 data-i18n="header.contact">CONTACTEZ-MOI</h3>
           <div class="social-links">
             <a href="https://www.linkedin.com/in/romain-guimbal-378995147/"
@@ -171,6 +174,7 @@
             /></a>
           </div>
         </div>
+      </menu>
     </header>
     <main>
       <div class="fullscreen-backdrop" id="backdrop"></div>

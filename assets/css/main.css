@@ -188,7 +188,7 @@ footer p {
 }
 
 @media screen and (max-width: 1500px) {
-  .tag-list {
+  .filter-list {
     margin: 10px 10px 32px 10px;
   }
 }
