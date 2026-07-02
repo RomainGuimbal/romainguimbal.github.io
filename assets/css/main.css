@@ -80,7 +80,7 @@ media-wrap:hover:not(:focus) {
 }
 
 spline-viewer {
-/*   width: 80vw;
+  /*   width: 80vw;
   width: 70em; */
   height: auto;
   margin: 0 auto;
@@ -172,46 +172,6 @@ footer p {
   margin: 0;
   padding: 20px;
   color: rgba(255, 255, 255, 0.5);
-}
-
-.tag-list {
-  position: relative;
-  width: fit-content;
-  display: inline-block;
-  margin: 0 auto 32px auto;
-  list-style: none;
-  background-color: black;
-  border-radius: 28.5px;
-  padding: 2px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-}
-
-.tag-item {
-  --col: #747474;
-  display: inline-block;
-  padding: 7px 14px;
-  margin: 2px;
-  background-color: rgba(var(--col), 0);
-  border: 1px solid var(--col);
-  color: var(--col);
-  user-select: none;
-  border-radius: 999px;
-  font-size: 0.9em;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.2s;
-  font-size: 14px;
-}
-
-.tag-item:hover {
-  box-shadow: 0 0 15px var(--col);
-  background-color: rgba(var(--col), 0.5);
-}
-
-.tag-item.enabled {
-  background-color: var(--col);
-  color: black;
-  /* box-shadow: 0 0 6px var(--col); */
 }
 
 .thumbnail-overlay {
