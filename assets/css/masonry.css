@@ -1,11 +1,9 @@
 .masonry-grid {
   margin: auto;
-  min-height: 70vh;
-  /* width: 100%; */
 }
 
 .grid-item {
-  width: 290px; 
+  width: 290px;
   margin: 0 15px 30px 15px;
   overflow: hidden;
   /* transition: 0.2s; */
