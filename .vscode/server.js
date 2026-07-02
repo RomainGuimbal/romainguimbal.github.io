@@ -1,6 +1,6 @@
 /**
  * Portfolio Editor Server
- * Run: node .vscode/server.js
+ * Run: node .vscode/server.js (TASK EXISTS)
  * Then open: http://localhost:3000
  */
 
