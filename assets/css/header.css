@@ -50,7 +50,9 @@ header {
 	z-index: 2;
 	box-shadow: 0 0 16px rgba(0, 0, 0, 0.8);
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 	user-select: none;
 }
 
@@ -145,7 +147,7 @@ header h1 {
 	line-height: 20px;
 	margin: 0;
 	letter-spacing: 5px;
-	color: #FFFFFF;
+  color: #ffffff;
 }
 
 #guimbal {
@@ -154,7 +156,7 @@ header h1 {
 	font-size: 24px;
 	line-height: 32px;
 	letter-spacing: -0.04em;
-	color: #3039FF;
+  color: #3039ff;
 	text-shadow: 0px 0px 0.5em #0011ff;
 	margin: 0;
 }
@@ -167,7 +169,7 @@ header #portfolio {
 	text-align: left;
 }
 
-.bio{
+.bio {
 	display: block;
 	align-items: center;
 }

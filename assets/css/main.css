@@ -1,3 +1,8 @@
+* {
+  margin: auto;
+  padding: 0;
+}
+
 html {
   height: 100%;
   width: 100%;
@@ -6,10 +11,9 @@ html {
   text-align: center;
   scrollbar-color: var(--muted-text) transparent;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   color: var(--text-color);
   background-color: var(--page-bg-color);
+  text-decoration: none;
 
   /* Dots */
   background-image: radial-gradient(
@@ -63,25 +67,16 @@ body {
 main {
   flex: 1;
   max-width: 1200px;
-  margin: auto;
-  margin-top: 0;
-}
-
-a {
-  text-decoration: none;
+  width: 100%;
 }
 
 a:link {
   color: var(--text-color);
 }
 
-media-wrap:hover:not(:focus){
+media-wrap:hover:not(:focus) {
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
   transition: box-shadow 0.1s ease-in-out;
-}
-
-.round {
-  border-radius: 50%;
 }
 
 spline-viewer {
@@ -232,6 +227,12 @@ footer p {
   transition: opacity 0.3s ease;
 }
 
+@media screen and (max-width: 1500px) {
+  .tag-list {
+    margin: 10px 10px 32px 10px;
+  }
+}
+
 /* caption for specific media */
 .media-wrap figcaption {
   margin: 0 auto;
@@ -247,13 +248,7 @@ footer p {
   color: rgb(227, 233, 255) !important;
 }
 
-@media screen and (max-width: 1500px) {
-  .tag-list {
-    margin: 10px 10px 32px 10px;
-  }
-}
-
-a.to-sp-portal .content {
+/* a.to-sp-portal .content {
   aspect-ratio: 1/1;
   background-image: linear-gradient(
     to top,
@@ -273,7 +268,7 @@ a.to-sp-portal .content {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
+} */
 
 /* .to-sp-portal p{
 	margin: 0 auto 0;
@@ -317,16 +312,18 @@ img.to-sp-decoration {
     opacity 0.35s ease,
     visibility 0.35s ease;
 }
+
 #masonry-preloader img {
   width: 60px;
   height: auto;
 }
+
 #masonry-preloader.hidden {
   opacity: 0;
   visibility: hidden;
 }
 
-a.to-sp-portal .content div {
+/* a.to-sp-portal .content div {
   display: grid;
   width: 0;
   height: 0;
@@ -337,7 +334,7 @@ a.to-sp-portal .content div p,
 a.to-sp-portal .content div img {
   position: absolute;
   transform: translate(-50%, -50%);
-}
+} */
 
 /*.cursor-light {
   position: fixed;
