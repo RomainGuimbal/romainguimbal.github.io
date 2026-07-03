@@ -1,0 +1,36 @@
+[
+  {
+    "title": "SurfacePsycho Alpha 8 Cover",
+    "description": "Fait avec Blender SurfacePsycho pour démontrer ses capacités en design 2D",
+    "link": "",
+    "thumb": "assets/img/thumbnails/1783086915923-0fok3-thumb.jpg",
+    "full": "assets/img/1783086915923-0fok3.jpg",
+    "tags": [
+      "graphic",
+      "product"
+    ],
+    "year": "2025"
+  },
+  {
+    "title": "Sirène au Sac plastique",
+    "description": "",
+    "link": "",
+    "thumb": "assets/img/thumbnails/1783084137656-imypl-thumb.jpeg",
+    "full": "assets/img/1783084137656-imypl.jpeg",
+    "tags": [
+      "painting"
+    ],
+    "year": "2026"
+  },
+  {
+    "title": "",
+    "description": "",
+    "link": "",
+    "thumb": "assets/img/thumbnails/1783084786625-66vbk-thumb.jpeg",
+    "full": "assets/img/1783084786625-66vbk.jpeg",
+    "tags": [
+      "painting"
+    ],
+    "year": "2026"
+  }
+]

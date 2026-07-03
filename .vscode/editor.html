@@ -369,6 +369,9 @@
       <button class="btn btn-secondary" onclick="loadProjects()">
         ↺ Reload
       </button>
+      <button class="btn btn-secondary" onclick="regenerateThumbnails()">
+        ♻ Regenerate thumbnails
+      </button>
       <button class="btn btn-apply" onclick="applyChanges()">
         Apply changes
       </button>
@@ -401,6 +404,26 @@
           setStatus("Loaded", "ok");
         } catch (e) {
           setStatus("Error loading: " + e.message, "error");
+        }
+      }
+
+      async function regenerateThumbnails() {
+        try {
+          setStatus("Regenerating thumbnails…");
+          const res = await fetch("/regenerate-thumbnails", { method: "POST" });
+          if (!res.ok) throw new Error(await res.text());
+
+          const data = await res.json();
+          if (Array.isArray(data.projects)) {
+            projects = data.projects;
+          }
+          renderAll();
+          setStatus(
+            `Regenerated ${data.count || 0} thumbnail${(data.count || 0) === 1 ? "" : "s"} ✓`,
+            "ok",
+          );
+        } catch (e) {
+          setStatus("Error: " + e.message, "error");
         }
       }
 
@@ -664,10 +687,10 @@
       async function applyChanges() {
         // Basic validation
         const missing = projects.filter((p) => !p.title.trim());
-        if (missing.length) {
-          setStatus("Every project needs a title.", "error");
-          return;
-        }
+        // if (missing.length) {
+        //   setStatus("Every project needs a title.", "error");
+        //   return;
+        // }
 
         try {
           setStatus("Applying…");

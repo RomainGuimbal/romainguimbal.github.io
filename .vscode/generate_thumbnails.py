@@ -13,7 +13,7 @@ Usage:
   python .vscode/generate_thumbnails.py              # both images and videos
   python .vscode/generate_thumbnails.py --images     # images only
   python .vscode/generate_thumbnails.py --videos     # videos only
-  python .vscode/generate_thumbnails.py --size 512 512 --quality 80
+  python .vscode/generate_thumbnails.py --size 512 1024 --quality 80
 """
 
 import argparse
@@ -35,14 +35,20 @@ VIDEO_EXTENSIONS = {'.mp4', '.webm', '.mov', '.avi', '.mkv'}
 
 def create_image_thumbnail(source_path: Path, dest_path: Path, size: tuple, quality: int) -> bool:
     try:
-        from PIL import Image
+        from PIL import Image, ImageOps
     except ImportError:
         print("ERROR: Pillow not installed. Run: pip install Pillow")
         sys.exit(1)
 
     try:
         with Image.open(source_path) as img:
-            img.thumbnail(size, Image.Resampling.LANCZOS)
+            target_width, target_height = size
+            max_height = max(1, min(target_height if target_height and target_height > 0 else 1024, 1024))
+
+            if img.height / img.width > 2:
+                img = ImageOps.fit(img, (target_width, max_height), method=Image.Resampling.LANCZOS)
+            else:
+                img.thumbnail((target_width, max_height), Image.Resampling.LANCZOS)
 
             if source_path.suffix.lower() == '.png':
                 img.save(dest_path, format='PNG', optimize=True)
@@ -111,7 +117,7 @@ def ffmpeg_available() -> bool:
 
 def extract_first_frame(video_path: Path, output_path: Path) -> bool:
     result = subprocess.run(
-        ['ffmpeg', '-y', '-i', str(video_path), '-vframes', '1', '-q:v', '2', str(output_path)],
+        ['ffmpeg', '-y', '-i', str(video_path), '-vf', 'scale=512:-1:flags=lanczos', '-frames:v', '1', '-q:v', '2', str(output_path)],
         capture_output=True,
     )
     return result.returncode == 0
@@ -157,8 +163,8 @@ def main():
     parser = argparse.ArgumentParser(description='Generate image and video thumbnails.')
     parser.add_argument('--images', action='store_true', help='Process images only')
     parser.add_argument('--videos', action='store_true', help='Process videos only')
-    parser.add_argument('--size', type=int, nargs=2, default=[512, 512],
-                        metavar=('W', 'H'), help='Max thumbnail dimensions (default: 512 512)')
+    parser.add_argument('--size', type=int, nargs=2, default=[512, 1024],
+                        metavar=('W', 'H'), help='Max thumbnail dimensions (default: 512 1024, crops very wide images and keeps width at 512)')
     parser.add_argument('--quality', type=int, default=85,
                         help='JPEG quality 1-100 (default: 85)')
     args = parser.parse_args()
