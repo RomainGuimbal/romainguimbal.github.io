@@ -1,6 +1,31 @@
 [
   {
+    "title": "Artiche",
+    "description": "Image extraite du court-métrage \"Born to Wear, The Vegetal Revange\" Réalisé en collaboration avec Tom Février",
+    "link": "",
+    "thumb": "assets/img/thumbnails/artiche-thumb.jpg",
+    "full": "assets/img/artiche.jpg",
+    "tags": [
+      "rendering",
+      "vfx",
+      "procedural"
+    ],
+    "year": "2023"
+  },
+  {
     "title": "",
+    "description": "Image de couverture SurfacePsycho version 0.9",
+    "link": "",
+    "thumb": "assets/img/thumbnails/0.9 cover-thumb.jpg",
+    "full": "assets/img/0.9 cover.jpg",
+    "tags": [
+      "graphic",
+      "rendering"
+    ],
+    "year": "2025"
+  },
+  {
+    "title": "G-co",
     "description": "Illustrator",
     "link": "",
     "thumb": "assets/img/thumbnails/G-co 2-thumb.jpg",
@@ -24,7 +49,7 @@
   },
   {
     "title": "Sirène au Sac plastique",
-    "description": "",
+    "description": "Sirène au Sac plastique",
     "link": "",
     "thumb": "assets/img/thumbnails/1783084137656-imypl-thumb.jpeg",
     "full": "assets/img/1783084137656-imypl.jpeg",
@@ -34,7 +59,7 @@
     "year": "2026"
   },
   {
-    "title": "",
+    "title": "Poupée",
     "description": "",
     "link": "",
     "thumb": "assets/img/thumbnails/1783084786625-66vbk-thumb.jpeg",

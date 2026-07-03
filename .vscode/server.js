@@ -189,7 +189,7 @@ app.post("/apply", (req, res) => {
 
 // ─── Card renderer ────────────────────────────────────────────────────────────
 function renderCard(project) {
-  const parts = [project.title, project.description, project.year]
+  const parts = [project.description, project.year]
     .filter((value) => value != null && String(value).trim() !== "")
     .map((value) => escapeHtml(value));
 
