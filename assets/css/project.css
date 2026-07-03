@@ -206,6 +206,11 @@
   border-radius: 4px;
   opacity: 0;
   transition: opacity 0.3s ease;
+  font-size: 14px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 0px;
 }
 
 .nav-arrow.prev {

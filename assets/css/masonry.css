@@ -1,14 +1,19 @@
 .masonry-grid {
-  margin: auto;
-  min-height: 70vh;
-  /* width: 100%; */
+  margin-left: 450px;
+  width: auto;
 }
 
 .grid-item {
-  width: 290px; 
+  width: 290px;
   margin: 0 15px 30px 15px;
   overflow: hidden;
   /* transition: 0.2s; */
+}
+
+@media (max-width: 1024px) {
+  .masonry-grid {
+    margin: 0 auto;
+  }
 }
 
 /* SIZING ALREADY INSIDE masonry.js TO CLARIFY*/

@@ -8,6 +8,7 @@ html {
   width: 100%;
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
+  font-weight: 600;
   text-align: center;
   scrollbar-color: var(--muted-text) transparent;
   box-sizing: border-box;
@@ -59,15 +60,23 @@ html {
 
 body {
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+
+@media (max-width: 1024px) {
+  body {
+    flex-direction: column;
+  }
 }
 
 main {
   flex: 1;
   max-width: 1200px;
-  width: 100%;
+  position: relative;
+  /* margin-left: 420px; */
+  padding-right: 25px;
 }
 
 a:link {
@@ -188,7 +197,7 @@ footer p {
 }
 
 @media screen and (max-width: 1500px) {
-  .tag-list {
+  .filter-list {
     margin: 10px 10px 32px 10px;
   }
 }
@@ -328,8 +337,8 @@ a.to-sp-portal .content div img {
 
 .lang-switcher {
   position: fixed;
-  top: 0.9rem;
-  right: 1rem;
+  top: 10px;
+  right: 10px;
   z-index: 1000;
   display: flex;
   gap: 0.25rem;
@@ -358,4 +367,8 @@ a.to-sp-portal .content div img {
 .lang-btn.active {
   opacity: 1;
   transform: scale(1.1);
+}
+
+a {
+  text-decoration: none;
 }
