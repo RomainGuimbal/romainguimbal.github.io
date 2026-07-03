@@ -1,5 +1,16 @@
 [
   {
+    "title": "",
+    "description": "Illustrator",
+    "link": "",
+    "thumb": "assets/img/thumbnails/G-co 2-thumb.jpg",
+    "full": "assets/img/G-co 2.jpg",
+    "tags": [
+      "graphic"
+    ],
+    "year": "2014"
+  },
+  {
     "title": "SurfacePsycho Alpha 8 Cover",
     "description": "Fait avec Blender SurfacePsycho pour démontrer ses capacités en design 2D",
     "link": "",

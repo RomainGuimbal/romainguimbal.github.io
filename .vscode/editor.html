@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
+    <link rel="stylesheet" href="assets/css/colors.css" />
     <title>Portfolio Editor</title>
     <style>
       *,
@@ -16,7 +16,15 @@
 
       body {
         font-family: system-ui, sans-serif;
-        background: #f5f5f3;
+        background-color: var(--page-bg-color);
+
+        /* Dots */
+        background-image: radial-gradient(
+          color-mix(in srgb, var(--page-bg-color) 93%, white) 0.08em,
+          transparent 0
+        );
+        background-size: 30px 30px;
+
         color: #1a1a1a;
         min-height: 100vh;
       }
@@ -115,7 +123,7 @@
       #card-list {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 2px;
       }
 
       /* ── Project card ── */
