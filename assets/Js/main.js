@@ -173,15 +173,18 @@ function filterTag(tag) {
 //   }, 300);
 // }
 
-function toggleMenu(element) {
+function toggleMenu() {
+  const titleBox = document.getElementById("title-box");
+  const button = document.getElementById("menu-burger");
   const menu = document.getElementById("main-menu");
-  if (!element.classList.contains("enabled")) {
-    element.classList.add("enabled");
+
+  if (!titleBox.classList.contains("enabled")) {
+    titleBox.classList.add("enabled");
     menu.classList.add("enabled");
-    element.textContent = "✖";
+    button.textContent = "✖"; //"╳";
   } else {
-    element.classList.remove("enabled");
+    titleBox.classList.remove("enabled");
     menu.classList.remove("enabled");
-    element.textContent = "☰";
+    button.textContent = "☰";
   }
 }

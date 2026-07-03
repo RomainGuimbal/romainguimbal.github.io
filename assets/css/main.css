@@ -8,6 +8,7 @@ html {
   width: 100%;
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
+  font-weight: 600;
   text-align: center;
   scrollbar-color: var(--muted-text) transparent;
   box-sizing: border-box;
@@ -61,13 +62,20 @@ body {
   width: 100%;
   min-height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
 }
 
 main {
   flex: 1;
   max-width: 1200px;
-  width: 100%;
+  /* width: 100%; */
+  position: relative;
 }
 
 a:link {
@@ -358,4 +366,8 @@ a.to-sp-portal .content div img {
 .lang-btn.active {
   opacity: 1;
   transform: scale(1.1);
+}
+
+a {
+  text-decoration: none;
 }
