@@ -464,7 +464,7 @@
 
     <div class="card-body">
 
-      <!-- ══ MEDIA TYPE ══ -->
+      <!-- MEDIA TYPE -->
       <div class="field">
         <label>Media Type</label>
         <select style="padding: 8px 11px; border: 1px solid #d0d0cc; border-radius: 7px; font-size: 13px; cursor: pointer;"
@@ -474,7 +474,7 @@
         </select>
       </div>
 
-      <!-- ══ IMAGE UPLOAD ══ -->
+      <!-- IMAGE UPLOAD -->
       <div class="field" id="image-upload-field-${index}" style="${project.mediaType === "video" ? "display:none" : ""}">
         <label>Original image</label>
         <div class="image-upload-area" id="upload-area-${index}"
@@ -492,7 +492,7 @@
         </div>
       </div>
 
-      <!-- ══ VIDEO UPLOAD ══ -->
+      <!-- VIDEO UPLOAD -->
       <div class="field" id="video-upload-field-${index}" style="${project.mediaType !== "video" ? "display:none" : ""}">
         <label>Original video</label>
         <div style="display:flex; gap:8px; align-items:center;">
@@ -504,25 +504,7 @@
         </div>
         <small style="color: #999; font-size: 11px; margin-top: 4px; display: block;">Drop or choose the original video file; a thumbnail will be generated automatically.</small>
 
-      <!-- ══ VIDEO THUMBNAIL ══ -->
-      <div class="field" id="video-thumb-field-${index}" style="${project.mediaType !== "video" ? "display:none" : ""}">
-        <label>Video Thumbnail</label>
-        <div class="image-upload-area" id="upload-video-thumb-area-${index}"
-             ondragover="handleDragOver(event,${index})"
-             ondragleave="handleDragLeave(event,${index})"
-             ondrop="handleDrop(event,${index})">
-          <input type="file" accept="image/*" onchange="handleImageSelect(event,${index})"/>
-          <div class="upload-hint">Click or drag an image here</div>
-        </div>
-        <div class="upload-progress" id="upload-progress-${index}">Uploading…</div>
-        <div class="image-preview" id="preview-${index}"
-             style="${project.thumb ? "display:block" : ""}">
-          <img src="${project.thumb || ""}" alt="preview" />
-          <button class="remove-image" onclick="removeImage(${index})" title="Remove image">✕</button>
-        </div>
-      </div>
-
-      <!-- ══ ASPECT RATIO (VIDEO ONLY) ══ -->
+      <!-- ASPECT RATIO (VIDEO ONLY) -->
       <div class="field" id="aspect-ratio-field-${index}" style="${project.mediaType !== "video" ? "display:none" : ""}">
         <label>Aspect Ratio</label>
         <select style="padding: 8px 11px; border: 1px solid #d0d0cc; border-radius: 7px; font-size: 13px; cursor: pointer;"
@@ -571,7 +553,7 @@
                oninput="updateField(${index},'link',this.value)" />
       </div>
 
-      <!-- ══ End of fields ══ -->
+      <!-- End of fields -->
 
       <div class="card-footer">
         <button class="btn btn-danger btn-sm" onclick="removeProject(${index})">Remove project</button>
