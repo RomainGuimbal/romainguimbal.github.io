@@ -142,7 +142,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        padding: 14px 16px;
+        padding: 5px 16px;
         background: #fafaf8;
         border-bottom: 1px solid #e0e0dc;
         cursor: pointer;
@@ -276,53 +276,36 @@
       }
 
       /* ── Tags field ── */
-      .tags-input-wrapper {
+      .tag-options {
         display: flex;
         flex-wrap: wrap;
-        gap: 6px;
-        padding: 7px 10px;
-        border: 1px solid #d0d0cc;
-        border-radius: 7px;
-        background: #fff;
-        min-height: 40px;
-        cursor: text;
-        transition:
-          border-color 0.15s,
-          box-shadow 0.15s;
+        gap: 8px;
       }
-      .tags-input-wrapper:focus-within {
-        border-color: #2563eb;
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-      }
-      .tag-pill {
+      .tag-option {
         display: inline-flex;
         align-items: center;
-        gap: 4px;
-        background: #f0f5ff;
-        color: #1e40af;
+        gap: 6px;
+        padding: 6px 10px;
+        border: 1px solid #d0d0cc;
+        border-radius: 999px;
+        background: #f8f8f6;
+        color: #4b5563;
         font-size: 12px;
         font-weight: 500;
-        padding: 2px 8px;
-        border-radius: 20px;
-      }
-      .tag-pill button {
-        background: none;
-        border: none;
         cursor: pointer;
-        color: #6b7280;
-        font-size: 11px;
-        padding: 0;
-        line-height: 1;
+        transition:
+          border-color 0.15s,
+          background 0.15s,
+          color 0.15s;
       }
-      .tags-input-wrapper input {
-        border: none;
-        outline: none;
-        font-size: 13px;
-        font-family: inherit;
-        flex: 1;
-        min-width: 80px;
-        padding: 0;
-        background: transparent;
+      .tag-option.selected {
+        background: #eef4ff;
+        border-color: #93c5fd;
+        color: #1e3a8a;
+      }
+      .tag-option input {
+        margin: 0;
+        accent-color: #2563eb;
       }
 
       /* ── Card footer ── */
@@ -398,6 +381,17 @@
     <script>
       // ─── State ───────────────────────────────────────────────────────────────────
       let projects = [];
+      const AVAILABLE_TAGS = [
+        "product",
+        "graphic",
+        "rendering",
+        "programming",
+        "vfx",
+        "modeling",
+        "animation",
+        "procedural",
+        "painting",
+      ];
 
       // ─── Boot ────────────────────────────────────────────────────────────────────
       loadProjects();
@@ -501,7 +495,7 @@
                min="2000" 
                max="2100" 
                step="1" 
-               value="2020"
+               value="${esc(String(project.year ?? ""))}"
                oninput="updateField(${index},'year',this.value)" />
       </div>
 
@@ -512,12 +506,9 @@
       </div>
 
       <div class="field">
-        <label>Tags <span style="color:#999;font-weight:400">(press Enter or comma to add)</span></label>
-        <div class="tags-input-wrapper" id="tags-wrapper-${index}" onclick="focusTagInput(${index})">
-          ${renderTagPills(project.tags || [], index)}
-          <input type="text" id="tag-input-${index}"
-                 placeholder="product, graphic, rendering, programming; vfx, modeling, animation, procedural, painting"
-                 onkeydown="handleTagKey(event,${index})" />
+        <label>Tags</label>
+        <div class="tag-options" id="tag-options-${index}">
+          ${renderTagOptions(project, index)}
         </div>
       </div>
       
@@ -538,16 +529,15 @@
         return card;
       }
 
-      function renderTagPills(tags, index) {
-        return tags
-          .map(
-            (t, ti) => `
-    <span class="tag-pill">
-      ${esc(t)}
-      <button onclick="removeTag(${index},${ti})" title="Remove tag">✕</button>
-    </span>`,
-          )
-          .join("");
+      function renderTagOptions(project, index) {
+        return AVAILABLE_TAGS.map((tag) => {
+          const selected = hasTag(project, tag);
+          return `
+            <label class="tag-option ${selected ? "selected" : ""}">
+              <input type="checkbox" ${selected ? "checked" : ""} onchange="toggleTag(${index}, '${tag}')" />
+              <span>${esc(tag)}</span>
+            </label>`;
+        }).join("");
       }
 
       // ─── Toggle open/close ────────────────────────────────────────────────────────
@@ -636,34 +626,37 @@
       }
 
       // ─── Tags ─────────────────────────────────────────────────────────────────────
-      function focusTagInput(index) {
-        document.getElementById("tag-input-" + index)?.focus();
-      }
-
-      function handleTagKey(e, index) {
-        if (e.key === "Enter" || e.key === ",") {
-          e.preventDefault();
-          const input = e.target;
-          const value = input.value.replace(/,/g, "").trim();
-          if (!value) return;
-          if (!projects[index].tags) projects[index].tags = [];
-          projects[index].tags.push(value);
-          input.value = "";
-          // Re-render pills only
-          const wrapper = document.getElementById("tags-wrapper-" + index);
-          const inp = wrapper.querySelector("input");
-          wrapper.innerHTML = renderTagPills(projects[index].tags, index);
-          wrapper.appendChild(inp);
-          inp.focus();
+      function normalizeTags(tags) {
+        if (!tags) return [];
+        if (Array.isArray(tags)) {
+          return tags.filter((tag) => typeof tag === "string").map((tag) => tag.trim()).filter(Boolean);
         }
+        if (typeof tags === "string") {
+          return tags
+            .split(",")
+            .map((tag) => tag.trim())
+            .filter(Boolean);
+        }
+        return [];
       }
 
-      function removeTag(projIndex, tagIndex) {
-        projects[projIndex].tags.splice(tagIndex, 1);
-        const wrapper = document.getElementById("tags-wrapper-" + projIndex);
-        const inp = wrapper.querySelector("input");
-        wrapper.innerHTML = renderTagPills(projects[projIndex].tags, projIndex);
-        wrapper.appendChild(inp);
+      function hasTag(project, tag) {
+        return normalizeTags(project.tags).includes(tag);
+      }
+
+      function toggleTag(index, tag) {
+        const project = projects[index];
+        if (!project) return;
+
+        const tags = normalizeTags(project.tags);
+        const tagIndex = tags.indexOf(tag);
+        if (tagIndex >= 0) {
+          tags.splice(tagIndex, 1);
+        } else {
+          tags.push(tag);
+        }
+
+        project.tags = tags;
       }
 
       // ─── Add / Remove projects ────────────────────────────────────────────────────
