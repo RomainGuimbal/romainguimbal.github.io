@@ -28,7 +28,9 @@
       "label": "Generate Thumbnails",
       "type": "shell",
       "command": "python",
-      "args": [".vscode/generate_thumbnails.py"],
+      "args": [
+        ".vscode/generate_thumbnails.py"
+      ],
       "group": "build",
       "presentation": {
         "reveal": "always",
@@ -40,8 +42,24 @@
       "label": "Start Editor",
       "type": "shell",
       "command": "node",
-      "args": [".vscode/server.js"],
-      "group": "build"
+      "args": [
+        ".vscode/server.js"
+      ],
+      "group": "build",
+      "hide": true,
+      "isBackground": true
+    },
+    {
+      "label": "Open Editor",
+      "type": "shell",
+      "command": "start",
+      "args": [
+        "http://localhost:3000"
+      ],
+      "group": "build",
+      "dependsOn": [
+        "Start Editor"
+      ]
     }
   ]
 }
