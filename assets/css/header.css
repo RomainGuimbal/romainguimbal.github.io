@@ -5,13 +5,32 @@
 header {
   margin: 25px;
   position: fixed;
+  left: 0;
+  top: 0;
+  height: auto;
   z-index: 500;
-  /* gap: 0px; */
+  gap: 0px;
   display: flex;
   flex-direction: column;
-  width: 370px;
+  max-width: 370px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   border-radius: 20px;
+}
+
+@media (max-width: 1024px) {
+  header {
+    position: relative;
+    height: auto;
+    margin: 25px auto;
+    left: auto;
+    top: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    margin-top: 50px;
+  }
 }
 
 #title-box {
@@ -94,16 +113,9 @@ header {
   user-select: none;
 }
 
-/* header h1,*/
 header h2,
 header h3 {
   text-transform: uppercase;
-}
-
-header h1 {
-  text-align: left;
-  margin-bottom: 30px;
-  font-size: 40px;
 }
 
 #name {
@@ -116,6 +128,7 @@ header h1 {
   width: 100%;
   color: #ffffff;
   margin: 0;
+  text-align: left;
 }
 
 header #portfolio {
