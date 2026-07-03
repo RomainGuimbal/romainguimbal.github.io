@@ -10,6 +10,12 @@
   /* transition: 0.2s; */
 }
 
+@media (max-width: 1024px) {
+  .masonry-grid {
+    margin: 0 auto;
+  }
+}
+
 /* SIZING ALREADY INSIDE masonry.js TO CLARIFY*/
 /* Add responsive breakpoints */
 @media screen and (max-width: 767px) {
