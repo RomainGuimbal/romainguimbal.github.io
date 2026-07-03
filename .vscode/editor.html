@@ -464,10 +464,47 @@
 
     <div class="card-body">
 
-      <!-- ══ IMAGE UPLOAD ══ -->
+      <!-- ══ MEDIA TYPE ══ -->
       <div class="field">
-        <label>Thumbnail image</label>
+        <label>Media Type</label>
+        <select style="padding: 8px 11px; border: 1px solid #d0d0cc; border-radius: 7px; font-size: 13px; cursor: pointer;"
+                onchange="updateField(${index},'mediaType',this.value)">
+          <option value="image" ${project.mediaType !== "video" ? "selected" : ""}>Image</option>
+          <option value="video" ${project.mediaType === "video" ? "selected" : ""}>Video</option>
+        </select>
+      </div>
+
+      <!-- ══ IMAGE UPLOAD ══ -->
+      <div class="field" id="image-upload-field-${index}" style="${project.mediaType === "video" ? "display:none" : ""}">
+        <label>Original image</label>
         <div class="image-upload-area" id="upload-area-${index}"
+             ondragover="handleDragOver(event,${index})"
+             ondragleave="handleDragLeave(event,${index})"
+             ondrop="handleDrop(event,${index})">
+          <input type="file" accept="image/*" onchange="handleImageSelect(event,${index})"/>
+          <div class="upload-hint">Drop the original image here. A thumbnail will be generated automatically.</div>
+        </div>
+        <div class="upload-progress" id="upload-progress-${index}">Uploading…</div>
+        <div class="image-preview" id="preview-${index}"
+             style="${project.thumb ? "display:block" : ""}">
+          <img src="${project.thumb || ""}" alt="preview" />
+          <button class="remove-image" onclick="removeImage(${index})" title="Remove image">✕</button>
+        </div>
+      </div>
+
+      <!-- ══ VIDEO UPLOAD ══ -->
+      <div class="field" id="video-upload-field-${index}" style="${project.mediaType !== "video" ? "display:none" : ""}">
+        <label>Original video</label>
+        <input type="text" 
+               value="${esc(project.full || "")}" 
+               placeholder="e.g., assets/video/myVideo.mp4"
+               oninput="updateField(${index},'full',this.value)" />
+        <small style="color: #999; font-size: 11px; margin-top: 4px; display: block;">Path to the original video file</small>
+
+      <!-- ══ VIDEO THUMBNAIL ══ -->
+      <div class="field" id="video-thumb-field-${index}" style="${project.mediaType !== "video" ? "display:none" : ""}">
+        <label>Video Thumbnail</label>
+        <div class="image-upload-area" id="upload-video-thumb-area-${index}"
              ondragover="handleDragOver(event,${index})"
              ondragleave="handleDragLeave(event,${index})"
              ondrop="handleDrop(event,${index})">
@@ -480,6 +517,18 @@
           <img src="${project.thumb || ""}" alt="preview" />
           <button class="remove-image" onclick="removeImage(${index})" title="Remove image">✕</button>
         </div>
+      </div>
+
+      <!-- ══ ASPECT RATIO (VIDEO ONLY) ══ -->
+      <div class="field" id="aspect-ratio-field-${index}" style="${project.mediaType !== "video" ? "display:none" : ""}">
+        <label>Aspect Ratio</label>
+        <select style="padding: 8px 11px; border: 1px solid #d0d0cc; border-radius: 7px; font-size: 13px; cursor: pointer;"
+                onchange="updateField(${index},'aspectRatio',this.value)">
+          <option value="16/9" ${project.aspectRatio === "16/9" ? "selected" : ""}>16/9 (Landscape)</option>
+          <option value="9/16" ${project.aspectRatio === "9/16" ? "selected" : ""}>9/16 (Portrait)</option>
+          <option value="10/13" ${project.aspectRatio === "10/13" ? "selected" : ""}>10/13 (Tall)</option>
+          <option value="1/1" ${project.aspectRatio === "1/1" ? "selected" : ""}>1/1 (Square)</option>
+        </select>
       </div>
 
       <div class="field">
@@ -560,6 +609,15 @@
             preview.classList.toggle("untitled", !value);
           }
         }
+
+        // Toggle visibility of media type fields
+        if (key === "mediaType") {
+          const isVideo = value === "video";
+          document.getElementById(`image-upload-field-${index}`).style.display = isVideo ? "none" : "";
+          document.getElementById(`video-upload-field-${index}`).style.display = isVideo ? "" : "none";
+          document.getElementById(`video-thumb-field-${index}`).style.display = isVideo ? "" : "none";
+          document.getElementById(`aspect-ratio-field-${index}`).style.display = isVideo ? "" : "none";
+        }
       }
 
       // ─── Image handling ───────────────────────────────────────────────────────────
@@ -609,7 +667,7 @@
           const preview = document.getElementById("preview-" + index);
           preview.querySelector("img").src = thumb + "?t=" + Date.now();
           preview.style.display = "block";
-          setStatus("Image uploaded ✓", "ok");
+          setStatus("Original media uploaded ✓", "ok");
         } catch (e) {
           setStatus("Upload failed: " + e.message, "error");
         } finally {
@@ -668,6 +726,8 @@
           thumb: "",
           full: "",
           tags: [],
+          mediaType: "image",
+          aspectRatio: "16/9",
         });
         renderAll();
         // Auto-open the new card

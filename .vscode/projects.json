@@ -25,6 +25,17 @@
     "year": "2025"
   },
   {
+    "title": "Sirène au Sac plastique",
+    "description": "Sirène au Sac plastique",
+    "link": "",
+    "thumb": "assets/img/thumbnails/1783084137656-imypl-thumb.jpeg",
+    "full": "assets/img/1783084137656-imypl.jpeg",
+    "tags": [
+      "painting"
+    ],
+    "year": "2026"
+  },
+  {
     "title": "G-co",
     "description": "Illustrator",
     "link": "",
@@ -46,17 +57,6 @@
       "product"
     ],
     "year": "2025"
-  },
-  {
-    "title": "Sirène au Sac plastique",
-    "description": "Sirène au Sac plastique",
-    "link": "",
-    "thumb": "assets/img/thumbnails/1783084137656-imypl-thumb.jpeg",
-    "full": "assets/img/1783084137656-imypl.jpeg",
-    "tags": [
-      "painting"
-    ],
-    "year": "2026"
   },
   {
     "title": "Poupée",

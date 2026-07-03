@@ -193,17 +193,41 @@ function renderCard(project) {
     .filter((value) => value != null && String(value).trim() !== "")
     .map((value) => escapeHtml(value));
 
+  const tagsClass = String(project.tags || "").replace(/,/g, " ");
+  const figcaption = `<figcaption data-i18n-html="html.fig.${escapeHtml(project.title)}">
+    ${parts.join("<br />")}
+    </figcaption>`;
+
+  // Video item
+  if (project.mediaType === "video") {
+    const aspectRatio = project.aspectRatio || "16/9";
+    return `
+  <article class="grid-item ${tagsClass}">
+    <a class="media-wrap video-container" style="aspect-ratio: ${escapeHtml(aspectRatio)}">
+      <video
+        preload="none"
+        data-src="${escapeHtml(project.full)}"
+        data-type="video/mp4"
+      ></video>
+      <div class="video-thumbnail loading"></div>
+      <button class="play-pause-btn" id="playPauseBtn">
+        <div class="play-icon"></div>
+      </button>
+    </a>
+    ${figcaption}
+  </article>`.trim();
+  }
+
+  // Image item (default)
   return `
-  <article class="grid-item ${String(project.tags).replace(/,/g, " ")}">
-    <a class="media-wrap image-item" href="${project.full}">
+  <article class="grid-item ${tagsClass}">
+    <a class="media-wrap image-item" href="${escapeHtml(project.full)}">
       <img
-        src="${project.thumb}"
+        src="${escapeHtml(project.thumb)}"
         alt="${escapeHtml(project.title)}"
       />
     </a>
-    <figcaption data-i18n-html="html.fig.${escapeHtml(project.title)}">
-    ${parts.join("<br />")}
-    </figcaption>
+    ${figcaption}
   </article>`.trim();
 }
 // width="${THUMB_WIDTH}"
