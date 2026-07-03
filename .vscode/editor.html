@@ -495,11 +495,14 @@
       <!-- ══ VIDEO UPLOAD ══ -->
       <div class="field" id="video-upload-field-${index}" style="${project.mediaType !== "video" ? "display:none" : ""}">
         <label>Original video</label>
-        <input type="text" 
-               value="${esc(project.full || "")}" 
-               placeholder="e.g., assets/video/myVideo.mp4"
-               oninput="updateField(${index},'full',this.value)" />
-        <small style="color: #999; font-size: 11px; margin-top: 4px; display: block;">Path to the original video file</small>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <input type="file" accept="video/*" onchange="handleVideoSelect(event,${index})" />
+          <input type="text" 
+                 value="${esc(project.full || "")}" 
+                 placeholder="Or paste path like assets/video/myVideo.mp4"
+                 oninput="updateField(${index},'full',this.value)" style="flex:1" />
+        </div>
+        <small style="color: #999; font-size: 11px; margin-top: 4px; display: block;">Drop or choose the original video file; a thumbnail will be generated automatically.</small>
 
       <!-- ══ VIDEO THUMBNAIL ══ -->
       <div class="field" id="video-thumb-field-${index}" style="${project.mediaType !== "video" ? "display:none" : ""}">
@@ -644,6 +647,40 @@
       function handleImageSelect(e, index) {
         const file = e.target.files[0];
         if (file) uploadImage(file, index);
+      }
+
+      function handleVideoSelect(e, index) {
+        const file = e.target.files[0];
+        if (file) uploadVideo(file, index);
+      }
+
+      async function uploadVideo(file, index) {
+        const progress = document.getElementById("upload-progress-" + index);
+        progress.style.display = "block";
+
+        try {
+          const formData = new FormData();
+          formData.append("video", file);
+
+          const res = await fetch("/upload-video", {
+            method: "POST",
+            body: formData,
+          });
+          if (!res.ok) throw new Error(await res.text());
+
+          const { thumb, full } = await res.json();
+          projects[index].thumb = thumb;
+          projects[index].full = full;
+
+          const preview = document.getElementById("preview-" + index);
+          preview.querySelector("img").src = thumb + "?t=" + Date.now();
+          preview.style.display = "block";
+          setStatus("Video uploaded and thumbnail generated ✓", "ok");
+        } catch (e) {
+          setStatus("Upload failed: " + e.message, "error");
+        } finally {
+          progress.style.display = "none";
+        }
       }
 
       async function uploadImage(file, index) {

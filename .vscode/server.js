@@ -9,6 +9,7 @@ const multer = require("multer");
 const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
+const { spawn } = require("child_process");
 
 const app = express();
 const PORT = 3000;
@@ -17,6 +18,7 @@ const PORT = 3000;
 const ROOT = path.resolve(__dirname, "..");
 const INDEX_PATH = path.join(ROOT, "index.html");
 const IMAGES_DIR = path.join(ROOT, "assets", "img");
+const VIDEO_DIR = path.join(ROOT, "assets", "video");
 
 // Thumbnail dimensions — width is fixed at 512 and height is capped at 768
 const THUMB_WIDTH = 512;
@@ -24,6 +26,7 @@ const THUMB_MAX_HEIGHT = 768;
 
 // ─── Ensure images folder exists ─────────────────────────────────────────────
 fs.mkdirSync(IMAGES_DIR, { recursive: true });
+fs.mkdirSync(VIDEO_DIR, { recursive: true });
 
 // ─── Middleware ───────────────────────────────────────────────────────────────
 app.use(express.json());
@@ -82,6 +85,36 @@ app.post("/upload-image", upload.single("image"), async (req, res) => {
   }
 });
 
+// ─── Video upload (save original + generate thumbnail from first frame)
+app.post("/upload-video", upload.single("video"), async (req, res) => {
+  try {
+    if (!req.file) return res.status(400).json({ error: "No file received" });
+
+    const ext = path.extname(req.file.originalname) || ".mp4";
+    const basename = `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+    const fullName = `${basename}${ext}`;
+    const thumbName = `${basename}-thumb.jpg`;
+
+    const fullPath = path.join(VIDEO_DIR, fullName);
+    fs.writeFileSync(fullPath, req.file.buffer);
+
+    // Ensure thumbnails directory exists
+    fs.mkdirSync(path.join(IMAGES_DIR, "thumbnails"), { recursive: true });
+    const thumbPath = path.join(IMAGES_DIR, "thumbnails", thumbName);
+
+    // Generate thumbnail from first frame
+    await generateThumbnailFromVideo(fullPath, thumbPath);
+
+    res.json({
+      thumb: `assets/img/thumbnails/${thumbName}`,
+      full: `assets/video/${fullName}`,
+    });
+  } catch (err) {
+    console.error("Video processing error:", err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 async function generateThumbnailFile(sourcePath, outputPath) {
   const metadata = await sharp(sourcePath).metadata();
   const width = metadata.width || 0;
@@ -100,11 +133,48 @@ async function generateThumbnailFile(sourcePath, outputPath) {
   }
 }
 
-function getProjectImagePath(project) {
+async function generateThumbnailFromVideo(sourceVideoPath, outputPath) {
+  // Extract first frame into a temporary file, then use sharp to resize it
+  const tmpFrame = outputPath + ".frame.jpg";
+
+  // Resolve ffmpeg binary: prefer ffmpeg-static if available, else fall back to system 'ffmpeg'
+  let ffmpegBin = "ffmpeg";
+  try {
+    // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+    ffmpegBin = require("ffmpeg-static");
+  } catch (e) {
+    console.warn("ffmpeg-static not found, falling back to system ffmpeg. Install ffmpeg-static for bundled ffmpeg.");
+  }
+
+  await new Promise((resolve, reject) => {
+    const args = ["-y", "-i", sourceVideoPath, "-frames:v", "1", tmpFrame];
+    const proc = spawn(ffmpegBin, args);
+
+    let stderr = "";
+    proc.stderr.on("data", (d) => (stderr += d.toString()));
+    proc.on("close", (code) => {
+      if (code === 0 && fs.existsSync(tmpFrame)) resolve();
+      else reject(new Error(`ffmpeg failed (${code}): ${stderr}`));
+    });
+  });
+
+  // Use the same image resizing logic as for photos
+  await generateThumbnailFile(tmpFrame, outputPath);
+
+  // remove temporary frame file
+  try {
+    fs.unlinkSync(tmpFrame);
+  } catch (e) {
+    // ignore
+  }
+}
+
+function getProjectMediaPath(project) {
   if (!project?.full) return null;
 
   const normalized = String(project.full).replace(/\\/g, "/").replace(/^\/+/, "");
-  if (!normalized.startsWith("assets/img/")) return null;
+  // accept assets/img/ and assets/video/ (and other assets/*)
+  if (!normalized.startsWith("assets/")) return null;
 
   const absolutePath = path.join(ROOT, normalized);
   return fs.existsSync(absolutePath) ? absolutePath : null;
@@ -125,17 +195,31 @@ app.post("/regenerate-thumbnails", async (req, res) => {
 
     let count = 0;
     for (const project of projects) {
-      const sourcePath = getProjectImagePath(project);
+      const sourcePath = getProjectMediaPath(project);
       if (!sourcePath) continue;
 
-      const ext = path.extname(sourcePath) || ".jpg";
-      const basename = path.basename(sourcePath, ext);
-      const thumbName = `${basename}-thumb${ext}`;
+      const srcExt = path.extname(sourcePath).toLowerCase();
+      const basename = path.basename(sourcePath, srcExt);
+
+      // For video sources, always emit a .jpg thumbnail
+      const isVideo = (project.mediaType === "video") || [".mp4", ".mov", ".webm", ".mkv"].includes(srcExt);
+      const thumbExt = isVideo ? ".jpg" : (srcExt || ".jpg");
+      const thumbName = `${basename}-thumb${thumbExt}`;
       const thumbPath = path.join(IMAGES_DIR, "thumbnails", thumbName);
 
-      await generateThumbnailFile(sourcePath, thumbPath);
-      project.thumb = `assets/img/thumbnails/${thumbName}`;
-      count += 1;
+      if (isVideo) {
+        try {
+          await generateThumbnailFromVideo(sourcePath, thumbPath);
+          project.thumb = `assets/img/thumbnails/${thumbName}`;
+          count += 1;
+        } catch (e) {
+          console.error("Failed to generate video thumbnail for", sourcePath, e.message);
+        }
+      } else {
+        await generateThumbnailFile(sourcePath, thumbPath);
+        project.thumb = `assets/img/thumbnails/${thumbName}`;
+        count += 1;
+      }
     }
 
     fs.writeFileSync(projectsPath, JSON.stringify(projects, null, 2), "utf8");
