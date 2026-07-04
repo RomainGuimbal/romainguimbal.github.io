@@ -5,7 +5,7 @@
 
 .grid-item {
   width: 290px;
-  margin: 0 15px 30px 15px;
+  margin: 0 5px 30px 5px;
   overflow: hidden;
   /* transition: 0.2s; */
 }
