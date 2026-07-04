@@ -316,7 +316,7 @@ a.to-sp-portal .content div img {
   transform: translate(-50%, -50%);
 } */
 
-.cursor-light {
+#cursor-light {
   position: fixed;
   top: 0;
   left: 0;

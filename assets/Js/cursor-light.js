@@ -1,5 +1,5 @@
 // Cursor light follower with requestAnimationFrame for smooth performance
-const cursorLight = document.querySelector('.cursor-light');
+const cursorLight = document.getElementById('cursor-light');
 
 if (cursorLight) {
     let mouseX = 0;
