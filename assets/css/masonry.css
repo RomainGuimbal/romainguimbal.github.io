@@ -1,6 +1,6 @@
 .masonry-grid {
-  /* margin-left: 450px; */
   width: auto;
+  margin: 0;
 }
 
 .grid-item {
@@ -10,7 +10,8 @@
   /* transition: 0.2s; */
 }
 
-@media (max-width: 1024px) {
+/* 1024px + 410px of menu */
+@media (max-width: 1434px) {
   .masonry-grid {
     margin: 0 auto;
   }

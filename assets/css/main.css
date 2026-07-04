@@ -62,14 +62,8 @@ body {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: column; */
   flex-wrap: wrap;
-}
-
-@media (max-width: 1024px) {
-  body {
-    flex-direction: column;
-  }
 }
 
 main {
@@ -80,8 +74,19 @@ main {
   /* padding-right: 25px; */
 }
 
+/* 1024px + 410px of menu */
+@media (max-width: 1434px) {
+  body {
+    flex-direction: column;
+  }
+
+  main {
+    max-width: 100%;
+  }
+}
+
 #menu-spacer {
-  width: 280px;
+  width: 410px;
   margin: 0;
 }
 
