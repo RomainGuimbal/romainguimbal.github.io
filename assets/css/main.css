@@ -76,8 +76,13 @@ main {
   flex: 1;
   max-width: 1200px;
   position: relative;
-  /* margin-left: 420px; */
-  padding-right: 25px;
+  margin: 0;
+  /* padding-right: 25px; */
+}
+
+#menu-spacer {
+  width: 280px;
+  margin: 0;
 }
 
 a:link {
