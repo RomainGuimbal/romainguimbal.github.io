@@ -28,7 +28,8 @@ header {
   }
 }
 
-@media (max-width: 768px) {
+/* Menu collision with flags */
+@media (max-width: 540px) {
   header {
     margin-top: 50px;
   }

@@ -1,13 +1,10 @@
+/* ================= */
+/*       Grid        */
+/* ================= */
+
 .masonry-grid {
   width: auto;
   margin: 0;
-}
-
-.grid-item {
-  width: 290px;
-  margin: 0 5px 30px 5px;
-  overflow: hidden;
-  /* transition: 0.2s; */
 }
 
 /* 1024px + 410px of menu */
@@ -17,21 +14,30 @@
   }
 }
 
-/* SIZING ALREADY INSIDE masonry.js TO CLARIFY*/
-/* Add responsive breakpoints */
-@media screen and (max-width: 767px) {
-  .grid-item {
-    width: calc(50% - 30px);
-    margin: 0 10px 20px 10px;
-  }
+/* ================= */
+/*       Items       */
+/* ================= */
+
+/* Sync with masonry.js for size change */
+
+/* Width 300 */
+.grid-item {
+  width: 290px;
+  margin: 0 5px 30px;
+  overflow: hidden;
 }
 
-@media screen and (max-width: 480px) {
+/* Width 200 */
+@media screen and (max-width: 640px) {
   .grid-item {
-    width: calc(50% - 20px);
+    width: 190px;
     margin: 0 5px 15px 5px;
   }
 }
+
+/* ================= */
+/*      Content      */
+/* ================= */
 
 .grid-item img,
 .grid-item video,
