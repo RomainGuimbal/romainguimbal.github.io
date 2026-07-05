@@ -61,17 +61,13 @@ html {
 body {
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
 }
 
 main {
   flex: 1;
   max-width: 1200px;
   position: relative;
-  margin: 0;
-  /* padding-right: 25px; */
+  margin: 0 0 0 410px;
 }
 
 /* 1024px + 410px of menu */
@@ -82,44 +78,13 @@ main {
 
   main {
     max-width: 100%;
+    margin: 0;
   }
-}
-
-#menu-spacer {
-  width: 410px;
-  margin: 0;
 }
 
 a:link {
   color: var(--text-color);
 }
-
-
-/* spline-viewer {
-  height: auto;
-  margin: 0 auto;
-  position: relative;
-} */
-
-/* .numero {
-  font:
-    bold 12em "Poppins",
-    sans-serif;
-  font-size: clamp(3rem, -5rem + 20vw, 12rem);
-  text-align: left;
-  position: absolute;
-  margin: 0;
-  mix-blend-mode: overlay;
-  line-height: 0.85em;
-  color: #e6e6e794;
-}
-
-.item .numero {
-  position: absolute;
-  transform: translate(-50vw, 0);
-  right: clamp(150px, 20%, 250px);
-  text-align: right;
-} */
 
 footer {
   box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.3);
@@ -200,6 +165,32 @@ a.to-sp-portal .content div img {
   mask: var(--noise);
   mask-mode: ;
 */
+
+/* spline-viewer {
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+} */
+
+/* .numero {
+  font:
+    bold 12em "Poppins",
+    sans-serif;
+  font-size: clamp(3rem, -5rem + 20vw, 12rem);
+  text-align: left;
+  position: absolute;
+  margin: 0;
+  mix-blend-mode: overlay;
+  line-height: 0.85em;
+  color: #e6e6e794;
+}
+
+.item .numero {
+  position: absolute;
+  transform: translate(-50vw, 0);
+  right: clamp(150px, 20%, 250px);
+  text-align: right;
+} */
 
 /* ============================================================
    Language switcher

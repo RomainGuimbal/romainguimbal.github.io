@@ -75,14 +75,25 @@
   }
 }
 
+/* Width 180 */
+@media screen and (max-width: 410px) {
+  .grid-item {
+    width: 174px;
+    margin: 0 2px 15px 2px;
+  }
+
+  .grid-item.grid-item.project{
+    outline-offset: 2px;
+  }
+}
+
 /* ================= */
 /*      Content      */
 /* ================= */
 
 .grid-item img,
 .grid-item video,
-.grid-item div#spline-container,
-.grid-item .duo {
+.grid-item div#spline-container {
   width: 100%;
   height: auto;
   display: block;
@@ -95,23 +106,10 @@
   padding: 10px;
 }
 
-.grid-item figcaption,
-.grid-item .multi-image figcaption {
-  margin-top: 5px;
-  height: auto;
-  text-align: left;
-  /* white-space: nowrap; */
-  color: var(--project-caption-color);
-  font-size: 0.8em;
-  width: 100%;
-  display: block;
-}
-
 .grid-item.project {
   outline: var(--project-color) 2px solid;
   outline-offset: 4px;
   border-radius: 3px;
-  /* Ensure child media elements inherit border-radius */
   aspect-ratio: auto; /* Allow JS to set aspect-ratio inline */
 }
 
@@ -184,6 +182,23 @@
   object-fit: cover;
 }
 
+.note-card {
+  background-color: var(--half-color);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+  text-align: left;
+  color: black;
+  font-size: 1em !important;
+  margin: 0 auto 0;
+  border-radius: 3px;
+}
+
+.note-card-content {
+  padding: 1em;
+}
+
+/*=======================
+  MEDIA WRAP
+=======================*/
 
 .media-wrap {
   position: relative;
@@ -226,26 +241,28 @@
   background-color: transparent;
 }
 
-.note-card {
-  background-color: var(--half-color);
-  box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
-  text-align: left;
-  color: black;
-  font-size: 1em !important;
-  margin: 0 auto 0;
-  border-radius: 3px;
-}
-
-.note-card-content {
-  padding: 1em;
-}
-
 media-wrap:hover:not(:focus) {
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
   transition: box-shadow 0.1s ease-in-out;
 }
 
-/* caption for specific media */
+/*=====================
+  CAPTION
+=====================*/
+
+/* Main caption */
+.grid-item figcaption {
+  margin-top: 5px;
+  height: auto;
+  text-align: left;
+  /* white-space: nowrap; */
+  color: var(--project-caption-color);
+  font-size: 0.8em;
+  width: 100%;
+  display: block;
+}
+
+/* Caption on media */
 .media-wrap figcaption {
   margin: 0 auto;
   position: relative;
@@ -260,7 +277,8 @@ media-wrap:hover:not(:focus) {
   color: rgb(227, 233, 255) !important;
 }
 
-.thumbnail-overlay {
+/* Old video player */
+/* .thumbnail-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -271,4 +289,4 @@ media-wrap:hover:not(:focus) {
   border-radius: 10px;
   cursor: pointer;
   transition: opacity 0.3s ease;
-}
+} */
