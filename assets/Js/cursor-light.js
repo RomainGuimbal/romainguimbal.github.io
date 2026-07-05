@@ -1,39 +1,20 @@
 // Cursor light follower with requestAnimationFrame for smooth performance
 const cursorLight = document.getElementById('cursor-light');
 
-if (cursorLight) {
-    let mouseX = 0;
-    let mouseY = 0;
-    let rafId = null;
+document.addEventListener('mousemove', (e) => {
+  // Convert to percentage for CSS (or use px, but % works better for resize)
+  const x = (e.clientX / window.innerWidth) * 100;
+  const y = (e.clientY / window.innerHeight) * 100;
+  cursorLight.style.setProperty('--x', x + '%');
+  cursorLight.style.setProperty('--y', y + '%');
+});
 
-    const updatePosition = () => {
-        cursorLight.style.left = mouseX + 'px';
-        cursorLight.style.top = mouseY + 'px';
-    };
-
-    const scheduleUpdate = () => {
-        if (rafId === null) {
-            rafId = requestAnimationFrame(() => {
-                updatePosition();
-                rafId = null;
-            });
-        }
-    };
-
-    // Mouse movement - only update coordinates, defer DOM update to RAF
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        scheduleUpdate();
-    });
-
-    // Touch movement - only update coordinates, defer DOM update to RAF
-    document.addEventListener('touchmove', (e) => {
-        if (e.touches.length > 0) {
-            const touch = e.touches[0];
-            mouseX = touch.clientX;
-            mouseY = touch.clientY;
-            scheduleUpdate();
-        }
-    }, { passive: true });
-}
+document.addEventListener('touchmove', (e) => {
+  if (e.touches.length > 0) {
+    const touch = e.touches[0];
+    const x = (touch.clientX / window.innerWidth) * 100;
+    const y = (touch.clientY / window.innerHeight) * 100;
+    cursorLight.style.setProperty('--x', x + '%');
+    cursorLight.style.setProperty('--y', y + '%');
+  }
+}, { passive: true });

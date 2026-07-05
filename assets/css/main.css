@@ -316,28 +316,23 @@ a.to-sp-portal .content div img {
   transform: translate(-50%, -50%);
 } */
 
-#cursor-light {
+/* #cursor-light {
   position: fixed;
   top: 0;
   left: 0;
-  width: 1000px;
-  height: 1000px;
-  border-radius: 999px;
-  background:
-    radial-gradient(
-      circle,
-      rgba(69, 56, 255, 0.1) 0%,
-      rgba(69, 56, 255, 0.1) 10%,
-      rgba(69, 56, 255, 0) 70%,
-      rgba(0, 0, 0, 0) 80%,
-      rgba(0, 0, 0, 0) 100%
-    );
-
+  width: 100vw;
+  height: 100vh;
   mix-blend-mode: color-dodge;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: all 0.1s ease;
-}
+  z-index: 10;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(69, 56, 255, 0.1) 0%,
+    rgba(69, 56, 255, 0.1) 10%,
+    rgba(69, 56, 255, 0) 70%,
+    rgba(0, 0, 0, 0) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+} */
 /*
   mask: var(--noise);
   mask-mode: ;
