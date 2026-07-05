@@ -213,7 +213,7 @@
   transition: 0.3s ease;
 }
 
-.media-wrap img,
+/* .media-wrap img,
 .media-wrap video {
   filter: grayscale(100%);
   transition: filter 0.5s ease;
@@ -239,7 +239,7 @@
 
 .media-wrap:hover::before {
   background-color: transparent;
-}
+} */
 
 media-wrap:hover:not(:focus) {
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
