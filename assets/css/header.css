@@ -192,7 +192,7 @@ header #portfolio {
   margin: 0 auto 0 auto;
   list-style: none;
 }
- 
+
 .filter,
 #mail-button {
   display: inline-block;
@@ -256,4 +256,17 @@ button {
   width: 25px;
   padding: 5px;
   margin: auto 0;
+  transition: 0.2s;
 }
+
+/* BROKEN
+.social-links a:hover::before { 
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(var(--menu-text), 0.5);
+  filter: blur(15px);
+} */
