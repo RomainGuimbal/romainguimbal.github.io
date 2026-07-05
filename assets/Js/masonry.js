@@ -170,22 +170,23 @@ function add_or_remove_nav_arrows(multiImage) {
 }
 
 function getColumnWidth() {
+  if (window.innerWidth <= 410) {
+    return 180;
+  }
   if (window.innerWidth <= 640) {
     return 200;
   }
-  // if (window.innerWidth <= 767) {
-  //   return 300;
-  // }
   return 300;
 }
 
 function getGutterSize() {
+  if (window.innerWidth <= 410) {
+    return 6;
+  }
   if (window.innerWidth <= 640) {
     return 10;
   }
-  // if (window.innerWidth <= 767) {
-  //   return 20;
-  // }
+
   return 20;
 }
 
