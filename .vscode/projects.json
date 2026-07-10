@@ -68,5 +68,17 @@
       "painting"
     ],
     "year": "2026"
+  },
+  {
+    "title": "Head Sculpt",
+    "description": "Sculpture de visage semi-stylisée",
+    "link": "",
+    "thumb": "assets/img/thumbnails/1783699210011-wlvx8-thumb.jpg",
+    "full": "assets/img/1783699210011-wlvx8.jpg",
+    "tags": [
+      "modeling"
+    ],
+    "mediaType": "image",
+    "year": "2022"
   }
 ]
