@@ -3,11 +3,11 @@
 }
 
 header {
-  margin: 25px;
-  position: fixed;
-  left: 0;
-  top: 0;
+  position: relative;
   height: auto;
+  margin: 25px auto;
+  left: auto;
+  top: auto;
   z-index: 500;
   gap: 0px;
   display: flex;
@@ -15,17 +15,6 @@ header {
   max-width: 370px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   border-radius: 20px;
-}
-
-/* 1024px + 410px of menu */
-@media (max-width: 1434px) {
-  header {
-    position: relative;
-    height: auto;
-    margin: 25px auto;
-    left: auto;
-    top: auto;
-  }
 }
 
 /* Menu collision with flags */
@@ -192,7 +181,7 @@ header #portfolio {
   margin: 0 auto 0 auto;
   list-style: none;
 }
- 
+
 .filter,
 #mail-button {
   display: inline-block;

@@ -61,6 +61,7 @@ html {
 body {
   width: 100%;
   min-height: 100vh;
+  flex-direction: column;
 }
 
 main {
@@ -68,18 +69,8 @@ main {
   max-width: 1200px;
   position: relative;
   margin: 0 0 0 410px;
-}
-
-/* 1024px + 410px of menu */
-@media (max-width: 1434px) {
-  body {
-    flex-direction: column;
-  }
-
-  main {
-    max-width: 100%;
-    margin: 0;
-  }
+  max-width: 100%;
+  margin: 0;
 }
 
 a:link {

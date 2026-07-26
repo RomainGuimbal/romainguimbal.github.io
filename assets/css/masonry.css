@@ -5,7 +5,7 @@
 /* Masonry grid: keep hidden until layout is ready to avoid flash*/
 .masonry-grid {
   width: auto;
-  margin: 0;
+  margin: 0 auto;
   opacity: 0;
   visibility: hidden;
   transition:
@@ -15,13 +15,6 @@
 .masonry-grid.masonry-loaded {
   opacity: 1;
   visibility: visible;
-}
-
-/* 1024px + 410px of menu */
-@media (max-width: 1434px) {
-  .masonry-grid {
-    margin: 0 auto;
-  }
 }
 
 /* Preloader shown while masonry is loading */
@@ -82,7 +75,7 @@
     margin: 0 2px 15px 2px;
   }
 
-  .grid-item.grid-item.project{
+  .grid-item.grid-item.project {
     outline-offset: 2px;
   }
 }
