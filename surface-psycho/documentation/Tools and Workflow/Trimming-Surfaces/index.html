@@ -25,7 +25,7 @@
     
     
       
-        <title>Add Trim Contour - SurfacePsycho Documentation</title>
+        <title>Trimming Surfaces - SurfacePsycho Documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#add-trim-contour" class="md-skip">
+        <a href="#trimming-surfaces" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Add Trim Contour
+              Trimming Surfaces
             
           </span>
         </div>
@@ -5219,6 +5219,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trimming Surfaces
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -5226,7 +5244,7 @@
   <span class="md-ellipsis">
     
   
-    Add Trim Contour
+    Trimming Surfaces
   
 
     
@@ -5235,6 +5253,75 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#manual-trimming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Trimming
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Trimming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-trim-contour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add Trim Contour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-trim-contour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit Trim Contour
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-destructive-trimming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Destructive Trimming
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -5296,6 +5383,64 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#manual-trimming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Trimming
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Trimming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-trim-contour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add Trim Contour
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-trim-contour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit Trim Contour
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-destructive-trimming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Destructive Trimming
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5311,11 +5456,15 @@
 
 
 
-<h1 id="add-trim-contour">Add Trim Contour</h1>
+<h1 id="trimming-surfaces">Trimming Surfaces</h1>
+<h2 id="manual-trimming">Manual Trimming</h2>
+<h3 id="add-trim-contour">Add Trim Contour</h3>
 <p>To quickly add a trim contour use the following button in the SP N panel :</p>
 <p><img width="300" height="auto" alt="add trim contour button" src="https://github.com/user-attachments/assets/a189f075-67a8-4b4e-93e7-08789733a384"/></p>
-<h1 id="edit-trim-contour">Edit Trim Contour</h1>
-<p>Trim contours in SurfacePsycho are defined with the <a href="https://github.com/RomainGuimbal/SurfacePsycho/wiki/Editing-Wires">wire system</a>. The wires are projected over the X-Y plane of the object. The X axis represents the U axis and Y the V axis.</p>
+<h3 id="edit-trim-contour">Edit Trim Contour</h3>
+<p>Trim contours in SurfacePsycho are defined with the <a href="../Editing-Wires/">wire system</a>. The wires are projected over the X-Y plane of the object. The X axis represents the U axis and Y the V axis.</p>
+<h2 id="non-destructive-trimming">Non-Destructive Trimming</h2>
+<p>Modifiers such as <code>SP - Trim Bezier Patch</code> or <code>SP - Trim Bezier Surface from Projected Wires</code> are trimming the surface they act on.</p>
 
 
 
