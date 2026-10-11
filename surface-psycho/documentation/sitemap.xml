@@ -421,10 +421,6 @@
          <lastmod>2026-10-11</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Utility/SP_Curvature/</loc>
-         <lastmod>2026-10-11</lastmod>
-    </url>
-    <url>
          <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Utility/Index/SP%20-%20Reorder%20Curve%20Index/</loc>
          <lastmod>2026-10-11</lastmod>
     </url>
@@ -453,14 +449,6 @@
          <lastmod>2026-10-11</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Utility/Set%20Property/SP%20-%20Set%20Patch%20Instance%20Type/</loc>
-         <lastmod>2026-10-11</lastmod>
-    </url>
-    <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Utility/Set%20Property/SP%20-%20Set%20Segment%20Type/</loc>
-         <lastmod>2026-10-11</lastmod>
-    </url>
-    <url>
          <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Utility/Split/SP%20-%20Multi%20Split%20Curve/</loc>
          <lastmod>2026-10-11</lastmod>
     </url>
@@ -486,6 +474,18 @@
     </url>
     <url>
          <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Utility/Transform/SP%20-%20Transform%20UVMap/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Node%20Groups/SP%20-%20Set%20Patch%20Instance%20Type/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Node%20Groups/SP%20-%20Set%20Segment%20Type/</loc>
+         <lastmod>2026-10-11</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Node%20Groups/SP_Curvature/</loc>
          <lastmod>2026-10-11</lastmod>
     </url>
     <url>
