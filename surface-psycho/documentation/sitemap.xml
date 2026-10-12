@@ -5,19 +5,19 @@
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/10-Install-and-Setup/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/10_Install%20and%20Setup/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/80-Compatibility%20and%20Upgrade/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/80_Compatibility%20and%20Upgrade/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/90-About/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/90_About/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Analyse/SP%20-%20Compare-Mesh/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Analyse/SP%20-%20Compare%20Mesh/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
@@ -81,11 +81,15 @@
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Connect/SP%20-%20Connect-Curve/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Connect/SP%20-%20Connect%20Curve/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Connect/SP%20-%20Connect-Flat-Patch/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Connect/SP%20-%20Connect%20Flat%20Patch/</loc>
+         <lastmod>2026-10-12</lastmod>
+    </url>
+    <url>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Convert/SP%20-%20Convert%20Circles%20and%20Ellipses%20to%20Splines/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
@@ -93,11 +97,7 @@
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Convert/SP%20-%20Convert-Circles-and-Ellipses-to-Splines/</loc>
-         <lastmod>2026-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Convert/SP%20-%20Convert-Flat-Patch-to-Bezier-Patch/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Convert/SP%20-%20Convert%20Flat%20Patch%20to%20Bezier%20Patch/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
@@ -157,11 +157,11 @@
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Fillet/SP%20-%20Fillet%20Trim%20Contour/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Fillet/SP%20-%20Fillet%20Polyline%20with%20Circles/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Fillet/SP%20-%20Fillet-Polyline-with-Circles/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Fillet/SP%20-%20Fillet%20Trim%20Contour/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
@@ -205,7 +205,7 @@
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Shape/SP%20-%20Extrude-Compound/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Shape/SP%20-%20Extrude%20Compound/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
@@ -345,11 +345,11 @@
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Trim/SP%20-%20Crop-or-Extend-Curve/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Trim/SP%20-%20Crop%20or%20Extend%20Curve/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Trim/SP%20-%20Crop-or-Extend-Patch/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Trim/SP%20-%20Crop%20or%20Extend%20Patch/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
@@ -377,15 +377,15 @@
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Utility/SP%20-%20Continuities-between-Segments/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Utility/SP%20-%20Continuities%20between%20Segments/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Utility/SP%20-%20Copy-Geometry/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Utility/SP%20-%20Copy%20Geometry/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Utility/SP%20-%20Copy-Internal-Curve/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Modifers/Utility/SP%20-%20Copy%20Internal%20Curve/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
@@ -485,23 +485,19 @@
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Destructive-editing/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Destructive%20editing/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Editing-Wires/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Exact%20Normals/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Exact-Normals/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Explode%20Compound/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Explode-Compound/</loc>
-         <lastmod>2026-10-12</lastmod>
-    </url>
-    <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Import-and-Export/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Import%20and%20Export/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
@@ -517,23 +513,23 @@
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Procedural-modeling/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Procedural%20modeling/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/SP-Mode/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/SP%20Mode/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/SP-Objects/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/SP%20Objects/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Trimming-Surfaces/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Trimming%20Surfaces/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
     <url>
-         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Workflow-Tips/</loc>
+         <loc>https://https:/romainguimbal.github.io/surface-psycho/documentation/Workflow/Workflow%20Tips/</loc>
          <lastmod>2026-10-12</lastmod>
     </url>
 </urlset>
