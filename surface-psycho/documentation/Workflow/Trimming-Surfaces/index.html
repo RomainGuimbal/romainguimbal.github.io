@@ -3616,7 +3616,7 @@
   <span class="md-ellipsis">
     
   
-    SP   Crop or Extend Patch
+    SP - Crop or Extend Patch
   
 
     
@@ -3644,7 +3644,7 @@
   <span class="md-ellipsis">
     
   
-    SP   Edge Offset of Flat Patch
+    SP - Edge Offset of Flat Patch
   
 
     
@@ -5333,10 +5333,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#add-trim-contour" class="md-nav__link">
+  <a href="#add-a-trim-contour" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Add Trim Contour
+        Add a Trim Contour
       
     </span>
   </a>
@@ -5344,10 +5344,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#edit-trim-contour" class="md-nav__link">
+  <a href="#edit-it" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edit Trim Contour
+        Edit it
       
     </span>
   </a>
@@ -5453,10 +5453,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#add-trim-contour" class="md-nav__link">
+  <a href="#add-a-trim-contour" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Add Trim Contour
+        Add a Trim Contour
       
     </span>
   </a>
@@ -5464,10 +5464,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#edit-trim-contour" class="md-nav__link">
+  <a href="#edit-it" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edit Trim Contour
+        Edit it
       
     </span>
   </a>
@@ -5509,13 +5509,15 @@
 
 <h1 id="trimming-surfaces">Trimming Surfaces</h1>
 <h2 id="manual-trimming">Manual Trimming</h2>
-<h3 id="add-trim-contour">Add Trim Contour</h3>
-<p>To quickly add a trim contour use the following button in the SP N panel :</p>
-<p><img width="300" height="auto" alt="add trim contour button" src="https://github.com/user-attachments/assets/a189f075-67a8-4b4e-93e7-08789733a384"/></p>
-<h3 id="edit-trim-contour">Edit Trim Contour</h3>
-<p>Trim contours in SurfacePsycho are defined with the <a href="../Editing-Wires/">wire system</a>. The wires are projected over the X-Y plane of the object. The X axis represents the U axis and Y the V axis.</p>
+<h3 id="add-a-trim-contour">Add a Trim Contour</h3>
+<p>To quickly add a trim contour <code>N Panel &gt; SurfacePsycho &gt; Edit &gt; Trim Contour &gt; Add</code> :
+<img alt="Assign geometry to trim contour from panel" src="../../Images/assign%20trim.jpg" /></p>
+<h3 id="edit-it">Edit it</h3>
+<p>Trim contours in SurfacePsycho are defined with the <a href="../Editing-Wires/">wire system</a>. The wires are projected over the X-Y plane of the object (X represents U, Y represents V). The trim contour is simply some geometry marked as such. </p>
+<p>To mark or unmark some, <code>N Panel &gt; SurfacePsycho &gt; Edit &gt; Trim Contour &gt; Toggle</code>. </p>
+<p>The <code>Select</code> button allows you to view what is already assigned.</p>
 <h2 id="non-destructive-trimming">Non-Destructive Trimming</h2>
-<p>Modifiers such as <code>SP - Trim Bezier Patch</code> or <code>SP - Trim Bezier Surface from Projected Wires</code> are trimming the surface they act on.</p>
+<p>Trimming surfaces can be automated by modifiers of the trim category. Note that <a href="../../Modifers/Trim/SP%20-%20Crop-or-Extend-Patch/">SP - Crop or Extend Patch</a> acts on the control points of the surface and not on its trim contour.</p>
 
 
 

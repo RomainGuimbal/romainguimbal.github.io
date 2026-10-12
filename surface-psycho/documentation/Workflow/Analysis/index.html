@@ -3616,7 +3616,7 @@
   <span class="md-ellipsis">
     
   
-    SP   Crop or Extend Patch
+    SP - Crop or Extend Patch
   
 
     
@@ -3644,7 +3644,7 @@
   <span class="md-ellipsis">
     
   
-    SP   Edge Offset of Flat Patch
+    SP - Edge Offset of Flat Patch
   
 
     
@@ -4990,6 +4990,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -5006,6 +5024,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-curvature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyse Curvature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analyse Curvature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Curves
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Surfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Surfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matcaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matcaps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-distances-between-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyse Distances Between Curves
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -5347,6 +5451,81 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-curvature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyse Curvature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analyse Curvature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Curves
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Surfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Surfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matcaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matcaps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-distances-between-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyse Distances Between Curves
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5363,6 +5542,16 @@
 
 
 <h1 id="analysis">Analysis</h1>
+<h2 id="analyse-curvature">Analyse Curvature</h2>
+<h3 id="curves">Curves</h3>
+<p>To display the curvature of a curve at every evaluated point, enable curvature combs in the mesher modifier.</p>
+<h3 id="surfaces">Surfaces</h3>
+<p>For surfaces, there is a specific modifier: <a href="../../Modifers/Analyse/SP%20-%20Curvature%20Analysis/">SP - Curvature Analysis</a>. It can be added automatically to every surfaces through <code>N Panel &gt; SurfacePsycho &gt; View &gt; Curvature Analysis</code>. By default it displays the mean curvature </p>
+<!-- TODO : Alt + change param... -->
+
+<h4 id="matcaps">Matcaps</h4>
+<p>To register the matcaps shiped with the addon, go to <code>Edit &gt; Preferences &gt; Add-ons &gt; SurfacePsycho &gt; Psycho Matcaps</code> and click <code>Add</code>. They will appear in the matcap list. For better analysis, increase surfaces resolutions, enable <code>Exact Normals</code> and EEVEE's <code>high quality normals</code> (<a href="../Exact-Normals/">More info here</a>).</p>
+<h2 id="analyse-distances-between-curves">Analyse Distances Between Curves</h2>
 
 
 
