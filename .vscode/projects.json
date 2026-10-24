@@ -80,5 +80,31 @@
     ],
     "mediaType": "image",
     "year": "2022"
+  },
+  {
+    "title": "G5 VERTICON 2026",
+    "description": "",
+    "link": "",
+    "thumb": "assets/img/thumbnails/1792870120044-1szf1-thumb.jpg",
+    "full": "assets/img/1792870120044-1szf1.jpg",
+    "tags": [
+      "rendering",
+      "modeling",
+      "product"
+    ],
+    "mediaType": "image",
+    "aspectRatio": "16/9"
+  },
+  {
+    "title": "SurfacePsycho Alpha 10 Cover",
+    "description": "",
+    "link": "",
+    "thumb": "assets/img/thumbnails/1792870441990-khn00-thumb.png",
+    "full": "assets/img/1792870441990-khn00.png",
+    "tags": [
+      "rendering"
+    ],
+    "mediaType": "image",
+    "aspectRatio": "16/9"
   }
 ]
