@@ -181,13 +181,13 @@ function getColumnWidth() {
 
 function getGutterSize() {
   if (window.innerWidth <= 410) {
-    return 6;
+    return 3;
   }
   if (window.innerWidth <= 640) {
-    return 10;
+    return 5;
   }
 
-  return 20;
+  return 10;
 }
 
 // Resize handlers

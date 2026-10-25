@@ -8,7 +8,7 @@ const i18nData = {
   fr: {
     /* --- Header / Bio card --- */
     "bio.role": "Ingénieur-Designer",
-    "header.filter": "FILTRER LES PROJETS",
+    "header.filter": "Filtrer ▾",
     "header.bio-title": "ME CONNAÎTRE",
     "header.bio":
       "Designer Français, ingénieur mécanique-mécatronique de formation, passionné par la biologie et l'animation.",
@@ -68,7 +68,7 @@ const i18nData = {
   en: {
     /* --- Header / Bio card --- */
     "bio.role": "Engineer-Designer",
-    "header.filter": "FILTER PROJECTS",
+    "header.filter": "Filter ▾",
     "header.bio-title": "ABOUT ME",
     "header.bio":
       "French designer, trained as a mechanical and mechatronics engineer, with a passion for biology and animation.",

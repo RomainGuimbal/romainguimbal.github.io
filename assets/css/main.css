@@ -234,7 +234,7 @@ a {
 
 .hero {
   width: 100%;
-  height: calc(100vh - 50px);
+  height: 80vh;
   position: relative;
   overflow: hidden;
   display: block;
@@ -244,4 +244,121 @@ a {
   position: relative;
   object-fit: cover;
   min-width: 100%;
+}
+
+/* ---------- Anchor button ---------- */
+.anchor-btn {
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #ffffff00;
+  font-size: 14px;
+  cursor: pointer;
+}
+.anchor-btn:hover {
+  background: #ffffff4b;
+}
+
+/* ---------- Popover wrapper ---------- */
+.popover {
+  position: relative;
+  display: inline-block;
+}
+
+/* ---------- The black bubble ---------- */
+.popover-menu {
+  position: absolute;
+  top: calc(100% + 10px); /* gap between bubble and button */
+  left: 50%;
+
+  background: #0a0a0a;
+  color: #e5e5e5;
+  border-radius: 10px;
+  min-width: 200px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(4px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0.18s;
+
+  z-index: 5000;
+}
+
+/* The little tail (queue): a rotated square poking out of the bottom edge.
+         It overlaps the bubble, so no seam is visible. */
+.popover-menu::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: #0a0a0a;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.popover.open .popover-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ---------- Checkbox list ---------- */
+.popover-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+}
+
+.popover-menu label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+}
+.popover-menu label:hover {
+  background: #1c1c1c;
+}
+
+.popover-menu input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1.5px solid #52525b;
+  border-radius: 4px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+.popover-menu input[type="checkbox"]::before {
+  content: "";
+  width: 9px;
+  height: 5px;
+  border-left: 2px solid #0a0a0a;
+  border-bottom: 2px solid #0a0a0a;
+  transform: rotate(-45deg) scale(0);
+  transition: transform 0.12s ease;
+}
+.popover-menu input[type="checkbox"]:checked {
+  background: #fafafa;
+  border-color: #fafafa;
+}
+.popover-menu input[type="checkbox"]:checked::before {
+  transform: rotate(-45deg) scale(1);
+}
+
+.popover-menu span {
+  margin: 0;
 }

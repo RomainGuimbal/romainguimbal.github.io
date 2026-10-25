@@ -94,65 +94,40 @@ $(function () {
 //############################################
 
 // Event at tag click
-function toggleTag(element) {
-  // Button Display
-  if (!element.classList.contains("enabled")) {
-    element.classList.add("enabled");
-  } else {
-    const allTag = document.getElementById("all");
-    allTag.classList.add("enabled");
-    element = allTag;
-  }
-
-  const allTagItems = document.querySelectorAll(".filter");
-
-  allTagItems.forEach((item) => {
-    if (item != element) {
-      if (item.classList.contains("enabled")) {
-        item.classList.remove("enabled");
-      }
+function toggleTag() {
+  // Refresh active tag list
+  const allTagsElements = document.querySelectorAll(".filter");
+  let activeTags = [];
+  allTagsElements.forEach((item) => {
+    if (item.checked) {
+      activeTags.push(item.id);
     }
   });
 
-  // Grid Item Display
-  if (element.id === "product") {
-    filterTag("product");
-  } else if (element.id === "graphic") {
-    filterTag("graphic");
-    // } else if(element.id === "engineering"){
-    //     filterTag("engineering");
-  } else if (element.id === "rendering") {
-    filterTag("rendering");
-  } else if (element.id === "programming") {
-    filterTag("programming");
-  } else if (element.id === "vfx") {
-    filterTag("vfx");
-  } else if (element.id === "modeling") {
-    filterTag("modeling");
-  } else if (element.id === "animation") {
-    filterTag("animation");
-  } else if (element.id === "procedural") {
-    filterTag("procedural");
-  } else if (element.id === "painting") {
-    filterTag("painting");
-  } else if (element.id === "all") {
-    const allGridItems = document.querySelectorAll(".grid-item");
-    allGridItems.forEach((item) => {
-      // item.style.opacity = '';
-      item.style.display = "";
-    });
-  }
-
+  filterProjects(activeTags);
   if (msnry) {
     refreshMasonryLayout();
   }
 }
 
-// Finds images to display
-function filterTag(tag) {
+// Finds projects to display
+function filterProjects(activeTags) {
   const allGridItems = document.querySelectorAll(".grid-item");
   allGridItems.forEach((item) => {
-    if (!item.classList.contains(tag)) {
+    const self_tags = item.classList;
+    let pass = false;
+    if (activeTags.length == 0) {
+      pass = true;
+    } else {
+      for (const tag of activeTags) {
+        if (self_tags.contains(tag)) {
+          pass = true;
+          break;
+        }
+      }
+    }
+
+    if (!pass) {
       item.style.display = "none";
       // item.style.opacity = '0.2';
     } else {
@@ -188,3 +163,12 @@ function toggleMenu() {
     button.textContent = "☰";
   }
 }
+
+// Filter menu toggle
+const popover = document.getElementById("popover");
+document.getElementById("filterMenuButton").addEventListener("click", () => {
+  popover.classList.toggle("open");
+});
+document.addEventListener("click", (e) => {
+  if (!popover.contains(e.target)) popover.classList.remove("open");
+});

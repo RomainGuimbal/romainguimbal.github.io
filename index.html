@@ -69,92 +69,6 @@
       </div>
 
       <menu id="main-menu" class="">
-        <div id="filter-section" class="menu-section">
-          <h3 data-i18n="header.filter">FILTRER LES PROJETS</h3>
-          <li class="filter-list section-content">
-            <div
-              class="filter enabled"
-              id="all"
-              onclick="toggleTag(this)"
-              data-i18n="tag.all"
-            >
-              All
-            </div>
-            <div
-              class="filter"
-              id="product"
-              onclick="toggleTag(this)"
-              data-i18n="tag.product"
-            >
-              Product Design
-            </div>
-            <div
-              class="filter"
-              id="graphic"
-              onclick="toggleTag(this)"
-              data-i18n="tag.graphic"
-            >
-              Graphic
-            </div>
-            <div
-              class="filter"
-              id="rendering"
-              onclick="toggleTag(this)"
-              data-i18n="tag.rendering"
-            >
-              Rendering
-            </div>
-            <div
-              class="filter"
-              id="programming"
-              onclick="toggleTag(this)"
-              data-i18n="tag.programming"
-            >
-              Programming
-            </div>
-            <div
-              class="filter"
-              id="vfx"
-              onclick="toggleTag(this)"
-              data-i18n="tag.vfx"
-            >
-              VFX
-            </div>
-            <div
-              class="filter"
-              id="modeling"
-              onclick="toggleTag(this)"
-              data-i18n="tag.modeling"
-            >
-              3D Modeling
-            </div>
-            <div
-              class="filter"
-              id="animation"
-              onclick="toggleTag(this)"
-              data-i18n="tag.animation"
-            >
-              Animation
-            </div>
-            <div
-              class="filter"
-              id="procedural"
-              onclick="toggleTag(this)"
-              data-i18n="tag.procedural"
-            >
-              Procedural 3D
-            </div>
-            <div
-              class="filter"
-              id="painting"
-              onclick="toggleTag(this)"
-              data-i18n="tag.painting"
-            >
-              Drawing &amp Painting
-            </div>
-          </li>
-        </div>
-
         <div id="bio" class="menu-section">
           <h3 data-i18n="header.bio-title">ME CONNAÎTRE</h3>
           <div class="section-content">
@@ -173,19 +87,19 @@
           <div id="social-links" class="section-content">
             <a id="mail-button" href="mailto:romain.guimbal@proton.me"
               >✉ romain.guimbal@proton.me</a
-            ><a href="https://www.linkedin.com/in/romain-guimbal-378995147/"
+            ><a class="icon-container" href="https://www.linkedin.com/in/romain-guimbal-378995147/"
               ><img
                 class="social-icon"
                 src="assets/icons/linkedin.svg"
                 alt="LinkedIn icon" /></a
-            ><a href="https://bsky.app/profile/romainguimbal.bsky.social"
+            ><a class="icon-container" href="https://bsky.app/profile/romainguimbal.bsky.social"
               ><img
                 class="social-icon"
                 src="assets/icons/bluesky.svg"
                 alt="Bluesky icon"
                 style="width: 20px; height: 20px; padding: 7.5px 0px"
             /></a>
-            <a href="https://www.youtube.com/@Romain_Guimbal"
+            <a class="icon-container" href="https://www.youtube.com/@Romain_Guimbal"
               ><img
                 class="social-icon"
                 src="assets/icons/youtube.svg"
@@ -206,6 +120,118 @@
           style="aspect-ratio: 11/8"
         />
       </article>
+
+      <div id="actionBar" style="margin-top: 10px;">
+        <div class="popover open" id="popover">
+          <button class="anchor-btn" id="filterMenuButton">
+            <img
+              src="assets/icons/filter.svg"
+              alt="filter icon"
+              style="width: 20px; height: 20px"
+            />
+            <span data-i18n="header.filter" style="vertical-align: center">
+              Filter ▾</span
+            >
+          </button>
+
+          <div class="popover-menu" role="menu">
+            <ul>
+              <li onclick="toggleTag()">
+                <label
+                  ><input
+                    id="product"
+                    class="filter"
+                    type="checkbox"
+                    unchecked
+                  /><span data-i18n="tag.product">Product Design</span></label
+                >
+              </li>
+              <li onclick="toggleTag()">
+                <label
+                  ><input
+                    id="graphic"
+                    class="filter"
+                    type="checkbox"
+                    unchecked
+                  /><span data-i18n="tag.graphic">Graphic</span></label
+                >
+              </li>
+              <li onclick="toggleTag()">
+                <label
+                  ><input
+                    id="rendering"
+                    class="filter"
+                    type="checkbox"
+                    unchecked
+                  /><span data-i18n="tag.rendering">Rendering</span></label
+                >
+              </li>
+              <li onclick="toggleTag()">
+                <label
+                  ><input
+                    id="programming"
+                    class="filter"
+                    type="checkbox"
+                    unchecked
+                  /><span data-i18n="tag.programming">Programming</span></label
+                >
+              </li>
+              <li onclick="toggleTag()">
+                <label
+                  ><input
+                    id="vfx"
+                    class="filter"
+                    type="checkbox"
+                    unchecked
+                  /><span data-i18n="tag.vfx">VFX</span></label
+                >
+              </li>
+              <li onclick="toggleTag()">
+                <label
+                  ><input
+                    id="modeling"
+                    class="filter"
+                    type="checkbox"
+                    unchecked
+                  /><span data-i18n="tag.modeling">3D Modeling</span></label
+                >
+              </li>
+              <li onclick="toggleTag()">
+                <label
+                  ><input
+                    id="animation"
+                    class="filter"
+                    type="checkbox"
+                    unchecked
+                  /><span data-i18n="tag.animation">Animation</span></label
+                >
+              </li>
+              <li onclick="toggleTag()">
+                <label
+                  ><input
+                    id="procedural"
+                    class="filter"
+                    type="checkbox"
+                    unchecked
+                  /><span data-i18n="tag.procedural">Procedural 3D</span></label
+                >
+              </li>
+              <li onclick="toggleTag()">
+                <label
+                  ><input
+                    id="painting"
+                    class="filter"
+                    type="checkbox"
+                    unchecked
+                  /><span data-i18n="tag.painting"
+                    >Drawing &amp Painting</span
+                  ></label
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
       <div id="masonry-preloader">
         <img src="assets/icons/preload-animation.svg" alt="Loading..." />
