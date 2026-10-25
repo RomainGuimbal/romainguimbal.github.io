@@ -318,7 +318,6 @@
       /* ── Add project button ── */
       #add-btn-wrap {
         text-align: center;
-        padding-top: 8px;
       }
 
       /* ── Upload progress ── */
@@ -369,13 +368,14 @@
     </header>
 
     <main>
-      <div id="card-list"></div>
-      <div id="empty-state">No projects yet. Add your first one below.</div>
-      <div id="add-btn-wrap" style="padding-top: 16px">
+      <!-- Add button at the top: new projects appear first -->
+      <div id="add-btn-wrap" style="margin-bottom: 16px">
         <button class="btn btn-primary" onclick="addProject()">
           + Add project
         </button>
       </div>
+      <div id="card-list"></div>
+      <div id="empty-state">No projects yet. Add your first one above.</div>
     </main>
 
     <script>
@@ -503,6 +503,7 @@
                  oninput="updateField(${index},'full',this.value)" style="flex:1" />
         </div>
         <small style="color: #999; font-size: 11px; margin-top: 4px; display: block;">Drop or choose the original video file; a thumbnail will be generated automatically.</small>
+      </div>
 
       <!-- ASPECT RATIO (VIDEO ONLY) -->
       <div class="field" id="aspect-ratio-field-${index}" style="${project.mediaType !== "video" ? "display:none" : ""}">
@@ -545,7 +546,7 @@
           ${renderTagOptions(project, index)}
         </div>
       </div>
-      
+
       <div class="field">
         <label>Link (URL)</label>
         <input type="url" value="${esc(project.link)}"
@@ -568,7 +569,7 @@
           const selected = hasTag(project, tag);
           return `
             <label class="tag-option ${selected ? "selected" : ""}">
-              <input type="checkbox" ${selected ? "checked" : ""} onchange="toggleTag(${index}, '${tag}')" />
+              <input type="checkbox" ${selected ? "checked" : ""} onchange="toggleTag(${index}, '${tag}', this)" />
               <span>${esc(tag)}</span>
             </label>`;
         }).join("");
@@ -598,14 +599,13 @@
         // Toggle visibility of media type fields
         if (key === "mediaType") {
           const isVideo = value === "video";
-          document.getElementById(`image-upload-field-${index}`).style.display =
-            isVideo ? "none" : "";
-          document.getElementById(`video-upload-field-${index}`).style.display =
-            isVideo ? "" : "none";
-          document.getElementById(`video-thumb-field-${index}`).style.display =
-            isVideo ? "" : "none";
-          document.getElementById(`aspect-ratio-field-${index}`).style.display =
-            isVideo ? "" : "none";
+          const showField = (id, show) => {
+            const el = document.getElementById(`${id}-${index}`);
+            if (el) el.style.display = show ? "" : "none";
+          };
+          showField("image-upload-field", !isVideo);
+          showField("video-upload-field", isVideo);
+          showField("aspect-ratio-field", isVideo);
         }
       }
 
@@ -728,7 +728,7 @@
         return normalizeTags(project.tags).includes(tag);
       }
 
-      function toggleTag(index, tag) {
+      function toggleTag(index, tag, input) {
         const project = projects[index];
         if (!project) return;
 
@@ -741,11 +741,18 @@
         }
 
         project.tags = tags;
+
+        // Keep the chip's visual state in sync with the checkbox
+        if (input) {
+          const label = input.closest(".tag-option");
+          label?.classList.toggle("selected", input.checked);
+        }
       }
 
       // ─── Add / Remove projects ────────────────────────────────────────────────────
       function addProject() {
-        projects.push({
+        // Insert at the top so the newest project is first
+        projects.unshift({
           title: "",
           description: "",
           link: "",
@@ -756,11 +763,11 @@
           aspectRatio: "16/9",
         });
         renderAll();
-        // Auto-open the new card
-        const cards = document.querySelectorAll(".grid-item");
-        const last = cards[cards.length - 1];
-        last?.classList.add("open");
-        last?.scrollIntoView({ behavior: "smooth", block: "center" });
+
+        // Auto-open the new (first) card
+        const first = document.querySelector(".grid-item");
+        first?.classList.add("open");
+        first?.scrollIntoView({ behavior: "smooth", block: "start" });
       }
 
       function removeProject(index) {
@@ -773,7 +780,7 @@
       // ─── Apply ───────────────────────────────────────────────────────────────────
       async function applyChanges() {
         // Basic validation
-        const missing = projects.filter((p) => !p.title.trim());
+        // const missing = projects.filter((p) => !p.title?.trim());
         // if (missing.length) {
         //   setStatus("Every project needs a title.", "error");
         //   return;
@@ -800,7 +807,15 @@
 
         list.querySelectorAll(".drag-handle").forEach((handle) => {
           const card = handle.closest(".grid-item");
-          card.draggable = true;
+
+          // Only make the card draggable while the handle is pressed,
+          // so text inside inputs stays selectable/editable.
+          handle.addEventListener("mousedown", () => {
+            card.draggable = true;
+          });
+          card.addEventListener("mouseup", () => {
+            card.draggable = false;
+          });
 
           card.addEventListener("dragstart", () => {
             dragged = card;
@@ -809,6 +824,7 @@
 
           card.addEventListener("dragend", () => {
             card.classList.remove("dragging");
+            card.draggable = false;
             dragged = null;
             // Sync projects array to DOM order
             const newOrder = [...list.querySelectorAll(".grid-item")].map(
