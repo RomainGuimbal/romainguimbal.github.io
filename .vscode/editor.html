@@ -598,10 +598,14 @@
         // Toggle visibility of media type fields
         if (key === "mediaType") {
           const isVideo = value === "video";
-          document.getElementById(`image-upload-field-${index}`).style.display = isVideo ? "none" : "";
-          document.getElementById(`video-upload-field-${index}`).style.display = isVideo ? "" : "none";
-          document.getElementById(`video-thumb-field-${index}`).style.display = isVideo ? "" : "none";
-          document.getElementById(`aspect-ratio-field-${index}`).style.display = isVideo ? "" : "none";
+          document.getElementById(`image-upload-field-${index}`).style.display =
+            isVideo ? "none" : "";
+          document.getElementById(`video-upload-field-${index}`).style.display =
+            isVideo ? "" : "none";
+          document.getElementById(`video-thumb-field-${index}`).style.display =
+            isVideo ? "" : "none";
+          document.getElementById(`aspect-ratio-field-${index}`).style.display =
+            isVideo ? "" : "none";
         }
       }
 
@@ -706,7 +710,10 @@
       function normalizeTags(tags) {
         if (!tags) return [];
         if (Array.isArray(tags)) {
-          return tags.filter((tag) => typeof tag === "string").map((tag) => tag.trim()).filter(Boolean);
+          return tags
+            .filter((tag) => typeof tag === "string")
+            .map((tag) => tag.trim())
+            .filter(Boolean);
         }
         if (typeof tags === "string") {
           return tags

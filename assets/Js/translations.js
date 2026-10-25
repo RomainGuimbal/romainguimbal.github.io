@@ -22,7 +22,7 @@ const i18nData = {
     "tag.vfx": "Effets Visuels",
     "tag.modeling": "Modélisation 3D",
     "tag.animation": "Animation",
-    "tag.procedural": "3D Procédural",
+    "tag.procedural": "3D Procédurale",
     "tag.painting": "Dessin & Peinture",
 
     /* --- Figcaptions (HTML versions for multi-line / italic content) --- */

@@ -224,3 +224,26 @@ a.to-sp-portal .content div img {
 a {
   text-decoration: none;
 }
+
+.line{
+  position: fixed;
+  left:50px;
+  background-color: gray;
+  width: 1px;
+  height: 100vh;
+  top: 0px;
+}
+
+.hero{
+  width: clamp(100px, 100%, 1000px);
+  height:fit-content;
+  position: relative;
+}
+
+.hero img{
+  width: 100%;
+  height:auto;
+  position: relative;
+  margin: 0;
+  border-radius: 8px;
+}

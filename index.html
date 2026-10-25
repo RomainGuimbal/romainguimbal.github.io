@@ -54,6 +54,11 @@
         🇬🇧
       </button>
     </div>
+<!-- 
+    <div id="lines">
+      <div class="line vertical"></div>
+    </div> -->
+
     <!-- Promo Banner-->
     <header>
       <div id="title-box" class="" onclick="toggleMenu()">
@@ -66,7 +71,7 @@
       <menu id="main-menu" class="">
         <div id="filter-section" class="menu-section">
           <h3 data-i18n="header.filter">FILTRER LES PROJETS</h3>
-          <li class="filter-list">
+          <li class="filter-list section-content">
             <div
               class="filter enabled"
               id="all"
@@ -152,18 +157,20 @@
 
         <div id="bio" class="menu-section">
           <h3 data-i18n="header.bio-title">ME CONNAÎTRE</h3>
-          <div id="bio-content">
-            <img id="profile_picture" src="assets/img/photo_portrait.jpg" />
-            <p data-i18n="header.bio">
-              Designer Français, ingénieur mécanique-mécatronique de formation,
-              passionné par la biologie et l'animation.
-            </p>
+          <div class="section-content">
+            <div id="bio-content">
+              <div id="profile_picture"></div>
+              <p data-i18n="header.bio">
+                Designer Français, ingénieur mécanique-mécatronique de
+                formation, passionné par la biologie et l'animation.
+              </p>
+            </div>
           </div>
-        </div>
+          <!-- </div> -->
 
-        <div id="contact-section" class="menu-section">
-          <h3>CONTACT</h3>
-          <div id="social-links">
+          <!-- <div id="contact-section" class="menu-section">
+          <h3>CONTACT</h3> -->
+          <div id="social-links" class="section-content">
             <a id="mail-button" href="mailto:romain.guimbal@proton.me"
               >✉ romain.guimbal@proton.me</a
             ><a href="https://www.linkedin.com/in/romain-guimbal-378995147/"
@@ -192,6 +199,9 @@
     <main>
       <div class="fullscreen-backdrop" id="backdrop"></div>
       <!-- <div id="cursor-light"></div> -->
+      <!-- <article class="hero">
+        <img src="assets/img/0.10 cover 16_9 alt.png" alt="" />
+      </article> -->
       <div id="masonry-preloader">
         <img src="assets/icons/preload-animation.svg" alt="Loading..." />
       </div>
