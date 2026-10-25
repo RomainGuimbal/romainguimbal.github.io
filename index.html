@@ -48,10 +48,18 @@
   <body>
     <div class="lang-switcher">
       <button class="lang-btn" data-lang="fr" onclick="setLanguage(`fr`)">
-        🇫🇷
+        <img
+          alt="FR"
+          src="https://cdn.jsdelivr.net/npm/flag-icons@7.6.0/flags/4x3/fr.svg"
+          style="height: 15px; border-radius: 3px;"
+        />
       </button>
       <button class="lang-btn" data-lang="en" onclick="setLanguage(`en`)">
-        🇬🇧
+        <img
+          alt="FR"
+          src="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/flags/4x3/gb.svg"
+          style="height: 15px; border-radius: 3px;"
+        />
       </button>
     </div>
     <!-- 
@@ -87,19 +95,25 @@
           <div id="social-links" class="section-content">
             <a id="mail-button" href="mailto:romain.guimbal@proton.me"
               >✉ romain.guimbal@proton.me</a
-            ><a class="icon-container" href="https://www.linkedin.com/in/romain-guimbal-378995147/"
+            ><a
+              class="icon-container"
+              href="https://www.linkedin.com/in/romain-guimbal-378995147/"
               ><img
                 class="social-icon"
                 src="assets/icons/linkedin.svg"
                 alt="LinkedIn icon" /></a
-            ><a class="icon-container" href="https://bsky.app/profile/romainguimbal.bsky.social"
+            ><a
+              class="icon-container"
+              href="https://bsky.app/profile/romainguimbal.bsky.social"
               ><img
                 class="social-icon"
                 src="assets/icons/bluesky.svg"
                 alt="Bluesky icon"
                 style="width: 20px; height: 20px; padding: 7.5px 0px"
             /></a>
-            <a class="icon-container" href="https://www.youtube.com/@Romain_Guimbal"
+            <a
+              class="icon-container"
+              href="https://www.youtube.com/@Romain_Guimbal"
               ><img
                 class="social-icon"
                 src="assets/icons/youtube.svg"
@@ -121,8 +135,8 @@
         />
       </article>
 
-      <div id="actionBar" style="margin-top: 10px;">
-        <div class="popover open" id="popover">
+      <div id="actionBar" style="margin-top: 10px">
+        <div class="popover" id="popover">
           <button class="anchor-btn" id="filterMenuButton">
             <img
               src="assets/icons/filter.svg"
