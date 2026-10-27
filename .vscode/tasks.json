@@ -60,6 +60,11 @@
       "dependsOn": [
         "Start Editor"
       ]
+    },
+    {
+      "label": "Start Smol Harness",
+      "type": "shell",
+      "command": "cmd | smol",
     }
   ]
 }

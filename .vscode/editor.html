@@ -441,6 +441,11 @@
         }
         empty.style.display = "none";
 
+        // Associate every project with its item-page placeholder link
+        projects.forEach((p, i) => {
+          if (!p.link) p.link = itemPagePath(p, i);
+        });
+
         projects.forEach((p, i) => list.appendChild(buildCard(p, i)));
         initDragSort();
       }
@@ -549,8 +554,8 @@
 
       <div class="field">
         <label>Link (URL)</label>
-        <input type="url" value="${esc(project.link)}"
-               placeholder="https://hh"
+        <input type="url" id="link-field-${index}" value="${esc(project.link)}"
+               placeholder="../assets/html/items/my-project.html"
                oninput="updateField(${index},'link',this.value)" />
       </div>
 
@@ -582,7 +587,12 @@
 
       // ─── Field updates ────────────────────────────────────────────────────────────
       function updateField(index, key, value) {
-        projects[index][key] = value;
+        const project = projects[index];
+        // Path the placeholder link would have had with the current title
+        const prevAutoLink =
+          key === "title" ? itemPagePath(project, index) : null;
+
+        project[key] = value;
 
         // Keep the header title preview in sync
         if (key === "title") {
@@ -593,6 +603,14 @@
           if (preview) {
             preview.textContent = value || "Untitled project";
             preview.classList.toggle("untitled", !value);
+          }
+
+          // Keep the item-page placeholder link in sync with the title,
+          // unless the user typed a custom link manually.
+          if (!project.link || project.link === prevAutoLink) {
+            project.link = itemPagePath(project, index);
+            const linkInput = document.getElementById(`link-field-${index}`);
+            if (linkInput) linkInput.value = project.link;
           }
         }
 
@@ -847,6 +865,24 @@
             }
           });
         });
+      }
+
+      // ─── Item page placeholder link ─────────────────────────────────────────────
+      // Each project is associated with its own page under ../assets/html/items/.
+      // This is only a placeholder path — the page itself is created by the
+      // backend when applying changes.
+      function slugify(text) {
+        return String(text || "")
+          .toLowerCase()
+          .trim()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "")
+          .slice(0, 60);
+      }
+
+      function itemPagePath(project, index) {
+        const slug = slugify(project.title) || `project-${index + 1}`;
+        return `../assets/html/items/${slug}.html`;
       }
 
       // ─── Helpers ──────────────────────────────────────────────────────────────────

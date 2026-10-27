@@ -1,8 +1,35 @@
 [
   {
+    "title": "Stage-dream",
+    "description": "Exploration with depth map and reflection",
+    "link": "../assets/html/items/stage-dream.html",
+    "thumb": "assets/img/thumbnails/1793127906899-jjcb6-thumb.jpg",
+    "full": "assets/img/1793127906899-jjcb6.jpg",
+    "tags": [
+      "painting",
+      "vfx"
+    ],
+    "mediaType": "image",
+    "aspectRatio": "16/9",
+    "year": "2022"
+  },
+  {
+    "title": "Fresque",
+    "description": "Fresque freestyle. Stylo-plume et aquarelle.",
+    "link": "../assets/html/items/fresque.html",
+    "thumb": "assets/img/thumbnails/1792964448729-ye5kk-thumb.jpg",
+    "full": "assets/img/1792964448729-ye5kk.jpg",
+    "tags": [
+      "painting"
+    ],
+    "mediaType": "image",
+    "aspectRatio": "16/9",
+    "year": "2019"
+  },
+  {
     "title": "G5 VERTICON 2026",
     "description": "",
-    "link": "",
+    "link": "../assets/html/items/g5-verticon-2026.html",
     "thumb": "assets/img/thumbnails/1792870120044-1szf1-thumb.jpg",
     "full": "assets/img/1792870120044-1szf1.jpg",
     "tags": [
@@ -17,7 +44,7 @@
   {
     "title": "SurfacePsycho Alpha 10 Cover",
     "description": "",
-    "link": "",
+    "link": "../assets/html/items/surfacepsycho-alpha-10-cover.html",
     "thumb": "assets/img/thumbnails/1792870441990-khn00-thumb.png",
     "full": "assets/img/1792870441990-khn00.png",
     "tags": [
@@ -29,7 +56,7 @@
   {
     "title": "Artiche",
     "description": "Image extraite du court-métrage \"Born to Wear, The Vegetal Revange\" Réalisé en collaboration avec Tom Février",
-    "link": "",
+    "link": "../assets/html/items/artiche.html",
     "thumb": "assets/img/thumbnails/artiche-thumb.jpg",
     "full": "assets/img/artiche.jpg",
     "tags": [
@@ -40,9 +67,9 @@
     "year": "2023"
   },
   {
-    "title": "",
+    "title": "Cover 0.9",
     "description": "Image de couverture SurfacePsycho version 0.9",
-    "link": "",
+    "link": "../assets/html/items/cover-0-9.html",
     "thumb": "assets/img/thumbnails/0.9 cover-thumb.jpg",
     "full": "assets/img/0.9 cover.jpg",
     "tags": [
@@ -54,7 +81,7 @@
   {
     "title": "Sirène au Sac plastique",
     "description": "Sirène au Sac plastique",
-    "link": "",
+    "link": "../assets/html/items/sir-ne-au-sac-plastique.html",
     "thumb": "assets/img/thumbnails/1783084137656-imypl-thumb.jpeg",
     "full": "assets/img/1783084137656-imypl.jpeg",
     "tags": [
@@ -65,7 +92,7 @@
   {
     "title": "G-co",
     "description": "Illustrator",
-    "link": "",
+    "link": "../assets/html/items/g-co.html",
     "thumb": "assets/img/thumbnails/G-co 2-thumb.jpg",
     "full": "assets/img/G-co 2.jpg",
     "tags": [
@@ -76,7 +103,7 @@
   {
     "title": "SurfacePsycho Alpha 8 Cover",
     "description": "Fait avec Blender SurfacePsycho pour démontrer ses capacités en design 2D",
-    "link": "",
+    "link": "../assets/html/items/surfacepsycho-alpha-8-cover.html",
     "thumb": "assets/img/thumbnails/1783086915923-0fok3-thumb.jpg",
     "full": "assets/img/1783086915923-0fok3.jpg",
     "tags": [
@@ -88,7 +115,7 @@
   {
     "title": "Poupée",
     "description": "",
-    "link": "",
+    "link": "../assets/html/items/poup-e.html",
     "thumb": "assets/img/thumbnails/1783084786625-66vbk-thumb.jpeg",
     "full": "assets/img/1783084786625-66vbk.jpeg",
     "tags": [
@@ -99,7 +126,7 @@
   {
     "title": "Head Sculpt",
     "description": "Sculpture de visage semi-stylisée",
-    "link": "",
+    "link": "../assets/html/items/head-sculpt.html",
     "thumb": "assets/img/thumbnails/1783699210011-wlvx8-thumb.jpg",
     "full": "assets/img/1783699210011-wlvx8.jpg",
     "tags": [

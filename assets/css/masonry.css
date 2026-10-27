@@ -78,10 +78,6 @@
     width: 174px;
     margin: 0 2px 15px 2px;
   }
-
-  .grid-item.grid-item.project {
-    outline-offset: 2px;
-  }
 }
 
 /* ================= */
@@ -108,6 +104,12 @@
   outline-offset: 4px;
   border-radius: 3px;
   aspect-ratio: auto; /* Allow JS to set aspect-ratio inline */
+}
+
+@media screen and (max-width: 410px) {
+  .grid-item.project {
+    outline-offset: 1px;
+  }
 }
 
 .grid-item .image-dots {

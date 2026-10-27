@@ -1,0 +1,10 @@
+{
+  "buttons": [
+    {
+      "name": "🖋️",
+      "task": "Open Editor",
+      "icon": "",
+      "tooltip": "Open Editor"
+    }
+  ]
+}
