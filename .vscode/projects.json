@@ -14,6 +14,98 @@
     "year": "2022"
   },
   {
+    "title": "sp-logo",
+    "description": "Logo SurfacePsycho",
+    "link": "../assets/html/items/sp-logo.html",
+    "thumb": "assets/img/thumbnails/thumbnail_splogo_color.jpg",
+    "full": "assets/img/splogo_color.jpg",
+    "tags": [
+      "project",
+      "graphic"
+    ],
+    "mediaType": "image",
+    "aspectRatio": "1"
+  },
+  {
+    "title": "Logo recycling - savan ranger",
+    "description": "Logo",
+    "link": "../assets/html/items/Logo-recycling-savan-ranger.html",
+    "thumb": "assets/img/thumbnails/thumbnail_Logo recycling - savan ranger.jpg",
+    "full": "assets/img/Logo recycling - savan ranger.jpg",
+    "tags": [
+      "graphic"
+    ],
+    "mediaType": "image",
+    "aspectRatio": "16/9",
+    "year": "2025"
+  },
+  {
+    "title": "surfacepsycho",
+    "description": "SurfacePsycho Blender add-on",
+    "link": "../assets/html/items/surfacepsycho.html",
+    "thumb": "assets/img/thumbnails/thumbnail_bateau demo sp.jpg",
+    "full": "assets/img/bateau demo sp.jpg",
+    "tags": [
+      "project",
+      "programming",
+      "product"
+    ],
+    "mediaType": "video"
+  },
+  {
+    "title": "random car dessin",
+    "description": "Croquis d'entrainement",
+    "link": "../assets/html/items/random-car-dessin.html",
+    "thumb": "assets/img/thumbnails/thumbnail_random car dessin.jpg",
+    "full": "assets/img/random car dessin.jpg",
+    "tags": [
+      "product",
+      "rendering",
+      "modeling"
+    ],
+    "mediaType": "image",
+    "aspectRatio": "16/9",
+    "year": "2024"
+  },
+  {
+    "title": "Lardon",
+    "description": "Le Lardon",
+    "link": "../assets/html/items/lardon.html",
+    "thumb": "assets/img/thumbnails/thumbnail_Lardon octobre 2019 copy.jpg",
+    "full": "assets/img/Lardon octobre 2019 copy.jpg",
+    "tags": [
+      "product",
+      "rendering",
+      "modeling"
+    ],
+    "mediaType": "image",
+    "aspectRatio": "16/9",
+    "year": "2019"
+  },
+  {
+    "title": "vaisseau scoot modif avril 2021",
+    "description": "",
+    "link": "../assets/html/items/vaisseau-scoot-modif-avril-2021.html",
+    "thumb": "assets/img/thumbnails/thumbnail_vaisseau scoot modif avril 2021.jpg",
+    "full": "assets/img/vaisseau scoot modif avril 2021.jpg",
+    "tags": [
+      "product",
+      "modeling"
+    ],
+    "mediaType": "image"
+  },
+  {
+    "title": "Precision living",
+    "description": "2022 Musique : Vibin' Out - FKJ, ((( O )))",
+    "link": "../assets/html/items/precision-living.html",
+    "thumb": "assets/img/thumbnails/1793026174837-d0kcb-thumb.jpg",
+    "full": "",
+    "tags": [
+      "animation"
+    ],
+    "mediaType": "video"
+  },
+  {
     "title": "Fresque",
     "description": "Fresque freestyle. Stylo-plume et aquarelle.",
     "link": "../assets/html/items/fresque.html",
