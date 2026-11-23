@@ -1,0 +1,125 @@
+/* ============================================================
+   Topbar — injected on every page by assets/Js/topbar.js
+   Sits on the page background: no background color of its own.
+   ============================================================ */
+
+:root {
+  --topbar-height: 48px;
+  --topbar-edge: 24px;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 600;
+
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  /* main.css sets `* { margin: auto }`, so resets are explicit here */
+  margin: 0;
+  padding: 0 var(--topbar-edge);
+  background: none;
+
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: left;
+  color: inherit;
+
+  /* transparent, so it must never swallow clicks on the page below */
+  pointer-events: none;
+}
+
+.topbar a,
+.topbar .lang-btn {
+  pointer-events: auto;
+}
+
+.topbar a {
+  margin: 0;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    opacity 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.topbar-brand {
+  opacity: 0.65;
+}
+
+.topbar-brand:hover {
+  opacity: 1;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  pointer-events: none;
+}
+
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 0;
+}
+
+.topbar-nav a {
+  opacity: 0.55;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+}
+
+.topbar-nav a:hover {
+  opacity: 1;
+}
+
+.topbar-nav a.active {
+  opacity: 1;
+  border-bottom-color: currentColor;
+}
+
+/* The flags live in the bar now, not pinned to the viewport corner */
+.topbar .lang-switcher {
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+}
+
+.topbar .lang-btn {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    --topbar-edge: 16px;
+    font-size: 12px;
+  }
+
+  .topbar-right {
+    gap: 12px;
+  }
+
+  .topbar-nav {
+    gap: 14px;
+  }
+
+  .topbar-brand {
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

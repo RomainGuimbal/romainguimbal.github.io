@@ -6,6 +6,11 @@
 
 const i18nData = {
   fr: {
+    /* --- Topbar --- */
+    "nav.work": "Travaux",
+    "nav.services": "Services",
+    "nav.about": "À propos",
+
     /* --- Header / Bio card --- */
     "bio.role": "Ingénieur-Designer",
     "header.filter": "Filtrer ▾",
@@ -66,6 +71,11 @@ const i18nData = {
   },
 
   en: {
+    /* --- Topbar --- */
+    "nav.work": "Work",
+    "nav.services": "Services",
+    "nav.about": "About",
+
     /* --- Header / Bio card --- */
     "bio.role": "Engineer-Designer",
     "header.filter": "Filter ▾",
