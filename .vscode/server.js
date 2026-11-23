@@ -16,7 +16,7 @@ const PORT = 3000;
 
 // ─── Paths (relative to project root) ────────────────────────────────────────
 const ROOT = path.resolve(__dirname, "..");
-const INDEX_PATH = path.join(ROOT, "index.html");
+const WORK_PATH = path.join(ROOT, "work.html");
 const IMAGES_DIR = path.join(ROOT, "assets", "img");
 const VIDEO_DIR = path.join(ROOT, "assets", "video");
 
@@ -230,7 +230,7 @@ app.post("/regenerate-thumbnails", async (req, res) => {
   }
 });
 
-// ─── Read current projects from index.html ───────────────────────────────────
+// ─── Read current projects from work.html ───────────────────────────────────
 const PROJECTS_PATH = path.join(ROOT, ".vscode", "projects.json");
 
 app.get("/projects", (req, res) => {
@@ -243,7 +243,7 @@ app.get("/projects", (req, res) => {
   }
 });
 
-// ─── Apply changes → rewrite index.html ──────────────────────────────────────
+// ─── Apply changes → rewrite work.html ──────────────────────────────────────
 app.post("/apply", (req, res) => {
   try {
     const projects = req.body;
@@ -253,8 +253,8 @@ app.post("/apply", (req, res) => {
     // Save data to projects.json
     fs.writeFileSync(PROJECTS_PATH, JSON.stringify(projects, null, 2), "utf8");
 
-    // Rewrite the cards in index.html
-    let html = fs.readFileSync(INDEX_PATH, "utf8");
+    // Rewrite the cards in work.html
+    let html = fs.readFileSync(WORK_PATH, "utf8");
     const cardsHtml = projects.map(renderCard).join("\n");
     const projectsBlock = `<!--PROJECTS-START-->\n${cardsHtml}\n<!--PROJECTS-END-->`;
     if (html.includes("<!--PROJECTS-START-->")) {
@@ -262,7 +262,7 @@ app.post("/apply", (req, res) => {
         /<!--PROJECTS-START-->[\s\S]*?<!--PROJECTS-END-->/,
         projectsBlock,
       );
-      fs.writeFileSync(INDEX_PATH, html, "utf8");
+      fs.writeFileSync(WORK_PATH, html, "utf8");
     }
 
     res.json({ ok: true });

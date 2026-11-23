@@ -7,8 +7,8 @@ html {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   text-align: center;
   scrollbar-color: var(--muted-text) transparent;
   box-sizing: border-box;
@@ -71,6 +71,143 @@ main {
   margin: 0 0 0 410px;
   max-width: 100%;
   margin: 0;
+}
+
+/* ============================================================
+   Content pages — structure-driven layout
+
+   Any page written as
+
+     <main>
+       <h1>Page title</h1>
+       <p>Lead paragraph</p>
+       <section>
+         <h1>Section heading</h1>
+         <div class="section-content">…</div>
+         <p>Body text</p>
+       </section>
+     </main>
+
+   inherits everything below. The rules only key off the nesting,
+   never off a page id, so a new page needs no CSS at all.
+   ============================================================ */
+
+main {
+  --content-width: 720px;
+  --content-gutter: 24px;
+  --section-gap: 3.5rem;
+}
+
+/* ---------- Page title ---------- */
+main > h1 {
+  margin: calc(var(--topbar-height, 48px) + 3rem) auto 0;
+  padding: 0 var(--content-gutter);
+  font-weight: 300;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ---------- Lead paragraph ---------- */
+main > p {
+  max-width: var(--content-width);
+  margin: 1rem auto 0;
+  padding: 0 var(--content-gutter);
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--muted-text);
+}
+
+/* ---------- Sections ---------- */
+main > section {
+  max-width: var(--content-width);
+  margin: var(--section-gap) auto 0;
+  padding: 0 var(--content-gutter);
+  text-align: left;
+}
+
+main > section:last-child {
+  margin-bottom: var(--section-gap);
+}
+
+/* Section heading: small uppercase label with an accent rule */
+main > section > h1 {
+  margin: 0;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-text);
+  text-align: left;
+}
+
+main > section > h1::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  margin-top: 0.7rem;
+  border-radius: 999px;
+  background-image: linear-gradient(
+    to right,
+    var(--accent),
+    var(--accent-light)
+  );
+}
+
+/* Section body text */
+main > section p {
+  max-width: 68ch;
+  margin: 1rem 0 0;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-color);
+  text-align: left;
+}
+
+/* Section content block: a row of content items */
+main > section .section-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 1.25rem 0 0;
+}
+
+main > section .section-content a {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-color);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+main > section .section-content a:hover {
+  opacity: 1;
+}
+
+main > section .section-content img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  main {
+    --content-gutter: 16px;
+    --section-gap: 2.5rem;
+  }
+
+  main > h1 {
+    margin-top: calc(var(--topbar-height, 48px) + 2rem);
+  }
 }
 
 a:link {
@@ -180,44 +317,6 @@ a.to-sp-portal .content div img {
   right: clamp(150px, 20%, 250px);
   text-align: right;
 } */
-
-/* ============================================================
-   Language switcher
-   ============================================================ */
-
-.lang-switcher {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 1000;
-  display: flex;
-  gap: 0.25rem;
-  align-items: center;
-}
-
-.lang-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.4rem;
-  line-height: 1;
-  opacity: 0.35;
-  transition:
-    opacity 0.2s,
-    transform 0.2s;
-  padding: 0.15rem;
-  border-radius: 4px;
-}
-
-.lang-btn:hover {
-  opacity: 0.75;
-  transform: scale(1.15);
-}
-
-.lang-btn.active {
-  opacity: 1;
-  transform: scale(1.1);
-}
 
 a {
   text-decoration: none;
