@@ -42,7 +42,7 @@
 
   var CONFIG = {
     // Share of the available height the focused project takes.
-    peakShare: 0.6,
+    peakShare: 0.7,
 
     // Width of the peak, in index units. Larger = the neighbours
     // stay tall for longer.
@@ -422,7 +422,14 @@
 
   stack.addEventListener("pointerdown", function (event) {
     if (event.pointerType === "mouse" && event.button !== 0) return;
-    drag = { y: event.clientY, travel: 0, moved: 0 };
+
+    // Capture below retargets every following event, pointerup
+    // included, to the stack, so the card under the pointer has to
+    // be remembered now: by the time the tap is over, the event no
+    // longer knows which project it landed on.
+    var card = event.target.closest ? event.target.closest("article") : null;
+
+    drag = { y: event.clientY, travel: 0, moved: 0, card: card };
     if (stack.setPointerCapture) stack.setPointerCapture(event.pointerId);
   });
 
@@ -455,15 +462,17 @@
     if (!drag) return;
 
     var moved = drag.moved;
+    var card = drag.card;
     drag = null;
 
     if (stack.hasPointerCapture && stack.hasPointerCapture(event.pointerId)) {
       stack.releasePointerCapture(event.pointerId);
     }
 
-    // A tap focuses the project under the pointer.
+    // A click focuses the project under the pointer, exactly like a
+    // scroll hop: the wave slides to it in CONFIG.duration ms. A
+    // gesture that dragged belongs to the scroll instead.
     if (event.type === "pointerup" && moved < 8) {
-      var card = event.target.closest ? event.target.closest("article") : null;
       var index = cards.indexOf(card);
       if (index !== -1) moveTo(index);
     }
