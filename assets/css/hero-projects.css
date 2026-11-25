@@ -1,10 +1,14 @@
 /* ============================================================
    Hero projects — full-viewport "wave" stack
 
-   The article heights are computed every frame by
-   assets/Js/hero-projects.js: the stack always fills exactly the
-   viewport, nothing scrolls, and the card under the focus is the
-   tall one while its neighbours shrink proportionally.
+   The article heights are computed by assets/Js/hero-projects.js:
+   the stack always fills exactly the viewport, nothing scrolls, and
+   the card under the focus is the tall one while its neighbours
+   shrink proportionally.
+
+   The script writes one keyframe per slide and stops there — the
+   interpolation is the `transition` on the card below, so the easing
+   is declared here rather than in a requestAnimationFrame loop.
 
    Geometry lives here and is read back by the script (gap,
    paddings, --hero-min-height), so the layout can be retuned
@@ -22,6 +26,11 @@
   /* Smallest height a card may fall back to; keeps every project
      on screen even when it is far from the focus. */
   --hero-min-height: 30px;
+
+  /* Length and shape of a slide, from one focused project to the
+     next. Any CSS timing function works here. */
+  --hero-slide-duration: 300ms;
+  --hero-slide-ease: cubic-bezier(0.65, 0, 0.35, 1);
 
   /* Written by the script, from the measured height of the page
      footer, so the stack never hides behind it. */
@@ -105,9 +114,31 @@ body:has(.hero-projects) {
   color: var(--text-color-on-dark);
   text-align: left;
 
-  /* --project-height is written by the script in coarse buckets */
+  /* The label size follows the card height, written by the script as
+     --project-height on the card itself. */
   font-size: clamp(13px, calc(var(--project-height, 60px) * 0.055), 34px);
   cursor: pointer;
+
+  /* One slide, driven by the browser: the script only writes the
+     target heights. The label follows in a few discrete steps rather
+     than one text layout per frame — that per-frame relayout is what
+     made the slide stutter in Firefox. */
+  transition:
+    height var(--hero-slide-duration) var(--hero-slide-ease),
+    font-size var(--hero-slide-duration) steps(6, end);
+}
+
+/* The script adds this class around a resize, where the cards have to
+   land at their new heights at once instead of sliding there from the
+   heights they had in the previous viewport. */
+.hero-projects.is-instant>article {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-projects>article {
+    transition: none;
+  }
 }
 
 /* Hover highlight as a plain translucent fill. `filter: brightness()`
@@ -133,15 +164,6 @@ body:has(.hero-projects) {
 .hero-projects>article:focus-visible {
   outline: 2px solid var(--accent-light);
   outline-offset: -4px;
-}
-
-/* ---------- Card heights, set by the script ---------- */
-
-/* Below ~30px there is no room for a legible label: hide it rather
-   than clip half the glyphs. The height threshold is CONFIG.tinyBelow. */
-.hero-projects>article[data-size="tiny"] {
-  --card-pad-y: 0px;
-  font-size: 0;
 }
 
 /* ---------- Page footer ---------- */

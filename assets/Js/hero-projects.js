@@ -5,56 +5,77 @@
    the heights always add up to the viewport: the stack never
    scrolls and no project is ever pushed off screen.
 
-   How a height is obtained
-   ------------------------
-   1. A focus position `p` slides along the stack in index units.
-      p = 0 is the first project, p = 2.5 sits halfway between the
-      third and the fourth. Wheel, drag and arrow keys move it.
-      There is no inertia: input is accumulated until it crosses a
-      threshold, then the focus jumps exactly one project in
-      CONFIG.duration ms and stops dead on arrival. The wheel is
-      then deaf for CONFIG.cooldown ms, so no gesture — however
-      violent — can ever skip a project.
-   2. Every project is scored with one continuous profile:
+   Where a height comes from
+   -------------------------
+   1. The focus is one project, an integer index `f`.
+   2. Lay a curve over the stack, centred on the focused project,
+      and read how much of it each card catches:
 
-        profile(d) = 1 / (1 + (d / spread) ^ tail)      d = |i - p|
+          density(x) = exp(-(|x - c| / width) ^ shape)      c = peak
 
-      `spread` is how wide the peak is, `tail` how fast the rest
-      of the stack fades away (below 1 the tail stays fat, above 2
-      only the immediate neighbour stays visible).
-   3. The scores are normalised, then raised to a single exponent
-      solved once per layout so that the most focused project lands
-      on `peakShare` of the screen. That exponent is solved for each
-      resting position and blended between them, because a project
-      in the middle of the stack has two neighbours of equal height
-      while the end ones do not — without the per-position solve the
-      peak would only reach 60 % at the ends.
-   4. The shares are turned into pixels, with a floor at
-      --hero-min-height so the collapsed projects stay visible and
-      clickable. The overflow is taken back from the others.
+      `width` is how far, in projects, you have to move away from
+      the peak for the curve to fall to 1/e. `shape` bends the
+      profile: 2 is the textbook gaussian bell, 1 keeps the
+      shoulders high around a pointed peak, 4 holds a flat top and
+      drops sharply at the flanks. `centre` slides the peak inside
+      the focused card, 0 being its top edge and 1 its bottom edge.
+   3. The curve is sampled evenly across the stack — CONFIG.substeps
+      points per card, taken at their midpoints — and the samples
+      are added up into a running total. The cumulative value at a
+      card edge is that total; the height of card i is the
+      difference between the values at its two edges, i.e. the
+      slice of the curve sitting in that card's band. Differences
+      of the cumulative total, never of the curve itself: those go
+      negative on the far side of the peak, while a running total
+      only ever rises, so every slice is positive and the n slices
+      add up to the mass the stack caught.
+   4. The slices are normalised to the available height and lifted
+      to --hero-min-height by fitHeights(), which takes the
+      overflow back from the tallest of them so the column still
+      fills the viewport exactly. Nothing else is imposed: the share
+      the focused card ends up with is whatever the curve gives it,
+      which is what `width` and `shape` are for.
 
-   Everything is a share of the available height, so a resize only
-   needs a fresh measurement. Knobs live in CONFIG below.
+   Motion
+   ------
+   The script never interpolates and never runs a frame loop. It
+   writes one keyframe — the heights of the project being focused —
+   and CSS transitions the heights, with the duration and easing
+   declared in hero-projects.css. A hop that lands mid-slide just
+   retargets: the browser eases from the current computed heights.
+
+   Input is accumulated until it crosses a threshold, then the focus
+   jumps exactly one project, and the wheel stays deaf for
+   CONFIG.cooldown ms so no gesture, however violent, can skip a
+   card.
    ============================================================ */
 
 (function () {
   "use strict";
 
   var CONFIG = {
-    // Share of the available height the focused project takes.
-    peakShare: 0.8,
+    // ---- the curve ----
 
-    // Width of the peak, in index units. Larger = the neighbours
-    // stay tall for longer.
-    spread: 20.0,
+    // Distance, in projects, at which the curve has fallen to 1/e.
+    // The knob that decides everything: 0.3 is a spike, 0.6 a soft
+    // hill, 1.2 a broad swell that lifts the whole stack.
+    width: 0.6,
 
-    // How fast the wave fades out. 1 = 1/d, 2 = 1/d².
-    tail: 0.5,
+    // Shape of the flanks. 2 is the textbook gaussian, 1 keeps the
+    // shoulders high around a pointed peak, 4 holds a flat top and
+    // drops sharply at both ends.
+    shape: 2,
 
-    // Length of a slide from one project to the next, in ms. Every
-    // focus change lasts exactly this long: no easing tail, and
-    // nothing keeps drifting once the input stops.
-    duration: 300,
+    // Where the peak sits inside the focused card: 0.5 centres it,
+    // 0 puts it on the card's top edge, 1 on its bottom edge.
+    centre: 0.5,
+
+    // Samples taken per card when the curve is cut into slices.
+    // 16 is already far finer than a pixel; this is the only reason
+    // to touch it.
+    substeps: 16,
+
+    // ---- input ----
 
     // Scrolled pixels needed before the focus hops one project.
     // A mouse notch is about 100 px, so two of them are needed here;
@@ -69,107 +90,64 @@
     // Part of the available height a drag has to cover to hop one
     // project.
     dragTravel: 0.22,
-
-    // How the label follows the card. --project-height drives the
-    // font-size, and every new value makes the browser lay the text
-    // out again — the expensive part in Firefox. So the value is
-    // rounded to `fontStep` px and refreshed at most every
-    // `fontInterval` ms per card: a handful of updates per slide
-    // instead of one per frame. Both are imperceptible; at rest the
-    // exact value is always written.
-    fontStep: 1,
-    fontInterval: 40,
   };
 
   var stack = document.querySelector(".hero-projects");
   if (!stack) return;
 
   var cards = [];
-  var reduceMotion =
-    window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   var state = {
-    p: 0, // focus position, in index units
-    target: 0, // project the focus is heading to
-    from: 0, // focus position the current slide started from
-    elapsed: 0, // ms spent in the current slide
+    focus: 0, // index of the focused project
     avail: 0, // height to share between the cards, in px
-    minHeight: 40,
-    contrasts: [], // one exponent per project, pins the peak share
-    running: false,
-    last: 0,
-    lockUntil: 0, // wheel is ignored until this timestamp
+    minHeight: 40, // floor a collapsed card may not go under
+    cache: [], // heights per rest position, filled on demand
+    lockUntil: 0, // wheel and drag are ignored until this timestamp
   };
 
-  /* ---------- The profile ---------- */
+  /* ---------- The curve ---------- */
 
-  function profile(d) {
-    return 1 / (1 + Math.pow(Math.abs(d) / CONFIG.spread, CONFIG.tail));
+  // The wave itself: a bell centred on `peak`, in index units,
+  // falling to 1/e at CONFIG.width projects from the centre.
+  // CONFIG.shape bends its flanks — 2 is the textbook gaussian, 1
+  // keeps broad shoulders, 4 gives a flat top and steep sides.
+  function density(x, peak) {
+    return Math.exp(-Math.pow(Math.abs(x - peak) / CONFIG.width, CONFIG.shape));
   }
 
-  // Share of the most focused card for a given contrast exponent,
-  // with the focus resting on project `focus`.
-  function peakShareAt(k, focus) {
-    var max = 0;
-    var sum = 0;
+  // Share of the wave carried by each card, normalised to 1.
+  //
+  // The curve is sampled CONFIG.substeps times inside every card, at
+  // the middle of each sub-step, and the samples are accumulated: a
+  // card's share is the running total at its bottom edge minus the
+  // total at its top edge. That integral, not the curve value at the
+  // card's own index, is what makes the wave continuous across the
+  // stack — sampling the curve once per card would hand the whole
+  // peak to whichever card happens to sit under the centre and leave
+  // its neighbours flat.
+  function sharesAt(focus) {
     var count = cards.length;
-
-    for (var i = 0; i < count; i++) {
-      var w = Math.pow(profile(i - focus), k);
-      sum += w;
-      if (w > max) max = w;
-    }
-    return sum > 0 ? max / sum : 0;
-  }
-
-  // Smallest exponent that brings the peak up to CONFIG.peakShare.
-  function solveContrast(focus) {
-    if (cards.length < 2) return 1;
-
-    var target = Math.min(Math.max(CONFIG.peakShare, 0.05), 0.95);
-    var lo = 0.05;
-    var hi = 60;
-
-    if (peakShareAt(hi, focus) <= target) return hi;
-    if (peakShareAt(lo, focus) >= target) return lo;
-
-    for (var i = 0; i < 32; i++) {
-      var mid = (lo + hi) / 2;
-      if (peakShareAt(mid, focus) < target) lo = mid;
-      else hi = mid;
-    }
-    return (lo + hi) / 2;
-  }
-
-  // Contrast exponent for a floating focus: the per-project values
-  // are blended together, so the exponent is continuous in `p` and
-  // lands on the exact solved value whenever a project is focused.
-  function contrastAt(p) {
-    var list = state.contrasts;
-    if (!list.length) return 1;
-
-    var lo = Math.min(Math.max(Math.floor(p), 0), list.length - 1);
-    var hi = Math.min(Math.max(Math.ceil(p), 0), list.length - 1);
-    if (lo === hi) return list[lo];
-    return list[lo] + (list[hi] - list[lo]) * (p - lo);
-  }
-
-  // Normalised height shares, summing to exactly 1.
-  function shares(p) {
-    var count = cards.length;
-    var weights = new Array(count);
-    var contrast = contrastAt(p);
-    var sum = 0;
+    var shares = new Array(count);
+    var step = 1 / CONFIG.substeps;
+    var centre = focus + CONFIG.centre;
+    var total = 0;
     var i;
+    var j;
 
     for (i = 0; i < count; i++) {
-      weights[i] = Math.pow(profile(i - p), contrast);
-      sum += weights[i];
+      var before = total;
+
+      for (j = 0; j < CONFIG.substeps; j++) {
+        total += density(i + (j + 0.5) * step, centre);
+      }
+
+      shares[i] = total - before;
     }
 
-    if (!(sum > 0)) sum = 1;
-    for (i = 0; i < count; i++) weights[i] /= sum;
-    return weights;
+    if (total > 0) {
+      for (i = 0; i < count; i++) shares[i] /= total;
+    }
+    return shares;
   }
 
   /* ---------- Shares to pixels ---------- */
@@ -208,38 +186,53 @@
     });
   }
 
-  /* ---------- DOM ---------- */
+  // Heights for a rest position, solved on first use and kept until
+  // the next measurement invalidates them.
+  function heightsAt(focus) {
+    var cached = state.cache[focus];
+    if (cached) return cached;
 
-  function setCardHeight(card, height, exact) {
-    var previous = card.__heroHeight;
-    if (exact || previous === undefined || Math.abs(height - previous) >= 0.05) {
-      card.__heroHeight = height;
-      card.style.height = height.toFixed(2) + "px";
+    var count = cards.length;
+    var heights;
+
+    if (!count) return [];
+
+    if (count === 1) {
+      heights = [state.avail];
+    } else {
+      heights = fitHeights(sharesAt(focus), state.avail, state.minHeight);
     }
 
-    // The label scales with the card through this variable, but it
-    // is rounded and throttled (CONFIG.fontStep / fontInterval):
-    // rewriting it on every frame forces a text layout per frame in
-    // Firefox, which is what made the slide stutter there.
-    var step = Math.max(CONFIG.fontStep, 1);
-    var bucket = Math.round(height / step) * step;
-
-    if (bucket !== card.__heroBucket) {
-      var now = Date.now();
-      if (exact || !(now - (card.__heroFontAt || 0) < CONFIG.fontInterval)) {
-        card.__heroFontAt = now;
-        card.__heroBucket = bucket;
-        card.style.setProperty("--project-height", bucket + "px");
-      }
-    }
+    state.cache[focus] = heights;
+    return heights;
   }
 
-  function render() {
-    var heights = fitHeights(shares(state.p), state.avail, state.minHeight);
-    // At rest the heights are final, so write them exactly: the skip
-    // tolerance below would otherwise leave the column a pixel short.
-    var exact = state.p === state.target;
-    for (var i = 0; i < cards.length; i++) setCardHeight(cards[i], heights[i], exact);
+  /* ---------- DOM ---------- */
+
+  function setCardHeight(card, height) {
+    // A keyframe, not a step: CSS eases from whatever the card
+    // currently measures to this value, so one write per slide.
+    var value = height.toFixed(2) + "px";
+    card.style.height = value;
+    card.style.setProperty("--project-height", value);
+  }
+
+  // `instant` writes the keyframe with the transition disabled: on a
+  // resize the cards have to land at once instead of sliding from
+  // the previous viewport's heights.
+  function render(instant) {
+    var heights = heightsAt(state.focus);
+
+    if (instant) stack.classList.add("is-instant");
+
+    for (var i = 0; i < cards.length; i++) setCardHeight(cards[i], heights[i]);
+
+    if (instant) {
+      // Read back so the new heights commit while the class is still
+      // on, then hand the cards back to CSS for the next slide.
+      void stack.offsetHeight;
+      stack.classList.remove("is-instant");
+    }
   }
 
   /* ---------- Measuring ---------- */
@@ -283,78 +276,41 @@
       0,
       stack.clientHeight - padY - gap * Math.max(cards.length - 1, 0),
     );
-    state.contrasts = cards.map(function (card, index) {
-      return solveContrast(index);
-    });
 
-    // The focus keeps `peakShare` of the height, the others share
-    // the rest, so that is the most a collapsed card may claim.
-    // Without this cap, a dozen projects on a laptop screen would
-    // all end up at the floor and the wave would be gone.
+    // Collapsed cards may claim at most half of the column between
+    // them; the wave keeps the rest. Without this cap, a dozen
+    // projects on a laptop screen would all sit on the floor and the
+    // wave would be gone.
     if (cards.length > 1) {
-      var peak = Math.min(Math.max(CONFIG.peakShare, 0.05), 0.95);
-      var roomy = ((1 - peak) * state.avail * 0.95) / (cards.length - 1);
+      var roomy = (state.avail * 0.5) / (cards.length - 1);
       state.minHeight = Math.max(4, Math.min(floor, roomy));
     }
 
-    if (state.target > cards.length - 1) state.target = Math.max(cards.length - 1, 0);
-    if (state.p > cards.length - 1) state.p = state.target;
+    if (state.focus > cards.length - 1) state.focus = Math.max(cards.length - 1, 0);
+
+    // Every cached height was built from the old measurement.
+    state.cache = [];
   }
 
-  /* ---------- Motion ---------- */
+  /* ---------- Focus ---------- */
 
-  function easeInOut(t) {
-    // Standard ease function
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  function clampFocus(position) {
+    return Math.min(Math.max(Math.round(position), 0), Math.max(cards.length - 1, 0));
   }
 
-  function animate(now) {
-    state.elapsed += state.last ? Math.min(now - state.last, 80) : 16;
-    state.last = now;
-
-    var t = Math.min(state.elapsed / CONFIG.duration, 1);
-    state.p = state.from + (state.target - state.from) * easeInOut(t);
-    render();
-
-    if (t < 1) {
-      window.requestAnimationFrame(animate);
-      return;
-    }
-
-    state.p = state.target;
-    state.running = false;
-    state.last = 0;
-  }
-
-  function clampTarget(position) {
-    return Math.min(Math.max(position, 0), Math.max(cards.length - 1, 0));
-  }
-
-  // Slide the focus to `position` in exactly CONFIG.duration ms.
-  // Called again mid-slide, it starts a fresh slide from wherever
-  // the wave currently is.
+  // Point the wave at `position`. Only the target keyframe is
+  // written: the slide is a CSS transition, so a call landing
+  // mid-slide retargets from the current heights.
   function moveTo(position) {
-    var next = clampTarget(position);
+    var next = clampFocus(position);
+    if (next === state.focus) return;
 
-    state.target = next;
-    state.from = state.p;
-    state.elapsed = 0;
-
-    if (reduceMotion || !(CONFIG.duration > 0) || next === state.p) {
-      state.p = next;
-      render();
-      return;
-    }
-
-    if (!state.running) {
-      state.running = true;
-      state.last = 0;
-      window.requestAnimationFrame(animate);
-    }
+    state.focus = next;
+    render(false);
   }
 
   function nudge(delta) {
-    moveTo(state.target + delta);
+    moveTo(state.focus + delta);
   }
 
   // One gesture, one project: the input is deaf for `cooldown` ms
@@ -364,7 +320,7 @@
     if (Date.now() < state.lockUntil) return false;
 
     state.lockUntil = Date.now() + Math.max(CONFIG.cooldown, 0);
-    moveTo(state.target + direction);
+    moveTo(state.focus + direction);
     return true;
   }
 
@@ -456,7 +412,7 @@
     }
 
     // A click focuses the project under the pointer, exactly like a
-    // scroll hop: the wave slides to it in CONFIG.duration ms. A
+    // scroll hop: the wave slides to it in the CSS duration. A
     // gesture that dragged belongs to the scroll instead.
     if (event.type === "pointerup" && moved < 8) {
       var index = cards.indexOf(card);
@@ -504,11 +460,11 @@
   function relayout() {
     measureFooter();
     measure();
-    render();
+    render(true);
   }
 
-  // Resize events and the ResizeObserver can fire in bursts; solving
-  // the contrasts and rewriting every card for each of them is pure
+  // Resize events and the ResizeObserver can fire in bursts; cutting
+  // the curve and rewriting every card for each of them is pure
   // waste, so they collapse into one relayout per frame.
   var relayoutQueued = false;
 
@@ -533,7 +489,7 @@
   relayout();
 
   // Handy from the console while tuning:
-  //   heroWave.config.spread = 0.8; heroWave.refresh()
+  //   heroWave.config.width = 0.9; heroWave.refresh()
   window.heroWave = {
     config: CONFIG,
     state: state,
