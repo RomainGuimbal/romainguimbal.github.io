@@ -42,19 +42,19 @@
 
   var CONFIG = {
     // Share of the available height the focused project takes.
-    peakShare: 0.7,
+    peakShare: 0.8,
 
     // Width of the peak, in index units. Larger = the neighbours
     // stay tall for longer.
-    spread: 0.5,
+    spread: 20.0,
 
     // How fast the wave fades out. 1 = 1/d, 2 = 1/d².
-    tail: 0.55,
+    tail: 0.5,
 
     // Length of a slide from one project to the next, in ms. Every
     // focus change lasts exactly this long: no easing tail, and
     // nothing keeps drifting once the input stops.
-    duration: 400,
+    duration: 300,
 
     // Scrolled pixels needed before the focus hops one project.
     // A mouse notch is about 100 px, so two of them are needed here;
@@ -64,16 +64,11 @@
     // How long the wheel stays deaf after a hop, in ms. A gesture
     // that keeps sending events therefore moves the focus by one
     // project at most, instead of racing down the stack.
-    cooldown: 400,
+    cooldown: 300,
 
     // Part of the available height a drag has to cover to hop one
     // project.
     dragTravel: 0.22,
-
-    // Height, in px, below which a card switches to small type.
-    tinyBelow: 30,
-    compactBelow: 90,
-    largeAbove: 260,
 
     // How the label follows the card. --project-height drives the
     // font-size, and every new value makes the browser lay the text
@@ -82,8 +77,8 @@
     // `fontInterval` ms per card: a handful of updates per slide
     // instead of one per frame. Both are imperceptible; at rest the
     // exact value is always written.
-    fontStep: 8,
-    fontInterval: 80,
+    fontStep: 1,
+    fontInterval: 40,
   };
 
   var stack = document.querySelector(".hero-projects");
@@ -215,21 +210,11 @@
 
   /* ---------- DOM ---------- */
 
-  function sizeFor(height) {
-    if (height < CONFIG.tinyBelow) return "tiny";
-    if (height < CONFIG.compactBelow) return "compact";
-    if (height > CONFIG.largeAbove) return "large";
-    return "normal";
-  }
-
   function setCardHeight(card, height, exact) {
     var previous = card.__heroHeight;
     if (exact || previous === undefined || Math.abs(height - previous) >= 0.05) {
       card.__heroHeight = height;
       card.style.height = height.toFixed(2) + "px";
-
-      var size = sizeFor(height);
-      if (card.dataset.size !== size) card.dataset.size = size;
     }
 
     // The label scales with the card through this variable, but it
@@ -319,6 +304,7 @@
   /* ---------- Motion ---------- */
 
   function easeInOut(t) {
+    // Standard ease function
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   }
 

@@ -13,15 +13,15 @@
    ============================================================ */
 
 :root {
-  --hero-gap: 10px;
+  --hero-gap: 4px;
   --hero-pad-top: calc(var(--topbar-height, 48px) + 16px);
-  --hero-pad-bottom: 16px;
+  --hero-pad-bottom: 10px;
   --hero-pad-x: 14px;
   --hero-radius: 20px;
 
   /* Smallest height a card may fall back to; keeps every project
      on screen even when it is far from the focus. */
-  --hero-min-height: 40px;
+  --hero-min-height: 30px;
 
   /* Written by the script, from the measured height of the page
      footer, so the stack never hides behind it. */
@@ -61,11 +61,8 @@ body:has(.hero-projects) {
   cursor: ns-resize;
 }
 
-/* The label size follows this variable, which the script rewrites as
-   the card grows or shrinks. Declaring it non-inherited keeps a
-   rewrite to the card itself instead of its whole subtree, and
-   Firefox re-resolves it as a real length instead of a token
-   stream. Browsers without @property simply ignore this block. */
+/* Declaring the label size non-inherited keeps a
+   rewrite to the card itself instead of its whole subtree, faster for Firefox */
 @property --project-height {
   syntax: "<length>";
   inherits: false;
@@ -101,7 +98,7 @@ body:has(.hero-projects) {
   background-color: black;
   background-image:
     linear-gradient(black, black),
-    linear-gradient(170deg, #73adf7 0%, #001167 57%, #3275cc 100%);
+    linear-gradient(170deg, #73adf7 0%, var(--project-color) 57%, #3275cc 100%);
   background-clip: padding-box, border-box;
   background-origin: border-box;
 
@@ -110,26 +107,8 @@ body:has(.hero-projects) {
 
   /* --project-height is written by the script in coarse buckets */
   font-size: clamp(13px, calc(var(--project-height, 60px) * 0.055), 34px);
-
   cursor: pointer;
-
-  /* A card is resized on every frame of a slide, so this shadow is
-     re-rasterised at each new size. A wide blur over a viewport-wide
-     card is the most expensive thing painted per frame, and on the
-     grey page background it barely reads: a tight blur keeps the
-     depth for a fraction of the area. */
-  /* box-shadow:
-    inset 0 1px 0 var(--overlay-white-weak),
-    0 3px 8px var(--shadow-soft); */
 }
-
-/* No ::before rim: `contain: paint` makes the card a stacking context
-   and a clip box. A pseudo pinned at -1px therefore either paints over
-   the card face (z-index auto) or, at z-index -1, paints above the
-   card's own background while its 1px overhang is clipped away — it
-   can never sit behind the black face like #title-box::before does,
-   because there is no containment on that box. Hence the border-box
-   background layer on the card itself. */
 
 /* Hover highlight as a plain translucent fill. `filter: brightness()`
    would move the card onto an offscreen surface, and the pointer
@@ -163,20 +142,6 @@ body:has(.hero-projects) {
 .hero-projects>article[data-size="tiny"] {
   --card-pad-y: 0px;
   font-size: 0;
-}
-
-.hero-projects>article[data-size="compact"] {
-  --card-pad-y: 7px;
-  /* font-size: 11px; */
-  letter-spacing: 0.06em;
-}
-
-.hero-projects>article[data-size="normal"] {
-  --card-pad-y: 12px;
-}
-
-.hero-projects>article[data-size="large"] {
-  --card-pad-y: 24px;
 }
 
 /* ---------- Page footer ---------- */
