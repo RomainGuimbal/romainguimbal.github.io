@@ -320,6 +320,7 @@
     if (Date.now() < state.lockUntil) return false;
 
     state.lockUntil = Date.now() + Math.max(CONFIG.cooldown, 0);
+    mark(null);
     moveTo(state.focus + direction);
     return true;
   }
@@ -331,6 +332,17 @@
   // mouse notch both move the focus one project at a time.
   var wheelTravel = 0;
 
+  // The last few hundred wheel events, as [ms since load, px], with a
+  // null px standing for a hop. Flick once, then run heroWave.dump() in
+  // the console: the sizes and the gaps between them are what the
+  // gesture reading has to be tuned against.
+  var trace = [];
+
+  function mark(delta) {
+    if (trace.length > 250) trace.shift();
+    trace.push([Math.round(performance.now()), delta]);
+  }
+
   // The page cannot scroll, so the wheel is ours wherever it fires.
   window.addEventListener(
     "wheel",
@@ -338,16 +350,18 @@
       if (event.ctrlKey) return; // pinch-zoom
       event.preventDefault();
 
+      var delta = event.deltaY;
+      if (event.deltaMode === 1) delta *= 16;
+      else if (event.deltaMode === 2) delta *= state.avail || window.innerHeight;
+
+      mark(delta);
+
       // Still cooling down from the previous hop: swallow the event
       // whole, including its travel, so nothing piles up.
       if (Date.now() < state.lockUntil) {
         wheelTravel = 0;
         return;
       }
-
-      var delta = event.deltaY;
-      if (event.deltaMode === 1) delta *= 16;
-      else if (event.deltaMode === 2) delta *= state.avail || window.innerHeight;
 
       var threshold = Math.max(CONFIG.scrollThreshold, 1);
       wheelTravel += delta;
@@ -495,5 +509,12 @@
     state: state,
     goTo: moveTo,
     refresh: relayout,
+    dump: function () {
+      return trace
+        .map(function (entry) {
+          return entry[1] === null ? entry[0] + " hop" : entry[0] + " " + entry[1];
+        })
+        .join("\n");
+    },
   };
 })();
