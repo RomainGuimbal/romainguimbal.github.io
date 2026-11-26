@@ -21,11 +21,11 @@
   --hero-pad-top: calc(var(--topbar-height, 48px) + 16px);
   --hero-pad-bottom: 10px;
   --hero-pad-x: 14px;
-  --hero-radius: 20px;
+  --hero-radius: 15px;
 
   /* Smallest height a card may fall back to; keeps every project
      on screen even when it is far from the focus. */
-  --hero-min-height: 20px;
+  --hero-min-height: 30px;
 
   /* Length and shape of a slide, from one focused project to the
      next. Any CSS timing function works here. */
@@ -119,7 +119,7 @@ body:has(.hero-projects) {
   /* Capped here rather than in the script: a tall card keeps the full
      18px, a collapsing one gives its inset back and can go thin. */
   --card-pad-x: clamp(14px, 2.2vw, 34px);
-  padding: min(var(--card-pad-y), 18px) var(--card-pad-x);
+  padding: min(var(--card-pad-y), 6px) var(--card-pad-x);
 
   display: flex;
   align-items: flex-end;
@@ -142,7 +142,8 @@ body:has(.hero-projects) {
 
   /* The label size follows the card height, written by the script as
      --project-height on the card itself. */
-  font-size: clamp(13px, calc(var(--project-height, 60px) * 0.055), 34px);
+  /* font-size: clamp(13px, calc(var(--project-height, 60px) * 0.055), 34px); */
+  font-size: 12px;
   cursor: pointer;
 
   /* One slide, driven by the browser: the script only writes the
@@ -193,6 +194,42 @@ body:has(.hero-projects) {
   outline-offset: -4px;
 }
 
+/* ---------- Card face ---------- */
+
+/* A direct child of the card that should fill it — a thumbnail, a
+   video — is taken out of the flex row and stretched over the card, so
+   the label keeps the bottom to itself instead of being pushed aside
+   by it. `inset: 0` on an absolutely positioned child lands on the
+   padding box, so the 1px gradient rim stays visible; the card's
+   `contain: paint` is what already makes it a stacking context, which
+   is what keeps `z-index: -1` behind its own label and nothing else. */
+.hero-projects>article>.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: calc(var(--hero-radius) - 1px);
+  overflow: hidden;
+  /* The card owns the gesture: no native image drag under the pointer */
+  pointer-events: none;
+}
+
+.hero-projects>article>.hero-content>.bg-img{
+  /* width: calc(100%*2); */
+  width: 100%;
+  object-fit: cover;
+  opacity: 30%;
+  position: absolute;
+  z-index: -1;
+}
+
+.hero-projects>article>.hero-content>.main-img {
+  display: block;
+  width: auto;
+  height: 60%;
+  margin-top: var(--hero-min-height);
+}
+
+
 /* ---------- Page footer ---------- */
 
 /* The stack covers the viewport, so the footer becomes a thin
@@ -220,10 +257,10 @@ body:has(.hero-projects) main>footer p {
   color: color-mix(in srgb, var(--text-color) 45%, transparent);
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   :root {
     --hero-gap: 8px;
     --hero-pad-x: 10px;
     --hero-min-height: 20px;
   }
-}
+} */
