@@ -226,8 +226,13 @@ body:has(.hero-projects) {
   opacity: 1;
 }
 
-.hero-projects>article>.hero-content>.bg-img{
-  /* width: calc(100%*2); */
+.hero-projects>article>.bg-img{
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: calc(var(--hero-radius) - 1px);
+  overflow: hidden;
+  pointer-events: none;
   width: 100%;
   object-fit: cover;
   opacity: 40%;
