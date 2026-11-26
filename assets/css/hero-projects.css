@@ -21,11 +21,12 @@
   --hero-pad-top: calc(var(--topbar-height, 48px) + 16px);
   --hero-pad-bottom: 10px;
   --hero-pad-x: 14px;
-  --hero-radius: 15px;
+  --hero-radius: 30px;
 
-  /* Smallest height a card may fall back to; keeps every project
-     on screen even when it is far from the focus. */
-  --hero-min-height: 30px;
+  /* Height added under every card, before its share of the wave.
+     Pads the whole stack instead of capping its flanks, so the
+     shape of the curve survives down to the smallest project. */
+  --hero-min-height: 10px;
 
   /* Length and shape of a slide, from one focused project to the
      next. Any CSS timing function works here. */
@@ -159,12 +160,14 @@ body:has(.hero-projects) {
 /* The script adds this class around a resize, where the cards have to
    land at their new heights at once instead of sliding there from the
    heights they had in the previous viewport. */
-.hero-projects.is-instant>article {
+.hero-projects.is-instant>article,
+.hero-projects.is-instant>article>.hero-content {
   transition: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-projects>article {
+  .hero-projects>article,
+  .hero-projects>article>.hero-content {
     transition: none;
   }
 }
@@ -211,13 +214,23 @@ body:has(.hero-projects) {
   overflow: hidden;
   /* The card owns the gesture: no native image drag under the pointer */
   pointer-events: none;
+
+  /* Only the focused project shows its face: it fades in as the card
+     grows and hands the stage back when the focus moves on. Same
+     duration and curve as the slide, so the two travel together. */
+  opacity: 0;
+  transition: opacity var(--hero-slide-duration) var(--hero-slide-ease);
+}
+
+.hero-projects>article.is-focused>.hero-content {
+  opacity: 1;
 }
 
 .hero-projects>article>.hero-content>.bg-img{
   /* width: calc(100%*2); */
   width: 100%;
   object-fit: cover;
-  opacity: 30%;
+  opacity: 40%;
   position: absolute;
   z-index: -1;
 }

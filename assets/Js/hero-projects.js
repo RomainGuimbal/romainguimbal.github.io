@@ -11,13 +11,10 @@
    2. Lay a curve over the stack, centred on the focused project,
       and read how much of it each card catches:
 
-          density(x) = exp(-(|x - c| / width) ^ shape)      c = peak
+          density(x) = exp(-(|x - c| / width) ^ 2)      c = peak
 
       `width` is how far, in projects, you have to move away from
-      the peak for the curve to fall to 1/e. `shape` bends the
-      profile: 2 is the textbook gaussian bell, 1 keeps the
-      shoulders high around a pointed peak, 4 holds a flat top and
-      drops sharply at the flanks. `centre` slides the peak inside
+      the peak for the curve to fall to 1/e. `centre` slides the peak inside
       the focused card, 0 being its top edge and 1 its bottom edge.
    3. The curve is sampled evenly across the stack — CONFIG.substeps
       points per card, taken at their midpoints — and the samples
@@ -29,12 +26,13 @@
       negative on the far side of the peak, while a running total
       only ever rises, so every slice is positive and the n slices
       add up to the mass the stack caught.
-   4. The slices are normalised to the available height and lifted
-      to --hero-min-height by fitHeights(), which takes the
-      overflow back from the tallest of them so the column still
-      fills the viewport exactly. Nothing else is imposed: the share
-      the focused card ends up with is whatever the curve gives it,
-      which is what `width` and `shape` are for.
+   4. fitHeights() gives every slice the same lift, --hero-min-height,
+      and shares what is left of the available height between them in
+      proportion to the curve. The lift is added, never clamped: a
+      ceiling would cut the flanks off flat and leave the ends of the
+      wave as a bar of equal cards. It is small, so the focused card
+      still ends up with whatever the curve gives it, which is what
+      `width` and `shape` are for.
 
    Motion
    ------
@@ -59,12 +57,7 @@
     // Distance, in projects, at which the curve has fallen to 1/e.
     // The knob that decides everything: 0.3 is a spike, 0.6 a soft
     // hill, 1.2 a broad swell that lifts the whole stack.
-    width: 0.6,
-
-    // Shape of the flanks. 2 is the textbook gaussian, 1 keeps the
-    // shoulders high around a pointed peak, 4 holds a flat top and
-    // drops sharply at both ends.
-    shape: 2,
+    width: 4,
 
     // Where the peak sits inside the focused card: 0.5 centres it,
     // 0 puts it on the card's top edge, 1 on its bottom edge.
@@ -100,7 +93,7 @@
   var state = {
     focus: 0, // index of the focused project
     avail: 0, // height to share between the cards, in px
-    minHeight: 40, // floor a collapsed card may not go under
+    minHeight: 40, // lift added under every card, in px
     cache: [], // heights per rest position, filled on demand
     lockUntil: 0, // wheel and drag are ignored until this timestamp
   };
@@ -112,7 +105,8 @@
   // CONFIG.shape bends its flanks — 2 is the textbook gaussian, 1
   // keeps broad shoulders, 4 gives a flat top and steep sides.
   function density(x, peak) {
-    return Math.exp(-Math.pow(Math.abs(x - peak) / CONFIG.width, CONFIG.shape));
+    return Math.exp((1-Math.sqrt(Math.abs(x - peak))) / (1/CONFIG.width));
+    // return Math.exp(-Math.pow(Math.max(Math.abs(x - peak)-1,Math.abs(x - peak)+1) / CONFIG.width, 2));
   }
 
   // Share of the wave carried by each card, normalised to 1.
@@ -152,37 +146,30 @@
 
   /* ---------- Shares to pixels ---------- */
 
-  // Solve heights = shares * scale, with every height >= floor, and
-  // the sum exactly equal to `avail`. Monotone in `scale`, so a
-  // bisection is enough.
-  function fitHeights(shareList, avail, floor) {
+  // heights = lift + share * rest, with `rest` chosen so the heights
+  // add up to `avail` exactly. Since the shares add up to 1, that is
+  // just avail - count * lift: no search needed, and every card keeps
+  // its slice of the curve in full — the lift only pads the bottom
+  // of each one. Clamping instead of adding would put a ceiling under
+  // the flanks, where the curve is at its thinnest, and turn the ends
+  // of the wave into a bar of identical cards.
+  function fitHeights(shareList, avail, lift) {
     var count = shareList.length;
     if (!count) return [];
 
-    if (count * floor >= avail) {
+    var rest = avail - count * lift;
+
+    // A lift the column cannot pay for: fall back to an even split,
+    // there is no room left for a shape.
+    if (rest <= 0) {
       var even = avail / count;
       return shareList.map(function () {
         return even;
       });
     }
 
-    var peak = Math.max.apply(null, shareList) || 1;
-    var lo = 0;
-    var hi = avail / peak;
-
-    for (var pass = 0; pass < 36; pass++) {
-      if (hi - lo < 0.01) break; // a hundredth of a pixel is enough
-
-      var mid = (lo + hi) / 2;
-      var total = 0;
-      for (var i = 0; i < count; i++) total += Math.max(shareList[i] * mid, floor);
-      if (total < avail) lo = mid;
-      else hi = mid;
-    }
-
-    var scale = (lo + hi) / 2;
     return shareList.map(function (share) {
-      return Math.max(share * scale, floor);
+      return lift + share * rest;
     });
   }
 
@@ -259,7 +246,12 @@
 
     if (instant) stack.classList.add("is-instant");
 
-    for (var i = 0; i < cards.length; i++) setCardHeight(cards[i], heights[i]);
+    for (var i = 0; i < cards.length; i++) {
+      setCardHeight(cards[i], heights[i]);
+      // The only flag the CSS needs: the focused card is the one whose
+      // face is shown.
+      cards[i].classList.toggle("is-focused", i === state.focus);
+    }
 
     if (instant) {
       // Read back so the new heights commit while the class is still
@@ -311,12 +303,13 @@
       stack.clientHeight - padY - gap * Math.max(cards.length - 1, 0),
     );
 
-    // Collapsed cards may claim at most half of the column between
-    // them; the wave keeps the rest. Without this cap, a dozen
-    // projects on a laptop screen would all sit on the floor and the
-    // wave would be gone.
+    // The lift is paid for by every card, out of the same column, so
+    // let the whole set of lifts claim at most half of it; the wave
+    // keeps the rest. Without this cap, a dozen projects on a laptop
+    // screen would spend the column on padding and the wave would be
+    // gone.
     if (cards.length > 1) {
-      var roomy = (state.avail * 0.5) / (cards.length - 1);
+      var roomy = (state.avail * 0.5) / cards.length;
       state.minHeight = Math.max(4, Math.min(floor, roomy));
     }
 
