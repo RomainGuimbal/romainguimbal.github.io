@@ -186,6 +186,30 @@
     });
   }
 
+  // Whole pixels that still add up to `target`. A card edge landing
+  // between two pixels is snapped to one when it is painted, and which
+  // way it snaps depends on where that edge falls — so a column of
+  // fractional heights paints a total that is not the total it was
+  // given, and the column's unpinned end moves by a pixel from one rest
+  // position to the next. Rounded here, every edge sits on the grid and
+  // the sum stays exact; the residue goes to the tallest card, where a
+  // pixel changes nothing.
+  function whole(heights, target) {
+    var snapped = heights.map(Math.round);
+    var slack = Math.round(target);
+
+    for (var i = 0; i < snapped.length; i++) slack -= snapped[i];
+
+    if (slack && snapped.length) {
+      var tallest = 0;
+      for (var j = 1; j < heights.length; j++) {
+        if (heights[j] > heights[tallest]) tallest = j;
+      }
+      snapped[tallest] += slack;
+    }
+    return snapped;
+  }
+
   // Heights for a rest position, solved on first use and kept until
   // the next measurement invalidates them.
   function heightsAt(focus) {
@@ -203,6 +227,8 @@
       heights = fitHeights(sharesAt(focus), state.avail, state.minHeight);
     }
 
+    heights = whole(heights, state.avail);
+
     state.cache[focus] = heights;
     return heights;
   }
@@ -215,6 +241,14 @@
     var value = height.toFixed(2) + "px";
     card.style.height = value;
     card.style.setProperty("--project-height", value);
+
+    // The vertical inset is half of what the border leaves. It is
+    // written with the same value and transitioned on the same curve,
+    // so height >= 2 * inset + 2px holds from the first frame to the
+    // last and the card always measures exactly what it was given —
+    // a card can never be thinner than its own padding otherwise.
+    // CSS caps it, a tall card keeps its full inset.
+    card.style.setProperty("--card-pad-y", ((height - 2) / 2).toFixed(2) + "px");
   }
 
   // `instant` writes the keyframe with the transition disabled: on a

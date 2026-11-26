@@ -25,7 +25,7 @@
 
   /* Smallest height a card may fall back to; keeps every project
      on screen even when it is far from the focus. */
-  --hero-min-height: 30px;
+  --hero-min-height: 20px;
 
   /* Length and shape of a slide, from one focused project to the
      next. Any CSS timing function works here. */
@@ -52,7 +52,14 @@ body:has(.hero-projects) {
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
+  /* Pinned to the padding top, not centred. The cards fill the column
+     exactly, so centring has nothing to do at rest — but it splits any
+     leftover between the top and the bottom, and during a slide that
+     leftover moves by a fraction of a pixel. Pinned, the first card
+     never moves: the slack lands past the last one. */
+  justify-content: flex-start;
+
   gap: var(--hero-gap);
 
   /* main.css sets `* { margin: auto }` — reset it explicitly */
@@ -60,7 +67,13 @@ body:has(.hero-projects) {
   padding: var(--hero-pad-top) var(--hero-pad-x) calc(var(--hero-pad-bottom) + var(--hero-footer-inset));
 
   box-sizing: border-box;
+
+  /* `clip`, not `hidden`: a hidden box is still a scroll container, and
+     the browser is free to nudge its scroll offset when the cards
+     resize — a hop's worth of jump at the top. The plain value is the
+     fallback for browsers without `clip`. */
   overflow: hidden;
+  overflow: clip;
 
   /* Vertical gestures belong to the wave, not to the page */
   touch-action: none;
@@ -78,6 +91,18 @@ body:has(.hero-projects) {
   initial-value: 60px;
 }
 
+/* Vertical inset of the label, written by the script from the card's
+   own height and transitioned with it. A box can never be thinner than
+   twice its padding plus its border, so a fixed inset would put a
+   silent 38px floor under --hero-min-height — and the column would then
+   be taller than the heights the script handed it, by 8px for every
+   collapsed card. */
+@property --card-pad-y {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 18px;
+}
+
 /* ---------- Cards ---------- */
 
 .hero-projects>article {
@@ -91,9 +116,10 @@ body:has(.hero-projects) {
      paint inside the card so nothing outside has to be redone. */
   contain: layout paint;
 
-  --card-pad-y: 18px;
+  /* Capped here rather than in the script: a tall card keeps the full
+     18px, a collapsing one gives its inset back and can go thin. */
   --card-pad-x: clamp(14px, 2.2vw, 34px);
-  padding: var(--card-pad-y) var(--card-pad-x);
+  padding: min(var(--card-pad-y), 18px) var(--card-pad-x);
 
   display: flex;
   align-items: flex-end;
@@ -125,6 +151,7 @@ body:has(.hero-projects) {
      made the slide stutter in Firefox. */
   transition:
     height var(--hero-slide-duration) var(--hero-slide-ease),
+    --card-pad-y var(--hero-slide-duration) var(--hero-slide-ease),
     font-size var(--hero-slide-duration) steps(6, end);
 }
 
@@ -197,6 +224,6 @@ body:has(.hero-projects) main>footer p {
   :root {
     --hero-gap: 8px;
     --hero-pad-x: 10px;
-    --hero-min-height: 34px;
+    --hero-min-height: 20px;
   }
 }
